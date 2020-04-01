@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Citra layout calculator</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0 auto;
+        max-width: 416px;
+      }
+
+      .form-group {
+        display: flex;
+        margin-bottom: 8px;
+      }
+      .form-group > * {
+        flex: 1;
+      }
+
+      .info {
+        color: #666;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+      .center {
+        display: block;
+        margin: 0 auto;
+      }
+
+      button,
+      textarea {
+        width: 100%;
+        margin: 8px 0;
+      }
+
+      textarea {
+        min-height: 544px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="text-center">Citra layout calculator</h1>
+
+    <div class="form-group">
+      <label for="monitorWidth">Monitor width</label>
+      <input id="monitorWidth" type="number" value="1920" />
+    </div>
+    <div class="form-group">
+      <label for="monitorHeight">Monitor height</label>
+      <input id="monitorHeight" type="number" value="1080" />
+    </div>
+
+    <hr />
+
+    <!-- <div class="form-group">
+      <label for="topWidth">Top screen width</label>
+      <input id="topWidth" type="number" value="400" />
+    </div> -->
+    <div class="form-group">
+      <label for="topHeight">Top screen height</label>
+      <input id="topHeight" type="number" value="240" />
+    </div>
+    <!-- <div class="form-group">
+      <label for="bottomWidth">Bottom screen width</label>
+      <input id="bottomWidth" type="number" value="320" />
+    </div> -->
+    <div class="form-group">
+      <label for="bottomHeight">Bottom screen height</label>
+      <input id="bottomHeight" type="number" value="240" />
+    </div>
+
+    <hr />
+
+    <button id="calculate" onclick="generateLayout()" class="center">
+      Generate layout
+    </button>
+    <div class="text-center info">
+      <small>(vertical layouts only)</small>
+    </div>
+
+    <div id="output-wrapper" hidden>
+      <br />
+
+      <label for="output">Output:</label>
+
+      <textarea id="output" readonly></textarea>
+
+      <button id="copy" onclick="copyLayout()" class="center">
+        Copy layout
+      </button>
+    </div>
+
+    <div class="info">
+      <p>
+        Defaults:
+      </p>
+
+      <div class="form-group">
+        <label>Top screen width:</label>
+        <label>400</label>
+      </div>
+      <div class="form-group">
+        <label>Top screen height:</label>
+        <label>240</label>
+      </div>
+
+      <div class="form-group">
+        <label>Bottom screen width:</label>
+        <label>320</label>
+      </div>
+      <div class="form-group">
+        <label>Bottom screen height:</label>
+        <label>240</label>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+      const defaultTopWidth = 400;
+      const defaultTopHeight = 240;
+      const defaultBottomWidth = 320;
+      const defaultBottomHeight = 240;
+
+      const generateLayout = e => {
+        const monitorWidth = parseInt(jQuery('#monitorWidth').val(), 10);
+        const monitorHeight = parseInt(jQuery('#monitorHeight').val(), 10);
+        // const topWidth = parseInt(jQuery('#topWidth').val(), 10);
+        const topHeight = parseInt(jQuery('#topHeight').val(), 10);
+        // const bottomWidth = parseInt(jQuery('#bottomWidth').val(), 10);
+        const bottomHeight = parseInt(jQuery('#bottomHeight').val(), 10);
+
+        const topWidth = (topHeight * defaultTopWidth) / defaultTopHeight;
+        const bottomWidth =
+          (bottomHeight * defaultBottomWidth) / defaultBottomHeight;
+
+        if (
+          !(
+            monitorWidth &&
+            monitorHeight &&
+            topWidth &&
+            topHeight &&
+            bottomWidth &&
+            bottomHeight
+          )
+        ) {
+          alert('Form is incomplete.');
+          return;
+        }
+
+        if (topWidth > monitorWidth || bottomWidth > monitorWidth) {
+          alert('Screens are too wide to fit your monitor.');
+          return;
+        }
+
+        if (topHeight + bottomHeight > monitorHeight) {
+          alert('Screens are too tall to fit your monitor.');
+          return;
+        }
+
+        jQuery('#output').text(
+          `[Layout]
+render_3d\\default=true
+render_3d=0
+factor_3d\\default=true
+factor_3d=0
+pp_shader_name\\default=true
+pp_shader_name=none (builtin)
+filter_mode\\default=true
+filter_mode=true
+layout_option=0
+swap_screen\\default=true
+swap_screen=false
+upright_screen\\default=true
+upright_screen=false
+custom_layout\\default=false
+custom_layout=true
+custom_top_left\\default=false
+custom_top_left=${(monitorWidth - topWidth) / 2}
+custom_top_top\\default=true
+custom_top_top=0
+custom_top_right\\default=false
+custom_top_right=${(monitorWidth - topWidth) / 2 + topWidth}
+custom_top_bottom\\default=false
+custom_top_bottom=${topHeight}
+custom_bottom_left\\default=false
+custom_bottom_left=${(monitorWidth - bottomWidth) / 2}
+custom_bottom_top\\default=false
+custom_bottom_top=${monitorHeight - bottomHeight}
+custom_bottom_right\\default=false
+custom_bottom_right=${(monitorWidth - bottomWidth) / 2 + bottomWidth}
+custom_bottom_bottom\\default=false
+custom_bottom_bottom=${monitorHeight}`,
+        );
+        jQuery('#output-wrapper').removeAttr('hidden');
+      };
+
+      const copyLayout = () => {
+        jQuery('#output')[0].select();
+        document.execCommand('copy');
+        alert('Layout copied.');
+      };
+    </script>
+  </body>
+</html>
