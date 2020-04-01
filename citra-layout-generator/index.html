@@ -22,6 +22,18 @@
       .info {
         color: #666;
       }
+      .link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #333;
+      }
+      .link:hover {
+        filter: brightness(1.2);
+      }
+      .link > * {
+        margin: 0 2px;
+      }
 
       .text-center {
         text-align: center;
@@ -78,7 +90,7 @@
     <button id="calculate" onclick="generateLayout()" class="center">
       Generate layout
     </button>
-    <div class="text-center info">
+    <div class="info text-center">
       <small>(vertical layouts only)</small>
     </div>
 
@@ -117,6 +129,13 @@
         <label>240</label>
       </div>
     </div>
+
+    <a class="link" href="https://github.com/jesuscc1993"
+      ><img
+        src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+        width="16"
+      /><small>github.com/jesuscc1993</small></a
+    >
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
