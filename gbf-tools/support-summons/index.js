@@ -79,7 +79,7 @@ const loadSample = () => {
 const uglifyString = (string) => string.toLowerCase().replace(/ /g, '_');
 
 const getSummonImages = (summon) => {
-  if (!(summon && summon.id && summon.uncap)) {
+  if (!(summon && summon.id)) {
     return '<img src="assets/images/empty_summon.png"><div class="uncap-stars"></div>';
   }
 
