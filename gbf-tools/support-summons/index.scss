@@ -1,0 +1,189 @@
+$page-background: #150f0f;
+
+body {
+  background: $page-background;
+  margin: 8px auto;
+  text-align: center;
+  width: 720px;
+}
+
+body,
+input {
+  color: white;
+  font-family: 'Delius';
+}
+
+input {
+  $background: #666;
+  $primary: #be8a44;
+  max-width: 100%;
+
+  background: none;
+  border-radius: 3px;
+  border: 1px solid $background;
+  caret-color: $background;
+  outline: none;
+  padding: 4px;
+
+  &:focus {
+    border-color: $primary;
+  }
+
+  &[type='button'] {
+    background: white;
+    border-color: transparent;
+    color: $page-background;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 8px;
+    transition: 0.2s;
+
+    &:not(:hover),
+    &:active {
+      &.primary {
+        background: $primary;
+      }
+      &:not(.primary) {
+        opacity: 0.66;
+      }
+    }
+  }
+
+  &.summon-id {
+    width: 124px;
+  }
+  &.summon-uncap {
+    width: 96px;
+  }
+}
+
+.form-field {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  + .form-field {
+    margin-top: 4px;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  margin: 4px 0;
+}
+
+.frame {
+  $border-width: 74px;
+  $horizontal-padding: 28px;
+  border-image: url(assets/images/frame_result_awakened.png) 74 0 fill;
+  border-style: solid;
+  border-width: $border-width 0;
+  width: 640px;
+
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 8px $horizontal-padding;
+
+  .title {
+    position: absolute;
+    text-align: center;
+    width: calc(100% - #{$horizontal-padding * 2});
+    top: $border-width / -2 - 4px;
+    font-size: 18px;
+  }
+
+  .contents {
+    margin-bottom: -32px;
+  }
+}
+
+.summons-grid {
+  $summon-width: 68px;
+  $summon-height: 143px;
+  display: grid;
+  grid-gap: 4px;
+  grid-template-columns: repeat(auto-fill, $summon-width);
+  justify-content: space-between;
+
+  img.summon {
+    background-image: url(assets/images/empty_summon.png);
+    background-size: cover;
+    height: $summon-height;
+    width: $summon-width;
+  }
+}
+
+.player-form {
+  width: 33%;
+  margin: 0 auto 32px;
+}
+
+.summons-form {
+  display: grid;
+  grid-gap: 4%;
+  grid-template-columns: repeat(auto-fill, 21%);
+  justify-content: space-between;
+  margin: 0 auto 64px;
+}
+
+.element {
+  $size: 42px;
+  background: url(assets/images/elements.png) no-repeat;
+  background-size: $size $size * 7;
+  display: block;
+  height: $size;
+  margin: 0 auto 4px;
+  width: $size;
+
+  + span {
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+
+  &.fire {
+    background-position: 0 $size * -0;
+  }
+  &.water {
+    background-position: 0 $size * -1;
+  }
+  &.earth {
+    background-position: 0 $size * -2;
+  }
+  &.wind {
+    background-position: 0 $size * -3;
+  }
+  &.light {
+    background-position: 0 $size * -4;
+  }
+  &.dark {
+    background-position: 0 $size * -5;
+  }
+  &.misc_1,
+  &.misc_2 {
+    background-position: 0 $size * -6;
+  }
+}
+
+.uncap-stars {
+  $star-size: 13px;
+  margin: 6px 0 0;
+  min-height: $star-size;
+
+  .uncap-star {
+    background: url(assets/images/evolution_star.png) no-repeat;
+    background-size: $star-size $star-size * 6;
+    background-position: 0 0;
+    display: inline-block;
+    height: $star-size;
+    width: $star-size;
+
+    &:nth-child(4),
+    &:nth-child(5) {
+      background-position: 0 $star-size * -5;
+    }
+  }
+}

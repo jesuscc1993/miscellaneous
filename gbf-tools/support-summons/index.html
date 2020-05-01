@@ -1,0 +1,54 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="http://game.granbluefantasy.jp/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Delius&display=swap"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>GBF Support Summons Generator</title>
+  </head>
+  <body>
+    <h1>GBF Support Summons Generator</h1>
+
+    <div id="summons-frame" class="frame">
+      <div class="title" id="frame-title"></div>
+      <div class="contents summons-grid"></div>
+    </div>
+
+    <form id="support-summons-form">
+      <h3>Player</h3>
+
+      <div class="player-form">
+        <div class="form-field">
+          <label for="pid">ID</label>
+          <input id="pid" name="pid" placeholder="00000000" />
+        </div>
+        <div class="form-field">
+          <label for="pid">IGN</label>
+          <input id="ign" name="ign" />
+        </div>
+      </div>
+
+      <div class="summons-form"></div>
+    </form>
+
+    <p>
+      <input id="loadSample" type="button" value="Load sample"></input>
+    </p>
+    <p>
+      <input id="generate" type="button" class="primary" value="Generate"></input>
+    </p>
+    <p hidden>
+      <input id="download" type="button" class="primary" value="Download"></input>
+    </p>
+
+    <div id="output" hidden></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js"></script>
+    <!-- <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script> -->
+    <script src="index.js"></script>
+  </body>
+</html>
