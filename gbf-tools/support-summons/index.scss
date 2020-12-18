@@ -57,6 +57,10 @@ input {
   }
 }
 
+.form-group {
+  margin-bottom: 16px;
+}
+
 .form-field {
   align-items: center;
   display: flex;
@@ -102,8 +106,8 @@ p {
 }
 
 .summons-grid {
-  $summon-width: 68px;
-  $summon-height: 143px;
+  $summon-width: 80px;
+  $summon-height: 168px;
   display: grid;
   grid-gap: 4px;
   grid-template-columns: repeat(auto-fill, $summon-width);
@@ -162,15 +166,14 @@ p {
   &.dark {
     background-position: 0 $size * -5;
   }
-  &.misc_1,
-  &.misc_2 {
+  &.misc {
     background-position: 0 $size * -6;
   }
 }
 
 .uncap-stars {
   $star-size: 13px;
-  margin: 6px 0 0;
+  margin: 6px 0;
   min-height: $star-size;
 
   .uncap-star {

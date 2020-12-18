@@ -1,6 +1,8 @@
 const summonRootUrl =
   'http://game.granbluefantasy.jp/assets/img/sp/assets/summon/ls';
 
+const summonSlots = 2;
+
 const elements = [
   { name: 'Fire' },
   { name: 'Water' },
@@ -8,55 +10,103 @@ const elements = [
   { name: 'Wind' },
   { name: 'Light' },
   { name: 'Dark' },
-  { name: 'Misc 1' },
-  { name: 'Misc 2' },
+  { name: 'Misc' },
 ];
 
 const sampleSummons = {
-  fire: { id: '2040034000_02', uncap: 4 },
-  water: { id: '2040028000_02', uncap: 4 },
-  earth: { id: '2040027000_02', uncap: 4 },
-  wind: { id: '2040020000_02', uncap: 4 },
-  light: { id: '2040056000_02', uncap: 5 },
-  dark: { id: '2040046000_02', uncap: 4 },
-  misc_1: { id: '2040167000', uncap: 4 },
-  misc_2: { id: '2040114000', uncap: 5 },
+  fire: [
+    { id: '2040034000_02', uncap: 4 },
+    { id: '2040185000', uncap: 3 },
+  ],
+  water: [
+    { id: '2040028000_02', uncap: 4 },
+    { id: '2040225000', uncap: 3 },
+  ],
+  earth: [
+    { id: '2040027000_02', uncap: 4 },
+    { id: '2040205000', uncap: 3 },
+  ],
+  wind: [
+    { id: '2040020000_02', uncap: 4 },
+    { id: '2040261000', uncap: 3 },
+  ],
+  light: [
+    { id: '2040047000_02', uncap: 4 },
+    { id: '2040056000_02', uncap: 5 },
+  ],
+  dark: [
+    { id: '2040046000_02', uncap: 4 },
+    { id: '2040003000', uncap: 5 },
+  ],
+  misc: [
+    { id: '2040167000', uncap: 4 },
+    { id: '2040114000', uncap: 5 },
+  ],
 };
 
 const supportSummonsForm = jQuery('#support-summons-form');
+const summonsGrid = jQuery('.summons-grid');
 
 const initialize = () => {
   elements.forEach(({ name }) => {
     const ugglyName = uglifyString(name);
 
-    jQuery('.summons-grid').append(`
+    summonsGrid.append(`
       <div class="summon-portrait">
         <div class="element ${ugglyName}"></div>
         <span>${name}</span>
         ${getSummonImages()}
+        ${getSummonImages()}
       </div>
     `);
 
-    jQuery('.summons-form').append(`
+    const elementGroup = jQuery(`
       <div>
         <h3>${name}</h3>
-        
-        <div class="form-field">
-          <label for="${ugglyName}-id">ID</label>
-          <input id="${ugglyName}-id" name="${ugglyName}-id" class="summon-id" placeholder="0000000000" />
-        </div>
-        
-        <div class="form-field">
-          <label for="${ugglyName}-uncap">Uncap</label>
-          <input id="${ugglyName}-uncap" name="${ugglyName}-uncap" class="summon-uncap" type="number" min="0" max="5" value="3" />
-        </div>
       </div>
     `);
+
+    for (let i = 0; i < summonSlots; i++) {
+      elementGroup.append(getSummonFormGroup(ugglyName, i));
+    }
+
+    jQuery('.summons-form').append(elementGroup);
   });
 
   jQuery('#generate').click(() => generatePicture());
   jQuery('#loadSample').click(() => loadSample());
   jQuery('#download').click(() => download());
+};
+
+const getSummonFormGroup = (ugglyName, index) => {
+  return `
+    <div class="form-group">
+      <p>Slot ${index + 1}</p>
+            
+      <div class="form-field">
+        <label for="${ugglyName}-${index}-id">ID</label>
+        <input
+          class="summon-id"
+          id="${ugglyName}-${index}-id"
+          name="${ugglyName}-${index}-id"
+          placeholder="0000000000"
+        />
+      </div>
+      
+      <div class="form-field">
+        <label for="${ugglyName}-${index}-uncap">Uncap</label>
+        <input
+          class="summon-uncap"
+          id="${ugglyName}-${index}-uncap"
+          max="5"
+          min="0"
+          name="${ugglyName}-${index}-uncap"
+          type="number"
+          value="3"
+        />
+      </div>
+    </div>
+  `;
 };
 
 const loadSample = () => {
@@ -66,10 +116,11 @@ const loadSample = () => {
 
     elements.forEach(({ name }) => {
       const ugglyName = uglifyString(name);
-      const { id, uncap } = sampleSummons[ugglyName];
-
-      jQuery(`input#${ugglyName}-id`).val(id);
-      jQuery(`input#${ugglyName}-uncap`).val(uncap);
+      const summons = sampleSummons[ugglyName];
+      summons.forEach(({ id, uncap }, index) => {
+        jQuery(`input#${ugglyName}-${index}-id`).val(id);
+        jQuery(`input#${ugglyName}-${index}-uncap`).val(uncap);
+      });
     });
 
     generatePicture();
@@ -98,20 +149,28 @@ const generatePicture = () => {
   title = ign ? (pid && ign ? `${title} / ` : ``) + `IGN: ${ign}` : title;
   jQuery('#frame-title').text(title);
 
-  jQuery('.summons-grid').html('');
+  summonsGrid.html('');
+
   elements.forEach(({ name }) => {
     const ugglyName = uglifyString(name);
 
-    jQuery('.summons-grid').append(`
+    const element = jQuery(`
       <div class="summon-portrait">
         <div class="element ${ugglyName}"></div>
         <span>${name}</span>
-        ${getSummonImages({
-          id: formData[`${ugglyName}-id`],
-          uncap: parseInt(formData[`${ugglyName}-uncap`], 10),
-        })}
       </div>
     `);
+
+    for (let i = 0; i < summonSlots; i++) {
+      element.append(
+        getSummonImages({
+          id: formData[`${ugglyName}-${i}-id`],
+          uncap: parseInt(formData[`${ugglyName}-${i}-uncap`], 10),
+        })
+      );
+    }
+
+    summonsGrid.append(element);
   });
 
   // download();
@@ -129,11 +188,16 @@ const download = () => {
     //   jQuery('#output').html(canvas);
     // });
     //
-    // html2canvas(jQuery('#summons-frame')[0], {
-    //   backgroundColor: null,
-    //   onrendered: (canvas) => {
-    //     jQuery('#output').html(canvas);
-    //   },
+    // html2canvas(jQuery('#summons-frame')[0]).then((canvas) => {
+    //   var tempcanvas = document.createElement('canvas');
+    //   tempcanvas.width=465;
+    //   tempcanvas.height=524;
+    //   var context=tempcanvas.getContext('2d');
+    //   context.drawImage(canvas,465,40,465,524,0,0,465,524);
+    //   var link=document.createElement("a");
+    //   link.href=canvas.toDataURL('image/jpg');
+    //   link.download = 'screenshot.jpg';
+    //   link.click();
     // });
     //
     // domtoimage.toPng(jQuery('#summons-frame')[0]).then(function (dataUrl) {
@@ -149,7 +213,7 @@ const getFormData = () => {
     .serializeArray()
     .reduce(
       (formData, field) => ({ ...formData, [field.name]: field.value }),
-      {},
+      {}
     );
 };
 
