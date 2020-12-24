@@ -1,1 +1,1 @@
-body{background:#888;margin:0;overflow-y:scroll}img{max-width:100%;border-radius:4px;box-shadow:0 2px 4px #0004}.images-container{display:grid;grid-gap:8px;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));grid-template-rows:repeat(auto-fit, minmax(474px, 1fr));padding:8px}/*# sourceMappingURL=styles.css.map */
+body{background:#888;margin:4px;overflow-y:scroll}h1+small{display:inline-block;margin-top:-16px}h2{margin:20px 0 8px}.images-container img{margin:0 8px 8px 0;max-width:608}.images-container .scene img{max-width:464px}/*# sourceMappingURL=styles.css.map */

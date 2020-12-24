@@ -1,23 +1,29 @@
-$image-width: 320px;
-$image-height: 474px;
+$spacing: 8px;
 
 body {
   background: #888;
-  margin: 0;
+  margin: 4px;
   overflow-y: scroll;
 }
 
-img {
-  max-width: 100%;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px #0004;
+h1 + small {
+  display: inline-block;
+  margin-top: -16px;
+}
+
+h2 {
+  margin: 20px 0 $spacing;
 }
 
 .images-container {
-  $spacing: 8px;
-  display: grid;
-  grid-gap: $spacing;
-  grid-template-columns: repeat(auto-fit, minmax($image-width, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax($image-height, 1fr));
-  padding: $spacing;
+  img {
+    margin: 0 $spacing $spacing 0;
+    max-width: 608;
+  }
+
+  .scene {
+    img {
+      max-width: 464px;
+    }
+  }
 }

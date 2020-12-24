@@ -5,8 +5,40 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <input id="character-id" type="text" placeholder="Character ID" />
-    <div id="images-container" class="images-container"></div>
+    <h1>Character Viewer</h1>
+
+    <small>(Press on any picture to zoom in)</small>
+
+    <h2>Character / Outfit ID</h2>
+    <input id="character-id" type="text" placeholder="e.g., 3040147000" />
+    <button onclick="loadCharacter()">Load character</button>
+    <button onclick="clearCharacter()">Clear</button>
+
+    <div id="images-container" class="images-container">
+      <h2>Inventory (M)</h2>
+      <div class="images-group inventory-m"></div>
+
+      <h2>Inventory (S)</h2>
+      <div class="images-group inventory-s"></div>
+
+      <h2>Party</h2>
+      <div class="images-group party"></div>
+
+      <h2>Ougi</h2>
+      <div class="images-group ougi"></div>
+
+      <h2>Banner</h2>
+      <div class="images-group banners"></div>
+
+      <h2>Full</h2>
+      <div class="images-group full"></div>
+
+      <h2>Scene</h2>
+      <div class="images-group scene"></div>
+    </div>
+
+    <h2>Examples:</h2>
+    <ul class="examples"></ul>
   </body>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="script.js"></script>
