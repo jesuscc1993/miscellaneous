@@ -94,7 +94,7 @@ const loadExamples = () => {
 
     examplesContainer.append(`
       <li>
-        <a href="${baseUrl}?id=${id}">${name}</a
+        <a href="?id=${id}">${name}</a
       </li>
     `);
   }
