@@ -24,6 +24,9 @@ const questAssets =
 const characterVariants = ['', '_a', '_b', '_c'];
 const characterEmotions = [
   'angry',
+  'bad',
+  'cry',
+  'doya',
   'joy',
   'laugh',
   'mood',
