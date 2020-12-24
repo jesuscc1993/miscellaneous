@@ -16,9 +16,17 @@ h2 {
 }
 
 .images-container {
+  a {
+    display: inline-block;
+  }
+
   img {
     margin: 0 $spacing $spacing 0;
     max-width: 608;
+  }
+
+  .images-group {
+    font-size: 0;
   }
 
   .scene {

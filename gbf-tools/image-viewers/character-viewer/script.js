@@ -2,6 +2,8 @@ const examples = [
   { id: '3040027000', name: 'Anila' },
   { id: '3040202000', name: 'Athena' },
   { id: '3040070000', name: 'Beatrix' },
+  { id: '3040070000_unarmed', name: 'Beatrix (unarmed)' },
+  { id: '3040070000_unarmed2', name: 'Beatrix (unarmed2)' },
   { id: '3710085000', name: 'Beatrix (Skyfall Blue Kimono Outfit)' },
   { id: '3030013000', name: 'Lamretta' },
   { id: '3040063000', name: 'Narmaya' },
@@ -20,6 +22,20 @@ const assets = 'http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc';
 const questAssets =
   'http://game-a1.granbluefantasy.jp/assets_en/img/sp/quest/scene/character';
 const characterVariants = ['', '_a', '_b', '_c'];
+const characterEmotions = [
+  'angry',
+  'joy',
+  'laugh',
+  'mood',
+  'mortifying',
+  'pride',
+  'sad',
+  'serious',
+  'shy',
+  'suddenly',
+  'surprise',
+  'weak',
+];
 
 const characterIdInput = jQuery('#character-id');
 
@@ -34,8 +50,8 @@ const scene = container.find('.scene');
 
 const loadCharacter = () => {
   const characterId = characterIdInput.val();
-  if (characterId.length !== 10) {
-    throw new Error('Character ID must be exactly 10 digits long');
+  if (characterId.length < 10) {
+    throw new Error('Character ID must be exactly at least 10 digits long');
   }
 
   banners.html('');
@@ -55,25 +71,32 @@ const loadCharacter = () => {
     appendImage(party, `${assets}/f/${characterId}_0${i}.jpg`);
   }
 
-  for (let i = 0; i < characterVariants.length; i++) {
-    const variant = characterVariants[i];
+  characterVariants.forEach((variant) => {
     const characterRoot = `${questAssets}/body/${characterId}`;
     const variantRoot = `${characterRoot}${variant}`;
 
     appendImage(scene, `${variantRoot}.png`);
-    for (let pose = 2; pose <= 3; pose++) {
-      appendImage(scene, `${characterRoot}_0${pose}${variant}.png`);
+    for (let variantIndex = 2; variantIndex <= 3; variantIndex++) {
+      appendImage(scene, `${characterRoot}_0${variantIndex}${variant}.png`);
     }
 
-    appendImage(scene, `${variantRoot}_up.png`);
-    appendImage(scene, `${variantRoot}_laugh_up.png`);
-    for (let up = 1; up <= 3; up++) {
-      appendImage(scene, `${variantRoot}_up${up}.png`);
-      for (let laugh = 1; laugh <= 3; laugh++) {
-        appendImage(scene, `${variantRoot}_laugh${laugh}_up${up}.png`);
+    characterEmotions.forEach((emotion) => {
+      for (let emotionIndex = 0; emotionIndex <= 3; emotionIndex++) {
+        const emotionString = `${variantRoot}_${emotion}${
+          emotionIndex === 0 ? '' : emotionIndex
+        }`;
+
+        appendImage(scene, `${emotionString}.png`);
+
+        for (let upIndex = 0; upIndex <= 3; upIndex++) {
+          appendImage(
+            scene,
+            `${emotionString}_up${upIndex === 0 ? '' : upIndex}.png`
+          );
+        }
       }
-    }
-  }
+    });
+  });
 };
 
 const clearCharacter = () => {
@@ -81,9 +104,15 @@ const clearCharacter = () => {
 };
 
 const appendImage = (container, src) => {
-  container.append(
-    `<a href="${src}"><img src="${src}" onerror="this.style.display='none'"></a>`
-  );
+  container.append(`
+    <a href="${src}" style="display: none">
+      <img
+        src="${src}"
+        title="${src}"
+        onerror="this.parentNode.remove()"
+        onload="this.parentNode.style=''"
+      >
+    </a>`);
 };
 
 const loadExamples = () => {
