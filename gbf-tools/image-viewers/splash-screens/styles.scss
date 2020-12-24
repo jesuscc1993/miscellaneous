@@ -1,0 +1,23 @@
+$image-width: 320px;
+$image-height: 474px;
+
+body {
+  background: #888;
+  margin: 0;
+  overflow-y: scroll;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px #0004;
+}
+
+.images-container {
+  $spacing: 8px;
+  display: grid;
+  grid-gap: $spacing;
+  grid-template-columns: repeat(auto-fit, minmax($image-width, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax($image-height, 1fr));
+  padding: $spacing;
+}

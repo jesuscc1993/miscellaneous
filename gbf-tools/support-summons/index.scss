@@ -190,3 +190,13 @@ p {
     }
   }
 }
+
+@media print {
+  body {
+    background: white;
+
+    > *:not(#summons-frame) {
+      display: none;
+    }
+  }
+}
