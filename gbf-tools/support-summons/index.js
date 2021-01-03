@@ -36,7 +36,7 @@ const sampleSummons = {
   ],
   dark: [
     { id: '2040046000_02', uncap: 4 },
-    { id: '2040003000', uncap: 5 },
+    { id: '2040003000_02', uncap: 5 },
   ],
   misc: [
     { id: '2040167000', uncap: 4 },
