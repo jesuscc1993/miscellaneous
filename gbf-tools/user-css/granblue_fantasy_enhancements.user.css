@@ -3,7 +3,7 @@
 @namespace      https://github.com/jesuscc1993/
 @author         MetalTxus
 @description    `Allows the customization of the game's layout and responsive behavior.<a href="https://imgur.com/a/kud5i">> Previews album <</a>`
-@version        2021.04.01
+@version        20210401
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 @advanced color bg-color "Background color" #150F0F
@@ -609,109 +609,107 @@ hide-support-plus-1 "Enabled" <<<EOT .prt-supporter-list .prt-summon-quality,
 
 ==/UserStyle== */
 @-moz-document domain("granbluefantasy.jp") {
+  /* font */
+  body,
+  .prt-status .prt-user-name .txt-user-name {
+    /* 'FOT-テロップ明朝 Pro D' */
+    font-family: '/*[[font-family]]*/', 'Average Sans', sans-serif !important;
+  }
 
-/* font */
-body,
-.prt-status .prt-user-name .txt-user-name {
-  /* 'FOT-テロップ明朝 Pro D' */
-  font-family: '/*[[font-family]]*/', 'Average Sans', sans-serif !important;
-}
+  /* hide sidebar */
+  body.jssdk > div:first-child > div:first-child {
+    display: none;
+  }
 
-/* hide sidebar */
-body.jssdk > div:first-child > div:first-child {
-  display: none;
-}
+  body,
+  .cnt-raid,
+  .cnt-raid .cnt-multi,
+  .prt-mask-job,
+  .prt-scene-comment-after-mask {
+    background: /*[[bg-color]]*/ !important;
+  }
+  .mask {
+    background: /*[[bg-color]]*/ B3 !important;
+  }
 
-body,
-.cnt-raid,
-.cnt-raid .cnt-multi,
-.prt-mask-job,
-.prt-scene-comment-after-mask {
-  background: /*[[bg-color]]*/ !important;
-}
-.mask {
-  background: /*[[bg-color]]*/B3 !important;
-}
+  /* fix font sizes */
+  .prt-supporter-info .prt-supporter-detail .prt-summon-skill.text-small {
+    font-size: 8.25px !important;
+    font-weight: 500;
+  }
 
-/* fix font sizes */
-.prt-supporter-info .prt-supporter-detail .prt-summon-skill.text-small {
-  font-size: 8.25px !important;
-  font-weight: 500;
-}
+  /* fix poker BG */
+  .cnt-poker {
+    background: #000;
+  }
 
-/* fix poker BG */
-.cnt-poker {
-  background: #000;
-}
+  /* fix user info BG */
+  .prt-user-info::before {
+    border-image-repeat: stretch stretch;
+  }
 
-/* fix user info BG */
-.prt-user-info::before {
-  border-image-repeat: stretch stretch;
-}
+  /* fix weapon and summon grid BGs */
+  .cnt-weapon-list {
+    background-position: -2.5px -423px;
+  }
 
-/* fix weapon and summon grid BGs */
-.cnt-weapon-list {
-  background-position: -2.5px -423px;
-}
+  .cnt-summon-list {
+    background-position: -2.5px -755px;
+  }
 
-.cnt-summon-list {
-  background-position: -2.5px -755px;
-}
+  /* fix crew chest overlapping pictures */
+  #submenu-general-chat #chat-body #chat-log .lis-log .txt-log {
+    padding-left: 52px;
+  }
 
-/* fix crew chest overlapping pictures */
-#submenu-general-chat #chat-body #chat-log .lis-log .txt-log {
-  padding-left: 52px;
-}
+  /* prevent horizontal scrollbar */
+  body {
+    overflow-x: hidden;
+  }
 
-/* prevent horizontal scrollbar */
-body {
-  overflow-x: hidden;
-}
+  /*[[center-content]]*/
 
-/*[[center-content]]*/
+  /*[[center-popups]]*/
 
-/*[[center-popups]]*/
+  /*[[hide-scrollbars]]*/
 
-/*[[hide-scrollbars]]*/
+  /*[[compact-gacha]]*/
 
-/*[[compact-gacha]]*/
+  /*[[compact-raids]]*/
 
-/*[[compact-raids]]*/
+  /*[[compact-summons]]*/
 
-/*[[compact-summons]]*/
+  /*[[fit-crew-chat]]*/
 
-/*[[fit-crew-chat]]*/
+  /*[[fix-header-menu]]*/
 
-/*[[fix-header-menu]]*/
+  /*[[hide-event-load]]*/
 
-/*[[hide-event-load]]*/
+  /*[[hide-crystal-count]]*/
 
-/*[[hide-crystal-count]]*/
+  /*[[hide-gacha-banner]]*/
 
-/*[[hide-gacha-banner]]*/
+  /*[[hide-outfit-sets]]*/
 
-/*[[hide-outfit-sets]]*/
+  /*[[hide-pinboard]]*/
 
-/*[[hide-pinboard]]*/
+  /*[[hide-quest-comment]]*/
 
-/*[[hide-quest-comment]]*/
+  /*[[hide-size]]*/
 
-/*[[hide-size]]*/
+  /*[[hide-special-draw]]*/
 
-/*[[hide-special-draw]]*/
+  /*[[hide-submenu]]*/
 
-/*[[hide-submenu]]*/
+  /*[[hide-support-plus]]*/
 
-/*[[hide-support-plus]]*/
+  /*[[keep-extras-open]]*/
 
-/*[[keep-extras-open]]*/
+  /*[[sort-summons]]*/
 
-/*[[sort-summons]]*/
+  /*[[submenu-on-left]]*/
 
-/*[[submenu-on-left]]*/
-
-/*[[selectable-text]]*/
-
+  /*[[selectable-text]]*/
 }
 
 /*[[compact-lists]]*/
