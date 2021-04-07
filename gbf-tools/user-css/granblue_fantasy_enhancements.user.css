@@ -3,7 +3,7 @@
 @namespace      https://github.com/jesuscc1993/
 @author         MetalTxus
 @description    `Allows the customization of the game's layout and responsive behavior.<a href="https://imgur.com/a/kud5i">> Previews album <</a>`
-@version        20210401.19.19
+@version        20210407.19.42
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 @advanced color bg-color "Background color" #150F0F
@@ -383,7 +383,7 @@ compact-summons-3 "Ultra" <<<EOT /* ultra compact summon selection *\/
   z-index: 1;
 }
 .prt-supporter-list .lis-supporter .prt-supporter-name.ico-friend::after {
-  right: 37px;
+  right: 37.5px;
   top: 0;
   zoom: .66;
 }
