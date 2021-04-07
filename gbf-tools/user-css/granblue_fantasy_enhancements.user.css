@@ -373,9 +373,19 @@ compact-summons-2 "Extra" <<<EOT /* extra compact summon selection *\/
 } EOT;
 compact-summons-3 "Ultra" <<<EOT /* ultra compact summon selection *\/
 .prt-supporter-list .lis-supporter .prt-supporter-thumb,
-.prt-supporter-list .lis-supporter .prt-supporter-name,
 .prt-supporter-list .lis-supporter .prt-supporter-info .prt-supporter-detail > *:not(.prt-summon-skill) {
   display: none;
+}
+.prt-supporter-list .lis-supporter .prt-supporter-name {
+  font-size: 0;
+  margin-bottom: -18px;
+  padding-bottom: 18px;
+  z-index: 1;
+}
+.prt-supporter-list .lis-supporter .prt-supporter-name.ico-friend::after {
+  right: 37px;
+  top: 0;
+  zoom: .66;
 }
 .prt-supporter-list .prt-supporter-attribute:not(.disableView) {
   display: grid !important;
