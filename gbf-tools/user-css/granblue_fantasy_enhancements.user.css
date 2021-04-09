@@ -184,6 +184,18 @@ reorder-coop-1 "Enabled" <<<EOT @-moz-document regexp("http://game.granbluefanta
 } EOT;
 
 }
+@advanced dropdown rearrange-raid-ui "Rearrange raid UI (7)" {
+  rearrange-raid-ui-0 "Disabled*" <<<EOT  EOT;
+rearrange-raid-ui-1 "Enabled" <<<EOT {
+
+.cnt-raid .prt-raid-log {
+  top: auto;
+  bottom: 96px;
+}
+
+} EOT;
+
+}
 @advanced dropdown keep-extras-open "Keep gameplay extras open" {
 	keep-extras-open-0 "Disabled*" <<<EOT  EOT;
 keep-extras-open-1 "Enabled" <<<EOT /* keep gameplay extras always open *\/
@@ -320,7 +332,7 @@ compact-gacha-0 "Disabled" <<<EOT  EOT;
 compact-raids-0 "Disabled" <<<EOT  EOT;
 
 }
-@advanced dropdown compact-summons "📦 Compact summons (7)" {
+@advanced dropdown compact-summons "📦 Compact summons (8)" {
 	compact-summons-1 "Basic*" <<<EOT /* compact summon selection *\/
 .prt-supporter-thumb {
   display: none;
@@ -420,7 +432,7 @@ compact-summons-3 "Ultra" <<<EOT /* ultra compact summon selection *\/
 compact-summons-0 "Disabled" <<<EOT  EOT;
 
 }
-@advanced dropdown compact-lists "📦 Compact lists (8)" {
+@advanced dropdown compact-lists "📦 Compact lists (9)" {
 	compact-lists-0 "Disabled*" <<<EOT  EOT;
 compact-lists-1 "Enabled" <<<EOT @-moz-document
 regexp("http://game.granbluefantasy.jp/#archaic/.*"),
@@ -531,7 +543,7 @@ body.jssdk #gree-game-container {
 hide-size-0 "Disabled" <<<EOT  EOT;
 
 }
-@advanced dropdown hide-crystal-count "⛔ Hide crystal count (9)" {
+@advanced dropdown hide-crystal-count "⛔ Hide crystal count (10)" {
 	hide-crystal-count-0 "Disabled*" <<<EOT  EOT;
 hide-crystal-count-1 "Enabled" <<<EOT /* hide crystal count *\/
 .prt-user-info .prt-info-possessed .prt-stone,
@@ -566,7 +578,7 @@ hide-outfit-sets-1 "Enabled" <<<EOT /* hide featured outfit sets *\/
 } EOT;
 
 }
-@advanced dropdown hide-quest-comment "⛔ Hide quest commentary (10)" {
+@advanced dropdown hide-quest-comment "⛔ Hide quest commentary (11)" {
 	hide-quest-comment-0 "Disabled*" <<<EOT  EOT;
 hide-quest-comment-1 "Enabled" <<<EOT /* hide quest commentary *\/
 .prt-lead {
