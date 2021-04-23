@@ -461,9 +461,12 @@
     }
     .prt-supporter-list .prt-supporter-attribute:not(.disableView) {
       display: grid !important;
-      grid-template-columns: repeat(auto-fill, 96px);
+      grid-template-columns: repeat(auto-fill, 92px);
       grid-template-rows: repeat(auto-fill, 44px);
-      margin: -4px 16px 16px;
+      margin: -4px 18px 16px;
+    }
+		.cnt-sequenceraid .prt-supporter-attribute:not(.disableView) {
+      margin: -4px 10px 16px;
     }
     .prt-supporter-list .lis-supporter .prt-supporter-info .prt-supporter-detail .prt-summon-skill {
       height: 40px;
@@ -759,7 +762,7 @@
     background: /*[[bg-color]]*/ !important;
   }
   .mask {
-    background: /*[[bg-color]]*/B3 !important;
+    background: /*[[bg-color]]*/ B3 !important;
   }
 
   /* fix font sizes */
