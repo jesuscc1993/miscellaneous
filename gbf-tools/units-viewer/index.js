@@ -11,7 +11,7 @@ const initialize = () => {
 
       const unitsGrid = jQuery(`<div class="units-grid"></div>`);
 
-      units.forEach((unit) => {
+      units.reverse().forEach((unit) => {
         unitsGrid.append(
           `<img class="unit-portrait" src="http://game-a1.granbluefantasy.jp/assets_en/img/sp/assets/npc/m/${unit}_01.jpg">`
         );

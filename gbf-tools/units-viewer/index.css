@@ -3,14 +3,22 @@
   --portrait-width: 140px;
 }
 
-body {
-  background-color: #201c1a;
-  color: #fff;
-  font-family: 'Delius';
-}
-
 * {
   font-weight: normal;
+}
+
+body {
+  background-color: #1f1c1a;
+  color: #fff;
+  font-family: 'Delius';
+  margin: 0;
+}
+
+.main {
+  background-color: #201c1a;
+  margin: 0 auto;
+  padding: 8px;
+  width: 1148px;
 }
 
 .units-grid {
@@ -18,7 +26,10 @@ body {
   grid-gap: 4px;
   grid-template-columns: repeat(auto-fill, var(--portrait-width));
   grid-template-rows: repeat(auto-fill, var(--portrait-height));
-  margin-bottom: 12px;
+}
+
+.units-grid + .units-grid {
+  margin-top: 12px;
 }
 
 .unit-portrait {
