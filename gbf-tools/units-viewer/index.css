@@ -1,17 +1,27 @@
 :root {
-  --portrait-width: 140px;
   --portrait-height: 80px;
+  --portrait-width: 140px;
+}
+
+body {
+  background-color: #201c1a;
+  color: #fff;
+  font-family: 'Delius';
+}
+
+* {
+  font-weight: normal;
 }
 
 .units-grid {
   display: grid;
+  grid-gap: 4px;
   grid-template-columns: repeat(auto-fill, var(--portrait-width));
   grid-template-rows: repeat(auto-fill, var(--portrait-height));
-  grid-gap: 4px;
   margin-bottom: 12px;
 }
 
 .unit-portrait {
-  width: var(--portrait-width);
   height: var(--portrait-height);
+  width: var(--portrait-width);
 }
