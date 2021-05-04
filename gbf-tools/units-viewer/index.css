@@ -1,0 +1,17 @@
+:root {
+  --portrait-width: 140px;
+  --portrait-height: 80px;
+}
+
+.units-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--portrait-width));
+  grid-template-rows: repeat(auto-fill, var(--portrait-height));
+  grid-gap: 4px;
+  margin-bottom: 12px;
+}
+
+.unit-portrait {
+  width: var(--portrait-width);
+  height: var(--portrait-height);
+}
