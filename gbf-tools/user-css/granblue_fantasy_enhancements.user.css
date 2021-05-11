@@ -3,7 +3,7 @@
 @namespace      https://github.com/jesuscc1993/
 @author         MetalTxus
 @description    `Allows the customization of the game's layout and responsive behavior.<a href="https://imgur.com/a/kud5i">> Previews album <</a>`
-@version        20210409.19.31
+@version        20210511.19.56
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 
@@ -843,6 +843,8 @@
   /*[[submenu-on-left]]*/
 
   /*[[selectable-text]]*/
+
+  /*[[rearrange-raid-ui]]*/
 }
 
 /*[[compact-lists]]*/
@@ -850,5 +852,3 @@
 /*[[compact-upgrade]]*/
 
 /*[[reorder-coop]]*/
-
-/*[[rearrange-raid-ui]]*/
