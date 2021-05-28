@@ -12,7 +12,7 @@ h1 {
 }
 
 body {
-  background: #111 no-repeat top right;
+  background: #111 no-repeat bottom right;
   background-size: contain;
   color: #fff;
   font-family: non-serif;
