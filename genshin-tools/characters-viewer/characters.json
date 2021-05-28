@@ -1,0 +1,178 @@
+[
+  {
+    "constellation": 4,
+    "id": "Ambor",
+    "level": 40,
+    "levelCap": 40,
+    "name": "Amber",
+    "rarity": 4
+  },
+  {
+    "constellation": 6,
+    "id": "Barbara",
+    "level": 70,
+    "levelCap": 70,
+    "name": "Barbara",
+    "rarity": 4
+  },
+  {
+    "constellation": 1,
+    "id": "Beidou",
+    "level": 80,
+    "levelCap": 80,
+    "name": "Beidou",
+    "rarity": 4
+  },
+  {
+    "constellation": 2,
+    "id": "Bennett",
+    "level": 80,
+    "levelCap": 80,
+    "name": "Bennett",
+    "rarity": 4
+  },
+  {
+    "constellation": 1,
+    "id": "Chongyun",
+    "level": 60,
+    "levelCap": 60,
+    "name": "Chongyun",
+    "rarity": 4
+  },
+  {
+    "constellation": 0,
+    "id": "Diluc",
+    "level": 90,
+    "levelCap": 90,
+    "name": "Diluc",
+    "rarity": 5
+  },
+  {
+    "constellation": 1,
+    "id": "Diona",
+    "level": 60,
+    "levelCap": 60,
+    "name": "Diona",
+    "rarity": 4
+  },
+  {
+    "constellation": 0,
+    "id": "Eula",
+    "level": 80,
+    "levelCap": 80,
+    "name": "Eula",
+    "rarity": 5
+  },
+  {
+    "constellation": 4,
+    "id": "Fischl",
+    "level": 80,
+    "levelCap": 80,
+    "name": "Fischl",
+    "rarity": 4
+  },
+  {
+    "constellation": 6,
+    "id": "PlayerGirl",
+    "level": 80,
+    "levelCap": 80,
+    "name": "Hotaru",
+    "rarity": 5
+  },
+  {
+    "constellation": 1,
+    "id": "Kaeya",
+    "level": 40,
+    "levelCap": 40,
+    "name": "Kaeya",
+    "rarity": 4
+  },
+  {
+    "constellation": 0,
+    "id": "Keqing",
+    "level": 80,
+    "levelCap": 90,
+    "name": "Keqing",
+    "rarity": 5
+  },
+  {
+    "constellation": 2,
+    "id": "Lisa",
+    "level": 40,
+    "levelCap": 40,
+    "name": "Lisa",
+    "rarity": 4
+  },
+  {
+    "constellation": 2,
+    "id": "Ningguang",
+    "level": 80,
+    "levelCap": 80,
+    "name": "Ningguang",
+    "rarity": 4
+  },
+  {
+    "constellation": 4,
+    "id": "Noel",
+    "level": 60,
+    "levelCap": 60,
+    "name": "Noelle",
+    "rarity": 4
+  },
+  {
+    "constellation": 0,
+    "id": "Qiqi",
+    "level": 80,
+    "levelCap": 80,
+    "name": "Qiqi",
+    "rarity": 5
+  },
+  {
+    "constellation": 2,
+    "id": "Razor",
+    "level": 40,
+    "levelCap": 40,
+    "name": "Razor",
+    "rarity": 4
+  },
+  {
+    "constellation": 1,
+    "id": "Sucrose",
+    "level": 60,
+    "levelCap": 60,
+    "name": "Sucrose",
+    "rarity": 4
+  },
+  {
+    "constellation": 0,
+    "id": "Venti",
+    "level": 80,
+    "levelCap": 80,
+    "name": "Venti",
+    "rarity": 5
+  },
+  {
+    "constellation": 6,
+    "id": "Xiangling",
+    "level": 80,
+    "levelCap": 80,
+    "name": "Xiangling",
+    "rarity": 4
+  },
+  {
+    "constellation": 4,
+    "id": "Xingqiu",
+    "level": 40,
+    "levelCap": 40,
+    "name": "Xingqiu",
+    "rarity": 4
+  },
+  {
+    "constellation": 0,
+    "id": "Xinyan",
+    "level": 60,
+    "levelCap": 60,
+    "name": "Xinyan",
+    "rarity": 4
+  }
+]
