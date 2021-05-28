@@ -12,7 +12,8 @@ h1 {
 }
 
 body {
-  background-color: #111;
+  background: #111 no-repeat top right;
+  background-size: contain;
   color: #fff;
   font-family: non-serif;
   margin: 0;
@@ -45,6 +46,7 @@ body {
   background: var(--c-character-bg);
   border-radius: 5px;
   color: var(--c-character-fg);
+  cursor: pointer;
   height: var(--character-height);
   overflow: hidden;
 }

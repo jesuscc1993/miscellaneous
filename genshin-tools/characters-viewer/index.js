@@ -32,6 +32,7 @@ const initialize = () => {
       characterText.append(level);
 
       characterContainer.append(characterText);
+      characterContainer.click(() => setCharacterBackground(character));
       charactersGrid.append(characterContainer);
     });
 
@@ -46,6 +47,13 @@ const sortCharacters = (characters) => {
       `${b.levelCap}`.localeCompare(`${a.levelCap}`) ||
       `${b.level}`.localeCompare(`${a.level}`) ||
       `${b.constellation}`.localeCompare(`${a.constellation}`)
+  );
+};
+
+const setCharacterBackground = (character) => {
+  jQuery('body').css(
+    `backgroundImage`,
+    `url(https://upload-os-bbs.mihoyo.com/game_record/genshin/character_image/UI_AvatarIcon_${character.id}@2x.png)`
   );
 };
 
