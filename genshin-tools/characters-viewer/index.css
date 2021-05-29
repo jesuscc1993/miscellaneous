@@ -1,28 +1,34 @@
 :root {
+  --c-character-bg: #e9e5dc;
+  --c-character-fg: #495366;
+  --card-roundness: 5px;
   --character-height: 176px;
   --character-width: 128px;
   --portrait-height: 128px;
   --portrait-width: 128px;
-  --c-character-fg: #495366;
-  --c-character-bg: #e9e5dc;
 }
 
 h1 {
   font-weight: normal;
 }
 
+html {
+  background: url(bg.jpg);
+  background-size: cover;
+}
+
 body {
-  background: #111 no-repeat bottom right;
+  background: no-repeat bottom right;
   background-size: contain;
   color: #fff;
-  font-family: non-serif;
+  font-family: 'HYWenHei 85W', 'Lucida Sans', non-serif;
   margin: 0;
 }
 
 .main {
   margin: 0 auto;
-  padding: 8px;
-  width: 808px;
+  padding: 8px 0 16px;
+  width: 848px;
 }
 
 .center-text {
@@ -33,7 +39,7 @@ body {
 
 .characters-grid {
   display: grid;
-  grid-gap: 8px;
+  grid-gap: 16px;
   grid-template-columns: repeat(auto-fill, var(--character-width));
   grid-template-rows: repeat(auto-fill, var(--character-height));
 }
@@ -44,22 +50,27 @@ body {
 
 .character {
   background: var(--c-character-bg);
-  border-radius: 5px;
+  border-radius: 7px 7px var(--card-roundness) var(--card-roundness);
+  box-shadow: 0 1px 8px #0004;
   color: var(--c-character-fg);
   cursor: pointer;
   height: var(--character-height);
-  overflow: hidden;
+  transition: .1s;
+}
+.character:hover {
+  filter: brightness(1.05) saturate(110%);
 }
 
 .character-portrait {
-  border-radius: 0 0 24px 0;
+  border-bottom: 1px solid #0004;
+  border-radius: var(--card-roundness) var(--card-roundness) 24px var(--card-roundness);
   height: var(--portrait-height);
   width: var(--portrait-width);
-  border-bottom: 1px solid #0004;
 }
 
 .character-text {
-  line-height: 20px;
+  font-size: 15px;
   font-weight: 500;
+  line-height: 20px;
   padding: 4px 0;
 }
