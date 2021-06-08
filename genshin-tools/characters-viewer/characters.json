@@ -170,16 +170,16 @@
   {
     "constellation": 4,
     "id": "Xingqiu",
-    "level": 40,
-    "levelCap": 40,
+    "level": 80,
+    "levelCap": 80,
     "name": "Xingqiu",
     "rarity": 4
   },
   {
     "constellation": 0,
     "id": "Xinyan",
-    "level": 60,
-    "levelCap": 60,
+    "level": 40,
+    "levelCap": 40,
     "name": "Xinyan",
     "rarity": 4
   }

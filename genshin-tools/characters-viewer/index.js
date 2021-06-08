@@ -46,9 +46,9 @@ const sortCharacters = (characters) => {
   return characters.sort(
     (a, b) =>
       `${b.rarity}`.localeCompare(`${a.rarity}`) ||
-      `${b.levelCap}`.localeCompare(`${a.levelCap}`) ||
-      `${b.level}`.localeCompare(`${a.level}`) ||
-      `${b.constellation}`.localeCompare(`${a.constellation}`)
+      // `${b.levelCap}`.localeCompare(`${a.levelCap}`) ||
+      `${b.level}`.localeCompare(`${a.level}`) 
+      // `${b.constellation}`.localeCompare(`${a.constellation}`) ||
   );
 };
 
