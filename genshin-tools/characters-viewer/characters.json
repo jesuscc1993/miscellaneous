@@ -10,8 +10,8 @@
   {
     "constellation": 6,
     "id": "Barbara",
-    "level": 70,
-    "levelCap": 70,
+    "level": 80,
+    "levelCap": 80,
     "name": "Barbara",
     "rarity": 4
   },
@@ -32,7 +32,7 @@
     "rarity": 4
   },
   {
-    "constellation": 1,
+    "constellation": 2,
     "id": "Chongyun",
     "level": 60,
     "levelCap": 60,
@@ -51,7 +51,7 @@
     "constellation": 1,
     "id": "Diona",
     "level": 60,
-    "levelCap": 60,
+    "levelCap": 70,
     "name": "Diona",
     "rarity": 4
   },
@@ -77,6 +77,14 @@
     "level": 80,
     "levelCap": 80,
     "name": "Hotaru",
+    "rarity": 5
+  },
+  {
+    "constellation": 0,
+    "id": "Qin",
+    "level": 40,
+    "levelCap": 50,
+    "name": "Jean",
     "rarity": 5
   },
   {

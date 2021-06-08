@@ -1,3 +1,5 @@
+const showUncap = false;
+
 const fetchJson = (url) => {
   return fetch(url).then((response) => response.json());
 };
@@ -23,13 +25,13 @@ const initialize = () => {
 
       const characterText = jQuery(`<div class="character-text"></div>`);
 
-      const name = jQuery(`<span class="center-text">${character.name}</span>`);
-      characterText.append(name);
+      const firstLineText = `${character.name} &#9733;${character.constellation}`;
+      const firstLine = jQuery(`<span class="center-text">${firstLineText}</span>`);
+      characterText.append(firstLine);
 
-      const level = jQuery(
-        `<span class="center-text">${character.constellation}&#9733;  ${character.level} / ${character.levelCap}</span>`
-      );
-      characterText.append(level);
+      const secondLineText = `Lvl. ${character.level}${showUncap ? ' / ' + character.levelCap : ''}`
+      const secondLine = jQuery(`<span class="center-text">${secondLineText}</span>`);
+      characterText.append(secondLine);
 
       characterContainer.append(characterText);
       characterContainer.click(() => setCharacterBackground(character));
