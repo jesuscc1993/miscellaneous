@@ -1,0 +1,270 @@
+// Constants
+let STRING_DELIMITER = ' ';
+let LINE_DELIMITER = '\n';
+
+// ==================================================================================================================
+// Miscellaneous
+// ==================================================================================================================
+
+if (typeof autosize === 'function') {
+  autosize($('textarea'));
+}
+
+$(document).ready(() => {
+  $('body').fadeIn();
+});
+
+function clearInputs (inputSelectors) {
+  if (inputSelectors) {
+    const inputs = $(inputSelectors.join(','));
+    if (inputs.length) {
+      inputs.val('');
+    }
+  }
+}
+
+// ==================================================================================================================
+// Section anchors
+// ==================================================================================================================
+
+$('.anchor-list a').each((i, anchor) => {
+  $(anchor).click((event) => {
+    event.preventDefault();
+    let target = $(anchor).attr('href');
+    window.history.pushState('', '', target);
+    $(target).get(0).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// ==================================================================================================================
+// String builder
+// ==================================================================================================================
+
+let stringBuilderInput = $('#stringBuilderInput');
+let stringBuilderOutput = $('#stringBuilderOutput');
+let stringBuilderKeepLineBreaks = $('#stringBuilderKeepLineBreaks');
+
+function buildString () {
+  stringBuilderOutput.val(getBuiltString(stringBuilderInput.val()));
+  stringBuilderOutput.css({ height: stringBuilderInput.css('height') });
+}
+
+function getBuiltString (input) {
+  let lineBreakCharacter = '';
+
+  if (stringBuilderKeepLineBreaks.prop('checked')) {
+    lineBreakCharacter = '\\n';
+  }
+
+  return input ? '"' + input.replace(/"/g, '\\"').replace(/\n/g, lineBreakCharacter + '" +\n"').replace(/\n"" \+/g, '\n') + '"' : '';
+}
+
+// ==================================================================================================================
+// Inline list sorter
+// ==================================================================================================================
+
+let unsortedInlineListInput = $('#unsortedInlineListInput');
+let sortedInlineListOutput = $('#sortedInlineListOutput');
+let inlineListSorterDiscardDuplicates = $('#inlineListSorterDiscardDuplicates');
+
+function sortInlineList () {
+  let sortedInlineList = getSortedInlineList(unsortedInlineListInput.val());
+
+  if (inlineListSorterDiscardDuplicates.prop('checked')) {
+    sortedInlineList = getDuplicateFreeArray(sortedInlineList);
+  }
+
+  sortedInlineListOutput.val(sortedInlineList.join(STRING_DELIMITER));
+  sortedInlineListOutput.css({ height: unsortedInlineListInput.css('height') });
+}
+
+function getSortedInlineList (inputString) {
+  return inputString.split(STRING_DELIMITER).sort();
+}
+
+// ==================================================================================================================
+// Multiline list sorter
+// ==================================================================================================================
+
+let unsortedMultilineListInput = $('#unsortedMultilineListInput');
+let sortedMultilineListOutput = $('#sortedMultilineListOutput');
+let multilineListSorterDiscardDuplicates = $('#multilineListSorterDiscardDuplicates');
+
+function sortMultilineList () {
+  let sortedMultilineList = getSortedMultilineList(unsortedMultilineListInput.val());
+
+  if (multilineListSorterDiscardDuplicates.prop('checked')) {
+    sortedMultilineList = getDuplicateFreeArray(sortedMultilineList);
+  }
+
+  sortedMultilineListOutput.val(sortedMultilineList.join(LINE_DELIMITER));
+  sortedMultilineListOutput.css({ height: unsortedMultilineListInput.css('height') });
+}
+
+function getSortedMultilineList (inputString) {
+  return inputString.split(LINE_DELIMITER).sort();
+}
+
+// ==================================================================================================================
+// Case transformer
+// ==================================================================================================================
+
+let sentenceCaseInput = $('#sentenceCaseInput');
+let lowercaseInput = $('#lowercaseInput');
+let uppercaseInput = $('#uppercaseInput');
+let capitalCaseInput = $('#capitalCaseInput');
+let camelCaseInput = $('#camelCaseInput');
+let snakeCaseInput = $('#snakeCaseInput');
+let kebabCaseInput = $('#kebabCaseInput');
+
+function transformFromSentenceCase () {
+  lowercaseInput.val(sentenceCaseInput.val().toLowerCase());
+  uppercaseInput.val(sentenceCaseInput.val().toUpperCase());
+  capitalCaseInput.val(transformSentenceToCapitalCase(sentenceCaseInput.val()));
+  camelCaseInput.val(transformSentenceToCamelCase(sentenceCaseInput.val()));
+  snakeCaseInput.val(transformSentenceToSnakeCase(sentenceCaseInput.val()));
+  kebabCaseInput.val(transformSentenceToKebabCase(sentenceCaseInput.val()));
+}
+
+function transformFromCapitalCase () {
+  sentenceCaseInput.val(transformCapitalToSentenceCase(capitalCaseInput.val()));
+  transformFromSentenceCase();
+}
+
+function transformFromLowercase () {
+  sentenceCaseInput.val(transformCapitalToSentenceCase(lowercaseInput.val()));
+  transformFromSentenceCase();
+}
+
+function transformFromUppercase () {
+  sentenceCaseInput.val(transformCapitalToSentenceCase(uppercaseInput.val()));
+  transformFromSentenceCase();
+}
+
+function transformFromCamelCase () {
+  sentenceCaseInput.val(transformCamelToSentenceCase(camelCaseInput.val()));
+  transformFromSentenceCase();
+}
+
+function transformFromSnakeCase () {
+  sentenceCaseInput.val(transformSnakeToSentenceCase(snakeCaseInput.val()));
+  transformFromSentenceCase();
+}
+
+function transformFromKebabCase () {
+  sentenceCaseInput.val(transformKebabToSentenceCase(kebabCaseInput.val()));
+  transformFromSentenceCase();
+}
+
+// Input
+
+function transformCapitalToSentenceCase (inputCase) {
+  return toSentenceCase(inputCase);
+}
+
+function transformCamelToSentenceCase (inputCase) {
+  return toSentenceCase(inputCase.replace(/([A-Z])/g, ' $1'));
+}
+
+function transformSnakeToSentenceCase (inputCase) {
+  return toSentenceCase(inputCase.replace(/_/g, ' '));
+}
+
+function transformKebabToSentenceCase (inputCase) {
+  return toSentenceCase(inputCase.replace(/-/g, ' '));
+}
+
+// Output
+
+function transformSentenceToCapitalCase (inputCase) {
+  return uppercaseWords(inputCase.toLowerCase());
+}
+
+function transformSentenceToCamelCase (inputCase) {
+  return lowercaseFirstLetter(uppercaseWords(inputCase.toLowerCase())).replace(/ /g, '');
+}
+
+function transformSentenceToSnakeCase (inputCase) {
+  return inputCase.toLowerCase().replace(/ /g, '_');
+}
+
+function transformSentenceToKebabCase (inputCase) {
+  return inputCase.toLowerCase().replace(/ /g, '-');
+}
+
+function toSentenceCase (string) {
+  return uppercaseFirstLetter(string.toLowerCase());
+}
+
+// ==================================================================================================================
+// Rule of three
+// ==================================================================================================================
+
+let axInput = $('#ruleOfThreeAxInput');
+let ayInput = $('#ruleOfThreeAyInput');
+let bxInput = $('#ruleOfThreeBxInput');
+let byInput = $('#ruleOfThreeByInput');
+
+function calculateRuleOfThree () {
+  let ax = axInput.val();
+  let ay = ayInput.val();
+  let bx = bxInput.val();
+
+  let ruleOfThree = getRuleOfThree(ax, ay, bx);
+  if (ruleOfThree) {
+    byInput.val(ruleOfThree);
+  }
+}
+
+function getRuleOfThree (ax, ay, bx) {
+  return (isNumber(ax) && isNumber(ay) && isNumber(bx)) ? (bx * ay) / ax : undefined;
+}
+
+// ==================================================================================================================
+// Regex replacer
+// ==================================================================================================================
+
+let regexReplacerInput = $('#regexReplacerInput');
+let regexReplacerOutput = $('#regexReplacerOutput');
+let regexpInput = $('#regexpInput');
+let regexReplacementInput = $('#regexReplacementInput');
+
+function applyRegexReplacement () {
+  let inputString = regexReplacerInput.val(),
+      regexp = new RegExp(regexpInput.val(), 'g'),
+      replacement = regexReplacementInput.val();
+
+  regexReplacerOutput.val(replaceByRegex(inputString, regexp, replacement));
+}
+
+function replaceByRegex (string, regexp, replacement) {
+  return string.replace(regexp, replacement);
+}
+
+// ------------------------------------------------------------------------------------------------------------------
+// Generic
+// ------------------------------------------------------------------------------------------------------------------
+
+function isNumber (string) {
+  return string && !isNaN(parseInt(string));
+}
+
+function uppercaseFirstLetter (string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function lowercaseFirstLetter (string) {
+  return string.charAt(0).toLowerCase() + string.slice(1);
+}
+
+function uppercaseWords (string) {
+  return string.replace(/\b\w/g, function (letter) {
+    return letter.toUpperCase();
+  });
+}
+
+function getDuplicateFreeArray (array) {
+  return array.filter(function (entry, i) {
+    return array.indexOf(entry) === i;
+  });
+}

@@ -1,0 +1,451 @@
+<html>
+  <head>
+    <title>
+      Web Tools
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="icon" type="image/x-icon" href="res/favicon.png">
+  </head>
+
+  <body style="display: none;">
+    <header>
+      <div class="content-wrapper">
+        <h1>
+          Web Tools
+        </h1>
+
+        <ul class="anchor-list">
+          <li>
+            <a href="#stringBuilder">
+              String builder</a>
+          </li>
+          <li>
+            <a href="#inlineListSorter">
+              Inline list sorter</a>
+          </li>
+          <li>
+            <a href="#multilineListSorter">
+              Multiline list sorter</a>
+          </li>
+          <li>
+            <a href="#textCaseTransformer">
+              Text case transformer</a>
+          </li>
+          <li>
+            <a href="#ruleOfThree">
+              Rule of three</a>
+          </li>
+          <li>
+            <a href="#regexReplacer">
+              Regex replacer</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+
+      <!-- String builder -->
+      <div id="stringBuilder" class="card">
+        <div class="card-header">
+          <h4 class="card-title">
+            String builder
+          </h4>
+
+          <div>
+            <label for="stringBuilderKeepLineBreaks">
+              Keep line breaks
+            </label>
+            <input id="stringBuilderKeepLineBreaks" type="checkbox" onchange="buildString()">
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="row-fluid">
+
+            <textarea
+              id="stringBuilderInput"
+              rows="4"
+              placeholder="Non-string input"
+              title="Non-string input"
+              onfocusout="buildString()"></textarea>
+
+          </div>
+          <div class="row-fluid">
+
+            <textarea
+              id="stringBuilderOutput"
+              rows="4"
+              placeholder="String output"
+              title="String output"
+              readonly></textarea>
+
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="row-fluid text-center">
+
+            <button class="btn" onclick="clearInputs(['#stringBuilderInput', '#stringBuilderOutput'])">
+              Clear
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Inline list sorter -->
+      <div id="inlineListSorter" class="card">
+        <div class="card-header">
+          <h4 class="card-title">
+            Inline list sorter
+          </h4>
+
+          <div>
+            <label for="inlineListSorterDiscardDuplicates">
+              Discard duplicates
+            </label>
+            <input id="inlineListSorterDiscardDuplicates" type="checkbox" onchange="sortInlineList()">
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="row-fluid">
+
+            <textarea
+              id="unsortedInlineListInput"
+              rows="4"
+              onfocusout="sortInlineList()"
+              placeholder="Unordered inline list"
+              title="Unordered inline list"></textarea>
+
+          </div>
+          <div class="row-fluid">
+
+            <textarea
+              id="sortedInlineListOutput"
+              rows="4"
+              placeholder="Ordered inline list"
+              title="Ordered inline list"
+              readonly></textarea>
+
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="row-fluid text-center">
+
+            <button class="btn" onclick="clearInputs(['#unsortedInlineListInput', '#sortedInlineListOutput'])">
+              Clear
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Multiline list sorter -->
+      <div id="multilineListSorter" class="card">
+        <div class="card-header">
+          <h4 class="card-title">
+            Multiline list sorter
+          </h4>
+
+          <div>
+            <label for="multilineListSorterDiscardDuplicates">
+              Discard duplicates
+            </label>
+            <input id="multilineListSorterDiscardDuplicates" type="checkbox" onchange="sortMultilineList()">
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="row-fluid">
+            <div class="span6">
+
+              <textarea
+                id="unsortedMultilineListInput"
+                rows="8"
+                onfocusout="sortMultilineList()"
+                placeholder="Unordered multiline list"
+                title="Unordered multiline list"></textarea>
+
+            </div>
+            <div class="span6">
+
+              <textarea
+                id="sortedMultilineListOutput"
+                rows="8"
+                placeholder="Ordered multiline list"
+                title="Ordered multiline list"
+                readonly></textarea>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="row-fluid text-center">
+
+            <button class="btn" onclick="clearInputs(['#unsortedMultilineListInput', '#sortedMultilineListOutput'])">
+              Clear
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Text case transformer -->
+      <div id="textCaseTransformer" class="card">
+        <div class="card-header">
+          <h4 class="card-title">
+            Text case transformer
+          </h4>
+        </div>
+
+        <div class="card-content">
+          <div class="row-fluid">
+
+            <input
+              id="sentenceCaseInput"
+              type="text"
+              placeholder="Sentence case"
+              title="Sentence case"
+              onfocusout="transformFromSentenceCase()"/>
+
+          </div>
+          <div class="row-fluid">
+
+            <input
+              id="capitalCaseInput"
+              type="text"
+              placeholder="Capital case"
+              title="Capital case"
+              onfocusout="transformFromCapitalCase()"/>
+
+          </div>
+          <div class="row-fluid">
+
+            <input
+              id="lowercaseInput"
+              type="text"
+              placeholder="Lowercase"
+              title="Lowercase"
+              onfocusout="transformFromLowercase()"/>
+
+          </div>
+          <div class="row-fluid">
+
+            <input
+              id="uppercaseInput"
+              type="text"
+              placeholder="Uppercase"
+              title="Uppercase"
+              onfocusout="transformFromUppercase()"/>
+
+          </div>
+          <div class="row-fluid">
+
+            <input
+              id="camelCaseInput"
+              type="text"
+              placeholder="Camel case"
+              title="Camel case"
+              onfocusout="transformFromCamelCase()"/>
+
+          </div>
+          <div class="row-fluid">
+
+            <input
+              id="snakeCaseInput"
+              type="text"
+              placeholder="Snake case"
+              title="Snake case"
+              onfocusout="transformFromSnakeCase()"/>
+
+          </div>
+          <div class="row-fluid">
+
+            <input
+              id="kebabCaseInput"
+              type="text"
+              placeholder="Kebab case"
+              title="Kebab case"
+              onfocusout="transformFromKebabCase()"/>
+
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="row-fluid text-center">
+
+            <button class="btn" onclick="clearInputs(['#sentenceCaseInput', '#capitalCaseInput', '#lowercaseInput', '#uppercaseInput', '#snakeCaseInput', '#camelCaseInput', '#kebabCaseInput'])">
+              Clear
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Rule of three -->
+      <div id="ruleOfThree" class="card">
+        <div class="card-header">
+          <h4 class="card-title">
+            Rule of three
+          </h4>
+        </div>
+
+        <div class="card-content">
+          <div class="row-fluid">
+
+            <span class="span5">
+              <input
+                class="text-center"
+                id="ruleOfThreeAxInput"
+                placeholder="a * x"
+                step="any"
+                title="a * x"
+                type="number"
+                onkeyup="calculateRuleOfThree()"/>
+            </span>
+
+            <span class="span2 text-center form-padded">
+              =
+            </span>
+
+            <span class="span5">
+              <input
+                class="text-center"
+                id="ruleOfThreeAyInput"
+                placeholder="a * y"
+                step="any"
+                title="a * y"
+                type="number"
+                onkeyup="calculateRuleOfThree()"/>
+            </span>
+
+          </div>
+          <div class="row-fluid">
+
+            <span class="span5">
+              <input
+                class="text-center"
+                id="ruleOfThreeBxInput"
+                placeholder="b * x"
+                step="any"
+                title="b * x"
+                type="number"
+                onkeyup="calculateRuleOfThree()"/>
+            </span>
+
+            <span class="span2 text-center form-padded">=</span>
+
+            <span class="span5">
+              <input
+                class="text-center"
+                id="ruleOfThreeByInput"
+                placeholder="b * y"
+                step="any"
+                title="b * y"
+                type="number"
+                readonly/>
+            </span>
+
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="row-fluid text-center">
+
+            <button class="btn" onclick="clearInputs(['#ruleOfThreeAxInput', '#ruleOfThreeAyInput', '#ruleOfThreeBxInput', '#ruleOfThreeByInput'])">
+              Clear
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Regex replacer -->
+      <div id="regexReplacer" class="card">
+        <div class="card-header">
+          <h4 class="card-title">
+            Regex replacer
+          </h4>
+        </div>
+
+        <div class="card-content">
+          <div class="row-fluid">
+
+            <input
+              id="regexReplacerInput"
+              type="text"
+              placeholder="Input string"
+              title="Input string"
+              onkeyup="applyRegexReplacement()"/>
+
+          </div>
+          <div class="row-fluid">
+
+            <span class="span6">
+              <input
+                id="regexpInput"
+                type="text"
+                placeholder="Regex expression"
+                title="Regex expression"
+                onkeyup="applyRegexReplacement()"/>
+            </span>
+
+            <span class="span6">
+              <input
+                id="regexReplacementInput"
+                type="text"
+                placeholder="Replacement"
+                title="Replacement"
+                onkeyup="applyRegexReplacement()"/>
+            </span>
+
+          </div>
+          <div class="row-fluid">
+
+            <input
+              id="regexReplacerOutput"
+              type="text"
+              placeholder="Output string"
+              title="Output string"
+              readonly/>
+
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="row-fluid text-center">
+
+            <button class="btn" onclick="clearInputs(['#regexReplacerInput', '#regexpInput', '#regexReplacementInput', '#regexReplacerOutput'])">
+              Clear
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer>
+      <div class="content-wrapper">
+        <p>Jesús Miguel Cruz Cana, 2017-2018</p>
+        <p>CC BY-NC-SA 4.0</p>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
+  </body>
+</html>
