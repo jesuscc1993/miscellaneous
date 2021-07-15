@@ -1,0 +1,19 @@
+{
+	"JP": {
+		"Generation 0": ["Tokino Sora", "Roboco", "Sakura Miko", "Hoshimachi Suisei", "AZKi"],
+		"Generation 1": ["Yozora Mel", "Shirakami Fubuki", "Natsuiro Matsuri", "Aki Rosenthal", "Akai Haato"],
+		"Generation 2": ["Minato Aqua", "Murasaki Shion", "Nakiri Ayame", "Yuzuki Choco", "Oozora Subaru"],
+		"Gamers": ["Shirakami Fubuki", "Ookami Mio", "Nekomata Okayu", "Inugami Korone"],
+		"Generation 3": ["Usada Pekora", "Uruha Rushia", "Shiranui Flare", "Shirogane Noel", "Houshou Marine"],
+		"Generation 4": ["Amane Kanata", "Tsunomaki Watame", "Tokoyami Towa", "Himemori Luna", "Kiryu Coco"],
+		"Generation 5": ["Yukihana Lamy", "Momosuzu Nene", "Shishiro Botan", "Omaru Polka"]
+	},
+	"ID": {
+		"Generation 1": ["Ayunda Risu", "Moona Hoshinova", "Airani Iofifteen"],
+		"Generation 2": ["Kureiji Ollie", "Anya Melfissa", "Pavolia Reine"]
+	},
+	"EN": {
+		"Generation 1": ["Mori Calliope", "Takanashi Kiara", "Ninomae Ina'nis", "Gawr Gura", "Watson Amelia"],
+		"Project: HOPE": ["IRyS"]
+	}
+}

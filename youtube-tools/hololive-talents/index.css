@@ -1,0 +1,52 @@
+:root {
+  --c-background: #181818;
+  --c-foreground: #aaa;
+  --c-primary: #49c8f0;
+}
+
+body {
+  background: var(--c-background);
+  color: var(--c-foreground);
+  font-family: 'Roboto', non-serif;
+  font-size: 20px;
+  margin: 0;
+  padding: 16px 0;
+  text-align: center;
+}
+
+h1 {
+  color: var(--c-primary);
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.talent {
+  background: transparent;
+  color: var(--c-primary);
+  display: inline-block;
+  padding: 8px 8px 2px;
+  border-radius: 12px;
+  transition: 0.15s;
+}
+
+.talent:hover {
+  color: var(--c-background);
+  background: var(--c-primary);
+}
+
+.talent img {
+  border-radius: 6px;
+  border: 1px solid #0002;
+}
+
+.talent-text {
+  padding: 6px 0;
+}
+
+.footer {
+  margin-top: 25vh;
+}
