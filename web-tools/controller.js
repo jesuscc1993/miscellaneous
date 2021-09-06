@@ -14,13 +14,30 @@ $(document).ready(() => {
   $('body').fadeIn();
 });
 
-function clearInputs (inputSelectors) {
+function clearInputs(inputSelectors) {
   if (inputSelectors) {
     const inputs = $(inputSelectors.join(','));
     if (inputs.length) {
       inputs.val('');
     }
   }
+}
+
+function replicateHeight(inputElement, outputElement) {
+  outputElement.css({ height: inputElement.css('height') });
+}
+
+function resizeInput(element) {
+  element.css({ height: `auto` });
+  element.css({ height: `${$('#sortedJsonOutput')[0].scrollHeight}px` });
+}
+
+function splitSortAndJoin(inputString, delimitter) {
+  return inputString.split(delimitter).sort().join(delimitter);
+}
+
+function stringify(json) {
+  return JSON.stringify(json, undefined, 2);
 }
 
 // ==================================================================================================================
@@ -44,19 +61,27 @@ let stringBuilderInput = $('#stringBuilderInput');
 let stringBuilderOutput = $('#stringBuilderOutput');
 let stringBuilderKeepLineBreaks = $('#stringBuilderKeepLineBreaks');
 
-function buildString () {
+function buildString() {
   stringBuilderOutput.val(getBuiltString(stringBuilderInput.val()));
-  stringBuilderOutput.css({ height: stringBuilderInput.css('height') });
+  resizeInput(stringBuilderOutput);
+  replicateHeight(stringBuilderInput, stringBuilderOutput);
 }
 
-function getBuiltString (input) {
+function getBuiltString(input) {
   let lineBreakCharacter = '';
 
   if (stringBuilderKeepLineBreaks.prop('checked')) {
     lineBreakCharacter = '\\n';
   }
 
-  return input ? '"' + input.replace(/"/g, '\\"').replace(/\n/g, lineBreakCharacter + '" +\n"').replace(/\n"" \+/g, '\n') + '"' : '';
+  return input
+    ? '"' +
+        input
+          .replace(/"/g, '\\"')
+          .replace(/\n/g, lineBreakCharacter + '" +\n"')
+          .replace(/\n"" \+/g, '\n') +
+        '"'
+    : '';
 }
 
 // ==================================================================================================================
@@ -67,19 +92,30 @@ let unsortedInlineListInput = $('#unsortedInlineListInput');
 let sortedInlineListOutput = $('#sortedInlineListOutput');
 let inlineListSorterDiscardDuplicates = $('#inlineListSorterDiscardDuplicates');
 
-function sortInlineList () {
-  let sortedInlineList = getSortedInlineList(unsortedInlineListInput.val());
+function sortInlineList() {
+  const sortedLines = getSortedInlineList(unsortedInlineListInput.val());
 
-  if (inlineListSorterDiscardDuplicates.prop('checked')) {
-    sortedInlineList = getDuplicateFreeArray(sortedInlineList);
-  }
-
-  sortedInlineListOutput.val(sortedInlineList.join(STRING_DELIMITER));
-  sortedInlineListOutput.css({ height: unsortedInlineListInput.css('height') });
+  sortedInlineListOutput.val(sortedLines);
+  replicateHeight(unsortedInlineListInput, sortedInlineListOutput);
 }
 
-function getSortedInlineList (inputString) {
-  return inputString.split(STRING_DELIMITER).sort();
+function getSortedInlineListLine(inputString) {
+  return splitSortAndJoin(inputString, STRING_DELIMITER);
+}
+
+function getSortedInlineList(inputString) {
+  return inputString
+    .split(LINE_DELIMITER)
+    .map((line) => {
+      let sortedInlineList = getSortedInlineListLine(line);
+
+      if (inlineListSorterDiscardDuplicates.prop('checked')) {
+        sortedInlineList = getDuplicateFreeArray(sortedInlineList);
+      }
+
+      return sortedInlineList;
+    })
+    .join(LINE_DELIMITER);
 }
 
 // ==================================================================================================================
@@ -88,21 +124,64 @@ function getSortedInlineList (inputString) {
 
 let unsortedMultilineListInput = $('#unsortedMultilineListInput');
 let sortedMultilineListOutput = $('#sortedMultilineListOutput');
-let multilineListSorterDiscardDuplicates = $('#multilineListSorterDiscardDuplicates');
+let multilineListSorterDiscardDuplicates = $(
+  '#multilineListSorterDiscardDuplicates'
+);
 
-function sortMultilineList () {
-  let sortedMultilineList = getSortedMultilineList(unsortedMultilineListInput.val());
+function sortMultilineList() {
+  let sortedMultilineList = getSortedMultilineList(
+    unsortedMultilineListInput.val()
+  );
 
   if (multilineListSorterDiscardDuplicates.prop('checked')) {
     sortedMultilineList = getDuplicateFreeArray(sortedMultilineList);
   }
 
-  sortedMultilineListOutput.val(sortedMultilineList.join(LINE_DELIMITER));
-  sortedMultilineListOutput.css({ height: unsortedMultilineListInput.css('height') });
+  sortedMultilineListOutput.val(sortedMultilineList);
+  resizeInput(sortedMultilineListOutput);
+  replicateHeight(unsortedMultilineListInput, sortedMultilineListOutput);
 }
 
-function getSortedMultilineList (inputString) {
-  return inputString.split(LINE_DELIMITER).sort();
+function getSortedMultilineList(inputString) {
+  return splitSortAndJoin(inputString, LINE_DELIMITER);
+}
+
+// ==================================================================================================================
+// JSON sorter
+// ==================================================================================================================
+
+let unsortedJsonInput = $('#unsortedJsonInput');
+let sortedJsonOutput = $('#sortedJsonOutput');
+let jsonSorterDiscardDuplicates = $('#jsonSorterDiscardDuplicates');
+
+function sortJson() {
+  let sortedJson = getSortedJson(unsortedJsonInput.val());
+
+  sortedJsonOutput.val(sortedJson);
+  resizeInput(sortedJsonOutput);
+}
+
+function getSortedJson(inputString) {
+  let json = JSON.parse(inputString);
+  const sortedJson = getPropertiesRecursivelySorted(json);
+  return stringify(sortedJson, undefined, 2);
+}
+
+function getPropertiesRecursivelySorted(json) {
+  const sortedJson = {};
+
+  Object.keys(json)
+    .sort()
+    .forEach((key) => {
+      const value = json[key];
+      sortedJson[key] = Array.isArray(value)
+        ? value.sort()
+        : typeof value === 'object'
+        ? getPropertiesRecursivelySorted(value)
+        : value;
+    });
+
+  return sortedJson;
 }
 
 // ==================================================================================================================
@@ -117,7 +196,7 @@ let camelCaseInput = $('#camelCaseInput');
 let snakeCaseInput = $('#snakeCaseInput');
 let kebabCaseInput = $('#kebabCaseInput');
 
-function transformFromSentenceCase () {
+function transformFromSentenceCase() {
   lowercaseInput.val(sentenceCaseInput.val().toLowerCase());
   uppercaseInput.val(sentenceCaseInput.val().toUpperCase());
   capitalCaseInput.val(transformSentenceToCapitalCase(sentenceCaseInput.val()));
@@ -126,73 +205,76 @@ function transformFromSentenceCase () {
   kebabCaseInput.val(transformSentenceToKebabCase(sentenceCaseInput.val()));
 }
 
-function transformFromCapitalCase () {
+function transformFromCapitalCase() {
   sentenceCaseInput.val(transformCapitalToSentenceCase(capitalCaseInput.val()));
   transformFromSentenceCase();
 }
 
-function transformFromLowercase () {
+function transformFromLowercase() {
   sentenceCaseInput.val(transformCapitalToSentenceCase(lowercaseInput.val()));
   transformFromSentenceCase();
 }
 
-function transformFromUppercase () {
+function transformFromUppercase() {
   sentenceCaseInput.val(transformCapitalToSentenceCase(uppercaseInput.val()));
   transformFromSentenceCase();
 }
 
-function transformFromCamelCase () {
+function transformFromCamelCase() {
   sentenceCaseInput.val(transformCamelToSentenceCase(camelCaseInput.val()));
   transformFromSentenceCase();
 }
 
-function transformFromSnakeCase () {
+function transformFromSnakeCase() {
   sentenceCaseInput.val(transformSnakeToSentenceCase(snakeCaseInput.val()));
   transformFromSentenceCase();
 }
 
-function transformFromKebabCase () {
+function transformFromKebabCase() {
   sentenceCaseInput.val(transformKebabToSentenceCase(kebabCaseInput.val()));
   transformFromSentenceCase();
 }
 
 // Input
 
-function transformCapitalToSentenceCase (inputCase) {
+function transformCapitalToSentenceCase(inputCase) {
   return toSentenceCase(inputCase);
 }
 
-function transformCamelToSentenceCase (inputCase) {
+function transformCamelToSentenceCase(inputCase) {
   return toSentenceCase(inputCase.replace(/([A-Z])/g, ' $1'));
 }
 
-function transformSnakeToSentenceCase (inputCase) {
+function transformSnakeToSentenceCase(inputCase) {
   return toSentenceCase(inputCase.replace(/_/g, ' '));
 }
 
-function transformKebabToSentenceCase (inputCase) {
+function transformKebabToSentenceCase(inputCase) {
   return toSentenceCase(inputCase.replace(/-/g, ' '));
 }
 
 // Output
 
-function transformSentenceToCapitalCase (inputCase) {
+function transformSentenceToCapitalCase(inputCase) {
   return uppercaseWords(inputCase.toLowerCase());
 }
 
-function transformSentenceToCamelCase (inputCase) {
-  return lowercaseFirstLetter(uppercaseWords(inputCase.toLowerCase())).replace(/ /g, '');
+function transformSentenceToCamelCase(inputCase) {
+  return lowercaseFirstLetter(uppercaseWords(inputCase.toLowerCase())).replace(
+    / /g,
+    ''
+  );
 }
 
-function transformSentenceToSnakeCase (inputCase) {
+function transformSentenceToSnakeCase(inputCase) {
   return inputCase.toLowerCase().replace(/ /g, '_');
 }
 
-function transformSentenceToKebabCase (inputCase) {
+function transformSentenceToKebabCase(inputCase) {
   return inputCase.toLowerCase().replace(/ /g, '-');
 }
 
-function toSentenceCase (string) {
+function toSentenceCase(string) {
   return uppercaseFirstLetter(string.toLowerCase());
 }
 
@@ -205,7 +287,7 @@ let ayInput = $('#ruleOfThreeAyInput');
 let bxInput = $('#ruleOfThreeBxInput');
 let byInput = $('#ruleOfThreeByInput');
 
-function calculateRuleOfThree () {
+function calculateRuleOfThree() {
   let ax = axInput.val();
   let ay = ayInput.val();
   let bx = bxInput.val();
@@ -216,8 +298,10 @@ function calculateRuleOfThree () {
   }
 }
 
-function getRuleOfThree (ax, ay, bx) {
-  return (isNumber(ax) && isNumber(ay) && isNumber(bx)) ? (bx * ay) / ax : undefined;
+function getRuleOfThree(ax, ay, bx) {
+  return isNumber(ax) && isNumber(ay) && isNumber(bx)
+    ? (bx * ay) / ax
+    : undefined;
 }
 
 // ==================================================================================================================
@@ -229,15 +313,15 @@ let regexReplacerOutput = $('#regexReplacerOutput');
 let regexpInput = $('#regexpInput');
 let regexReplacementInput = $('#regexReplacementInput');
 
-function applyRegexReplacement () {
+function applyRegexReplacement() {
   let inputString = regexReplacerInput.val(),
-      regexp = new RegExp(regexpInput.val(), 'g'),
-      replacement = regexReplacementInput.val();
+    regexp = new RegExp(regexpInput.val(), 'g'),
+    replacement = regexReplacementInput.val();
 
   regexReplacerOutput.val(replaceByRegex(inputString, regexp, replacement));
 }
 
-function replaceByRegex (string, regexp, replacement) {
+function replaceByRegex(string, regexp, replacement) {
   return string.replace(regexp, replacement);
 }
 
@@ -245,25 +329,25 @@ function replaceByRegex (string, regexp, replacement) {
 // Generic
 // ------------------------------------------------------------------------------------------------------------------
 
-function isNumber (string) {
+function isNumber(string) {
   return string && !isNaN(parseInt(string));
 }
 
-function uppercaseFirstLetter (string) {
+function uppercaseFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function lowercaseFirstLetter (string) {
+function lowercaseFirstLetter(string) {
   return string.charAt(0).toLowerCase() + string.slice(1);
 }
 
-function uppercaseWords (string) {
+function uppercaseWords(string) {
   return string.replace(/\b\w/g, function (letter) {
     return letter.toUpperCase();
   });
 }
 
-function getDuplicateFreeArray (array) {
+function getDuplicateFreeArray(array) {
   return array.filter(function (entry, i) {
     return array.indexOf(entry) === i;
   });
