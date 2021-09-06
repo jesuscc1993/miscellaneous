@@ -1,19 +1,20 @@
 {
-	"JP": {
-		"Generation 0": ["Tokino Sora", "Roboco", "Sakura Miko", "Hoshimachi Suisei", "AZKi"],
-		"Generation 1": ["Yozora Mel", "Shirakami Fubuki", "Natsuiro Matsuri", "Aki Rosenthal", "Akai Haato"],
-		"Generation 2": ["Minato Aqua", "Murasaki Shion", "Nakiri Ayame", "Yuzuki Choco", "Oozora Subaru"],
-		"Gamers": ["Shirakami Fubuki", "Ookami Mio", "Nekomata Okayu", "Inugami Korone"],
-		"Generation 3": ["Usada Pekora", "Uruha Rushia", "Shiranui Flare", "Shirogane Noel", "Houshou Marine"],
-		"Generation 4": ["Amane Kanata", "Tsunomaki Watame", "Tokoyami Towa", "Himemori Luna", "Kiryu Coco"],
-		"Generation 5": ["Yukihana Lamy", "Momosuzu Nene", "Shishiro Botan", "Omaru Polka"]
-	},
-	"ID": {
-		"Generation 1": ["Ayunda Risu", "Moona Hoshinova", "Airani Iofifteen"],
-		"Generation 2": ["Kureiji Ollie", "Anya Melfissa", "Pavolia Reine"]
-	},
-	"EN": {
-		"Generation 1": ["Mori Calliope", "Takanashi Kiara", "Ninomae Ina'nis", "Gawr Gura", "Watson Amelia"],
-		"Project: HOPE": ["IRyS"]
-	}
+  "JP": {
+    "Generation 0": ["AZKi", "Hoshimachi Suisei", "Roboco", "Sakura Miko", "Tokino Sora"],
+    "Generation 1": ["Akai Haato", "Aki Rosenthal", "Natsuiro Matsuri", "Shirakami Fubuki", "Yozora Mel"],
+    "Generation 2": ["Minato Aqua", "Murasaki Shion", "Nakiri Ayame", "Oozora Subaru", "Yuzuki Choco"],
+    "Gamers": ["Inugami Korone", "Nekomata Okayu", "Ookami Mio", "Shirakami Fubuki"],
+    "Generation 3": ["Houshou Marine", "Shiranui Flare", "Shirogane Noel", "Uruha Rushia", "Usada Pekora"],
+    "Generation 4": ["Amane Kanata", "Himemori Luna", "Kiryu Coco", "Tokoyami Towa", "Tsunomaki Watame"],
+    "Generation 5": ["Momosuzu Nene", "Omaru Polka", "Shishiro Botan", "Yukihana Lamy"]
+  },
+  "ID": {
+    "Generation 1": ["Airani Iofifteen", "Ayunda Risu", "Moona Hoshinova"],
+    "Generation 2": ["Anya Melfissa", "Kureiji Ollie", "Pavolia Reine"]
+  },
+  "EN": {
+    "Generation 1": ["Gawr Gura", "Mori Calliope", "Ninomae Ina'nis", "Takanashi Kiara", "Watson Amelia"],
+    "Project: HOPE": ["IRyS"],
+    "Generation 2": ["Ceres Fauna", "Hakos Baelz", "Nanashi Mumei", "Ouro Kronii", "Tsukumo Sana"]
+  }
 }
