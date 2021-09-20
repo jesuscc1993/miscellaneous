@@ -3,7 +3,7 @@
 @namespace      https://github.com/jesuscc1993/
 @author         MetalTxus
 @description    `Allows the customization of the game's layout and responsive behavior.<a href="https://imgur.com/a/kud5i">> Previews album <</a>`
-@version        20210511.19.56
+@version        20210921.1.16
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 
@@ -779,15 +779,6 @@
   /* fix user info BG */
   .prt-user-info::before {
     border-image-repeat: stretch stretch;
-  }
-
-  /* fix weapon and summon grid BGs */
-  .cnt-weapon-list {
-    background-position: -2.5px -423px;
-  }
-
-  .cnt-summon-list {
-    background-position: -2.5px -755px;
   }
 
   /* fix crew chest overlapping pictures */
