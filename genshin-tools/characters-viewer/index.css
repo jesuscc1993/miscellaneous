@@ -13,7 +13,7 @@ h1 {
 }
 
 html {
-  background: url(bg.jpg);
+  background: url(assets/images/bg.jpg);
   background-size: cover;
 }
 
@@ -28,7 +28,7 @@ body {
 .main {
   margin: 0 auto;
   padding: 8px 0 16px;
-  width: 848px;
+  max-width: 1136px;
 }
 
 .center-text {

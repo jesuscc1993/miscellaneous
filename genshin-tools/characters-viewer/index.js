@@ -61,6 +61,7 @@ const setCharacterBackground = (character) => {
 
 const rarityBackgrounds = {
   4: 'https://webstatic-sea.hoyolab.com/app/community-game-records-sea/images/level_4_bg_s.7a6c5841.png',
+  4.5: 'assets/images/char_bg_red.png',
   5: 'https://webstatic-sea.hoyolab.com/app/community-game-records-sea/images/level_5_bg_s.1ff411a0.png',
 };
 
