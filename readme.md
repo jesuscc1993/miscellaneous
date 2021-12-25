@@ -2,6 +2,8 @@
 
 Intended as a "hub" of sorts to host several minor miscellaneous projects.
 
+**NOTE:** some projects will fail in the live demo due to CORS or protocol issues.
+
 # Links
 
 - [/citra-layout-generator/](citra-layout-generator/)
