@@ -94,27 +94,24 @@ let inlineListSorterDiscardDuplicates = $('#inlineListSorterDiscardDuplicates');
 
 function sortInlineList() {
   const sortedLines = getSortedInlineList(unsortedInlineListInput.val());
-
   sortedInlineListOutput.val(sortedLines);
   replicateHeight(unsortedInlineListInput, sortedInlineListOutput);
 }
 
-function getSortedInlineListLine(inputString) {
-  return splitSortAndJoin(inputString, STRING_DELIMITER);
+function getSortedInlineListLine(line) {
+  let array = line.split(STRING_DELIMITER);
+
+  if (inlineListSorterDiscardDuplicates.prop('checked')) {
+    array = getDuplicateFreeArray(array);
+  }
+
+  return array.sort().join(STRING_DELIMITER);
 }
 
 function getSortedInlineList(inputString) {
   return inputString
     .split(LINE_DELIMITER)
-    .map((line) => {
-      let sortedInlineList = getSortedInlineListLine(line);
-
-      if (inlineListSorterDiscardDuplicates.prop('checked')) {
-        sortedInlineList = getDuplicateFreeArray(sortedInlineList);
-      }
-
-      return sortedInlineList;
-    })
+    .map(getSortedInlineListLine)
     .join(LINE_DELIMITER);
 }
 
@@ -129,21 +126,20 @@ let multilineListSorterDiscardDuplicates = $(
 );
 
 function sortMultilineList() {
-  let sortedMultilineList = getSortedMultilineList(
-    unsortedMultilineListInput.val()
-  );
-
-  if (multilineListSorterDiscardDuplicates.prop('checked')) {
-    sortedMultilineList = getDuplicateFreeArray(sortedMultilineList);
-  }
-
-  sortedMultilineListOutput.val(sortedMultilineList);
+  const sortedLines = getSortedMultilineList(unsortedMultilineListInput.val());
+  sortedMultilineListOutput.val(sortedLines);
   resizeInput(sortedMultilineListOutput);
   replicateHeight(unsortedMultilineListInput, sortedMultilineListOutput);
 }
 
 function getSortedMultilineList(inputString) {
-  return splitSortAndJoin(inputString, LINE_DELIMITER);
+  let array = inputString.split(LINE_DELIMITER);
+
+  if (multilineListSorterDiscardDuplicates.prop('checked')) {
+    array = getDuplicateFreeArray(array);
+  }
+
+  return array.sort().join(LINE_DELIMITER);
 }
 
 // ==================================================================================================================
