@@ -14,11 +14,28 @@ body {
   margin: 0;
 }
 
+a {
+  color: #dfa071;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h3 {
+  margin: 16px 0 8px;
+  padding: 8px 0;
+}
+
 .main {
   background-color: #201c1a;
   margin: 0 auto;
   padding: 8px;
   width: 1148px;
+}
+
+.links-container a {
+  margin: 0 4px;
 }
 
 .units-grid {
