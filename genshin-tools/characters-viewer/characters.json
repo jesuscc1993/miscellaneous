@@ -2,8 +2,8 @@
 	{
 		"constellation": 4,
 		"id": "Ambor",
-		"level": 40,
-		"levelCap": 40,
+		"level": 50,
+		"levelCap": 60,
 		"name": "Amber",
 		"rarity": 4
 	},
@@ -34,8 +34,8 @@
 	{
 		"constellation": 4,
 		"id": "Chongyun",
-		"level": 60,
-		"levelCap": 60,
+		"level": 80,
+		"levelCap": 80,
 		"name": "Chongyun",
 		"rarity": 4
 	},
@@ -50,8 +50,8 @@
 	{
 		"constellation": 2,
 		"id": "Feiyan",
-		"level": 60,
-		"levelCap": 60,
+		"level": 80,
+		"levelCap": 80,
 		"name": "Yanfei",
 		"rarity": 4
 	},
@@ -138,8 +138,8 @@
 	{
 		"constellation": 1,
 		"id": "Kaeya",
-		"level": 40,
-		"levelCap": 40,
+		"level": 50,
+		"levelCap": 60,
 		"name": "Kaeya",
 		"rarity": 4
 	},
@@ -154,8 +154,8 @@
 	{
 		"constellation": 2,
 		"id": "Lisa",
-		"level": 40,
-		"levelCap": 40,
+		"level": 50,
+		"levelCap": 60,
 		"name": "Lisa",
 		"rarity": 4
 	},
@@ -170,8 +170,8 @@
 	{
 		"constellation": 4,
 		"id": "Noel",
-		"level": 60,
-		"levelCap": 60,
+		"level": 80,
+		"levelCap": 80,
 		"name": "Noelle",
 		"rarity": 4
 	},
@@ -184,10 +184,10 @@
 		"rarity": 5
 	},
 	{
-		"constellation": 4,
+		"constellation": 5,
 		"id": "Razor",
-		"level": 40,
-		"levelCap": 40,
+		"level": 50,
+		"levelCap": 60,
 		"name": "Razor",
 		"rarity": 4
 	},
@@ -226,9 +226,17 @@
 	{
 		"constellation": 2,
 		"id": "Xinyan",
+		"level": 50,
+		"levelCap": 60,
+		"name": "Xinyan",
+		"rarity": 4
+	},
+	{
+		"constellation": 0,
+		"id": "Yunjin",
 		"level": 40,
 		"levelCap": 40,
-		"name": "Xinyan",
+		"name": "Yun Jin",
 		"rarity": 4
 	}
 ]
