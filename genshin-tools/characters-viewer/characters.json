@@ -234,8 +234,8 @@
 	{
 		"constellation": 0,
 		"id": "Yunjin",
-		"level": 40,
-		"levelCap": 40,
+		"level": 50,
+		"levelCap": 60,
 		"name": "Yun Jin",
 		"rarity": 4
 	}
