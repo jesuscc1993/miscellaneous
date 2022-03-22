@@ -42,8 +42,8 @@
 	{
 		"constellation": 1,
 		"id": "Sara",
-		"level": 60,
-		"levelCap": 60,
+		"level": 80,
+		"levelCap": 80,
 		"name": "Kujou Sara",
 		"rarity": 4
 	},
@@ -82,13 +82,13 @@
 	{
 		"constellation": 0,
 		"id": "Aloy",
-		"level": 40,
-		"levelCap": 40,
+		"level": 50,
+		"levelCap": 60,
 		"name": "Aloy",
 		"rarity": 4.5
 	},
 	{
-		"constellation": 4,
+		"constellation": 6,
 		"id": "Diona",
 		"level": 80,
 		"levelCap": 80,
@@ -154,8 +154,8 @@
 	{
 		"constellation": 0,
 		"id": "Tohma",
-		"level": 40,
-		"levelCap": 40,
+		"level": 50,
+		"levelCap": 60,
 		"name": "Thoma",
 		"rarity": 4
 	},
@@ -240,7 +240,7 @@
 		"rarity": 4
 	},
 	{
-		"constellation": 2,
+		"constellation": 3,
 		"id": "Xinyan",
 		"level": 50,
 		"levelCap": 60,
