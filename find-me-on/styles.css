@@ -19,6 +19,7 @@ img.pixelated {
 
 ul {
   list-style: none;
+  margin: 0;
   padding-left: 4px;
 }
 
@@ -26,7 +27,7 @@ a {
   align-items: center;
   color: #5a96f6;
   display: inline-flex;
-  line-height: 36px;
+  line-height: 40px;
   text-decoration: none;
   transition: 0.2s;
 }
@@ -36,4 +37,21 @@ a:visited {
 a:hover {
   filter: brightness(1.33);
   transform: translate(4px, 0);
+}
+
+.main-container {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+@media (min-width: 900px) {
+  .groups-container {
+    display: flex;
+  }
+
+  .group {
+    display: inline-flex;
+    flex-direction: column;
+    flex: 1;
+  }
 }
