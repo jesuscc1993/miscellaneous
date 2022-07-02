@@ -13,4 +13,5 @@ Intended as a "hub" of sorts to host several minor miscellaneous projects.
 - [/gbf-tools/image-viewers/town-backgrounds/](gbf-tools/image-viewers/town-backgrounds/)
 - [/gbf-tools/support-summons/](gbf-tools/support-summons/)
 - [/gbf-tools/user-css/](gbf-tools/user-css/)
+- [/pokemon/types-chart/](pokemon/types-chart/)
 - [/web-tools/](web-tools/)

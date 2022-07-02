@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      :root {
+        --c-red: #e03030;
+        --c-blue: #3692dc;
+        --c-green: #38bf4b;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      table {
+        font-size: 40px;
+      }
+
+      td {
+        border: 1px solid #0001;
+      }
+
+      td:not(.label) {
+        --size: 40px;
+        height: var(--size);
+        width: var(--size);
+        line-height: var(--size);
+
+        text-align: center;
+      }
+
+      footer {
+        padding: 2px 8px;
+      }
+
+      .attack {
+        background: var(--c-red);
+        color: white;
+      }
+
+      .defense {
+        background: var(--c-blue);
+        color: white;
+      }
+
+      .label .label {
+        font-size: 50%;
+        text-transform: uppercase;
+      }
+
+      .label.horizontal {
+        display: flex;
+        justify-content: end;
+      }
+
+      .label.horizontal .label {
+        padding: 0 8px;
+      }
+
+      .label.vertical {
+        align-items: center;
+        display: inline-flex;
+        flex-direction: column-reverse;
+        justify-content: end;
+        text-align: center;
+      }
+
+      .label.vertical .label {
+        height: 88px;
+        padding: 8px 0;
+        text-align: left;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        writing-mode: vertical-rl;
+      }
+
+      .label.centered {
+        justify-content: center;
+      }
+
+      .label .icon {
+        --size: 40px;
+        height: var(--size);
+        width: var(--size);
+        line-height: var(--size);
+        background-size: contain;
+        display: inline-block;
+      }
+
+      .normal-damage::after {
+        content: '·';
+      }
+
+      .no-damage::after {
+        /* content: '●'; */
+        content: '✖';
+        color: #6f1111;
+      }
+
+      .half-damage::after {
+        /* content: '◑'; */
+        content: '△';
+        color: var(--c-red);
+      }
+
+      .double-damage::after {
+        content: '◎';
+        color: var(--c-green);
+      }
+    </style>
+  </head>
+
+  <body>
+    <table cellpadding="0" cellspacing="0" id="sheet0">
+      <tbody>
+        <tr>
+          <td></td>
+          <td class="defense" colspan="20">
+            <div class="horizontal centered label">
+              <span class="icon" data-type="defense"></span>
+              <span class="label">defense</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="attack" rowspan="20">
+            <div class="vertical label">
+              <span class="icon" data-type="attack"></span>
+              <span class="label">attack</span>
+            </div>
+          </td>
+          <td></td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="normal"></span>
+              <span class="label">normal</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="fire"></span>
+              <span class="label">fire</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="water"></span>
+              <span class="label">water</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="electric"></span>
+              <span class="label">electric</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="grass"></span>
+              <span class="label">grass</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="ice"></span>
+              <span class="label">ice</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="fighting"></span>
+              <span class="label">fighting</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="poison"></span>
+              <span class="label">poison</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="ground"></span>
+              <span class="label">ground</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="flying"></span>
+              <span class="label">flying</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="psychic"></span>
+              <span class="label">psychic</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="bug"></span>
+              <span class="label">bug</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="rock"></span>
+              <span class="label">rock</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="ghost"></span>
+              <span class="label">ghost</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="dragon"></span>
+              <span class="label">dragon</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="dark"></span>
+              <span class="label">dark</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="steel"></span>
+              <span class="label">steel</span>
+            </div>
+          </td>
+          <td>
+            <div class="vertical label">
+              <span class="icon" data-type="fairy"></span>
+              <span class="label">fairy</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">normal</span>
+              <span class="icon" data-type="normal"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="no-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">fire</span>
+              <span class="icon" data-type="fire"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">water</span>
+              <span class="icon" data-type="water"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">electric</span>
+              <span class="icon" data-type="electric"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="half-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="no-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">grass</span>
+              <span class="icon" data-type="grass"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="double-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">ice</span>
+              <span class="icon" data-type="ice"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">fighting</span>
+              <span class="icon" data-type="fighting"></span>
+            </div>
+          </td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="half-damage"></td>
+          <td class="half-damage"></td>
+          <td class="double-damage"></td>
+          <td class="no-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="double-damage"></td>
+          <td class="half-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">poison</span>
+              <span class="icon" data-type="poison"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="no-damage"></td>
+          <td class="double-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">ground</span>
+              <span class="icon" data-type="ground"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="no-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">flying</span>
+              <span class="icon" data-type="flying"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">psychic</span>
+              <span class="icon" data-type="psychic"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="no-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">bug</span>
+              <span class="icon" data-type="bug"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="half-damage"></td>
+          <td class="half-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">rock</span>
+              <span class="icon" data-type="rock"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">ghost</span>
+              <span class="icon" data-type="ghost"></span>
+            </div>
+          </td>
+          <td class="no-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">dragon</span>
+              <span class="icon" data-type="dragon"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="no-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">dark</span>
+              <span class="icon" data-type="dark"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">steel</span>
+              <span class="icon" data-type="steel"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="half-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="double-damage"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="horizontal label">
+              <span class="label">fairy</span>
+              <span class="icon" data-type="fairy"></span>
+            </div>
+          </td>
+          <td class="normal-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="normal-damage"></td>
+          <td class="double-damage"></td>
+          <td class="double-damage"></td>
+          <td class="half-damage"></td>
+          <td class="normal-damage"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer>
+      <small
+        >Icons provided under
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/"
+          >CC BY-SA 4.0</a
+        >
+        by
+        <a href="https://commons.wikimedia.org/wiki/User:Andreuvv">Andreuvv</a>
+        on
+        <a
+          href="https://commons.wikimedia.org/wiki/Category:Pok%C3%A9mon_types_icons"
+          >Wikimedia Commons</a
+        >.</small
+      >
+    </footer>
+
+    <script>
+      var list = document.querySelectorAll('.label .icon');
+
+      for (var i = 0; i < list.length; i++) {
+        var url = list[i].getAttribute('data-type');
+        list[i].style.backgroundImage =
+          "url('./assets/images/" + url + ".svg')";
+      }
+    </script>
+  </body>
+</html>
