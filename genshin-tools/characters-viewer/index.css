@@ -28,7 +28,7 @@ body {
 .main {
   margin: 0 auto;
   padding: 8px 0 16px;
-  max-width: 1136px;
+  max-width: 1280px;
 }
 
 .center-text {
@@ -55,7 +55,7 @@ body {
   color: var(--c-character-fg);
   cursor: pointer;
   height: var(--character-height);
-  transition: .1s;
+  transition: 0.1s;
 }
 .character:hover {
   filter: brightness(1.05) saturate(110%);
@@ -63,7 +63,8 @@ body {
 
 .character-portrait {
   border-bottom: 1px solid #0004;
-  border-radius: var(--card-roundness) var(--card-roundness) 24px var(--card-roundness);
+  border-radius: var(--card-roundness) var(--card-roundness) 24px
+    var(--card-roundness);
   height: var(--portrait-height);
   width: var(--portrait-width);
 }
