@@ -62,7 +62,6 @@ footer {
   align-items: center;
   display: inline-flex;
   flex-direction: column-reverse;
-  height: 100%;
   justify-content: end;
   text-align: center;
 }
