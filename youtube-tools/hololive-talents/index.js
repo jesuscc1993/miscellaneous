@@ -1,4 +1,4 @@
-const query = `https://www.youtube.com/results?sp=CAI%3D&search_query=-español+-vietsub+-"sub+indo"+-"ru+sub"+-中文+-ซับไทย+`;
+const query = `https://www.youtube.com/results?sp=CAI%3D&search_query=-español+-subespañol+-idsub+-vietsub+-"sub+indo"+-"ru+sub"+-中文+-ซับไทย+`;
 
 const fetchJson = (url) => {
   return fetch(url).then((response) => response.json());

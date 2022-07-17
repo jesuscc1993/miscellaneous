@@ -6,11 +6,13 @@
     "Gamers": ["Inugami Korone", "Nekomata Okayu", "Ookami Mio", "Shirakami Fubuki"],
     "Generation 3": ["Houshou Marine", "Shiranui Flare", "Shirogane Noel", "Uruha Rushia", "Usada Pekora"],
     "Generation 4": ["Amane Kanata", "Himemori Luna", "Kiryu Coco", "Tokoyami Towa", "Tsunomaki Watame"],
-    "Generation 5": ["Momosuzu Nene", "Omaru Polka", "Shishiro Botan", "Yukihana Lamy"]
+    "Generation 5": ["Momosuzu Nene", "Omaru Polka", "Shishiro Botan", "Yukihana Lamy"],
+    "Generation 6": ["Hakui Koyori", "Kazama Iroha", "Laplus Darkness", "Sakamata Chloe", "Takane Lui"]
   },
   "ID": {
     "Generation 1": ["Airani Iofifteen", "Ayunda Risu", "Moona Hoshinova"],
-    "Generation 2": ["Anya Melfissa", "Kureiji Ollie", "Pavolia Reine"]
+    "Generation 2": ["Anya Melfissa", "Kureiji Ollie", "Pavolia Reine"],
+    "Generation 3": ["Kaela Kovalskia", "Kobo Kanaeru", "Vestia Zeta"]
   },
   "EN": {
     "Generation 1": ["Gawr Gura", "Mori Calliope", "Ninomae Ina'nis", "Takanashi Kiara", "Watson Amelia"],
