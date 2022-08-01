@@ -8,6 +8,11 @@
   --portrait-width: 128px;
 }
 
+@font-face {
+  font-family: 'HYWenHei 85W';
+  src: url(https://dl.dropbox.com/s/uys7kb0x346azji/%28Genshin%29%20HYWenHei-HEW.woff2);
+}
+
 h1 {
   font-weight: normal;
 }
