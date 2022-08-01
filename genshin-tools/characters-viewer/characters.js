@@ -1,4 +1,4 @@
-[
+const characters = [
   {
     "constellation": 4,
     "id": "Ambor",
@@ -53,6 +53,14 @@
     "level": 80,
     "levelCap": 80,
     "name": "Kujou Sara",
+    "rarity": 4
+  },
+  {
+    "constellation": 0,
+    "id": "Heizo",
+    "level": 40,
+    "levelCap": 40,
+    "name": "Heizou",
     "rarity": 4
   },
   {
@@ -161,6 +169,14 @@
   },
   {
     "constellation": 0,
+    "id": "Kazuha",
+    "level": 40,
+    "levelCap": 40,
+    "name": "Kazuha",
+    "rarity": 5
+  },
+  {
+    "constellation": 0,
     "id": "Tohma",
     "level": 50,
     "levelCap": 60,
@@ -182,6 +198,14 @@
     "levelCap": 60,
     "name": "Lisa",
     "rarity": 4
+  },
+  {
+    "constellation": 0,
+    "id": "Mona",
+    "level": 80,
+    "levelCap": 80,
+    "name": "Mona",
+    "rarity": 5
   },
   {
     "constellation": 6,
@@ -271,4 +295,4 @@
     "name": "Yun Jin",
     "rarity": 4
   }
-]
+];

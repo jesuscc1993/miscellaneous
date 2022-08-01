@@ -1,3 +1,5 @@
+const portraitSize = 112;
+
 const showUncap = false;
 
 const fetchJson = (url) => {
@@ -5,41 +7,39 @@ const fetchJson = (url) => {
 };
 
 const initialize = () => {
-  fetchJson('characters.json').then((characters) => {
-    const output = jQuery('#output');
+  const output = jQuery('#output');
 
-    const charactersGrid = jQuery(`<div class="characters-grid"></div>`);
+  const charactersGrid = jQuery(`<div class="characters-grid"></div>`);
 
-    sortCharacters(characters).forEach((character) => {
-      const avatar = `https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_${character.id}.png`;
-      const avatarbackground = rarityBackgrounds[character.rarity];
+  sortCharacters(characters).forEach((character) => {
+    const avatar = `https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_${character.id}.png`;
+    const avatarbackground = rarityBackgrounds[character.rarity];
 
-      const characterContainer = jQuery(`<div class="character"></div>`);
+    const characterContainer = jQuery(`<div class="character"></div>`);
 
-      const portrait = jQuery(`<div class="character-portrait"></div>`);
-      portrait.css(
-        `background`,
-        `url(${avatar}) center top / 128px 128px no-repeat, url(${avatarbackground}) 0px 0px / 100% no-repeat`
-      );
-      characterContainer.append(portrait);
+    const portrait = jQuery(`<div class="character-portrait"></div>`);
+    portrait.css(
+      `background`,
+      `url(${avatar}) center top / ${portraitSize}px ${portraitSize}px no-repeat, url(${avatarbackground}) 0px 0px / 100% no-repeat`
+    );
+    characterContainer.append(portrait);
 
-      const characterText = jQuery(`<div class="character-text"></div>`);
+    const characterText = jQuery(`<div class="character-text"></div>`);
 
-      const firstLineText = `${character.name} &#9733;${character.constellation}`;
-      const firstLine = jQuery(`<span class="center-text">${firstLineText}</span>`);
-      characterText.append(firstLine);
+    const firstLineText = `${character.name} &#9733;${character.constellation}`;
+    const firstLine = jQuery(`<span class="center-text">${firstLineText}</span>`);
+    characterText.append(firstLine);
 
-      const secondLineText = `Lvl. ${character.level}${showUncap ? ' / ' + character.levelCap : ''}`
-      const secondLine = jQuery(`<span class="center-text">${secondLineText}</span>`);
-      characterText.append(secondLine);
+    const secondLineText = `Lvl. ${character.level}${showUncap ? ' / ' + character.levelCap : ''}`
+    const secondLine = jQuery(`<span class="center-text">${secondLineText}</span>`);
+    characterText.append(secondLine);
 
-      characterContainer.append(characterText);
-      characterContainer.click(() => setCharacterBackground(character));
-      charactersGrid.append(characterContainer);
-    });
-
-    output.append(charactersGrid);
+    characterContainer.append(characterText);
+    characterContainer.click(() => setCharacterBackground(character));
+    charactersGrid.append(characterContainer);
   });
+
+  output.append(charactersGrid);
 };
 
 const sortCharacters = (characters) => {

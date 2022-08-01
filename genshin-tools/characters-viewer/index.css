@@ -2,10 +2,10 @@
   --c-character-bg: #e9e5dc;
   --c-character-fg: #495366;
   --card-roundness: 5px;
-  --character-height: 176px;
-  --character-width: 128px;
-  --portrait-height: 128px;
-  --portrait-width: 128px;
+  --character-height: 160px;
+  --character-width: 112px;
+  --portrait-height: 112px;
+  --portrait-width: 112px;
 }
 
 @font-face {
