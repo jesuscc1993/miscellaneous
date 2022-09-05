@@ -170,8 +170,8 @@ const characters = [
   {
     "constellation": 0,
     "id": "Kazuha",
-    "level": 40,
-    "levelCap": 40,
+    "level": 80,
+    "levelCap": 80,
     "name": "Kazuha",
     "rarity": 5
   },
