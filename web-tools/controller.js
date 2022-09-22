@@ -1,5 +1,5 @@
 // Constants
-let STRING_DELIMITER = ' ';
+let LIST_SEPARATOR = ', ';
 let LINE_DELIMITER = '\n';
 
 // ==================================================================================================================
@@ -32,8 +32,8 @@ function resizeInput(element) {
   element.css({ height: `${$('#sortedJsonOutput')[0].scrollHeight}px` });
 }
 
-function splitSortAndJoin(inputString, delimitter) {
-  return inputString.split(delimitter).sort().join(delimitter);
+function splitSortAndJoin(inputString, delimiter) {
+  return inputString.split(delimiter).sort().join(delimiter);
 }
 
 function stringify(json) {
@@ -75,12 +75,10 @@ function getBuiltString(input) {
   }
 
   return input
-    ? '"' +
-        input
-          .replace(/"/g, '\\"')
-          .replace(/\n/g, lineBreakCharacter + '" +\n"')
-          .replace(/\n"" \+/g, '\n') +
-        '"'
+    ? `"${input
+        .replace(/"/g, '\\"')
+        .replace(/\n/g, lineBreakCharacter + '" +\n"')
+        .replace(/\n"" \+/g, '\n')}"`
     : '';
 }
 
@@ -99,17 +97,18 @@ function sortInlineList() {
 }
 
 function getSortedInlineListLine(line) {
-  let array = line.split(STRING_DELIMITER);
+  let array = line.split(LIST_SEPARATOR);
 
   if (inlineListSorterDiscardDuplicates.prop('checked')) {
     array = getDuplicateFreeArray(array);
   }
 
-  return array.sort().join(STRING_DELIMITER);
+  return array.sort().join(LIST_SEPARATOR);
 }
 
 function getSortedInlineList(inputString) {
   return inputString
+    .replace(new RegExp(` +(${LIST_SEPARATOR}) +`, 'g'), '$1')
     .split(LINE_DELIMITER)
     .map(getSortedInlineListLine)
     .join(LINE_DELIMITER);
@@ -307,14 +306,16 @@ function getRuleOfThree(ax, ay, bx) {
 let regexReplacerInput = $('#regexReplacerInput');
 let regexReplacerOutput = $('#regexReplacerOutput');
 let regexpInput = $('#regexpInput');
+let regexpOptions = $('#regexpOptionsInput');
 let regexReplacementInput = $('#regexReplacementInput');
 
 function applyRegexReplacement() {
   let inputString = regexReplacerInput.val(),
-    regexp = new RegExp(regexpInput.val(), 'g'),
+    regexp = new RegExp(regexpInput.val(), regexpOptions.val() || 'gm'),
     replacement = regexReplacementInput.val();
 
   regexReplacerOutput.val(replaceByRegex(inputString, regexp, replacement));
+  replicateHeight(regexReplacerInput, regexReplacerOutput);
 }
 
 function replaceByRegex(string, regexp, replacement) {
