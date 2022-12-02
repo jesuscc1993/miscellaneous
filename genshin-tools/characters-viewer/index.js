@@ -24,9 +24,12 @@ const initialize = () => {
     );
     characterContainer.append(portrait);
 
+    const constellationText = jQuery(`<div class="character-text constellation-text center-text">${character.constellation}</div>`);
+    characterContainer.append(constellationText);
+
     const characterText = jQuery(`<div class="character-text"></div>`);
 
-    const firstLineText = `${character.name} &#9733;${character.constellation}`;
+    const firstLineText = character.name;
     const firstLine = jQuery(`<span class="center-text">${firstLineText}</span>`);
     characterText.append(firstLine);
 

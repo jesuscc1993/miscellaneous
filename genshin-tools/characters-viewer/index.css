@@ -1,11 +1,13 @@
 :root {
   --c-character-bg: #e9e5dc;
   --c-character-fg: #495366;
+
   --card-roundness: 5px;
   --character-height: 160px;
   --character-width: 112px;
   --portrait-height: 112px;
   --portrait-width: 112px;
+  --constellation-size: 20px;
 }
 
 @font-face {
@@ -60,6 +62,7 @@ body {
   color: var(--c-character-fg);
   cursor: pointer;
   height: var(--character-height);
+  position: relative;
   transition: 0.1s;
 }
 .character:hover {
@@ -79,4 +82,16 @@ body {
   font-weight: 500;
   line-height: 20px;
   padding: 4px 0;
+}
+
+.constellation-text {
+  background: #0004;
+  color: white;
+  height: var(--constellation-size);
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: var(--constellation-size);
+  border-radius: 0 var(--card-roundness) 0 var(--card-roundness);
 }
