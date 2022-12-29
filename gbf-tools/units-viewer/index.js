@@ -50,7 +50,7 @@ const initialize = () => {
 
       units.reverse().forEach((unit) => {
         unitsGrid.append(
-          `<img class="unit-portrait" src="http://game-a1.granbluefantasy.jp/assets_en/img/sp/assets/npc/m/${unit}_01.jpg">`
+          `<img class="unit-portrait" src="https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/npc/m/${unit}_01.jpg">`
         );
       });
 

@@ -18,9 +18,10 @@ const examples = [
 
 const baseUrl = location.href.split('?')[0];
 
-const assets = 'http://game-a.granbluefantasy.jp/assets_en/img/sp/assets/npc';
+const assets =
+  'https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/npc';
 const questAssets =
-  'http://game-a1.granbluefantasy.jp/assets_en/img/sp/quest/scene/character';
+  'https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/quest/scene/character';
 const characterVariants = ['', '_a', '_b', '_c'];
 const characterEmotions = [
   'angry',
