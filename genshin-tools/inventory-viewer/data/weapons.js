@@ -146,11 +146,12 @@ const weapons = [
     type: 'Catalyst',
   },
   {
-    id: '',
+    id: 'Windvane',
     level: 90,
     name: 'Missive Windspear',
     rarity: 4,
     type: 'Pole',
+    uncap: 5,
   },
   {
     id: 'Proto',
