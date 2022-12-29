@@ -113,3 +113,12 @@ body {
   width: var(--uncap-size);
   border-radius: 0 var(--card-roundness) 0 var(--card-roundness);
 }
+.uncap-text.maxed {
+  background: #a96759;
+  color: #ffe14b;
+}
+
+.weapon .uncap-text {
+  left: 0;
+  border-radius: var(--card-roundness) 0 var(--card-roundness) 0;
+}

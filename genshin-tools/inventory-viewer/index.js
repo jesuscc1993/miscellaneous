@@ -14,7 +14,7 @@ const processList = (identifier, items, itemType) => {
         : `https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_${item.id}.png`;
     const artworkbackground = rarityBackgrounds[item.rarity];
 
-    const itemContainer = jQuery(`<div class="item"></div>`);
+    const itemContainer = jQuery(`<div class="item ${itemType}"></div>`);
 
     const portrait = jQuery(`<div class="item-portrait"></div>`);
     portrait.css(
@@ -24,9 +24,9 @@ const processList = (identifier, items, itemType) => {
     itemContainer.append(portrait);
 
     const uncapText = jQuery(
-      `<div class="item-text uncap-text center-text">${
-        item.uncap || (itemType === ItemType.Weapon ? 1 : 0)
-      }</div>`
+      `<div class="item-text uncap-text center-text ${
+        itemType === ItemType.Weapon && item.uncap > 4 ? 'maxed' : ''
+      }">${item.uncap || (itemType === ItemType.Weapon ? 1 : 0)}</div>`
     );
     itemContainer.append(uncapText);
 
