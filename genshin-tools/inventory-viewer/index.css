@@ -1,14 +1,11 @@
 :root {
-  --c-character-bg: #e9e5dc;
-  --c-character-fg: #495366;
+  --c-item-bg: #e9e5dc;
+  --c-item-fg: #495366;
 
+  --artwork-size: 100px;
   --card-roundness: 5px;
-  --character-height: 160px;
-  --character-width: 112px;
-  --portrait-height: 112px;
-  --portrait-width: 112px;
-  --constellation-size: 20px;
   --grid-gap: 16px;
+  --uncap-size: 20px;
 }
 
 @font-face {
@@ -18,7 +15,10 @@
 
 h1 {
   font-weight: normal;
-  font-size: 1.5em;
+}
+
+h2 {
+  font-weight: normal;
 }
 
 html {
@@ -31,6 +31,7 @@ body {
   background-size: auto 720px;
   color: #fff;
   font-family: 'HYWenHei 85W', 'Lucida Sans', non-serif;
+  font-size: 14px;
   margin: 0;
   padding: 0 var(--grid-gap);
 }
@@ -38,7 +39,7 @@ body {
 .main {
   margin: 0 auto;
   padding: 8px 0 16px;
-  max-width: 1280px; /* 1140px */
+  max-width: 1260px;
 }
 
 .center-text {
@@ -47,55 +48,68 @@ body {
   width: 100%;
 }
 
-.characters-grid {
+.items-grid {
+  --card-height: 160px;
   display: grid;
   grid-gap: var(--grid-gap);
-  grid-template-columns: repeat(auto-fill, var(--character-width));
-  grid-template-rows: repeat(auto-fill, var(--character-height));
+  grid-template-columns: repeat(auto-fill, var(--artwork-size));
+  grid-template-rows: repeat(auto-fill, var(--card-height));
   justify-content: center;
+  margin-bottom: 24px;
 }
 
-.characters-grid + .characters-grid {
-  margin-top: 12px;
+.characters-grid {
+  --card-height: 148px;
 }
 
-.character {
-  background: var(--c-character-bg);
+.weapons-grid {
+  --card-height: 168px;
+}
+
+.weapons-grid .name {
+  align-items: center;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  white-space: break-spaces;
+}
+
+.item {
+  background: var(--c-item-bg);
   border-radius: 7px 7px var(--card-roundness) var(--card-roundness);
   box-shadow: 0 1px 8px #0004;
-  color: var(--c-character-fg);
+  color: var(--c-item-fg);
   cursor: pointer;
-  height: var(--character-height);
+  height: var(--card-height);
   position: relative;
   transition: 0.1s;
 }
-.character:hover {
+.item:hover {
   filter: brightness(1.05) saturate(110%);
 }
 
-.character-portrait {
+.item-portrait {
   border-bottom: 1px solid #0004;
   border-radius: var(--card-roundness) var(--card-roundness) 24px
     var(--card-roundness);
-  height: var(--portrait-height);
-  width: var(--portrait-width);
+  height: var(--artwork-size);
+  width: var(--artwork-size);
 }
 
-.character-text {
-  font-size: 14px;
+.item-text {
   font-weight: 500;
   line-height: 20px;
   padding: 4px 0;
 }
 
-.constellation-text {
-  background: #0004;
+.uncap-text {
+  background: #0006;
   color: white;
-  height: var(--constellation-size);
+  height: var(--uncap-size);
   padding: 0;
   position: absolute;
   right: 0;
   top: 0;
-  width: var(--constellation-size);
+  width: var(--uncap-size);
   border-radius: 0 var(--card-roundness) 0 var(--card-roundness);
 }
