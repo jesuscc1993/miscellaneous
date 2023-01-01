@@ -233,7 +233,7 @@ const characters = [
   },
   {
     id: 'Gorou',
-    level: 40,
+    level: 50,
     rarity: 4
   },
 ];
