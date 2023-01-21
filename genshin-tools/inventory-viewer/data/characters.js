@@ -217,7 +217,7 @@ const characters = [
     id: 'Sayu',
     level: 50,
     rarity: 4,
-    uncap: 4
+    uncap: 5
   },
   {
     id: 'Xinyan',
