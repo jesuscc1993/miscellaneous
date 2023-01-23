@@ -232,6 +232,11 @@ const characters = [
     rarity: 4
   },
   {
+    id: 'Yaoyao',
+    level: 40,
+    rarity: 4
+  },
+  {
     id: 'Gorou',
     level: 50,
     rarity: 4
