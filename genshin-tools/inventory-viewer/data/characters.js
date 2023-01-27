@@ -233,7 +233,7 @@ const characters = [
   },
   {
     id: 'Yaoyao',
-    level: 40,
+    level: 50,
     rarity: 4
   },
   {
