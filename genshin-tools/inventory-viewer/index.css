@@ -23,11 +23,14 @@ h2 {
 
 html {
   background: url(assets/images/bg.jpg);
+  background-attachment: fixed;
   background-size: cover;
 }
 
 body {
-  background: no-repeat bottom right;
+  background: no-repeat top right;
+  background-attachment: fixed;
+  background-position-y: calc(100vh - 720px);
   background-size: auto 720px;
   color: #fff;
   font-family: 'HYWenHei 85W', 'Lucida Sans', non-serif;

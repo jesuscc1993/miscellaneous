@@ -123,6 +123,11 @@ const characters = [
     uncap: 2,
   },
   {
+    id: 'Mika',
+    level: 1,
+    rarity: 4,
+  },
+  {
     id: 'Mona',
     level: 80,
     rarity: 5,
@@ -194,11 +199,16 @@ const characters = [
     id: 'Sucrose',
     level: 60,
     rarity: 4,
-    uncap: 4,
+    uncap: 6,
   },
   {
     id: 'Tartaglia',
     level: 80,
+    rarity: 5,
+  },
+  {
+    id: 'Tighnari',
+    level: 1,
     rarity: 5,
   },
   {
@@ -237,7 +247,7 @@ const characters = [
   },
   {
     id: 'Yelan',
-    level: 50,
+    level: 90,
     rarity: 5,
   },
   {

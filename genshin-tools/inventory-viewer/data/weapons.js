@@ -109,6 +109,13 @@ const weapons = [
     uncap: 5,
   },
   {
+    id: 'Narukami',
+    level: 90,
+    name: 'Mistsplitter Reforged',
+    rarity: 5,
+    type: 'Sword',
+  },
+  {
     id: 'Jyanome',
     level: 90,
     name: 'Hakushin Ring',
@@ -129,6 +136,7 @@ const weapons = [
     name: 'Iron\nSting',
     rarity: 4,
     type: 'Sword',
+    uncap: 5,
   },
   {
     id: 'MillenniaTuna',
@@ -162,6 +170,14 @@ const weapons = [
     uncap: 5,
   },
   {
+    id: 'Mori',
+    level: 90,
+    name: 'The\nCatch',
+    rarity: 4,
+    type: 'Pole',
+    uncap: 5,
+  },
+  {
     id: 'Proto',
     level: 90,
     name: 'Prototype Rancour',
@@ -175,7 +191,7 @@ const weapons = [
     name: 'Prototype Starglitter',
     rarity: 4,
     type: 'Pole',
-    uncap: 3,
+    uncap: 5,
   },
   {
     id: 'Recluse',
