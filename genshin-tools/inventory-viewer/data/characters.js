@@ -124,7 +124,7 @@ const characters = [
   },
   {
     id: 'Mika',
-    level: 1,
+    level: 50,
     rarity: 4,
   },
   {
@@ -208,7 +208,7 @@ const characters = [
   },
   {
     id: 'Tighnari',
-    level: 1,
+    level: 50,
     rarity: 5,
   },
   {
