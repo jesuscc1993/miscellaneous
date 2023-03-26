@@ -208,7 +208,7 @@ const characters = [
   },
   {
     id: 'Tighnari',
-    level: 50,
+    level: 80,
     rarity: 5,
   },
   {
