@@ -26,16 +26,18 @@ const initialize = () => {
 
           talentsList.forEach((talent) => {
             const talentContainer = jQuery(
-              `<a class="talent" href="${encodeURI(query)}${sanitizeTalent(
-                talent
-              )}"></a>`
+              `<a class="talent ${
+                talent.graduated ? 'graduated' : ''
+              }" href="${encodeURI(query)}${sanitizeTalent(talent.name)}"></a>`
             );
 
-            const talentImage = jQuery(`<img src="portraits/${talent}.jpg">`);
+            const talentImage = jQuery(
+              `<img src="portraits/${talent.name}.jpg">`
+            );
             talentContainer.append(talentImage);
 
             const talentText = jQuery(
-              `<div class="talent-text">${talent}</div>`
+              `<div class="talent-text">${talent.name}</div>`
             );
             talentContainer.append(talentText);
 

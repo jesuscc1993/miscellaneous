@@ -1,22 +1,94 @@
 {
   "JP": {
-    "Generation 0": ["AZKi", "Hoshimachi Suisei", "Roboco", "Sakura Miko", "Tokino Sora"],
-    "Generation 1": ["Akai Haato", "Aki Rosenthal", "Natsuiro Matsuri", "Shirakami Fubuki", "Yozora Mel"],
-    "Generation 2": ["Minato Aqua", "Murasaki Shion", "Nakiri Ayame", "Oozora Subaru", "Yuzuki Choco"],
-    "Gamers": ["Inugami Korone", "Nekomata Okayu", "Ookami Mio", "Shirakami Fubuki"],
-    "Generation 3": ["Houshou Marine", "Shiranui Flare", "Shirogane Noel", "Uruha Rushia", "Usada Pekora"],
-    "Generation 4": ["Amane Kanata", "Himemori Luna", "Kiryu Coco", "Tokoyami Towa", "Tsunomaki Watame"],
-    "Generation 5": ["Momosuzu Nene", "Omaru Polka", "Shishiro Botan", "Yukihana Lamy"],
-    "Generation 6": ["Hakui Koyori", "Kazama Iroha", "Laplus Darkness", "Sakamata Chloe", "Takane Lui"]
+    "Generation 0": [
+      { "name": "AZKi" },
+      { "name": "Hoshimachi Suisei" },
+      { "name": "Roboco" },
+      { "name": "Sakura Miko" },
+      { "name": "Tokino Sora" }
+    ],
+    "Generation 1": [
+      { "name": "Akai Haato" },
+      { "name": "Aki Rosenthal" },
+      { "name": "Natsuiro Matsuri" },
+      { "name": "Shirakami Fubuki" },
+      { "name": "Yozora Mel" }
+    ],
+    "Generation 2": [
+      { "name": "Minato Aqua" },
+      { "name": "Murasaki Shion" },
+      { "name": "Nakiri Ayame" },
+      { "name": "Oozora Subaru" },
+      { "name": "Yuzuki Choco" }
+    ],
+    "Gamers": [
+      { "name": "Inugami Korone" },
+      { "name": "Nekomata Okayu" },
+      { "name": "Ookami Mio" },
+      { "name": "Shirakami Fubuki" }
+    ],
+    "Generation 3": [
+      { "name": "Houshou Marine" },
+      { "name": "Shiranui Flare" },
+      { "name": "Shirogane Noel" },
+      { "name": "Uruha Rushia", "graduated": true },
+      { "name": "Usada Pekora" }
+    ],
+    "Generation 4": [
+      { "name": "Amane Kanata" },
+      { "name": "Himemori Luna" },
+      { "name": "Kiryu Coco", "graduated": true },
+      { "name": "Tokoyami Towa" },
+      { "name": "Tsunomaki Watame" }
+    ],
+    "Generation 5": [
+      { "name": "Momosuzu Nene" },
+      { "name": "Omaru Polka" },
+      { "name": "Shishiro Botan" },
+      { "name": "Yukihana Lamy" }
+    ],
+    "Generation 6": [
+      { "name": "Hakui Koyori" },
+      { "name": "Kazama Iroha" },
+      { "name": "Laplus Darkness" },
+      { "name": "Sakamata Chloe" },
+      { "name": "Takane Lui" }
+    ]
   },
   "ID": {
-    "Generation 1": ["Airani Iofifteen", "Ayunda Risu", "Moona Hoshinova"],
-    "Generation 2": ["Anya Melfissa", "Kureiji Ollie", "Pavolia Reine"],
-    "Generation 3": ["Kaela Kovalskia", "Kobo Kanaeru", "Vestia Zeta"]
+    "Generation 1": [
+      { "name": "Airani Iofifteen" },
+      { "name": "Ayunda Risu" },
+      { "name": "Moona Hoshinova" }
+    ],
+    "Generation 2": [
+      { "name": "Anya Melfissa" },
+      { "name": "Kureiji Ollie" },
+      { "name": "Pavolia Reine" }
+    ],
+    "Generation 3": [
+      { "name": "Kaela Kovalskia" },
+      { "name": "Kobo Kanaeru" },
+      { "name": "Vestia Zeta" }
+    ]
   },
   "EN": {
-    "Generation 1": ["Gawr Gura", "Mori Calliope", "Ninomae Ina'nis", "Takanashi Kiara", "Watson Amelia"],
-    "Project: HOPE": ["IRyS"],
-    "Generation 2": ["Ceres Fauna", "Hakos Baelz", "Nanashi Mumei", "Ouro Kronii", "Tsukumo Sana"]
+    "Generation 1": [
+      { "name": "Gawr Gura" },
+      { "name": "Mori Calliope" },
+      { "name": "Ninomae Ina'nis" },
+      { "name": "Takanashi Kiara" },
+      { "name": "Watson Amelia" }
+    ],
+    "Project: HOPE": [
+      { "name": "IRyS" }
+    ],
+    "Generation 2": [
+      { "name": "Ceres Fauna" },
+      { "name": "Hakos Baelz" },
+      { "name": "Nanashi Mumei" },
+      { "name": "Ouro Kronii" },
+      { "name": "Tsukumo Sana", "graduated": true }
+    ]
   }
 }

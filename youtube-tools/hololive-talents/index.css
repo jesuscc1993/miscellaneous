@@ -26,16 +26,26 @@ a {
 
 .talent {
   background: transparent;
+  border-radius: 12px;
   color: var(--c-primary);
   display: inline-block;
   padding: 8px 8px 2px;
-  border-radius: 12px;
+  position: relative;
   transition: 0.15s;
 }
-
+.talent.graduated:after {
+  background: url(portraits/_graduation_hat.png);
+  content: '';
+  height: 96px;
+  position: absolute;
+  right: -24px;
+  top: -24px;
+  width: 96px;
+  z-index: 1;
+}
 .talent:hover {
-  color: var(--c-background);
   background: var(--c-primary);
+  color: var(--c-background);
 }
 
 .talent img {
