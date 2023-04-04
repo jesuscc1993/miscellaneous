@@ -5,30 +5,42 @@ const fetchJson = (url) => {
 };
 
 const initialize = () => {
-  fetchJson('talents.json').then((talentsMap) => {
+  fetchJson('assets/data/talents.json').then((talentsMap) => {
     const output = jQuery('#output');
 
     const talentsContainer = jQuery(`<div class="talents-container"></div>`);
+    const linksContainer = jQuery(`<div class="links-container"></div>`);
 
     Object.keys(talentsMap).forEach((countryKey) => {
       const countryMap = talentsMap[countryKey];
       const countryContainer = jQuery(
-        `<div class="talent-country"><h2>${countryKey}</h2></div>`
+        `<div class="talent-country"><h2 id="${countryKey}">${countryKey}</h2></div>`
       );
+      const countryLinksContainer = jQuery(`<span></span>`);
+
+      linksContainer.append(`
+        <a href="#${sanitizeSpaces(countryKey)}">${countryKey}</a> : 
+      `);
 
       Object.keys(countryMap)
         .reverse()
-        .forEach((groupKey) => {
+        .forEach((groupKey, i) => {
           const talentsList = countryMap[groupKey];
-          const groupContainer = jQuery(
-            `<div class="talent-group"><h3>${groupKey}</h3></div>`
-          );
+          const groupContainer = jQuery(`
+            <div class="talent-group">
+               <h3 id="${sanitizeSpaces(groupKey)}">${groupKey}</h3>
+            </div>
+          `);
+          countryLinksContainer.append(`
+            ${i > 0 ? ' | ' : ''}
+            <a href="#${sanitizeSpaces(groupKey)}">${groupKey}</a>
+          `);
 
           talentsList.forEach((talent) => {
             const talentContainer = jQuery(
               `<a class="talent ${
                 talent.graduated ? 'graduated' : ''
-              }" href="${encodeURI(query)}${sanitizeTalent(talent.name)}"></a>`
+              }" href="${encodeURI(query)}${sanitizeSpaces(talent.name)}"></a>`
             );
 
             const talentImage = jQuery(
@@ -45,15 +57,18 @@ const initialize = () => {
           });
 
           countryContainer.append(groupContainer);
+          linksContainer.append(countryLinksContainer);
         });
 
+      linksContainer.append('<br />');
       talentsContainer.append(countryContainer);
     });
 
+    output.append(linksContainer);
     output.append(talentsContainer);
   });
 };
 
-const sanitizeTalent = (talent) => talent.replace(/ /g, '+');
+const sanitizeSpaces = (talent) => talent.replace(/ /g, '+');
 
 initialize();

@@ -1,20 +1,20 @@
 {
   "JP": {
-    "Generation 0": [
+    "Gen 0": [
       { "name": "AZKi" },
       { "name": "Hoshimachi Suisei" },
       { "name": "Roboco" },
       { "name": "Sakura Miko" },
       { "name": "Tokino Sora" }
     ],
-    "Generation 1": [
+    "Gen 1": [
       { "name": "Akai Haato" },
       { "name": "Aki Rosenthal" },
       { "name": "Natsuiro Matsuri" },
       { "name": "Shirakami Fubuki" },
       { "name": "Yozora Mel" }
     ],
-    "Generation 2": [
+    "Gen 2": [
       { "name": "Minato Aqua" },
       { "name": "Murasaki Shion" },
       { "name": "Nakiri Ayame" },
@@ -27,27 +27,27 @@
       { "name": "Ookami Mio" },
       { "name": "Shirakami Fubuki" }
     ],
-    "Generation 3": [
+    "Gen 3": [
       { "name": "Houshou Marine" },
       { "name": "Shiranui Flare" },
       { "name": "Shirogane Noel" },
       { "name": "Uruha Rushia", "graduated": true },
       { "name": "Usada Pekora" }
     ],
-    "Generation 4": [
+    "Gen 4": [
       { "name": "Amane Kanata" },
       { "name": "Himemori Luna" },
       { "name": "Kiryu Coco", "graduated": true },
       { "name": "Tokoyami Towa" },
       { "name": "Tsunomaki Watame" }
     ],
-    "Generation 5": [
+    "Gen 5": [
       { "name": "Momosuzu Nene" },
       { "name": "Omaru Polka" },
       { "name": "Shishiro Botan" },
       { "name": "Yukihana Lamy" }
     ],
-    "Generation 6": [
+    "Gen 6": [
       { "name": "Hakui Koyori" },
       { "name": "Kazama Iroha" },
       { "name": "Laplus Darkness" },
@@ -56,34 +56,32 @@
     ]
   },
   "ID": {
-    "Generation 1": [
+    "Gen 1": [
       { "name": "Airani Iofifteen" },
       { "name": "Ayunda Risu" },
       { "name": "Moona Hoshinova" }
     ],
-    "Generation 2": [
+    "Gen 2": [
       { "name": "Anya Melfissa" },
       { "name": "Kureiji Ollie" },
       { "name": "Pavolia Reine" }
     ],
-    "Generation 3": [
+    "Gen 3": [
       { "name": "Kaela Kovalskia" },
       { "name": "Kobo Kanaeru" },
       { "name": "Vestia Zeta" }
     ]
   },
   "EN": {
-    "Generation 1": [
+    "Gen 1": [
       { "name": "Gawr Gura" },
       { "name": "Mori Calliope" },
       { "name": "Ninomae Ina'nis" },
       { "name": "Takanashi Kiara" },
       { "name": "Watson Amelia" }
     ],
-    "Project: HOPE": [
-      { "name": "IRyS" }
-    ],
-    "Generation 2": [
+    "Project: HOPE": [{ "name": "IRyS" }],
+    "Gen 2": [
       { "name": "Ceres Fauna" },
       { "name": "Hakos Baelz" },
       { "name": "Nanashi Mumei" },
