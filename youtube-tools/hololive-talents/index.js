@@ -32,7 +32,7 @@ const initialize = () => {
             );
 
             const talentImage = jQuery(
-              `<img src="portraits/${talent.name}.jpg">`
+              `<img src="assets/images/portraits/${talent.name}.jpg">`
             );
             talentContainer.append(talentImage);
 

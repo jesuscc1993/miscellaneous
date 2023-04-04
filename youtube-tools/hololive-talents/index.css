@@ -34,7 +34,7 @@ a {
   transition: 0.15s;
 }
 .talent.graduated:after {
-  background: url(portraits/_graduation_hat.png);
+  background: url(assets/images/graduation_hat.png);
   content: '';
   height: 96px;
   position: absolute;
