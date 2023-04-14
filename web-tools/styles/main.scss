@@ -13,7 +13,7 @@ html {
   --cr-card-border-radius: 8px;
   --cr-disabled-opacity: 0.38;
   --cr-elevation-2: #0000004d 0 1px 2px 0, #00000026 0 2px 6px 2px;
-  --cr-input-background-color: rgba(0, 0, 0, 0.3);
+  --cr-input-background-color: #0000004d;
   --cr-input-border-radius: 4px;
   --cr-readonly-opacity: 0.66;
   --cr-section-padding: 20px;
@@ -50,9 +50,8 @@ input {
 input,
 textarea {
   background-color: var(--cr-input-background-color);
-  border-bottom: solid transparent;
+  border: 2px solid transparent;
   border-radius: var(--cr-input-border-radius);
-  border-width: 0 0 2px;
   caret-color: var(--google-blue-300);
   color: var(--google-grey-200);
   font-family: monospace;
@@ -61,7 +60,7 @@ textarea {
 
   &:not([readonly]) {
     &:focus {
-      border-color: var(--google-blue-300);
+      border-bottom-color: var(--google-blue-300);
     }
   }
   &[readonly] {
@@ -98,6 +97,30 @@ textarea {
 }
 .page-header img {
   margin-right: 12px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar,
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+::-webkit-resizer {
+  border: 8px solid transparent;
+  border-right-color: #444;
+  border-bottom-color: #444;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 8px;
+  border: 3px solid #1d1d1f;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+  border-width: 2px;
 }
 
 /* site */
@@ -177,7 +200,7 @@ footer {
   column-gap: var(--input-spacing);
 
   &:not(:last-child) {
-    margin-bottom: $content-margin / 2;
+    margin-bottom: $content-padding;
   }
 }
 
@@ -208,6 +231,7 @@ textarea {
 textarea {
   resize: vertical;
   white-space: pre;
+  border: 2px solid transparent;
 
   &[readonly] {
     cursor: text;

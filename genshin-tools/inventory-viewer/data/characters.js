@@ -238,7 +238,7 @@ const characters = [
     id: 'Xinyan',
     level: 50,
     rarity: 4,
-    uncap: 3,
+    uncap: 4,
   },
   {
     id: 'Yaoyao',
