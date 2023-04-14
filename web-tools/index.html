@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>Web Tools</title>
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
@@ -26,7 +27,6 @@
         </ul>
       </div>
     </div>
-  </div>
 
     <div class="content-wrapper">
       <!-- JSON sorter -->
@@ -43,7 +43,7 @@
                 placeholder="Unordered JSON"
                 rows="8"
                 title="Unordered JSON"
-                onfocusout="sortJson()"
+                onblur="sortJson()"
               ></textarea>
             </div>
             <div class="flex1">
@@ -84,7 +84,6 @@
               placeholder="Input string"
               rows="1"
               title="Input string"
-              type="text"
             ></textarea>
           </div>
 
@@ -94,7 +93,6 @@
                 id="regexpInput"
                 placeholder="Regex expression"
                 title="Regex expression"
-                type="text"
                 onkeyup="applyRegexReplacement()"
               />
             </span>
@@ -127,7 +125,6 @@
               readonly
               rows="1"
               title="Output string"
-              type="text"
             ></textarea>
           </div>
         </div>
@@ -220,7 +217,8 @@
       <div id="stringBuilder" class="card">
         <div class="card-header">
           <span class="card-title">
-            String builder<small>&nbsp;(for Java, mostly)</small>
+            String builder&nbsp;
+            <small>(for Java, mostly)</small>
           </span>
 
           <div>
@@ -241,7 +239,7 @@
                 placeholder="Non-string input"
                 rows="8"
                 title="Non-string input"
-                onfocusout="buildString()"
+                onblur="buildString()"
               ></textarea>
             </div>
             <div class="flex1">
@@ -272,7 +270,8 @@
       <div id="inlineListSorter" class="card">
         <div class="card-header">
           <span class="card-title">
-            List sorter<small>&nbsp;(inline; splits by comma)</small>
+            List sorter&nbsp;
+            <small>(inline; splits by comma)</small>
           </span>
 
           <div>
@@ -294,7 +293,7 @@
               placeholder="Unordered inline list"
               rows="4"
               title="Unordered inline list"
-              onfocusout="sortInlineList()"
+              onblur="sortInlineList()"
             ></textarea>
           </div>
           <div class="flex">
@@ -324,7 +323,8 @@
       <div id="multilineListSorter" class="card">
         <div class="card-header">
           <span class="card-title">
-            List sorter<small>&nbsp;(multiline; splits by newline)</small>
+            List sorter&nbsp;
+            <small>(multiline; splits by newline)</small>
           </span>
 
           <div>
@@ -347,7 +347,7 @@
                 placeholder="Unordered multiline list"
                 rows="8"
                 title="Unordered multiline list"
-                onfocusout="sortMultilineList()"
+                onblur="sortMultilineList()"
               ></textarea>
             </div>
             <div class="flex1">
@@ -378,8 +378,8 @@
       <div id="tableToJson" class="card">
         <div class="card-header">
           <span class="card-title">
-            Markdown / JIRA table to JSON
-            <small>&nbsp;(copy rows only; do not copy headers)</small>
+            Markdown / JIRA table to JSON&nbsp;
+            <small>(copy rows only; do not copy headers)</small>
           </span>
         </div>
 
@@ -391,7 +391,7 @@
                 placeholder="Table"
                 rows="8"
                 title="Table"
-                onfocusout="tableToJson()"
+                onblur="tableToJson()"
               ></textarea>
             </div>
             <div class="flex1">
@@ -422,9 +422,8 @@
       <div id="textCaseTransformer" class="card">
         <div class="card-header">
           <span class="card-title">
-            Text case transformer<small
-              >&nbsp;(type into any of the inputs)</small
-            >
+            Text case transformer&nbsp;
+            <small>(type into any of the inputs)</small>
           </span>
         </div>
 
@@ -435,7 +434,7 @@
               placeholder="Sentence case"
               title="Sentence case"
               type="text"
-              onfocusout="transformFromSentenceCase()"
+              onblur="transformFromSentenceCase()"
             />
           </div>
           <div class="flex">
@@ -444,7 +443,7 @@
               placeholder="Capital case"
               title="Capital case"
               type="text"
-              onfocusout="transformFromCapitalCase()"
+              onblur="transformFromCapitalCase()"
             />
           </div>
           <div class="flex">
@@ -453,7 +452,7 @@
               placeholder="Lowercase"
               title="Lowercase"
               type="text"
-              onfocusout="transformFromLowercase()"
+              onblur="transformFromLowercase()"
             />
           </div>
           <div class="flex">
@@ -462,7 +461,7 @@
               placeholder="Uppercase"
               title="Uppercase"
               type="text"
-              onfocusout="transformFromUppercase()"
+              onblur="transformFromUppercase()"
             />
           </div>
           <div class="flex">
@@ -471,7 +470,7 @@
               placeholder="Camel case"
               title="Camel case"
               type="text"
-              onfocusout="transformFromCamelCase()"
+              onblur="transformFromCamelCase()"
             />
           </div>
           <div class="flex">
@@ -480,7 +479,7 @@
               placeholder="Snake case"
               title="Snake case"
               type="text"
-              onfocusout="transformFromSnakeCase()"
+              onblur="transformFromSnakeCase()"
             />
           </div>
           <div class="flex">
@@ -489,7 +488,7 @@
               placeholder="Kebab case"
               title="Kebab case"
               type="text"
-              onfocusout="transformFromKebabCase()"
+              onblur="transformFromKebabCase()"
             />
           </div>
         </div>
@@ -518,10 +517,7 @@
       </div>
     </footer>
 
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-    ></script>
-    <script type="text/javascript" src="controller.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="controller.js"></script>
   </body>
 </html>

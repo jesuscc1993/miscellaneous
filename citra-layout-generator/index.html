@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Citra layout generator</title>
     <link rel="icon" href="https://github.com/favicon.ico" />
@@ -150,7 +150,7 @@
       const defaultBottomWidth = 320;
       const defaultBottomHeight = 240;
 
-      const generateLayout = e => {
+      const generateLayout = (e) => {
         const monitorWidth = parseInt(jQuery('#monitorWidth').val(), 10);
         const monitorHeight = parseInt(jQuery('#monitorHeight').val(), 10);
         // const topWidth = parseInt(jQuery('#topWidth').val(), 10);
@@ -218,7 +218,7 @@ custom_bottom_top=${monitorHeight - bottomHeight}
 custom_bottom_right\\default=false
 custom_bottom_right=${(monitorWidth - bottomWidth) / 2 + bottomWidth}
 custom_bottom_bottom\\default=false
-custom_bottom_bottom=${monitorHeight}`,
+custom_bottom_bottom=${monitorHeight}`
         );
         jQuery('#output-wrapper').removeAttr('hidden');
       };
