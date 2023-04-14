@@ -37,6 +37,12 @@ a:visited {
   color: var(--google-blue-300);
 }
 
+input {
+  &[type="checkbox"] {
+    filter: invert(.85) hue-rotate(180deg);
+  }
+}
+
 input,
 textarea {
   background-color: var(--cr-input-background-color);
