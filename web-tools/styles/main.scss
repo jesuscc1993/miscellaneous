@@ -2,6 +2,10 @@ $content-padding: 24px;
 $content-margin: 36px;
 $min-content-width: 1024px;
 
+* {
+  box-sizing: border-box;
+}
+
 /* chrome */
 html {
   --active-bg-color: #8bb5f829;
@@ -38,8 +42,8 @@ a:visited {
 }
 
 input {
-  &[type="checkbox"] {
-    filter: invert(.85) hue-rotate(180deg);
+  &[type='checkbox'] {
+    filter: invert(0.85) hue-rotate(180deg);
   }
 }
 
@@ -241,7 +245,6 @@ textarea {
 
 .card {
   max-width: 100%;
-  box-sizing: border-box;
   margin: $content-margin 0;
 
   // .card-header,
