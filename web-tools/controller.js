@@ -27,11 +27,6 @@ function replicateHeight(inputElement, outputElement) {
   outputElement.css({ height: inputElement.css('height') });
 }
 
-function resizeInput(element) {
-  element.css({ height: `auto` });
-  element.css({ height: `${$('#sortedJsonOutput')[0].scrollHeight}px` });
-}
-
 function splitSortAndJoin(inputString, delimiter) {
   return inputString.split(delimiter).sort().join(delimiter);
 }
@@ -63,7 +58,6 @@ let stringBuilderKeepLineBreaks = $('#stringBuilderKeepLineBreaks');
 
 function buildString() {
   stringBuilderOutput.val(getBuiltString(stringBuilderInput.val()));
-  resizeInput(stringBuilderOutput);
   replicateHeight(stringBuilderInput, stringBuilderOutput);
 }
 
@@ -127,7 +121,6 @@ let multilineListSorterDiscardDuplicates = $(
 function sortMultilineList() {
   const sortedLines = getSortedMultilineList(unsortedMultilineListInput.val());
   sortedMultilineListOutput.val(sortedLines);
-  resizeInput(sortedMultilineListOutput);
   replicateHeight(unsortedMultilineListInput, sortedMultilineListOutput);
 }
 
@@ -153,7 +146,7 @@ function sortJson() {
   let sortedJson = getSortedJson(unsortedJsonInput.val());
 
   sortedJsonOutput.val(sortedJson);
-  resizeInput(sortedJsonOutput);
+  replicateHeight(unsortedJsonInput, sortedJsonOutput);
 }
 
 function getSortedJson(inputString) {

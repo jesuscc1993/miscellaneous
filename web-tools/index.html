@@ -1,12 +1,6 @@
 <html>
   <head>
     <title>Web Tools</title>
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css"
-    />
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <link rel="icon" type="image/x-icon" href="res/favicon.png" />
   </head>
@@ -15,7 +9,11 @@
     <header>
       <div class="content-wrapper">
         <h1>Web Tools</h1>
+      </div>
+    </header>
 
+    <div class="border-bottom">
+      <div class="content-wrapper">
         <ul class="anchor-list">
           <li><a href="#jsonSorter"> JSON sorter</a></li>
           <li><a href="#regexReplacer"> Regex replacer</a></li>
@@ -27,18 +25,19 @@
           <li><a href="#textCaseTransformer"> Text case transformer</a></li>
         </ul>
       </div>
-    </header>
+    </div>
+  </div>
 
     <div class="content-wrapper">
       <!-- JSON sorter -->
       <div id="jsonSorter" class="card">
         <div class="card-header">
-          <h4 class="card-title">JSON sorter</h4>
+          <span class="card-title">JSON sorter</span>
         </div>
 
         <div class="card-content">
-          <div class="row-fluid">
-            <div class="span6">
+          <div class="flex">
+            <div class="flex1">
               <textarea
                 id="unsortedJsonInput"
                 placeholder="Unordered JSON"
@@ -47,7 +46,7 @@
                 onfocusout="sortJson()"
               ></textarea>
             </div>
-            <div class="span6">
+            <div class="flex1">
               <textarea
                 id="sortedJsonOutput"
                 placeholder="Ordered JSON"
@@ -60,7 +59,7 @@
         </div>
 
         <div class="card-footer">
-          <div class="row-fluid text-center">
+          <div class="center-contents">
             <button
               class="btn"
               onclick="clearInputs(['#unsortedJsonInput', '#sortedJsonOutput'])"
@@ -74,11 +73,11 @@
       <!-- Regex replacer -->
       <div id="regexReplacer" class="card">
         <div class="card-header">
-          <h4 class="card-title">Regex replacer</h4>
+          <span class="card-title">Regex replacer</span>
         </div>
 
         <div class="card-content">
-          <div class="row-fluid">
+          <div class="flex">
             <textarea
               id="regexReplacerInput"
               onkeyup="applyRegexReplacement()"
@@ -89,8 +88,8 @@
             ></textarea>
           </div>
 
-          <div class="row-fluid">
-            <span class="span6">
+          <div class="flex">
+            <span class="flex1">
               <input
                 id="regexpInput"
                 placeholder="Regex expression"
@@ -100,7 +99,7 @@
               />
             </span>
 
-            <span class="span6">
+            <span class="flex1">
               <input
                 id="regexpOptionsInput"
                 placeholder="Regex options (default = gm)"
@@ -111,7 +110,7 @@
             </span>
           </div>
 
-          <div class="row-fluid">
+          <div class="flex">
             <input
               id="regexReplacementInput"
               placeholder="Replacement"
@@ -121,7 +120,7 @@
             />
           </div>
 
-          <div class="row-fluid">
+          <div class="flex">
             <textarea
               id="regexReplacerOutput"
               placeholder="Output string"
@@ -134,7 +133,7 @@
         </div>
 
         <div class="card-footer">
-          <div class="row-fluid text-center">
+          <div class="center-contents">
             <button
               class="btn"
               onclick="clearInputs(['#regexReplacerInput', '#regexpInput', '#regexpOptionsInput', '#regexReplacementInput', '#regexReplacerOutput'])"
@@ -148,12 +147,12 @@
       <!-- Rule of three -->
       <div id="ruleOfThree" class="card">
         <div class="card-header">
-          <h4 class="card-title">Rule of three</h4>
+          <span class="card-title">Rule of three</span>
         </div>
 
         <div class="card-content">
-          <div class="row-fluid">
-            <span class="span5">
+          <div class="flex">
+            <span class="flex1">
               <input
                 id="ruleOfThreeAxInput"
                 class="text-center"
@@ -164,9 +163,9 @@
               />
             </span>
 
-            <span class="span2 text-center form-padded">=</span>
+            <span class="text-center form-padded">=</span>
 
-            <span class="span5">
+            <span class="flex1">
               <input
                 id="ruleOfThreeAyInput"
                 class="text-center"
@@ -177,8 +176,8 @@
               />
             </span>
           </div>
-          <div class="row-fluid">
-            <span class="span5">
+          <div class="flex">
+            <span class="flex1">
               <input
                 id="ruleOfThreeBxInput"
                 class="text-center"
@@ -189,9 +188,9 @@
               />
             </span>
 
-            <span class="span2 text-center form-padded">=</span>
+            <span class="text-center form-padded">=</span>
 
-            <span class="span5">
+            <span class="flex1">
               <input
                 id="ruleOfThreeByInput"
                 class="text-center"
@@ -206,7 +205,7 @@
         </div>
 
         <div class="card-footer">
-          <div class="row-fluid text-center">
+          <div class="center-contents">
             <button
               class="btn"
               onclick="clearInputs(['#ruleOfThreeAxInput', '#ruleOfThreeAyInput', '#ruleOfThreeBxInput', '#ruleOfThreeByInput'])"
@@ -220,9 +219,9 @@
       <!-- String builder -->
       <div id="stringBuilder" class="card">
         <div class="card-header">
-          <h4 class="card-title">
+          <span class="card-title">
             String builder<small>&nbsp;(for Java, mostly)</small>
-          </h4>
+          </span>
 
           <div>
             <label for="stringBuilderKeepLineBreaks"> Keep line breaks </label>
@@ -235,28 +234,30 @@
         </div>
 
         <div class="card-content">
-          <div class="row-fluid">
-            <textarea
-              id="stringBuilderInput"
-              placeholder="Non-string input"
-              rows="4"
-              title="Non-string input"
-              onfocusout="buildString()"
-            ></textarea>
-          </div>
-          <div class="row-fluid">
-            <textarea
-              id="stringBuilderOutput"
-              placeholder="String output"
-              readonly
-              rows="4"
-              title="String output"
-            ></textarea>
+          <div class="flex">
+            <div class="flex1">
+              <textarea
+                id="stringBuilderInput"
+                placeholder="Non-string input"
+                rows="8"
+                title="Non-string input"
+                onfocusout="buildString()"
+              ></textarea>
+            </div>
+            <div class="flex1">
+              <textarea
+                id="stringBuilderOutput"
+                placeholder="String output"
+                readonly
+                rows="8"
+                title="String output"
+              ></textarea>
+            </div>
           </div>
         </div>
 
         <div class="card-footer">
-          <div class="row-fluid text-center">
+          <div class="center-contents">
             <button
               class="btn"
               onclick="clearInputs(['#stringBuilderInput', '#stringBuilderOutput'])"
@@ -270,9 +271,9 @@
       <!-- List sorter (inline) -->
       <div id="inlineListSorter" class="card">
         <div class="card-header">
-          <h4 class="card-title">
+          <span class="card-title">
             List sorter<small>&nbsp;(inline; splits by comma)</small>
-          </h4>
+          </span>
 
           <div>
             <label for="inlineListSorterDiscardDuplicates">
@@ -287,7 +288,7 @@
         </div>
 
         <div class="card-content">
-          <div class="row-fluid">
+          <div class="flex">
             <textarea
               id="unsortedInlineListInput"
               placeholder="Unordered inline list"
@@ -296,7 +297,7 @@
               onfocusout="sortInlineList()"
             ></textarea>
           </div>
-          <div class="row-fluid">
+          <div class="flex">
             <textarea
               id="sortedInlineListOutput"
               placeholder="Ordered inline list"
@@ -308,7 +309,7 @@
         </div>
 
         <div class="card-footer">
-          <div class="row-fluid text-center">
+          <div class="center-contents">
             <button
               class="btn"
               onclick="clearInputs(['#unsortedInlineListInput', '#sortedInlineListOutput'])"
@@ -322,9 +323,9 @@
       <!-- List sorter (multiline) -->
       <div id="multilineListSorter" class="card">
         <div class="card-header">
-          <h4 class="card-title">
+          <span class="card-title">
             List sorter<small>&nbsp;(multiline; splits by newline)</small>
-          </h4>
+          </span>
 
           <div>
             <label for="multilineListSorterDiscardDuplicates">
@@ -339,8 +340,8 @@
         </div>
 
         <div class="card-content">
-          <div class="row-fluid">
-            <div class="span6">
+          <div class="flex">
+            <div class="flex1">
               <textarea
                 id="unsortedMultilineListInput"
                 placeholder="Unordered multiline list"
@@ -349,7 +350,7 @@
                 onfocusout="sortMultilineList()"
               ></textarea>
             </div>
-            <div class="span6">
+            <div class="flex1">
               <textarea
                 id="sortedMultilineListOutput"
                 placeholder="Ordered multiline list"
@@ -362,7 +363,7 @@
         </div>
 
         <div class="card-footer">
-          <div class="row-fluid text-center">
+          <div class="center-contents">
             <button
               class="btn"
               onclick="clearInputs(['#unsortedMultilineListInput', '#sortedMultilineListOutput'])"
@@ -376,15 +377,15 @@
       <!-- Markdown / JIRA table to JSON -->
       <div id="tableToJson" class="card">
         <div class="card-header">
-          <h4 class="card-title">
+          <span class="card-title">
             Markdown / JIRA table to JSON
             <small>&nbsp;(copy rows only; do not copy headers)</small>
-          </h4>
+          </span>
         </div>
 
         <div class="card-content">
-          <div class="row-fluid">
-            <div class="span6">
+          <div class="flex">
+            <div class="flex1">
               <textarea
                 id="tableToJsonInput"
                 placeholder="Table"
@@ -393,7 +394,7 @@
                 onfocusout="tableToJson()"
               ></textarea>
             </div>
-            <div class="span6">
+            <div class="flex1">
               <textarea
                 id="tableToJsonOutput"
                 placeholder="JSON"
@@ -406,7 +407,7 @@
         </div>
 
         <div class="card-footer">
-          <div class="row-fluid text-center">
+          <div class="center-contents">
             <button
               class="btn"
               onclick="clearInputs(['#tableToJsonInput', '#tableToJsonOutput'])"
@@ -420,15 +421,15 @@
       <!-- Text case transformer -->
       <div id="textCaseTransformer" class="card">
         <div class="card-header">
-          <h4 class="card-title">
+          <span class="card-title">
             Text case transformer<small
               >&nbsp;(type into any of the inputs)</small
             >
-          </h4>
+          </span>
         </div>
 
         <div class="card-content">
-          <div class="row-fluid">
+          <div class="flex">
             <input
               id="sentenceCaseInput"
               placeholder="Sentence case"
@@ -437,7 +438,7 @@
               onfocusout="transformFromSentenceCase()"
             />
           </div>
-          <div class="row-fluid">
+          <div class="flex">
             <input
               id="capitalCaseInput"
               placeholder="Capital case"
@@ -446,7 +447,7 @@
               onfocusout="transformFromCapitalCase()"
             />
           </div>
-          <div class="row-fluid">
+          <div class="flex">
             <input
               id="lowercaseInput"
               placeholder="Lowercase"
@@ -455,7 +456,7 @@
               onfocusout="transformFromLowercase()"
             />
           </div>
-          <div class="row-fluid">
+          <div class="flex">
             <input
               id="uppercaseInput"
               placeholder="Uppercase"
@@ -464,7 +465,7 @@
               onfocusout="transformFromUppercase()"
             />
           </div>
-          <div class="row-fluid">
+          <div class="flex">
             <input
               id="camelCaseInput"
               placeholder="Camel case"
@@ -473,7 +474,7 @@
               onfocusout="transformFromCamelCase()"
             />
           </div>
-          <div class="row-fluid">
+          <div class="flex">
             <input
               id="snakeCaseInput"
               placeholder="Snake case"
@@ -482,7 +483,7 @@
               onfocusout="transformFromSnakeCase()"
             />
           </div>
-          <div class="row-fluid">
+          <div class="flex">
             <input
               id="kebabCaseInput"
               placeholder="Kebab case"
@@ -494,7 +495,7 @@
         </div>
 
         <div class="card-footer">
-          <div class="row-fluid text-center">
+          <div class="center-contents">
             <button
               class="btn"
               onclick="clearInputs(['#sentenceCaseInput', '#capitalCaseInput', '#lowercaseInput', '#uppercaseInput', '#snakeCaseInput', '#camelCaseInput', '#kebabCaseInput'])"
@@ -508,18 +509,15 @@
 
     <footer>
       <div class="content-wrapper">
-        <p>
+        <div>
           <a href="https://github.com/jesuscc1993" target="_blank"
-            >@jesuscc1993</a
-          >; CC BY-NC-SA 4.0
-        </p>
+            >jesuscc1993</a
+          >
+        </div>
+        <p>CC BY-NC-SA 4.0</p>
       </div>
     </footer>
 
-    <script
-      type="text/javascript"
-      src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"
-    ></script>
     <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-3.2.1.min.js"
