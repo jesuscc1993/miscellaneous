@@ -2,7 +2,7 @@ $content-padding: 24px;
 $content-margin: 36px;
 $min-content-width: 1024px;
 
-$box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+$box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 
 body {
   margin: 0;
@@ -16,7 +16,7 @@ body {
 
   header,
   footer {
-  	text-align: center;
+    text-align: center;
     padding: 8px 0;
   }
 
@@ -30,12 +30,12 @@ body {
   }
 
   header {
-  	margin-bottom: $content-margin;
+    margin-bottom: $content-margin;
 
-  	h1 {
-  		margin: 0;
+    h1 {
+      margin: 0;
       padding: 8px 0;
-  	}
+    }
   }
 
   footer {
@@ -64,7 +64,7 @@ body {
       }
 
       a {
-      	padding: 0 8px;
+        padding: 0 8px;
       }
     }
   }
@@ -106,18 +106,18 @@ body {
     outline: none;
     border-radius: 2px;
     border-color: lightgray;
-    transition: .2s;
+    transition: 0.2s;
 
     &:not([readonly]) {
-      background: rgba(black, .025) !important;
+      background: rgba(black, 0.025) !important;
 
       &:focus {
-	      box-shadow: 0 1px 2px rgba(black, .25);
-	      border-color: #CCC;
-	    }
+        box-shadow: 0 1px 2px rgba(black, 0.25);
+        border-color: #ccc;
+      }
     }
     &[readonly] {
-      background: rgba(black, .05) !important;
+      background: rgba(black, 0.05) !important;
       cursor: text;
     }
   }
@@ -137,6 +137,10 @@ body {
 }
 
 /* theme */
+
+.btn {
+  padding: 4px 20px;
+}
 
 .card {
   background: white;
@@ -164,7 +168,7 @@ body {
     }
 
     + .card-content {
-      border-top: 1px solid rgba(black, .15);
+      border-top: 1px solid rgba(black, 0.15);
     }
   }
 
@@ -172,12 +176,11 @@ body {
     padding: $content-padding;
 
     & + .card-footer {
-      border-top: 1px solid rgba(black, .15);
+      border-top: 1px solid rgba(black, 0.15);
     }
   }
 
   .card-footer {
     padding: $content-padding * 2/3 $content-padding;
   }
-
 }

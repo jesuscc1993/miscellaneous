@@ -17,32 +17,206 @@
         <h1>Web Tools</h1>
 
         <ul class="anchor-list">
-          <li>
-            <a href="#stringBuilder"> String builder</a>
-          </li>
-          <li>
-            <a href="#inlineListSorter"> Inline list sorter</a>
-          </li>
-          <li>
-            <a href="#multilineListSorter"> Multiline list sorter</a>
-          </li>
-          <li>
-            <a href="#jsonSorter"> JSON sorter</a>
-          </li>
-          <li>
-            <a href="#textCaseTransformer"> Text case transformer</a>
-          </li>
-          <li>
-            <a href="#ruleOfThree"> Rule of three</a>
-          </li>
-          <li>
-            <a href="#regexReplacer"> Regex replacer</a>
-          </li>
+          <li><a href="#jsonSorter"> JSON sorter</a></li>
+          <li><a href="#regexReplacer"> Regex replacer</a></li>
+          <li><a href="#ruleOfThree"> Rule of three</a></li>
+          <li><a href="#stringBuilder"> String builder</a></li>
+          <li><a href="#inlineListSorter"> List sorter (inline)</a></li>
+          <li><a href="#multilineListSorter"> List sorter (multiline)</a></li>
+          <li><a href="#tableToJson"> Markdown / JIRA table to JSON</a></li>
+          <li><a href="#textCaseTransformer"> Text case transformer</a></li>
         </ul>
       </div>
     </header>
 
     <div class="content-wrapper">
+      <!-- JSON sorter -->
+      <div id="jsonSorter" class="card">
+        <div class="card-header">
+          <h4 class="card-title">JSON sorter</h4>
+        </div>
+
+        <div class="card-content">
+          <div class="row-fluid">
+            <div class="span6">
+              <textarea
+                id="unsortedJsonInput"
+                placeholder="Unordered JSON"
+                rows="8"
+                title="Unordered JSON"
+                onfocusout="sortJson()"
+              ></textarea>
+            </div>
+            <div class="span6">
+              <textarea
+                id="sortedJsonOutput"
+                placeholder="Ordered JSON"
+                readonly
+                rows="8"
+                title="Ordered JSON"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="row-fluid text-center">
+            <button
+              class="btn"
+              onclick="clearInputs(['#unsortedJsonInput', '#sortedJsonOutput'])"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regex replacer -->
+      <div id="regexReplacer" class="card">
+        <div class="card-header">
+          <h4 class="card-title">Regex replacer</h4>
+        </div>
+
+        <div class="card-content">
+          <div class="row-fluid">
+            <textarea
+              id="regexReplacerInput"
+              onkeyup="applyRegexReplacement()"
+              placeholder="Input string"
+              rows="1"
+              title="Input string"
+              type="text"
+            ></textarea>
+          </div>
+
+          <div class="row-fluid">
+            <span class="span6">
+              <input
+                id="regexpInput"
+                placeholder="Regex expression"
+                title="Regex expression"
+                type="text"
+                onkeyup="applyRegexReplacement()"
+              />
+            </span>
+
+            <span class="span6">
+              <input
+                id="regexpOptionsInput"
+                placeholder="Regex options (default = gm)"
+                title="Regex options"
+                type="text"
+                onkeyup="applyRegexReplacement()"
+              />
+            </span>
+          </div>
+
+          <div class="row-fluid">
+            <input
+              id="regexReplacementInput"
+              placeholder="Replacement"
+              title="Replacement"
+              type="text"
+              onkeyup="applyRegexReplacement()"
+            />
+          </div>
+
+          <div class="row-fluid">
+            <textarea
+              id="regexReplacerOutput"
+              placeholder="Output string"
+              readonly
+              rows="1"
+              title="Output string"
+              type="text"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="row-fluid text-center">
+            <button
+              class="btn"
+              onclick="clearInputs(['#regexReplacerInput', '#regexpInput', '#regexpOptionsInput', '#regexReplacementInput', '#regexReplacerOutput'])"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rule of three -->
+      <div id="ruleOfThree" class="card">
+        <div class="card-header">
+          <h4 class="card-title">Rule of three</h4>
+        </div>
+
+        <div class="card-content">
+          <div class="row-fluid">
+            <span class="span5">
+              <input
+                id="ruleOfThreeAxInput"
+                class="text-center"
+                placeholder="a * x"
+                title="a * x"
+                type="number"
+                onkeyup="calculateRuleOfThree()"
+              />
+            </span>
+
+            <span class="span2 text-center form-padded"> = </span>
+
+            <span class="span5">
+              <input
+                id="ruleOfThreeAyInput"
+                class="text-center"
+                placeholder="a * y"
+                title="a * y"
+                type="number"
+                onkeyup="calculateRuleOfThree()"
+              />
+            </span>
+          </div>
+          <div class="row-fluid">
+            <span class="span5">
+              <input
+                id="ruleOfThreeBxInput"
+                class="text-center"
+                placeholder="b * x"
+                title="b * x"
+                type="number"
+                onkeyup="calculateRuleOfThree()"
+              />
+            </span>
+
+            <span class="span2 text-center form-padded">=</span>
+
+            <span class="span5">
+              <input
+                id="ruleOfThreeByInput"
+                class="text-center"
+                placeholder="b * y"
+                title="b * y"
+                type="number"
+                onkeyup="calculateRuleOfThree()"
+                readonly
+              />
+            </span>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="row-fluid text-center">
+            <button
+              class="btn"
+              onclick="clearInputs(['#ruleOfThreeAxInput', '#ruleOfThreeAyInput', '#ruleOfThreeBxInput', '#ruleOfThreeByInput'])"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- String builder -->
       <div id="stringBuilder" class="card">
         <div class="card-header">
@@ -93,11 +267,11 @@
         </div>
       </div>
 
-      <!-- Inline list sorter -->
+      <!-- List sorter (inline) -->
       <div id="inlineListSorter" class="card">
         <div class="card-header">
           <h4 class="card-title">
-            Inline list sorter<small>&nbsp;(splits by comma)</small>
+            List sorter<small>&nbsp;(inline; splits by comma)</small>
           </h4>
 
           <div>
@@ -145,11 +319,11 @@
         </div>
       </div>
 
-      <!-- Multiline list sorter -->
+      <!-- List sorter (multiline) -->
       <div id="multilineListSorter" class="card">
         <div class="card-header">
           <h4 class="card-title">
-            Multiline list sorter<small>&nbsp;(splits by newline)</small>
+            List sorter<small>&nbsp;(multiline; splits by newline)</small>
           </h4>
 
           <div>
@@ -199,30 +373,33 @@
         </div>
       </div>
 
-      <!-- JSON sorter -->
-      <div id="jsonSorter" class="card">
+      <!-- Markdown / JIRA table to JSON -->
+      <div id="tableToJson" class="card">
         <div class="card-header">
-          <h4 class="card-title">JSON sorter</h4>
+          <h4 class="card-title">
+            Markdown / JIRA table to JSON
+            <small>&nbsp;(copy rows only; do not copy headers)</small>
+          </h4>
         </div>
 
         <div class="card-content">
           <div class="row-fluid">
             <div class="span6">
               <textarea
-                id="unsortedJsonInput"
-                placeholder="Unordered JSON"
+                id="tableToJsonInput"
+                placeholder="Table"
                 rows="8"
-                title="Unordered JSON"
-                onfocusout="sortJson()"
+                title="Table"
+                onfocusout="tableToJson()"
               ></textarea>
             </div>
             <div class="span6">
               <textarea
-                id="sortedJsonOutput"
-                placeholder="Ordered JSON"
+                id="tableToJsonOutput"
+                placeholder="JSON"
                 readonly
                 rows="8"
-                title="Ordered JSON"
+                title="JSON"
               ></textarea>
             </div>
           </div>
@@ -232,7 +409,7 @@
           <div class="row-fluid text-center">
             <button
               class="btn"
-              onclick="clearInputs(['#unsortedJsonInput', '#sortedJsonOutput'])"
+              onclick="clearInputs(['#tableToJsonInput', '#tableToJsonOutput'])"
             >
               Clear
             </button>
@@ -321,152 +498,6 @@
             <button
               class="btn"
               onclick="clearInputs(['#sentenceCaseInput', '#capitalCaseInput', '#lowercaseInput', '#uppercaseInput', '#snakeCaseInput', '#camelCaseInput', '#kebabCaseInput'])"
-            >
-              Clear
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Rule of three -->
-      <div id="ruleOfThree" class="card">
-        <div class="card-header">
-          <h4 class="card-title">Rule of three</h4>
-        </div>
-
-        <div class="card-content">
-          <div class="row-fluid">
-            <span class="span5">
-              <input
-                id="ruleOfThreeAxInput"
-                class="text-center"
-                placeholder="a * x"
-                title="a * x"
-                type="number"
-                onkeyup="calculateRuleOfThree()"
-              />
-            </span>
-
-            <span class="span2 text-center form-padded"> = </span>
-
-            <span class="span5">
-              <input
-                id="ruleOfThreeAyInput"
-                class="text-center"
-                placeholder="a * y"
-                title="a * y"
-                type="number"
-                onkeyup="calculateRuleOfThree()"
-              />
-            </span>
-          </div>
-          <div class="row-fluid">
-            <span class="span5">
-              <input
-                id="ruleOfThreeBxInput"
-                class="text-center"
-                placeholder="b * x"
-                title="b * x"
-                type="number"
-                onkeyup="calculateRuleOfThree()"
-              />
-            </span>
-
-            <span class="span2 text-center form-padded">=</span>
-
-            <span class="span5">
-              <input
-                id="ruleOfThreeByInput"
-                class="text-center"
-                placeholder="b * y"
-                title="b * y"
-                type="number"
-                onkeyup="calculateRuleOfThree()"
-                readonly
-              />
-            </span>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="row-fluid text-center">
-            <button
-              class="btn"
-              onclick="clearInputs(['#ruleOfThreeAxInput', '#ruleOfThreeAyInput', '#ruleOfThreeBxInput', '#ruleOfThreeByInput'])"
-            >
-              Clear
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Regex replacer -->
-      <div id="regexReplacer" class="card">
-        <div class="card-header">
-          <h4 class="card-title">Regex replacer</h4>
-        </div>
-
-        <div class="card-content">
-          <div class="row-fluid">
-            <textarea
-              id="regexReplacerInput"
-              onkeyup="applyRegexReplacement()"
-              placeholder="Input string"
-              rows="1"
-              title="Input string"
-              type="text"
-            ></textarea>
-          </div>
-
-          <div class="row-fluid">
-            <span class="span6">
-              <input
-                id="regexpInput"
-                placeholder="Regex expression"
-                title="Regex expression"
-                type="text"
-                onkeyup="applyRegexReplacement()"
-              />
-            </span>
-
-            <span class="span6">
-              <input
-                id="regexpOptionsInput"
-                placeholder="Regex options (default = gm)"
-                title="Regex options"
-                type="text"
-                onkeyup="applyRegexReplacement()"
-              />
-            </span>
-          </div>
-
-          <div class="row-fluid">
-            <input
-              id="regexReplacementInput"
-              placeholder="Replacement"
-              title="Replacement"
-              type="text"
-              onkeyup="applyRegexReplacement()"
-            />
-          </div>
-
-          <div class="row-fluid">
-            <textarea
-              id="regexReplacerOutput"
-              placeholder="Output string"
-              readonly
-              rows="1"
-              title="Output string"
-              type="text"
-            ></textarea>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="row-fluid text-center">
-            <button
-              class="btn"
-              onclick="clearInputs(['#regexReplacerInput', '#regexpInput', '#regexpOptionsInput', '#regexReplacementInput', '#regexReplacerOutput'])"
             >
               Clear
             </button>

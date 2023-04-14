@@ -322,6 +322,25 @@ function replaceByRegex(string, regexp, replacement) {
   return string.replace(regexp, replacement);
 }
 
+// ==================================================================================================================
+// Markdown / JIRA table to JSON
+// ==================================================================================================================
+
+let tableToJsonInput = $('#tableToJsonInput');
+let tableToJsonOutput = $('#tableToJsonOutput');
+
+function tableToJson() {
+  tableToJsonOutput.val(replaceTableWithJson(tableToJsonInput.val()));
+  replicateHeight(tableToJsonInput, tableToJsonOutput);
+}
+
+function replaceTableWithJson(string) {
+  return string
+    .replace(/^\|/gm, '"')
+    .replace(/\|$/gm, '",')
+    .replace(/\s*\|\s*/gm, '": "');
+}
+
 // ------------------------------------------------------------------------------------------------------------------
 // Generic
 // ------------------------------------------------------------------------------------------------------------------
