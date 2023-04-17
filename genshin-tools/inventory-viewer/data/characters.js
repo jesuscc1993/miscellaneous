@@ -51,7 +51,7 @@ const characters = [
     id: 'Diluc',
     level: 90,
     rarity: 5,
-    uncap: 2,
+    uncap: 3,
   },
   {
     id: 'Diona',
