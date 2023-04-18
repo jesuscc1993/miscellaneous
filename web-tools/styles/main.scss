@@ -200,7 +200,7 @@ footer {
   column-gap: var(--input-spacing);
 
   &:not(:last-child) {
-    margin-bottom: $content-padding;
+    margin-bottom: var(--input-spacing);
   }
 }
 
