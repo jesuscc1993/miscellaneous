@@ -108,7 +108,7 @@ const characters = [
   {
     fullName: 'Kaedehara Kazuha',
     id: 'Kazuha',
-    level: 80,
+    level: 90,
     rarity: 5,
   },
   {
@@ -151,6 +151,12 @@ const characters = [
     name: 'Tabibito',
     rarity: 5,
     uncap: 6,
+  },
+  {
+    id: 'Shenhe',
+    level: 90,
+    name: 'Shenhe',
+    rarity: 5
   },
   {
     id: 'Qin',
@@ -219,7 +225,7 @@ const characters = [
   },
   {
     id: 'Venti',
-    level: 80,
+    level: 90,
     rarity: 5,
   },
   {
