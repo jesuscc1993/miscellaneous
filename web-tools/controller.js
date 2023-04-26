@@ -1,50 +1,54 @@
 // Constants
-let LIST_SEPARATOR = ', ';
-let LINE_DELIMITER = '\n';
+const LIST_SEPARATOR = /,\s*/;
+const LINE_DELIMITER = /\n/;
 
 // ==================================================================================================================
 // Miscellaneous
 // ==================================================================================================================
 
 if (typeof autosize === 'function') {
-  autosize($('textarea'));
+  autosize(jQuery('textarea'));
 }
 
-$(document).ready(() => {
-  $('body').fadeIn();
+jQuery(document).ready(() => {
+  jQuery('body').fadeIn();
 });
 
-function clearInputs(inputSelectors) {
+const clearInputs = (inputSelectors) => {
   if (inputSelectors) {
-    const inputs = $(inputSelectors.join(','));
+    const inputs = jQuery(inputSelectors.join(','));
     if (inputs.length) {
       inputs.val('');
     }
   }
-}
+};
 
-function replicateHeight(inputElement, outputElement) {
+const replicateHeight = (inputElement, outputElement) => {
   outputElement.css({ height: inputElement.css('height') });
-}
+};
 
-function splitSortAndJoin(inputString, delimiter) {
+const splitSortAndJoin = (inputString, delimiter) => {
   return inputString.split(delimiter).sort().join(delimiter);
-}
+};
 
-function stringify(json) {
+const stringify = (json) => {
   return JSON.stringify(json, undefined, 2);
-}
+};
 
 // ==================================================================================================================
 // Section anchors
 // ==================================================================================================================
 
-$('.anchor-list a').each((i, anchor) => {
-  $(anchor).click((event) => {
+jQuery('.anchor-list a').each((i, anchor) => {
+  jQuery(anchor).click((event) => {
     event.preventDefault();
-    let target = $(anchor).attr('href');
+
+    const target = jQuery(anchor).attr('href');
+    jQuery(target)
+      .get(0)
+      .scrollIntoView({ behavior: 'smooth', block: 'start' });
+
     window.history.pushState('', '', target);
-    $(target).get(0).scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
@@ -52,16 +56,20 @@ $('.anchor-list a').each((i, anchor) => {
 // String builder
 // ==================================================================================================================
 
-let stringBuilderInput = $('#stringBuilderInput');
-let stringBuilderOutput = $('#stringBuilderOutput');
-let stringBuilderKeepLineBreaks = $('#stringBuilderKeepLineBreaks');
+const stringBuilderInput = jQuery('#stringBuilderInput');
+const stringBuilderOutput = jQuery('#stringBuilderOutput');
+const stringBuilderKeepLineBreaks = jQuery('#stringBuilderKeepLineBreaks');
 
-function buildString() {
-  stringBuilderOutput.val(getBuiltString(stringBuilderInput.val()));
+const buildString = () => {
+  const stringInput = stringBuilderInput.val();
+
+  const builtString = getBuiltString(stringInput);
+  stringBuilderOutput.val(builtString);
+
   replicateHeight(stringBuilderInput, stringBuilderOutput);
-}
+};
 
-function getBuiltString(input) {
+const getBuiltString = (input) => {
   let lineBreakCharacter = '';
 
   if (stringBuilderKeepLineBreaks.prop('checked')) {
@@ -74,88 +82,98 @@ function getBuiltString(input) {
         .replace(/\n/g, lineBreakCharacter + '" +\n"')
         .replace(/\n"" \+/g, '\n')}"`
     : '';
-}
+};
 
 // ==================================================================================================================
 // Inline list sorter
 // ==================================================================================================================
 
-let unsortedInlineListInput = $('#unsortedInlineListInput');
-let sortedInlineListOutput = $('#sortedInlineListOutput');
-let inlineListSorterDiscardDuplicates = $('#inlineListSorterDiscardDuplicates');
+const unsortedInlineListInput = jQuery('#unsortedInlineListInput');
+const sortedInlineListOutput = jQuery('#sortedInlineListOutput');
+const inlineListSorterDiscardDuplicates = jQuery(
+  '#inlineListSorterDiscardDuplicates'
+);
 
-function sortInlineList() {
-  const sortedLines = getSortedInlineList(unsortedInlineListInput.val());
+const sortInlineList = () => {
+  const unsortedInlineList = unsortedInlineListInput.val();
+
+  const sortedLines = getSortedInlineList(unsortedInlineList);
   sortedInlineListOutput.val(sortedLines);
-  replicateHeight(unsortedInlineListInput, sortedInlineListOutput);
-}
 
-function getSortedInlineListLine(line) {
+  replicateHeight(unsortedInlineListInput, sortedInlineListOutput);
+};
+
+const getSortedInlineListLine = (line) => {
   let array = line.split(LIST_SEPARATOR);
 
   if (inlineListSorterDiscardDuplicates.prop('checked')) {
     array = getDuplicateFreeArray(array);
   }
 
-  return array.sort().join(LIST_SEPARATOR);
-}
+  return array.sort().join(', ');
+};
 
-function getSortedInlineList(inputString) {
+const getSortedInlineList = (inputString) => {
   return inputString
     .replace(new RegExp(` +(${LIST_SEPARATOR}) +`, 'g'), '$1')
     .split(LINE_DELIMITER)
     .map(getSortedInlineListLine)
     .join(LINE_DELIMITER);
-}
+};
 
 // ==================================================================================================================
 // Multiline list sorter
 // ==================================================================================================================
 
-let unsortedMultilineListInput = $('#unsortedMultilineListInput');
-let sortedMultilineListOutput = $('#sortedMultilineListOutput');
-let multilineListSorterDiscardDuplicates = $(
+const unsortedMultilineListInput = jQuery('#unsortedMultilineListInput');
+const sortedMultilineListOutput = jQuery('#sortedMultilineListOutput');
+const multilineListSorterDiscardDuplicates = jQuery(
   '#multilineListSorterDiscardDuplicates'
 );
 
-function sortMultilineList() {
-  const sortedLines = getSortedMultilineList(unsortedMultilineListInput.val());
-  sortedMultilineListOutput.val(sortedLines);
-  replicateHeight(unsortedMultilineListInput, sortedMultilineListOutput);
-}
+const sortMultilineList = () => {
+  const unsortedMultilineList = unsortedMultilineListInput.val();
 
-function getSortedMultilineList(inputString) {
+  const sortedLines = getSortedMultilineList(unsortedMultilineList);
+  sortedMultilineListOutput.val(sortedLines);
+
+  replicateHeight(unsortedMultilineListInput, sortedMultilineListOutput);
+};
+
+const getSortedMultilineList = (inputString) => {
   let array = inputString.split(LINE_DELIMITER);
 
   if (multilineListSorterDiscardDuplicates.prop('checked')) {
     array = getDuplicateFreeArray(array);
   }
 
-  return array.sort().join(LINE_DELIMITER);
-}
+  return array.sort().join('\n');
+};
 
 // ==================================================================================================================
 // JSON sorter
 // ==================================================================================================================
 
-let unsortedJsonInput = $('#unsortedJsonInput');
-let sortedJsonOutput = $('#sortedJsonOutput');
-let jsonSorterDiscardDuplicates = $('#jsonSorterDiscardDuplicates');
+const unsortedJsonInput = jQuery('#unsortedJsonInput');
+const sortedJsonOutput = jQuery('#sortedJsonOutput');
+const jsonSorterDiscardDuplicates = jQuery('#jsonSorterDiscardDuplicates');
 
-function sortJson() {
-  let sortedJson = getSortedJson(unsortedJsonInput.val());
+const sortJson = () => {
+  const unsortedJson = unsortedJsonInput.val();
 
+  const sortedJson = getSortedJson(unsortedJson);
   sortedJsonOutput.val(sortedJson);
-  replicateHeight(unsortedJsonInput, sortedJsonOutput);
-}
 
-function getSortedJson(inputString) {
-  let json = JSON.parse(inputString);
+  replicateHeight(unsortedJsonInput, sortedJsonOutput);
+};
+
+const getSortedJson = (inputString) => {
+  const json = JSON.parse(inputString);
   const sortedJson = getPropertiesRecursivelySorted(json);
   return stringify(sortedJson, undefined, 2);
-}
+};
 
-function getPropertiesRecursivelySorted(json) {
+const getPropertiesRecursivelySorted = (json) => {
   const sortedJson = {};
 
   Object.keys(json)
@@ -170,194 +188,216 @@ function getPropertiesRecursivelySorted(json) {
     });
 
   return sortedJson;
-}
+};
 
 // ==================================================================================================================
 // Case transformer
 // ==================================================================================================================
 
-let sentenceCaseInput = $('#sentenceCaseInput');
-let lowercaseInput = $('#lowercaseInput');
-let uppercaseInput = $('#uppercaseInput');
-let capitalCaseInput = $('#capitalCaseInput');
-let camelCaseInput = $('#camelCaseInput');
-let snakeCaseInput = $('#snakeCaseInput');
-let kebabCaseInput = $('#kebabCaseInput');
+const sentenceCaseInput = jQuery('#sentenceCaseInput');
+const lowercaseInput = jQuery('#lowercaseInput');
+const uppercaseInput = jQuery('#uppercaseInput');
+const capitalCaseInput = jQuery('#capitalCaseInput');
+const camelCaseInput = jQuery('#camelCaseInput');
+const snakeCaseInput = jQuery('#snakeCaseInput');
+const kebabCaseInput = jQuery('#kebabCaseInput');
 
-function transformFromSentenceCase() {
+const transformFromSentenceCase = () => {
   lowercaseInput.val(sentenceCaseInput.val().toLowerCase());
   uppercaseInput.val(sentenceCaseInput.val().toUpperCase());
   capitalCaseInput.val(transformSentenceToCapitalCase(sentenceCaseInput.val()));
   camelCaseInput.val(transformSentenceToCamelCase(sentenceCaseInput.val()));
   snakeCaseInput.val(transformSentenceToSnakeCase(sentenceCaseInput.val()));
   kebabCaseInput.val(transformSentenceToKebabCase(sentenceCaseInput.val()));
-}
+};
 
-function transformFromCapitalCase() {
+const transformFromCapitalCase = () => {
   sentenceCaseInput.val(transformCapitalToSentenceCase(capitalCaseInput.val()));
   transformFromSentenceCase();
-}
+};
 
-function transformFromLowercase() {
+const transformFromLowercase = () => {
   sentenceCaseInput.val(transformCapitalToSentenceCase(lowercaseInput.val()));
   transformFromSentenceCase();
-}
+};
 
-function transformFromUppercase() {
+const transformFromUppercase = () => {
   sentenceCaseInput.val(transformCapitalToSentenceCase(uppercaseInput.val()));
   transformFromSentenceCase();
-}
+};
 
-function transformFromCamelCase() {
+const transformFromCamelCase = () => {
   sentenceCaseInput.val(transformCamelToSentenceCase(camelCaseInput.val()));
   transformFromSentenceCase();
-}
+};
 
-function transformFromSnakeCase() {
+const transformFromSnakeCase = () => {
   sentenceCaseInput.val(transformSnakeToSentenceCase(snakeCaseInput.val()));
   transformFromSentenceCase();
-}
+};
 
-function transformFromKebabCase() {
+const transformFromKebabCase = () => {
   sentenceCaseInput.val(transformKebabToSentenceCase(kebabCaseInput.val()));
   transformFromSentenceCase();
-}
+};
 
 // Input
 
-function transformCapitalToSentenceCase(inputCase) {
+const transformCapitalToSentenceCase = (inputCase) => {
   return toSentenceCase(inputCase);
-}
+};
 
-function transformCamelToSentenceCase(inputCase) {
+const transformCamelToSentenceCase = (inputCase) => {
   return toSentenceCase(inputCase.replace(/([A-Z])/g, ' $1'));
-}
+};
 
-function transformSnakeToSentenceCase(inputCase) {
+const transformSnakeToSentenceCase = (inputCase) => {
   return toSentenceCase(inputCase.replace(/_/g, ' '));
-}
+};
 
-function transformKebabToSentenceCase(inputCase) {
+const transformKebabToSentenceCase = (inputCase) => {
   return toSentenceCase(inputCase.replace(/-/g, ' '));
-}
+};
 
 // Output
 
-function transformSentenceToCapitalCase(inputCase) {
+const transformSentenceToCapitalCase = (inputCase) => {
   return uppercaseWords(inputCase.toLowerCase());
-}
+};
 
-function transformSentenceToCamelCase(inputCase) {
+const transformSentenceToCamelCase = (inputCase) => {
   return lowercaseFirstLetter(uppercaseWords(inputCase.toLowerCase())).replace(
     / /g,
     ''
   );
-}
+};
 
-function transformSentenceToSnakeCase(inputCase) {
+const transformSentenceToSnakeCase = (inputCase) => {
   return inputCase.toLowerCase().replace(/ /g, '_');
-}
+};
 
-function transformSentenceToKebabCase(inputCase) {
+const transformSentenceToKebabCase = (inputCase) => {
   return inputCase.toLowerCase().replace(/ /g, '-');
-}
+};
 
-function toSentenceCase(string) {
+const toSentenceCase = (string) => {
   return uppercaseFirstLetter(string.toLowerCase());
-}
+};
 
 // ==================================================================================================================
 // Rule of three
 // ==================================================================================================================
 
-let axInput = $('#ruleOfThreeAxInput');
-let ayInput = $('#ruleOfThreeAyInput');
-let bxInput = $('#ruleOfThreeBxInput');
-let byInput = $('#ruleOfThreeByInput');
+const axInput = jQuery('#ruleOfThreeAxInput');
+const ayInput = jQuery('#ruleOfThreeAyInput');
+const bxInput = jQuery('#ruleOfThreeBxInput');
+const byInput = jQuery('#ruleOfThreeByInput');
 
-function calculateRuleOfThree() {
-  let ax = axInput.val();
-  let ay = ayInput.val();
-  let bx = bxInput.val();
+const calculateRuleOfThree = () => {
+  const ax = toNumber(axInput.val());
+  const ay = toNumber(ayInput.val());
+  const bx = toNumber(bxInput.val());
 
-  let ruleOfThree = getRuleOfThree(ax, ay, bx);
-  if (ruleOfThree) {
-    byInput.val(ruleOfThree);
-  }
-}
+  const ruleOfThree = getRuleOfThree(ax, ay, bx);
+  byInput.val(ruleOfThree);
+};
 
-function getRuleOfThree(ax, ay, bx) {
-  return isNumber(ax) && isNumber(ay) && isNumber(bx)
-    ? (bx * ay) / ax
-    : undefined;
-}
+const getRuleOfThree = (ax, ay, bx) => {
+  return ax && ay && bx ? (bx * ay) / ax : undefined;
+};
 
 // ==================================================================================================================
 // Regex replacer
 // ==================================================================================================================
 
-let regexReplacerInput = $('#regexReplacerInput');
-let regexReplacerOutput = $('#regexReplacerOutput');
-let regexpInput = $('#regexpInput');
-let regexpOptions = $('#regexpOptionsInput');
-let regexReplacementInput = $('#regexReplacementInput');
+const regexReplacerInput = jQuery('#regexReplacerInput');
+const regexReplacerOutput = jQuery('#regexReplacerOutput');
+const regexpInput = jQuery('#regexpInput');
+const regexpOptions = jQuery('#regexpOptionsInput');
+const regexReplacementInput = jQuery('#regexReplacementInput');
 
-function applyRegexReplacement() {
-  let inputString = regexReplacerInput.val(),
-    regexp = new RegExp(regexpInput.val(), regexpOptions.val() || 'gm'),
-    replacement = regexReplacementInput.val();
+const applyRegexReplacement = () => {
+  const inputString = regexReplacerInput.val();
+  const regexp = new RegExp(regexpInput.val(), regexpOptions.val() || 'gm');
+  const replacement = regexReplacementInput.val();
 
-  regexReplacerOutput.val(replaceByRegex(inputString, regexp, replacement));
+  const replacedString = replaceByRegex(inputString, regexp, replacement);
+  regexReplacerOutput.val(replacedString);
+
   replicateHeight(regexReplacerInput, regexReplacerOutput);
-}
+};
 
-function replaceByRegex(string, regexp, replacement) {
+const replaceByRegex = (string, regexp, replacement) => {
   return string.replace(regexp, replacement);
-}
+};
 
 // ==================================================================================================================
 // Markdown / JIRA table to JSON
 // ==================================================================================================================
 
-let tableToJsonInput = $('#tableToJsonInput');
-let tableToJsonOutput = $('#tableToJsonOutput');
+const tableToJsonInput = jQuery('#tableToJsonInput');
+const tableToJsonOutput = jQuery('#tableToJsonOutput');
 
-function tableToJson() {
-  tableToJsonOutput.val(replaceTableWithJson(tableToJsonInput.val()));
+const tableToJson = () => {
+  const table = tableToJsonInput.val();
+
+  const json = replaceTableWithJson(table);
+  tableToJsonOutput.val(json);
+
   replicateHeight(tableToJsonInput, tableToJsonOutput);
-}
+};
 
-function replaceTableWithJson(string) {
+const replaceTableWithJson = (string) => {
   return string
     .replace(/^\|/gm, '"')
     .replace(/\|$/gm, '",')
     .replace(/\s*\|\s*/gm, '": "');
-}
+};
+
+// ==================================================================================================================
+// Triangular sum
+// ==================================================================================================================
+
+const triangularSumStartInput = jQuery('#triangularSumStartInput');
+const triangularSumEndInput = jQuery('#triangularSumEndInput');
+const triangularSumOutput = jQuery('#triangularSumOutput');
+
+const calculateTriangularSum = () => {
+  const start = toNumber(triangularSumStartInput.val()) || 1;
+  const end = toNumber(triangularSumEndInput.val());
+
+  const triangularSum = getTriangularSum(start, end);
+  triangularSumOutput.val(triangularSum);
+};
+
+const getTriangularSum = (start, end) => {
+  if (!(start && end && start <= end)) return undefined;
+  const min = ((start - 1) * (start - 1 + 1)) / 2;
+  const max = (end * (end + 1)) / 2;
+  return max - min;
+};
 
 // ------------------------------------------------------------------------------------------------------------------
 // Generic
 // ------------------------------------------------------------------------------------------------------------------
 
-function isNumber(string) {
-  return string && !isNaN(parseInt(string));
-}
+const toNumber = (string) => {
+  const value = Number(string);
+  return isNaN(value) ? undefined : value;
+};
 
-function uppercaseFirstLetter(string) {
+const uppercaseFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
-}
+};
 
-function lowercaseFirstLetter(string) {
+const lowercaseFirstLetter = (string) => {
   return string.charAt(0).toLowerCase() + string.slice(1);
-}
+};
 
-function uppercaseWords(string) {
-  return string.replace(/\b\w/g, function (letter) {
-    return letter.toUpperCase();
-  });
-}
+const uppercaseWords = (string) => {
+  return string.replace(/\b\w/g, (letter) => letter.toUpperCase());
+};
 
-function getDuplicateFreeArray(array) {
-  return array.filter(function (entry, i) {
-    return array.indexOf(entry) === i;
-  });
-}
+const getDuplicateFreeArray = (array) => {
+  return array.filter((entry, i) => array.indexOf(entry) === i);
+};

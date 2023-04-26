@@ -24,6 +24,7 @@
           <li><a href="#multilineListSorter"> List sorter (multiline)</a></li>
           <li><a href="#tableToJson"> Markdown / JIRA table to JSON</a></li>
           <li><a href="#textCaseTransformer"> Text case transformer</a></li>
+          <li><a href="#triangularSum"> Triangular sum</a></li>
         </ul>
       </div>
     </div>
@@ -498,6 +499,67 @@
             <button
               class="btn"
               onclick="clearInputs(['#sentenceCaseInput', '#capitalCaseInput', '#lowercaseInput', '#uppercaseInput', '#snakeCaseInput', '#camelCaseInput', '#kebabCaseInput'])"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Triangular Sum -->
+      <div id="triangularSum" class="card">
+        <div class="card-header">
+          <span class="card-title"
+            >Triangular Sum&nbsp; <small>1 + 2 + 3...</small></span
+          >
+        </div>
+
+        <div class="card-content">
+          <div class="flex">
+            <span class="flex1">
+              <input
+                id="triangularSumStartInput"
+                class="text-center"
+                placeholder="1 (Start)"
+                title="Start"
+                type="number"
+                onkeyup="calculateTriangularSum()"
+              />
+            </span>
+
+            <span class="text-center form-padded">=</span>
+
+            <span class="flex1">
+              <input
+                id="triangularSumEndInput"
+                class="text-center"
+                placeholder="End"
+                title="End"
+                type="number"
+                onkeyup="calculateTriangularSum()"
+              />
+            </span>
+          </div>
+          <div class="flex">
+            <span class="flex1">
+              <input
+                id="triangularSumOutput"
+                class="text-center"
+                placeholder="Sum"
+                title="Sum"
+                type="number"
+                readonly
+                onkeyup="calculateTriangularSum()"
+              />
+            </span>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="center-contents">
+            <button
+              class="btn"
+              onclick="clearInputs(['#triangularSumStartInput', '#triangularSumEndInput', '#triangularSumOutput'])"
             >
               Clear
             </button>
