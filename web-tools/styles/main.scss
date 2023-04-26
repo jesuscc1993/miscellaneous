@@ -215,10 +215,22 @@ footer {
 label {
   margin: 0;
   padding-right: 6px;
+
+  &[for] {
+    cursor: pointer;
+
+    + input[type='checkbox'] {
+      margin-left: 0;
+    }
+  }
 }
 
 input {
   height: auto !important;
+
+  &[type='checkbox'] {
+    cursor: pointer;
+  }
 }
 
 input,
