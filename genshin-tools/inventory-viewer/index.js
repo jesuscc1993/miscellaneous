@@ -3,7 +3,7 @@ const fetchJson = (url) => {
 };
 
 const processList = (identifier, items, itemType) => {
-  const output = jQuery(`#${identifier}`);
+  const output = jQuery(`#${identifier}Output`);
 
   const itemsGrid = jQuery(`<div class="items-grid ${identifier}-grid"></div>`);
 
@@ -54,8 +54,8 @@ const processList = (identifier, items, itemType) => {
 };
 
 const initialize = () => {
-  processList('charactersOutput', characters, ItemType.Character);
-  processList('weaponsOutput', weapons, ItemType.Weapon);
+  processList('characters', characters, ItemType.Character);
+  processList('weapons', weapons, ItemType.Weapon);
 };
 
 const sortItems = (items) => {

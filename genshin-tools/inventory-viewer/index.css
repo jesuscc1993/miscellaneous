@@ -61,17 +61,13 @@ body {
 }
 
 .items-grid {
-  --card-height: 160px;
+  --card-height: 148px;
   display: grid;
   grid-gap: var(--grid-gap);
   grid-template-columns: repeat(auto-fill, var(--artwork-size));
   grid-template-rows: repeat(auto-fill, var(--card-height));
   justify-content: center;
   margin-bottom: 24px;
-}
-
-.characters-grid {
-  --card-height: 148px;
 }
 
 .weapons-grid {
