@@ -77,10 +77,11 @@ const getBuiltString = (input) => {
   }
 
   return input
-    ? `"${input
+    ? input
         .replace(/"/g, '\\"')
         .replace(/\n/g, lineBreakCharacter + '" +\n"')
-        .replace(/\n"" \+/g, '\n')}"`
+        .replace(/\n"" \+/g, '\n')
+        .replace(/^|$/g, '"')
     : '';
 };
 
@@ -375,6 +376,35 @@ const getTriangularSum = (start, end) => {
   const min = ((start - 1) * (start - 1 + 1)) / 2;
   const max = (end * (end + 1)) / 2;
   return max - min;
+};
+
+// ==================================================================================================================
+// HTML to string
+// ==================================================================================================================
+
+const htmlToStringInput = jQuery('#htmlToStringInput');
+const htmlToStringOutput = jQuery('#htmlToStringOutput');
+const htmlToStringKeepLineBreaks = jQuery('#htmlToStringKeepLineBreaks');
+
+const htmlToString = () => {
+  const inputHTML = htmlToStringInput.val();
+
+  const outputString = getHTMLAsString(inputHTML);
+  htmlToStringOutput.val(outputString);
+
+  replicateHeight(htmlToStringInput, htmlToStringOutput);
+};
+
+const getHTMLAsString = (input) => {
+  return input
+    ? input
+        .replace(/"/g, '\\"')
+        .replace(/\n/g, ' ')
+        .replace(/\s{2,}/g, ' ')
+        .replace(/\s+>/g, '>')
+        .replace(/^\s+|\s+$/g, '')
+        .replace(/^|$/g, '"')
+    : '';
 };
 
 // ------------------------------------------------------------------------------------------------------------------

@@ -16,6 +16,7 @@
     <div class="border-bottom">
       <div class="content-wrapper">
         <ul class="anchor-list">
+          <li><a href="#htmlToString"> HTML to string</a></li>
           <li><a href="#jsonSorter"> JSON sorter</a></li>
           <li><a href="#regexReplacer"> Regex replacer</a></li>
           <li><a href="#ruleOfThree"> Rule of three</a></li>
@@ -30,6 +31,47 @@
     </div>
 
     <div class="content-wrapper">
+      <!-- HTML to string -->
+      <div id="htmlToString" class="card">
+        <div class="card-header">
+          <span class="card-title">HTML to string</span>
+        </div>
+
+        <div class="card-content">
+          <div class="flex">
+            <div class="flex1">
+              <textarea
+                id="htmlToStringInput"
+                placeholder="HTML"
+                rows="8"
+                title="HTML"
+                onblur="htmlToString()"
+              ></textarea>
+            </div>
+            <div class="flex1">
+              <textarea
+                id="htmlToStringOutput"
+                placeholder="String"
+                readonly
+                rows="8"
+                title="String"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="center-contents">
+            <button
+              class="btn"
+              onclick="clearInputs(['#htmlToStringInput', '#htmlToStringOutput'])"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- JSON sorter -->
       <div id="jsonSorter" class="card">
         <div class="card-header">
