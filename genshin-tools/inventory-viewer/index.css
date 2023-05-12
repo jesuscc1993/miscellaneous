@@ -61,8 +61,12 @@ small {
 
 .main {
   margin: 0 auto;
-  padding: 8px 0 20vh;
+  padding: 8px 0;
   max-width: 1260px;
+}
+
+.item-section {
+  min-height: 100vh;
 }
 
 .center-text {
