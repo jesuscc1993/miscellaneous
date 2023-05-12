@@ -13,6 +13,15 @@
   src: url('assets/fonts/HYWenHei 85W.woff2');
 }
 
+a,
+a:visited {
+  color: #657ef8;
+  transition: 150ms;
+}
+a:hover {
+  filter: brightness(1.15);
+}
+
 h1 {
   font-weight: normal;
 }
@@ -124,4 +133,9 @@ body {
 .weapon .uncap-text {
   left: 0;
   border-radius: var(--card-roundness) 0 var(--card-roundness) 0;
+}
+
+/* utility */
+.no-margin-bottom {
+  margin-bottom: 0;
 }

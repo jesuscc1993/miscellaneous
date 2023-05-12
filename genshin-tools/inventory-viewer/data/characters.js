@@ -31,7 +31,7 @@ const characters = [
   },
   {
     id: 'Bennett',
-    level: 80,
+    level: 90,
     rarity: 4,
     uncap: 4,
   },
@@ -55,7 +55,7 @@ const characters = [
   },
   {
     id: 'Diona',
-    level: 80,
+    level: 90,
     rarity: 4,
     uncap: 6,
   },
@@ -69,6 +69,11 @@ const characters = [
     id: 'Eula',
     level: 90,
     rarity: 5,
+  },
+  {
+    id: 'Faruzan',
+    level: 50,
+    rarity: 4,
   },
   {
     id: 'Feiyan',
@@ -156,7 +161,7 @@ const characters = [
     id: 'Shenhe',
     level: 90,
     name: 'Shenhe',
-    rarity: 5
+    rarity: 5,
   },
   {
     id: 'Qin',
@@ -236,7 +241,7 @@ const characters = [
   },
   {
     id: 'Xingqiu',
-    level: 80,
+    level: 90,
     rarity: 4,
     uncap: 6,
   },

@@ -54,8 +54,8 @@ const processList = (identifier, items, itemType) => {
 };
 
 const initialize = () => {
-  processList('characters', characters, ItemType.Character);
-  processList('weapons', weapons, ItemType.Weapon);
+  processList('charactersOutput', characters, ItemType.Character);
+  processList('weaponsOutput', weapons, ItemType.Weapon);
 };
 
 const sortItems = (items) => {

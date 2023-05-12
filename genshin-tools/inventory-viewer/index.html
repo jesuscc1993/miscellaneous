@@ -7,15 +7,16 @@
   </head>
   <body>
     <div class="main">
-      <h1>Genshin Inventory Viewer</h1>
+      <h1 class="no-margin-bottom">Genshin Inventory Viewer</h1>
+      <small>
+        (<a href="#characters">Characters</a> / <a href="#weapons">Weapons</a>)
+      </small>
 
-      <h2>Characters</h2>
+      <h2 id="characters">Characters</h2>
+      <div id="charactersOutput"></div>
 
-      <div id="characters"></div>
-
-      <h2>Weapons</h2>
-
-      <div id="weapons"></div>
+      <h2 id="weapons">Weapons</h2>
+      <div id="weaponsOutput"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js"></script>
