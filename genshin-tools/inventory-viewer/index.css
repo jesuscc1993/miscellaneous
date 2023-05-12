@@ -61,7 +61,6 @@ small {
 
 .main {
   margin: 0 auto;
-  padding: 8px 0;
   max-width: 1260px;
 }
 
@@ -144,6 +143,19 @@ small {
 .weapon .uncap-text {
   left: 0;
   border-radius: var(--card-roundness) 0 var(--card-roundness) 0;
+}
+
+.back-to-top {
+  bottom: 0;
+  cursor: pointer;
+  height: 64px;
+  margin: 12px;
+  position: fixed;
+  right: 0;
+  transition: 150ms;
+}
+.back-to-top:hover {
+  filter: brightness(1.25);
 }
 
 /* utility */

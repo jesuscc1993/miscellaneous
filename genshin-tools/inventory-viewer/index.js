@@ -74,6 +74,10 @@ const setItemBackground = (item) => {
   );
 };
 
+const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
+
 const ItemType = {
   Character: 'character',
   Weapon: 'weapon',
