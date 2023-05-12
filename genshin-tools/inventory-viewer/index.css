@@ -148,7 +148,6 @@ small {
 .back-to-top {
   bottom: 0;
   cursor: pointer;
-  height: 64px;
   margin: 12px;
   position: fixed;
   right: 0;
