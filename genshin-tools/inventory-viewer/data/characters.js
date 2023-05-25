@@ -39,7 +39,7 @@ const characters = [
     id: 'Chongyun',
     level: 80,
     rarity: 4,
-    uncap: 4,
+    uncap: 6,
   },
   {
     id: 'Collei',
@@ -48,10 +48,9 @@ const characters = [
     uncap: 1,
   },
   {
-    id: 'Diluc',
-    level: 90,
-    rarity: 5,
-    uncap: 3,
+    id: 'Dehya',
+    level: 40,
+    rarity: 5
   },
   {
     id: 'Diona',
@@ -120,6 +119,12 @@ const characters = [
     id: 'Keqing',
     level: 80,
     rarity: 5,
+  },
+  {
+    id: 'Momoka',
+    level: 40,
+    name: 'Kirara',
+    rarity: 4
   },
   {
     id: 'Lisa',
