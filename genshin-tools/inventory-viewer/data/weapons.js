@@ -256,7 +256,7 @@ const weapons = [
   },
   {
     id: 'Opus',
-    level: 40,
+    level: 90,
     rarity: 4,
     type: 'Sword',
     name: 'Cinnabar Spindle',
@@ -264,7 +264,7 @@ const weapons = [
   },
   {
     id: 'Fossil',
-    level: 40,
+    level: 90,
     name: 'Sacrificial Fragments',
     rarity: 4,
     type: 'Catalyst',

@@ -9,9 +9,10 @@ const processList = (identifier, items, itemType) => {
 
   sortItems(items).forEach((item) => {
     const artwork =
-      itemType === ItemType.Weapon
+      item.portrait ||
+      (itemType === ItemType.Weapon
         ? `https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_EquipIcon_${item.type}_${item.id}.png`
-        : `https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_${item.id}.png`;
+        : `https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_${item.id}.png`);
     const artworkbackground = rarityBackgrounds[item.rarity];
 
     const itemContainer = jQuery(`<div class="item ${itemType}"></div>`);
