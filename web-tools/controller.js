@@ -373,6 +373,7 @@ const tableToJson = () => {
 const replaceTableWithJson = (string) => {
   return string
     .replace(/"/gm, '\\"')
+    .replace(/\\{/gm, '{')
     .replace(/^\|/gm, '"')
     .replace(/\|$/gm, '",')
     .replace(/\s*\|\s*/gm, '": "');
@@ -398,6 +399,7 @@ const tableToCsv = () => {
 
 const replaceTableWithCsv = (string) => {
   return string
+    .replace(/\\{/gm, '{')
     .replace(/^\|/gm, '')
     .replace(/\|$/gm, '')
     .replace(/\s*\|\s*/gm, ';');
@@ -405,6 +407,7 @@ const replaceTableWithCsv = (string) => {
 
 const replaceTableWithEscapedCsv = (string) => {
   return string
+    .replace(/\\{/gm, '{')
     .replace(/"/gm, '""')
     .replace(/^\|/gm, '"')
     .replace(/\|$/gm, '"')
