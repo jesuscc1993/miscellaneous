@@ -18,6 +18,7 @@
         <ul class="anchor-list">
           <li><a href="#htmlToString"> HTML to string</a></li>
           <li><a href="#jsonSorter"> JSON sorter</a></li>
+          <li><a href="#jsonToProperties"> JSON to *.properties</a></li>
           <li><a href="#regexReplacer"> Regex replacer</a></li>
           <li><a href="#ruleOfThree"> Rule of three</a></li>
           <li><a href="#stringBuilder"> String builder</a></li>
@@ -106,6 +107,47 @@
             <button
               class="btn"
               onclick="clearInputs(['#unsortedJsonInput', '#sortedJsonOutput'])"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- JSON to *.properties -->
+      <div id="jsonToProperties" class="card">
+        <div class="card-header">
+          <span class="card-title"> JSON to *.properties </span>
+        </div>
+
+        <div class="card-content">
+          <div class="flex">
+            <div class="flex1">
+              <textarea
+                id="jsonToPropertiesInput"
+                placeholder="JSON"
+                rows="8"
+                title="JSON"
+                onblur="jsonToProperties()"
+              ></textarea>
+            </div>
+            <div class="flex1">
+              <textarea
+                id="jsonToPropertiesOutput"
+                placeholder="Properties"
+                readonly
+                rows="8"
+                title="Properties"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="center-contents">
+            <button
+              class="btn"
+              onclick="clearInputs(['#jsonToPropertiesInput', '#jsonToPropertiesOutput'])"
             >
               Clear
             </button>
