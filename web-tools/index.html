@@ -25,6 +25,7 @@
           <li><a href="#inlineListSorter"> List sorter (inline)</a></li>
           <li><a href="#multilineListSorter"> List sorter (multiline)</a></li>
           <li><a href="#tableToJson"> Markdown / JIRA table to JSON</a></li>
+          <li><a href="#tableToCsv"> Markdown / JIRA table to CSV</a></li>
           <li><a href="#textCaseTransformer"> Text case transformer</a></li>
           <li><a href="#triangularSum"> Triangular sum</a></li>
         </ul>
@@ -494,6 +495,50 @@
             <button
               class="btn"
               onclick="clearInputs(['#tableToJsonInput', '#tableToJsonOutput'])"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Markdown / JIRA table to CSV -->
+      <div id="tableToCsv" class="card">
+        <div class="card-header">
+          <span class="card-title">
+            Markdown / JIRA table to CSV&nbsp;
+            <small>(copy rows only; do not copy headers)</small>
+          </span>
+        </div>
+
+        <div class="card-content">
+          <div class="flex">
+            <div class="flex1">
+              <textarea
+                id="tableToCsvInput"
+                placeholder="Table"
+                rows="8"
+                title="Table"
+                onblur="tableToCsv()"
+              ></textarea>
+            </div>
+            <div class="flex1">
+              <textarea
+                id="tableToCsvOutput"
+                placeholder="CSV"
+                readonly
+                rows="8"
+                title="CSV"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="center-contents">
+            <button
+              class="btn"
+              onclick="clearInputs(['#tableToCsvInput', '#tableToCsvOutput'])"
             >
               Clear
             </button>

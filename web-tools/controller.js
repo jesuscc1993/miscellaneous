@@ -372,9 +372,33 @@ const tableToJson = () => {
 
 const replaceTableWithJson = (string) => {
   return string
+    .replace(/"/gm, '\\"')
     .replace(/^\|/gm, '"')
     .replace(/\|$/gm, '",')
     .replace(/\s*\|\s*/gm, '": "');
+};
+
+// ==================================================================================================================
+// Markdown / JIRA table to CSV
+// ==================================================================================================================
+
+const tableToCsvInput = jQuery('#tableToCsvInput');
+const tableToCsvOutput = jQuery('#tableToCsvOutput');
+
+const tableToCsv = () => {
+  const table = tableToCsvInput.val();
+
+  const csv = replaceTableWithCsv(table);
+  tableToCsvOutput.val(csv);
+
+  replicateHeight(tableToCsvInput, tableToCsvOutput);
+};
+
+const replaceTableWithCsv = (string) => {
+  return string
+    .replace(/^\|/gm, '')
+    .replace(/\|$/gm, '')
+    .replace(/\s*\|\s*/gm, ';');
 };
 
 // ==================================================================================================================
