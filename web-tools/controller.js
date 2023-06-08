@@ -374,8 +374,8 @@ const replaceTableWithJson = (string) => {
   return string
     .replace(/"/gm, '\\"')
     .replace(/\\{/gm, '{')
-    .replace(/^\|/gm, '"')
-    .replace(/\|$/gm, '",')
+    .replace(/^\|\s*/gm, '"')
+    .replace(/\s*\|$/gm, '",')
     .replace(/\s*\|\s*/gm, '": "');
 };
 
@@ -400,8 +400,8 @@ const tableToCsv = () => {
 const replaceTableWithCsv = (string) => {
   return string
     .replace(/\\{/gm, '{')
-    .replace(/^\|/gm, '')
-    .replace(/\|$/gm, '')
+    .replace(/^\|\s*/gm, '')
+    .replace(/\s*\|$/gm, '')
     .replace(/\s*\|\s*/gm, ';');
 };
 
@@ -409,8 +409,8 @@ const replaceTableWithEscapedCsv = (string) => {
   return string
     .replace(/\\{/gm, '{')
     .replace(/"/gm, '""')
-    .replace(/^\|/gm, '"')
-    .replace(/\|$/gm, '"')
+    .replace(/^\|\s*/gm, '"')
+    .replace(/\s*\|$/gm, '"')
     .replace(/\s*\|\s*/gm, '";"');
 };
 
