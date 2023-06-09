@@ -458,18 +458,17 @@ const htmlToString = () => {
 const getHTMLAsString = (input, useDoubleQuotes) => {
   const quote = useDoubleQuotes ? '"' : "'";
 
-  let output = input || '';
-
-  if (useDoubleQuotes) output = output.replace(/"/g, '\\"');
-
-  output = output
-    .replace(/\n/g, ' ')
-    .replace(/\s{2,}/g, ' ')
-    .replace(/\s+>/g, '>')
-    .replace(/^\s+|\s+$/g, '')
-    .replace(/^|$/g, quote);
-
-  return output;
+  return input
+    ? (useDoubleQuotes
+        ? input.replace(/"/g, '\\"')
+        : input.replace(/'/g, "\\'")
+      )
+        .replace(/\n/g, ' ')
+        .replace(/\s{2,}/g, ' ')
+        .replace(/\s+>/g, '>')
+        .replace(/^\s+|\s+$/g, '')
+        .replace(/^|$/g, quote)
+    : '';
 };
 
 // ------------------------------------------------------------------------------------------------------------------
