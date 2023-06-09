@@ -443,10 +443,11 @@ const getTriangularSum = (start, end) => {
 
 const htmlToStringInput = jQuery('#htmlToStringInput');
 const htmlToStringOutput = jQuery('#htmlToStringOutput');
-const htmlToStringKeepLineBreaks = jQuery('#htmlToStringKeepLineBreaks');
+const htmlToStringDoubleQuotes = jQuery('#htmlToStringDoubleQuotes');
 
 const htmlToString = () => {
   const inputHTML = htmlToStringInput.val();
+  const useDoubleQuotes = htmlToStringDoubleQuotes.prop('checked');
 
   const outputString = getHTMLAsString(inputHTML);
   htmlToStringOutput.val(outputString);
@@ -454,16 +455,21 @@ const htmlToString = () => {
   replicateHeight(htmlToStringInput, htmlToStringOutput);
 };
 
-const getHTMLAsString = (input) => {
-  return input
+const getHTMLAsString = (input, useDoubleQuotes) => {
+  const quote = useDoubleQuotes ? '"' : "'";
+
+  let output = input
     ? input
-        .replace(/"/g, '\\"')
         .replace(/\n/g, ' ')
         .replace(/\s{2,}/g, ' ')
         .replace(/\s+>/g, '>')
         .replace(/^\s+|\s+$/g, '')
-        .replace(/^|$/g, '"')
+        .replace(/^|$/g, quote)
     : '';
+
+  if (useDoubleQuotes) output = output.replace(/"/g, '\\"');
+
+  return output;
 };
 
 // ------------------------------------------------------------------------------------------------------------------
