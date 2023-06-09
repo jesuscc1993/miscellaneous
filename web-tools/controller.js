@@ -449,7 +449,7 @@ const htmlToString = () => {
   const inputHTML = htmlToStringInput.val();
   const useDoubleQuotes = htmlToStringDoubleQuotes.prop('checked');
 
-  const outputString = getHTMLAsString(inputHTML);
+  const outputString = getHTMLAsString(inputHTML, useDoubleQuotes);
   htmlToStringOutput.val(outputString);
 
   replicateHeight(htmlToStringInput, htmlToStringOutput);
@@ -458,16 +458,16 @@ const htmlToString = () => {
 const getHTMLAsString = (input, useDoubleQuotes) => {
   const quote = useDoubleQuotes ? '"' : "'";
 
-  let output = input
-    ? input
-        .replace(/\n/g, ' ')
-        .replace(/\s{2,}/g, ' ')
-        .replace(/\s+>/g, '>')
-        .replace(/^\s+|\s+$/g, '')
-        .replace(/^|$/g, quote)
-    : '';
+  let output = input || '';
 
   if (useDoubleQuotes) output = output.replace(/"/g, '\\"');
+
+  output = output
+    .replace(/\n/g, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .replace(/\s+>/g, '>')
+    .replace(/^\s+|\s+$/g, '')
+    .replace(/^|$/g, quote);
 
   return output;
 };
