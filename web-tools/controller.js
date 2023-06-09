@@ -459,10 +459,8 @@ const getHTMLAsString = (input, useDoubleQuotes) => {
   const quote = useDoubleQuotes ? '"' : "'";
 
   return input
-    ? (useDoubleQuotes
-        ? input.replace(/"/g, '\\"')
-        : input.replace(/'/g, "\\'")
-      )
+    ? input
+        .replace(new RegExp(quote, 'g'), `\\${quote}`)
         .replace(/\n/g, ' ')
         .replace(/\s{2,}/g, ' ')
         .replace(/\s+>/g, '>')
