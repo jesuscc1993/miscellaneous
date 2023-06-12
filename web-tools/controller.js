@@ -14,13 +14,20 @@ jQuery(document).ready(() => {
   jQuery('body').fadeIn();
 });
 
+const pasteInput = async (inputSelector) => {
+  const input = jQuery(inputSelector);
+  input.val(await navigator.clipboard.readText());
+  input.blur();
+};
+
+const copyOutput = async (inputSelector) => {
+  const input = jQuery(inputSelector);
+  navigator.clipboard.writeText(input.val());
+};
+
 const clearInputs = (inputSelectors) => {
-  if (inputSelectors) {
-    const inputs = jQuery(inputSelectors.join(','));
-    if (inputs.length) {
-      inputs.val('');
-    }
-  }
+  const inputs = jQuery(inputSelectors.join(','));
+  if (inputs.length) inputs.val('');
 };
 
 const replicateHeight = (inputElement, outputElement) => {
@@ -162,8 +169,12 @@ const jsonSorterDiscardDuplicates = jQuery('#jsonSorterDiscardDuplicates');
 const sortJson = () => {
   const unsortedJson = unsortedJsonInput.val();
 
-  const sortedJson = getSortedJson(unsortedJson);
-  sortedJsonOutput.val(sortedJson);
+  try {
+    const sortedJson = getSortedJson(unsortedJson);
+    sortedJsonOutput.val(sortedJson);
+  } catch {
+    sortedJsonOutput.val('');
+  }
 
   replicateHeight(unsortedJsonInput, sortedJsonOutput);
 };
