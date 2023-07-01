@@ -2,7 +2,7 @@ const characters = [
   {
     id: 'Aloy',
     level: 50,
-    rarity: 4.5,
+    rarity: 3,
   },
   {
     id: 'Ambor',
@@ -51,6 +51,11 @@ const characters = [
     id: 'Dehya',
     level: 50,
     rarity: 5
+  },
+  {
+    id: 'Diluc',
+    level: 90,
+    rarity: 5,
   },
   {
     id: 'Diona',
@@ -122,7 +127,7 @@ const characters = [
   },
   {
     id: 'Momoka',
-    level: 80,
+    level: 90,
     name: 'Kirara',
     portrait: 'https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u82ase/09f16853b42c95407e2071af70953556.png',
     rarity: 4

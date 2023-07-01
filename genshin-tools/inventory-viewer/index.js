@@ -64,7 +64,7 @@ const sortItems = (items) => {
     (a, b) =>
       `${b.rarity}`.localeCompare(`${a.rarity}`) ||
       `${b.level}`.localeCompare(`${a.level}`) ||
-      `${a.name}`.localeCompare(`${b.name}`)
+      `${a.name || a.id}`.localeCompare(`${b.name || b.id}`)
   );
 };
 
@@ -85,8 +85,8 @@ const ItemType = {
 };
 
 const rarityBackgrounds = {
+  3: 'assets/images/char_bg_red.png',
   4: 'https://webstatic-sea.hoyolab.com/app/community-game-records-sea/images/level_4_bg_s.7a6c5841.png',
-  4.5: 'assets/images/char_bg_red.png',
   5: 'https://webstatic-sea.hoyolab.com/app/community-game-records-sea/images/level_5_bg_s.1ff411a0.png',
 };
 
