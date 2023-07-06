@@ -49,7 +49,7 @@ const characters = [
   },
   {
     id: 'Dehya',
-    level: 50,
+    level: 80,
     rarity: 5
   },
   {
