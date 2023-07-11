@@ -133,6 +133,11 @@ const characters = [
     rarity: 4
   },
   {
+    id: 'Layla',
+    level: 50,
+    rarity: 4
+  },
+  {
     id: 'Lisa',
     level: 50,
     rarity: 4,
