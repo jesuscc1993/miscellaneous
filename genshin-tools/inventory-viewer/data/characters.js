@@ -76,7 +76,7 @@ const characters = [
   },
   {
     id: 'Faruzan',
-    level: 50,
+    level: 60,
     rarity: 4,
   },
   {
@@ -101,6 +101,7 @@ const characters = [
     id: 'Gorou',
     level: 50,
     rarity: 4,
+    uncap: 1,
   },
   {
     id: 'Heizo',
