@@ -118,6 +118,12 @@ small {
     width: var(--artwork-size);
   }
 
+  .item-text {
+    font-weight: 500;
+    line-height: 20px;
+    padding: 4px 0;
+  }
+
   .uncap-text {
     background: #0006;
     color: white;
@@ -133,12 +139,6 @@ small {
       background: #a96759;
       color: #ffe14b;
     }
-  }
-
-  .item-text {
-    font-weight: 500;
-    line-height: 20px;
-    padding: 4px 0;
   }
 
   &:hover {
