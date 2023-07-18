@@ -31,7 +31,7 @@ const processList = (identifier, items, itemType) => {
     );
     itemContainer.append(uncapText);
 
-    const itemText = jQuery(`<div class="item-text"></div>`);
+    const bottomText = jQuery(`<div class="item-text bottom-text"></div>`);
 
     const shortItemName = item.name || item.id;
     const nameLine = jQuery(
@@ -39,14 +39,14 @@ const processList = (identifier, items, itemType) => {
         item.fullName || shortItemName
       }">${shortItemName}</span>`
     );
-    itemText.append(nameLine);
+    bottomText.append(nameLine);
 
     const levelLine = jQuery(
       `<span class="center-text level">Lvl. ${item.level}</span>`
     );
-    itemText.append(levelLine);
+    bottomText.append(levelLine);
 
-    itemContainer.append(itemText);
+    itemContainer.append(bottomText);
     itemContainer.click(() => setItemBackground(item));
     itemsGrid.append(itemContainer);
   });

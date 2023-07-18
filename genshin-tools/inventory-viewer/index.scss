@@ -6,7 +6,7 @@
   --card-roundness: 5px;
   --grid-gap: 16px;
   --uncap-size: 20px;
-  --transition: 100ms;
+  --transition: 150ms;
 }
 
 @font-face {
@@ -85,6 +85,10 @@ small {
   grid-template-rows: repeat(auto-fill, var(--card-height));
   justify-content: center;
   margin-bottom: 24px;
+
+  &:has(.item:hover) .item:not(:hover) {
+    filter: grayscale(0.75);
+  }
 }
 
 .weapons-grid {
@@ -114,6 +118,7 @@ small {
     border-bottom: 1px solid #0004;
     border-radius: $roundness $roundness 24px $roundness;
     height: var(--artwork-size);
+    margin-bottom: -1px; /* compensate for border */
     transition: var(--transition);
     width: var(--artwork-size);
   }
@@ -122,18 +127,19 @@ small {
     font-weight: 500;
     line-height: 20px;
     padding: 4px 0;
+    transition: var(--transition);
   }
 
   .uncap-text {
     background: #0006;
+    border-radius: var(--card-roundness) 0 var(--card-roundness) 0;
     color: white;
     height: var(--uncap-size);
+    left: 0;
     padding: 0;
     position: absolute;
-    right: 0;
     top: 0;
     width: var(--uncap-size);
-    border-radius: 0 var(--card-roundness) 0 var(--card-roundness);
 
     &.maxed {
       background: #a96759;
@@ -142,18 +148,17 @@ small {
   }
 
   &:hover {
-    filter: brightness(1.05) saturate(110%);
+    scale: 1.08;
 
     & .item-portrait {
       $roundness: var(--card-roundness);
       border-radius: $roundness $roundness 12px $roundness;
     }
-  }
-}
 
-.weapon .uncap-text {
-  left: 0;
-  border-radius: var(--card-roundness) 0 var(--card-roundness) 0;
+    & > .bottom-text {
+      scale: 0.925;
+    }
+  }
 }
 
 .back-to-top {
