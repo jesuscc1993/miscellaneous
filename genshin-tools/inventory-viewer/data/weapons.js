@@ -2,7 +2,7 @@ const weapons = [
   {
     id: 'Amos',
     level: 90,
-    name: "Amos'\nBow",
+    name: "Amos' Bow",
     rarity: 5,
     type: 'Bow',
     uncap: 2,
@@ -10,7 +10,7 @@ const weapons = [
   {
     id: 'Falcon',
     level: 90,
-    name: 'Aquila\nFavonia',
+    name: 'Aquila Favonia',
     rarity: 5,
     type: 'Sword',
   },
@@ -133,7 +133,7 @@ const weapons = [
   {
     id: 'Exotic',
     level: 90,
-    name: 'Iron\nSting',
+    name: 'Iron Sting',
     rarity: 4,
     type: 'Sword',
     uncap: 5,
@@ -149,7 +149,7 @@ const weapons = [
   {
     id: 'Exotic',
     level: 90,
-    name: 'Mappa\nMare',
+    name: 'Mappa Mare',
     rarity: 4,
     type: 'Catalyst',
   },
@@ -172,7 +172,7 @@ const weapons = [
   {
     id: 'Mori',
     level: 90,
-    name: 'The\nCatch',
+    name: 'The Catch',
     rarity: 4,
     type: 'Pole',
     uncap: 5,
@@ -228,7 +228,7 @@ const weapons = [
   {
     id: 'Troupe',
     level: 90,
-    name: 'The\nWidsith',
+    name: 'The Widsith',
     rarity: 4,
     type: 'Catalyst',
   },
