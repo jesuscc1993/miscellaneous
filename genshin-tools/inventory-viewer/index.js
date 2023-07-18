@@ -13,14 +13,14 @@ const processList = (identifier, items, itemType) => {
       (itemType === ItemType.Weapon
         ? `https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_EquipIcon_${item.type}_${item.id}.png`
         : `https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_${item.id}.png`);
-    const artworkbackground = rarityBackgrounds[item.rarity];
+    const artworkBackground = rarityBackgrounds[item.rarity];
 
     const itemContainer = jQuery(`<div class="item ${itemType}"></div>`);
 
     const portrait = jQuery(`<div class="item-portrait"></div>`);
     portrait.css(
       `background`,
-      `url(${artwork}) center top / 100% 100% no-repeat, url(${artworkbackground}) 0px 0px / 100% no-repeat`
+      `url(${artwork}) center top / 100% 100% no-repeat, url(${artworkBackground}) 0px 0px / 100% no-repeat`
     );
     itemContainer.append(portrait);
 

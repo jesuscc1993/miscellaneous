@@ -97,7 +97,7 @@ small {
 }
 
 .item {
-  background: var(--c-item-bg);
+  background: linear-gradient(0deg, var(--c-item-bg) 50%, transparent 50%);
   border-radius: 7px 7px var(--card-roundness) var(--card-roundness);
   box-shadow: 0 1px 8px #0004;
   color: var(--c-item-fg);
