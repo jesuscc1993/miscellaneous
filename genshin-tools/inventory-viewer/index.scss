@@ -5,8 +5,9 @@
   --artwork-size: 100px;
   --card-roundness: 5px;
   --grid-gap: 16px;
-  --uncap-size: 20px;
+  --line-height: 20px;
   --transition: 150ms;
+  --uncap-size: 20px;
 }
 
 @font-face {
@@ -78,7 +79,6 @@ small {
 }
 
 .items-grid {
-  --card-height: 148px;
   display: grid;
   grid-gap: var(--grid-gap);
   grid-template-columns: repeat(auto-fill, var(--artwork-size));
@@ -91,15 +91,27 @@ small {
   }
 }
 
+.characters-grid {
+  --card-height: 148px;
+
+  .bottom-text {
+    height: calc(var(--line-height) * 2);
+
+    .name {
+      height: var(--line-height);
+    }
+  }
+}
+
 .weapons-grid {
   --card-height: 168px;
 
-  .name {
-    align-items: center;
-    display: flex;
-    height: 40px;
-    justify-content: center;
-    white-space: break-spaces;
+  .bottom-text {
+    height: calc(var(--line-height) * 3);
+
+    .name {
+      height: calc(var(--line-height) * 2);
+    }
   }
 }
 
@@ -125,8 +137,7 @@ small {
 
   .item-text {
     font-weight: 500;
-    line-height: 20px;
-    padding: 4px 0;
+    line-height: var(--line-height);
     transition: var(--transition);
   }
 
@@ -144,6 +155,21 @@ small {
     &.maxed {
       background: #a96759;
       color: #ffe14b;
+    }
+  }
+
+  .bottom-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 4px 0;
+
+    .name {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      line-height: 18px;
+      white-space: break-spaces;
     }
   }
 
