@@ -98,6 +98,7 @@ small {
   color: var(--c-item-fg);
   cursor: pointer;
   height: var(--card-height);
+  overflow: hidden;
   position: relative;
   transition: var(--transition);
 
@@ -136,21 +137,18 @@ small {
 
   .bottom-text {
     line-height: 18px;
-    padding: 4px 0;
+    overflow: hidden;
 
     .name,
     .level {
       align-items: center;
       display: flex;
       justify-content: center;
+      transition: var(--transition);
     }
 
     .name {
       white-space: break-spaces;
-    }
-
-    .level {
-      height: var(--line-height);
     }
   }
 
@@ -169,25 +167,45 @@ small {
 }
 
 .characters-grid {
-  --card-height: 148px;
+  --bottom-text-height: 28px;
+  --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
 
-  .bottom-text {
-    height: calc(var(--line-height) * 2);
+  .item {
+    .bottom-text {
+      height: calc(var(--line-height) * 2);
 
-    .name {
-      height: var(--line-height);
+      .name,
+      .level {
+        height: var(--bottom-text-height);
+      }
+    }
+
+    &:hover {
+      .name {
+        margin-top: calc(var(--bottom-text-height) * -1);
+      }
     }
   }
 }
 
 .weapons-grid {
-  --card-height: 168px;
+  --bottom-text-height: 46px;
+  --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
 
-  .bottom-text {
-    height: calc(var(--line-height) * 3);
+  .item {
+    .bottom-text {
+      height: calc(var(--line-height) * 3);
 
-    .name {
-      height: calc(var(--line-height) * 2);
+      .name,
+      .level {
+        height: var(--bottom-text-height);
+      }
+    }
+
+    &:hover {
+      .name {
+        margin-top: calc(var(--bottom-text-height) * -1);
+      }
     }
   }
 }
