@@ -91,30 +91,6 @@ small {
   }
 }
 
-.characters-grid {
-  --card-height: 148px;
-
-  .bottom-text {
-    height: calc(var(--line-height) * 2);
-
-    .name {
-      height: var(--line-height);
-    }
-  }
-}
-
-.weapons-grid {
-  --card-height: 168px;
-
-  .bottom-text {
-    height: calc(var(--line-height) * 3);
-
-    .name {
-      height: calc(var(--line-height) * 2);
-    }
-  }
-}
-
 .item {
   background: linear-gradient(0deg, var(--c-item-bg) 67%, transparent 67%);
   border-radius: 7px 7px var(--card-roundness) var(--card-roundness);
@@ -159,17 +135,22 @@ small {
   }
 
   .bottom-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    line-height: 18px;
     padding: 4px 0;
 
-    .name {
+    .name,
+    .level {
       align-items: center;
       display: flex;
       justify-content: center;
-      line-height: 18px;
+    }
+
+    .name {
       white-space: break-spaces;
+    }
+
+    .level {
+      height: var(--line-height);
     }
   }
 
@@ -183,6 +164,30 @@ small {
 
     & > .bottom-text {
       scale: 0.925;
+    }
+  }
+}
+
+.characters-grid {
+  --card-height: 148px;
+
+  .bottom-text {
+    height: calc(var(--line-height) * 2);
+
+    .name {
+      height: var(--line-height);
+    }
+  }
+}
+
+.weapons-grid {
+  --card-height: 168px;
+
+  .bottom-text {
+    height: calc(var(--line-height) * 3);
+
+    .name {
+      height: calc(var(--line-height) * 2);
     }
   }
 }
