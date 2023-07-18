@@ -3,7 +3,7 @@
   --c-item-fg: #495366;
 
   --artwork-size: 100px;
-  --card-roundness: 5px;
+  --card-roundness: 4px;
   --grid-gap: 16px;
   --line-height: 20px;
   --transition: 150ms;
@@ -93,7 +93,7 @@ small {
 
 .item {
   background: linear-gradient(0deg, var(--c-item-bg) 67%, transparent 67%);
-  border-radius: 7px 7px var(--card-roundness) var(--card-roundness);
+  border-radius: var(--card-roundness);
   box-shadow: 0 1px 8px #0004;
   color: var(--c-item-fg);
   cursor: pointer;
