@@ -65,7 +65,9 @@ const sortItems = (items) => {
   return items.sort(
     (a, b) =>
       `${b.rarity}`.localeCompare(`${a.rarity}`) ||
+      `${b.type}`.localeCompare(`${a.type}`) ||
       `${b.level}`.localeCompare(`${a.level}`) ||
+      `${b.uncap}`.localeCompare(`${a.uncap}`) ||
       `${a.name || a.id}`.localeCompare(`${b.name || b.id}`)
   );
 };
