@@ -15,7 +15,12 @@ const processList = (identifier, items, itemType) => {
         : `https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_${item.id}.png`);
     const artworkBackground = rarityBackgrounds[item.rarity];
 
-    const itemContainer = jQuery(`<div class="item ${itemType}"></div>`);
+    const shortItemName = item.name || item.id;
+    const itemContainer = jQuery(
+      `<div class="item ${itemType}" title="${
+        item.fullName || shortItemName
+      }"></div>`
+    );
 
     const portrait = jQuery(`<div class="item-portrait"></div>`);
     portrait.css(
@@ -33,11 +38,8 @@ const processList = (identifier, items, itemType) => {
 
     const bottomText = jQuery(`<div class="item-text bottom-text"></div>`);
 
-    const shortItemName = item.name || item.id;
     const nameLine = jQuery(
-      `<span class="center-text name" title="${
-        item.fullName || shortItemName
-      }">${shortItemName}</span>`
+      `<span class="center-text name">${shortItemName}</span>`
     );
     bottomText.append(nameLine);
 
