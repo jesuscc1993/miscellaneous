@@ -15,7 +15,7 @@ const weapons = [
   { id: 'Fossil',         level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Sacrificial Fragments' },
   { id: 'Fossil',         level: 90, rarity: 4, uncap: 5, type: 'Claymore', name: 'Sacrificial Greatsword' },
   { id: 'Fossil',         level: 90, rarity: 4, uncap: 5, type: 'Sword', name: 'Sacrificial Sword' },
-  { id: 'Ibis',           level: 90, rarity: 4, uncap: 5, type: 'Bow', name: 'Ibis Piercer', portrait: 'https://upload-static.hoyoverse.com/hoyolab-wiki/2023/05/26/194600931/3c33fbd1aeadf27dc00617c3f4d31c55_8985435652169839567.png' },
+  { id: 'Ibis',           level: 90, rarity: 4, uncap: 5, type: 'Bow', name: 'Ibis Piercer', portrait: 'https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u587xe/d0487b5253419380af5f2afbb726fe8d.png' },
   { id: 'Jyanome',        level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Hakushin Ring' },
   { id: 'Kasabouzu',      level: 90, rarity: 4, uncap: 5, type: 'Sword' },
   { id: 'Ludiharpastum',  level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Dodoco Tales' },
