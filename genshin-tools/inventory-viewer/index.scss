@@ -51,10 +51,9 @@ html {
 }
 
 body {
-  background: no-repeat top right;
+  background: no-repeat bottom right;
   background-attachment: fixed;
-  background-position-y: calc(100vh - 720px);
-  background-size: auto 720px;
+  background-size: auto min(640px, 100vh);
   color: #fff;
   font-family: 'HYWenHei 85W', non-serif;
   font-size: 14px;
