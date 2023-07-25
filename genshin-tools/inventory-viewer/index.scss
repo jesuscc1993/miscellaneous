@@ -1,3 +1,6 @@
+$weaponTypes: 'bow', 'catalyst', 'claymore', 'pole', 'sword';
+$elements: 'anemo', 'cryo', 'dendro', 'electro', 'geo', 'hydro', 'pyro';
+
 :root {
   --c-item-bg: #e9e5dc;
   --c-item-fg: #495366;
@@ -150,6 +153,31 @@ small {
     .name {
       white-space: pre-line;
     }
+
+    .level {
+      &:before,
+      &:after {
+        $size: 20px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: $size $size;
+        content: '';
+        display: inline-block;
+        height: $size;
+        width: $size;
+      }
+      &:before {
+        $size: 20px;
+        background-size: $size $size;
+        margin-right: 4px;
+      }
+      &:after {
+        $size: 16px;
+        background-image: url(assets/images/elements/wildcard.png);
+        background-size: $size $size;
+        margin-left: 4px;
+      }
+    }
   }
 
   &:hover {
@@ -162,6 +190,30 @@ small {
 
     & > .bottom-text {
       scale: 0.925;
+    }
+  }
+
+  @each $weaponType in $weaponTypes {
+    &.#{$weaponType} {
+      .bottom-text {
+        .level {
+          &:before {
+            background-image: url(assets/images/weapons/#{$weaponType}.png);
+          }
+        }
+      }
+    }
+  }
+
+  @each $element in $elements {
+    &.#{$element} {
+      .bottom-text {
+        .level {
+          &:after {
+            background-image: url(assets/images/elements/#{$element}.png);
+          }
+        }
+      }
     }
   }
 }

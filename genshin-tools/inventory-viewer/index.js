@@ -17,7 +17,7 @@ const processList = (identifier, items, itemType) => {
 
     const shortItemName = item.name || item.id;
     const itemContainer = jQuery(
-      `<div class="item ${itemType}" title="${
+      `<div class="item ${itemType} ${item.type.toLowerCase()} ${item.element?.toLowerCase()}" title="${
         item.fullName || shortItemName
       }"></div>`
     );
@@ -66,6 +66,7 @@ const sortItems = (items) => {
     (a, b) =>
       `${b.rarity}`.localeCompare(`${a.rarity}`) ||
       `${b.type}`.localeCompare(`${a.type}`) ||
+      `${b.element}`.localeCompare(`${a.element}`) ||
       `${b.level}`.localeCompare(`${a.level}`) ||
       `${b.uncap}`.localeCompare(`${a.uncap}`) ||
       `${a.name || a.id}`.localeCompare(`${b.name || b.id}`)
