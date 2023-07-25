@@ -21,7 +21,7 @@ const characters = [
   { id: 'Kaeya',          level: 50, rarity: 4, uncap: 1, type: 'Sword' },
   { id: 'Kazuha',         level: 90, rarity: 5, uncap: 0, type: 'Sword', fullName: 'Kaedehara Kazuha' },
   { id: 'Keqing',         level: 80, rarity: 5, uncap: 0, type: 'Sword' },
-  { id: 'Kokomi',         level: 50, rarity: 5, uncap: 0, type: 'Pole', fullName: 'Sangonomiya Kokomi' },
+  { id: 'Kokomi',         level: 50, rarity: 5, uncap: 0, type: 'Catalyst', fullName: 'Sangonomiya Kokomi' },
   { id: 'Layla',          level: 50, rarity: 4, uncap: 0, type: 'Sword' },
   { id: 'Lisa',           level: 50, rarity: 4, uncap: 2, type: 'Catalyst' },
   { id: 'Mika',           level: 50, rarity: 4, uncap: 0, type: 'Pole' },
