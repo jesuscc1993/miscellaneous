@@ -22,7 +22,7 @@ a {
   &,
   &:visited {
     color: #657ef8;
-    transition: 150ms;
+    transition: var(--transition);
     text-decoration: none;
   }
   &:hover {
@@ -272,15 +272,33 @@ small {
 }
 
 .back-to-top {
+  $size: 54px;
+  border-radius: 50%;
+  border: 3px solid #0000001a;
+  height: $size;
+  scale: 0.9;
+  transition: var(--transition);
+  width: $size;
+
   bottom: 0;
   cursor: pointer;
-  margin: 12px;
+  margin: 16px;
   position: fixed;
   right: 0;
-  transition: 150ms;
+
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    border-radius: 50%;
+    background: #fff;
+  }
 
   &:hover {
-    filter: brightness(1.25);
+    scale: 1;
+    filter: brightness(1.5);
   }
 }
 
