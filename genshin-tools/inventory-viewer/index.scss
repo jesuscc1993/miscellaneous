@@ -112,6 +112,27 @@ small {
     margin-bottom: -1px; /* compensate for border */
     transition: var(--transition);
     width: var(--artwork-size);
+
+    &:before {
+      $size: 30px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: $size $size;
+      content: '';
+      display: inline-block;
+      height: $size;
+      width: $size;
+    }
+  }
+
+  @each $element in $elements {
+    &.#{$element} {
+      .item-portrait {
+        &:before {
+          background-image: url(assets/images/elements/colored/#{$element}.png);
+        }
+      }
+    }
   }
 
   .item-text {
@@ -122,10 +143,8 @@ small {
 
   .uncap-text {
     background: #0006;
-    border-radius: var(--card-roundness) 0 var(--card-roundness) 0;
     color: white;
     height: var(--uncap-size);
-    left: 0;
     padding: 0;
     position: absolute;
     top: 0;
@@ -154,8 +173,7 @@ small {
     }
 
     .level {
-      &:before,
-      &:after {
+      &:before {
         $size: 20px;
         background-position: center;
         background-repeat: no-repeat;
@@ -169,12 +187,6 @@ small {
         $size: 20px;
         background-size: $size $size;
         margin-right: 4px;
-      }
-      &:after {
-        $size: 16px;
-        background-image: url(assets/images/elements/wildcard.png);
-        background-size: $size $size;
-        margin-left: 4px;
       }
     }
   }
@@ -203,18 +215,6 @@ small {
       }
     }
   }
-
-  @each $element in $elements {
-    &.#{$element} {
-      .bottom-text {
-        .level {
-          &:after {
-            background-image: url(assets/images/elements/#{$element}.png);
-          }
-        }
-      }
-    }
-  }
 }
 
 .characters-grid {
@@ -222,6 +222,11 @@ small {
   --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
 
   .item {
+    .uncap-text {
+      border-radius: 0 var(--card-roundness) 0 var(--card-roundness);
+      right: 0;
+    }
+
     .bottom-text {
       height: calc(var(--line-height) * 2);
 
@@ -244,6 +249,11 @@ small {
   --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
 
   .item {
+    .uncap-text {
+      border-radius: var(--card-roundness) 0 var(--card-roundness) 0;
+      left: 0;
+    }
+
     .bottom-text {
       height: calc(var(--line-height) * 3);
 
