@@ -25,6 +25,7 @@ const weapons = [
   { id: 'Narukami',       level: 90, rarity: 5, uncap: 1, type: 'Pole', name: 'Engulfing Lightning' },
   { id: 'Narukami',       level: 90, rarity: 5, uncap: 1, type: 'Sword', name: 'Mistsplitter Reforged' },
   { id: 'Opus',           level: 90, rarity: 4, uncap: 5, type: 'Sword', name: 'Cinnabar Spindle' },
+  { id: 'Proto',          level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Prototype Amber' },
   { id: 'Proto',          level: 90, rarity: 4, uncap: 5, type: 'Claymore', name: 'Prototype Archaic' },
   { id: 'Proto',          level: 90, rarity: 4, uncap: 5, type: 'Pole', name: 'Prototype Starglitter' },
   { id: 'Proto',          level: 90, rarity: 4, uncap: 5, type: 'Sword', name: 'Prototype Rancour' },
