@@ -127,9 +127,11 @@ custom_bottom_bottom=${bottomBottom}`
 
   jQuery('#output-wrapper').removeAttr('hidden');
   jQuery('#copy').text('Copy layout.');
+
+  copyLayout(true);
 };
 
-const copyLayout = () => {
+const copyLayout = (silent = false) => {
   navigator.clipboard.writeText(jQuery('#output').text());
-  jQuery('#copy').text('Layout copied.');
+  if (!silent) jQuery('#copy').text('Layout copied.');
 };
