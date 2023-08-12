@@ -21,19 +21,19 @@
 
     <!-- <div class="form-group">
       <label for="topWidth">Top screen width</label>
-      <input id="topWidth" type="number" value="400" />
+      <input id="topWidth" type="number" value="800" />
     </div> -->
     <div class="form-group">
       <label for="topHeight">Top screen height</label>
-      <input id="topHeight" type="number" value="240" />
+      <input id="topHeight" type="number" value="480" />
     </div>
     <!-- <div class="form-group">
       <label for="bottomWidth">Bottom screen width</label>
-      <input id="bottomWidth" type="number" value="320" />
+      <input id="bottomWidth" type="number" value="640" />
     </div> -->
     <div class="form-group">
       <label for="bottomHeight">Bottom screen height</label>
-      <input id="bottomHeight" type="number" value="240" />
+      <input id="bottomHeight" type="number" value="480" />
     </div>
 
     <hr />
@@ -46,21 +46,29 @@
     </div>
 
     <div id="output-wrapper" hidden>
-      <br />
-
-      <label for="output">Output:</label>
-
-      <textarea id="output" readonly></textarea>
+      <p>
+        <label for="output">Output:</label>
+      </p>
+      <p>
+        <textarea id="output" readonly></textarea>
+      </p>
 
       <button id="copy" onclick="copyLayout()" class="center">
         Copy layout
       </button>
+
+      <p>
+        <label> Preview:</label>
+      </p>
+
+      <div id="preview" class="preview">
+        <div id="top" class="screen top">Top</div>
+        <div id="bottom" class="screen bottom">Bottom</div>
+      </div>
     </div>
 
     <div class="info">
-      <p>
-        <small>Defaults:</small>
-      </p>
+      <p>Defaults:</p>
 
       <div class="form-group">
         <small>Top screen width:</small>

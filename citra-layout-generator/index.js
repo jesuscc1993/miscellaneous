@@ -43,44 +43,87 @@ const generateVerticalLayout = ({
     return;
   }
 
+  const topLeft = (monitorWidth - topWidth) / 2;
+  const topTop = 0;
+  const topRight = (monitorWidth - topWidth) / 2 + topWidth;
+  const topBottom = topHeight;
+  const bottomLeft = (monitorWidth - bottomWidth) / 2;
+  const bottomTop = monitorHeight - bottomHeight;
+  const bottomRight = (monitorWidth - bottomWidth) / 2 + bottomWidth;
+  const bottomBottom = monitorHeight;
+
+  jQuery('#topWidth').val(topWidth);
+  jQuery('#bottomWidth').val(bottomWidth);
+
   outputLayout({
+    bottomBottom,
     bottomHeight,
+    bottomLeft,
+    bottomRight,
+    bottomTop,
     bottomWidth,
     monitorHeight,
     monitorWidth,
+    topBottom,
     topHeight,
+    topLeft,
+    topRight,
+    topTop,
     topWidth,
   });
 };
 
 const outputLayout = ({
+  bottomBottom,
   bottomHeight,
+  bottomLeft,
+  bottomRight,
+  bottomTop,
   bottomWidth,
   monitorHeight,
   monitorWidth,
+  topBottom,
   topHeight,
+  topLeft,
+  topRight,
+  topTop,
   topWidth,
 }) => {
   jQuery('#output').text(
     `custom_layout\\default=false
 custom_layout=true
 custom_top_left\\default=false
-custom_top_left=${(monitorWidth - topWidth) / 2}
-custom_top_top\\default=true
-custom_top_top=0
+custom_top_left=${topLeft}
+custom_top_top\\default=false
+custom_top_top=${topTop}
 custom_top_right\\default=false
-custom_top_right=${(monitorWidth - topWidth) / 2 + topWidth}
+custom_top_right=${topRight}
 custom_top_bottom\\default=false
-custom_top_bottom=${topHeight}
+custom_top_bottom=${topBottom}
 custom_bottom_left\\default=false
-custom_bottom_left=${(monitorWidth - bottomWidth) / 2}
+custom_bottom_left=${bottomLeft}
 custom_bottom_top\\default=false
-custom_bottom_top=${monitorHeight - bottomHeight}
+custom_bottom_top=${bottomTop}
 custom_bottom_right\\default=false
-custom_bottom_right=${(monitorWidth - bottomWidth) / 2 + bottomWidth}
+custom_bottom_right=${bottomRight}
 custom_bottom_bottom\\default=false
-custom_bottom_bottom=${monitorHeight}`
+custom_bottom_bottom=${bottomBottom}`
   );
+
+  jQuery('#preview').css({ width: monitorWidth, height: monitorHeight });
+
+  jQuery('#preview #top').css({
+    width: topWidth,
+    height: topHeight,
+    top: topTop,
+    left: topLeft,
+  });
+  jQuery('#preview #bottom').css({
+    width: bottomWidth,
+    height: bottomHeight,
+    top: bottomTop,
+    left: bottomLeft,
+  });
 
   jQuery('#output-wrapper').removeAttr('hidden');
   jQuery('#copy').text('Copy layout.');
