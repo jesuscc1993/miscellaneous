@@ -3,30 +3,14 @@ const defaultTopHeight = 240;
 const defaultBottomWidth = 320;
 const defaultBottomHeight = 240;
 
-const generateLayout = () => {
-  const monitorWidth = parseInt(jQuery('#monitorWidth').val(), 10);
-  const monitorHeight = parseInt(jQuery('#monitorHeight').val(), 10);
-  // const topWidth = parseInt(jQuery('#topWidth').val(), 10);
-  const topHeight = parseInt(jQuery('#topHeight').val(), 10);
-  // const bottomWidth = parseInt(jQuery('#bottomWidth').val(), 10);
-  const bottomHeight = parseInt(jQuery('#bottomHeight').val(), 10);
-
+const generateVerticalLayout = ({
+  bottomHeight,
+  monitorHeight,
+  monitorWidth,
+  topHeight,
+}) => {
   const topWidth = (topHeight * defaultTopWidth) / defaultTopHeight;
   const bottomWidth = (bottomHeight * defaultBottomWidth) / defaultBottomHeight;
-
-  if (
-    !(
-      monitorWidth &&
-      monitorHeight &&
-      topWidth &&
-      topHeight &&
-      bottomWidth &&
-      bottomHeight
-    )
-  ) {
-    alert('Form is incomplete.');
-    return;
-  }
 
   if (topWidth > monitorWidth || bottomWidth > monitorWidth) {
     alert('Screens are too wide to fit your monitor.');
@@ -59,10 +43,31 @@ custom_bottom_bottom\\default=false
 custom_bottom_bottom=${monitorHeight}`
   );
   jQuery('#output-wrapper').removeAttr('hidden');
+  jQuery('#copy').text('Copy layout.');
+};
+
+const generateLayout = () => {
+  const monitorWidth = parseInt(jQuery('#monitorWidth').val(), 10);
+  const monitorHeight = parseInt(jQuery('#monitorHeight').val(), 10);
+  // const topWidth = parseInt(jQuery('#topWidth').val(), 10);
+  const topHeight = parseInt(jQuery('#topHeight').val(), 10);
+  // const bottomWidth = parseInt(jQuery('#bottomWidth').val(), 10);
+  const bottomHeight = parseInt(jQuery('#bottomHeight').val(), 10);
+
+  if (!(monitorWidth && monitorHeight && topHeight && bottomHeight)) {
+    alert('Form is incomplete.');
+    return;
+  }
+
+  generateVerticalLayout({
+    bottomHeight,
+    monitorHeight,
+    monitorWidth,
+    topHeight,
+  });
 };
 
 const copyLayout = () => {
-  jQuery('#output')[0].select();
-  document.execCommand('copy');
-  alert('Layout copied.');
+  navigator.clipboard.writeText(jQuery('#output').text());
+  jQuery('#copy').text('Layout copied.');
 };
