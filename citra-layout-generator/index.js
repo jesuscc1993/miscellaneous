@@ -67,14 +67,19 @@ const generateVerticalLayout = ({
     return;
   }
 
+  const emptySpace = monitorHeight - topHeight - bottomHeight;
+  const borderSpacing = Math.round(emptySpace / 3);
+  const centerSpace = emptySpace - borderSpacing * 2;
+
+  const topTop = borderSpacing;
+  const topBottom = topTop + topHeight;
   const topLeft = (monitorWidth - topWidth) / 2;
-  const topTop = 0;
-  const topRight = (monitorWidth - topWidth) / 2 + topWidth;
-  const topBottom = topHeight;
+  const topRight = topLeft + topWidth;
+
+  const bottomTop = topBottom + centerSpace;
+  const bottomBottom = bottomTop + bottomHeight;
   const bottomLeft = (monitorWidth - bottomWidth) / 2;
-  const bottomTop = monitorHeight - bottomHeight;
-  const bottomRight = (monitorWidth - bottomWidth) / 2 + bottomWidth;
-  const bottomBottom = monitorHeight;
+  const bottomRight = bottomLeft + bottomWidth;
 
   outputLayout({
     bottomHeight,
