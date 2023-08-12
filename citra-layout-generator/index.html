@@ -90,18 +90,20 @@
       <button onclick="setBottomSize(4)">4x</button>
     </div>
 
-    <br />
-
+    <p>
+      <label for="output">Generate:</label>
+    </p>
     <div class="form-group">
-      <button id="calculate" onclick="generateVerticalLayout()" class="center">
-        Generate vertical layout
+      <button onclick="generateVerticalLayout()" class="center">
+        Vertical layout
       </button>
-      <button
-        id="calculate"
-        onclick="generateHorizontalLayout()"
-        class="center"
-      >
-        Generate horizontal layout
+
+      <button onclick="generateSingleScreenLayout()" class="center">
+        Single screen layout
+      </button>
+
+      <button onclick="generateHorizontalLayout()" class="center">
+        Horizontal layout
       </button>
     </div>
 

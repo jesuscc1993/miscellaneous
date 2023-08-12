@@ -84,24 +84,22 @@ const generateVerticalLayout = () => {
   const bottomRight = bottomLeft + bottomWidth;
 
   outputLayout({
-    bottomHeight,
-    bottomWidth,
     monitorHeight,
     monitorWidth,
-    topHeight,
-    topWidth,
-
-    bottomBottom,
-    bottomLeft,
-    bottomRight,
-    bottomTop,
-    bottomWidth,
 
     topBottom,
     topHeight,
     topLeft,
     topRight,
     topTop,
+    topWidth,
+
+    bottomBottom,
+    bottomHeight,
+    bottomLeft,
+    bottomRight,
+    bottomTop,
+    bottomWidth,
   });
 };
 
@@ -140,24 +138,60 @@ const generateHorizontalLayout = () => {
   const bottomRight = bottomLeft + bottomWidth;
 
   outputLayout({
-    bottomHeight,
-    bottomWidth,
     monitorHeight,
     monitorWidth,
-    topHeight,
-    topWidth,
-
-    bottomBottom,
-    bottomLeft,
-    bottomRight,
-    bottomTop,
-    bottomWidth,
 
     topBottom,
     topHeight,
     topLeft,
     topRight,
     topTop,
+    topWidth,
+
+    bottomBottom,
+    bottomHeight,
+    bottomLeft,
+    bottomRight,
+    bottomTop,
+    bottomWidth,
+  });
+};
+
+const generateSingleScreenLayout = () => {
+  const { monitorHeight, monitorWidth, topHeight, topWidth } = getFormValues();
+
+  if (topWidth > monitorWidth) {
+    alert('Screen is too wide to fit your monitor.');
+    return;
+  }
+
+  if (topHeight > monitorWidth) {
+    alert('Screen is too tall to fit your monitor.');
+    return;
+  }
+
+  const topTop = (monitorHeight - topHeight) / 2;
+  const topBottom = topTop + topHeight;
+  const topLeft = (monitorWidth - topWidth) / 2;
+  const topRight = topLeft + topWidth;
+
+  outputLayout({
+    monitorHeight,
+    monitorWidth,
+
+    topBottom,
+    topHeight,
+    topLeft,
+    topRight,
+    topTop,
+    topWidth,
+
+    bottomBottom: 0,
+    bottomHeight: 0,
+    bottomLeft: 0,
+    bottomRight: 0,
+    bottomTop: 0,
+    bottomWidth: 0,
   });
 };
 
