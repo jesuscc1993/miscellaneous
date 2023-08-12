@@ -3,7 +3,8 @@
   --c-bg-10: #171a1c;
   --c-bg-15: #232629;
   --c-bg-20: #31363b;
-  --c-fg: #fff;
+  --c-fg-100: #fff;
+  --c-fg-60: #999;
   --c-anchor: #0cd;
 
   --border-radius: 3px;
@@ -12,7 +13,7 @@
 
 body {
   background: var(--c-bg-15);
-  color: var(--c-fg);
+  color: var(--c-fg-100);
 }
 
 hr {
@@ -25,7 +26,7 @@ input,
 textarea {
   background: var(--c-bg-20);
   border: 1px solid var(--c-border);
-  color: var(--c-fg);
+  color: var(--c-fg-100);
   border-radius: var(--border-radius);
 
   padding: 4px 6px;
@@ -55,6 +56,10 @@ a {
   &:hover {
     filter: brightness(1.2);
   }
+}
+
+.info {
+  color: var(--c-fg-60);
 }
 
 .preview {
