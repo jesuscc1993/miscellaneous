@@ -293,10 +293,30 @@ const recalculateBottomWidth = () => {
 };
 
 const setTopSize = (scale) => {
-  topWidthEl.val(defaultTopWidth * scale);
-  topHeightEl.val(defaultTopHeight * scale);
+  let _scale = scale;
+
+  const fullscreen = scale < 0;
+  if (fullscreen) {
+    _scale = Math.min(
+      monitorWidthEl.val() / defaultTopWidth,
+      monitorHeightEl.val() / defaultTopHeight
+    );
+  }
+
+  topWidthEl.val(defaultTopWidth * _scale);
+  topHeightEl.val(defaultTopHeight * _scale);
 };
 const setBottomSize = (scale) => {
-  bottomWidthEl.val(defaultBottomWidth * scale);
-  bottomHeightEl.val(defaultBottomHeight * scale);
+  let _scale = scale;
+
+  const fullscreen = scale < 0;
+  if (fullscreen) {
+    _scale = Math.min(
+      monitorWidthEl.val() / defaultBottomWidth,
+      monitorHeightEl.val() / defaultBottomHeight
+    );
+  }
+
+  bottomWidthEl.val(defaultBottomWidth * _scale);
+  bottomHeightEl.val(defaultBottomHeight * _scale);
 };
