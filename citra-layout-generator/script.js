@@ -1,3 +1,5 @@
+const oneKWidth = 960;
+const oneKHeight = 540;
 const defaultTopWidth = 400;
 const defaultTopHeight = 240;
 const defaultBottomWidth = 320;
@@ -232,19 +234,21 @@ custom_bottom_bottom\\default=false
 custom_bottom_bottom=${bottomBottom}`
   );
 
-  previewEl.css({ width: monitorWidth, height: monitorHeight });
+  const xScale = (100 * 16) / monitorWidth;
+  const yScale = (100 * 9) / monitorHeight;
 
   previewTopEl.css({
-    width: topWidth,
-    height: topHeight,
-    top: topTop,
-    left: topLeft,
+    left: topLeft * xScale,
+    top: topTop * yScale,
+    width: topWidth * xScale,
+    height: topHeight * yScale,
   });
+
   previewBottomEl.css({
-    width: bottomWidth,
-    height: bottomHeight,
-    top: bottomTop,
-    left: bottomLeft,
+    left: bottomLeft * xScale,
+    top: bottomTop * yScale,
+    width: bottomWidth * xScale,
+    height: bottomHeight * yScale,
   });
 
   outputWrapperEl.removeAttr('hidden');
@@ -292,6 +296,11 @@ const recalculateBottomWidth = () => {
   );
 };
 
+const setMonitorSize = (scale) => {
+  monitorWidthEl.val(oneKWidth * scale);
+  monitorHeightEl.val(oneKHeight * scale);
+};
+
 const setTopSize = (scale) => {
   let _scale = scale;
 
@@ -306,6 +315,7 @@ const setTopSize = (scale) => {
   topWidthEl.val(defaultTopWidth * _scale);
   topHeightEl.val(defaultTopHeight * _scale);
 };
+
 const setBottomSize = (scale) => {
   let _scale = scale;
 

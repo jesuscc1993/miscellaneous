@@ -19,6 +19,16 @@
       <input id="monitorHeight" type="number" value="1080" />
     </div>
 
+    <div class="form-group">
+      <button onclick="setMonitorSize(2)">2k</button>
+      <button onclick="setMonitorSize(3)">3k</button>
+      <button onclick="setMonitorSize(4)">4k</button>
+      <button onclick="setMonitorSize(5)">5k</button>
+      <button onclick="setMonitorSize(6)">6k</button>
+      <button onclick="setMonitorSize(7)">7k</button>
+      <button onclick="setMonitorSize(8)">8k</button>
+    </div>
+
     <hr />
 
     <div class="form-group">
@@ -48,11 +58,14 @@
     </div>
 
     <div class="form-group">
-      <button onclick="setTopSize(0)">0x</button>
       <button onclick="setTopSize(1)">1x</button>
       <button onclick="setTopSize(2)">2x</button>
       <button onclick="setTopSize(3)">3x</button>
       <button onclick="setTopSize(4)">4x</button>
+      <button onclick="setTopSize(5)">5x</button>
+      <button onclick="setTopSize(6)">6x</button>
+      <button onclick="setTopSize(7)">7x</button>
+      <button onclick="setTopSize(8)">8x</button>
       <button onclick="setTopSize(-1)">100%</button>
     </div>
 
@@ -85,11 +98,14 @@
     </div>
 
     <div class="form-group">
-      <button onclick="setBottomSize(0)">0x</button>
       <button onclick="setBottomSize(1)">1x</button>
       <button onclick="setBottomSize(2)">2x</button>
       <button onclick="setBottomSize(3)">3x</button>
       <button onclick="setBottomSize(4)">4x</button>
+      <button onclick="setBottomSize(5)">5x</button>
+      <button onclick="setBottomSize(6)">6x</button>
+      <button onclick="setBottomSize(7)">7x</button>
+      <button onclick="setBottomSize(8)">8x</button>
       <button onclick="setBottomSize(-1)">100%</button>
     </div>
 
@@ -116,8 +132,8 @@
       </p>
 
       <div id="preview" class="preview">
-        <div id="top" class="screen top">Top</div>
-        <div id="bottom" class="screen bottom">Bottom</div>
+        <div id="top" class="screen top" title="Top">T</div>
+        <div id="bottom" class="screen bottom" title="Bottom">B</div>
       </div>
 
       <p>

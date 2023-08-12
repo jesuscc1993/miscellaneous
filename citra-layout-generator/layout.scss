@@ -63,11 +63,12 @@ textarea {
 }
 
 .preview {
-  box-sizing: content-box;
-  font-size: 80px;
+  font-size: 3.5rem;
   margin: auto;
   position: relative;
-  zoom: 0.25;
+  zoom: 0.3;
+  width: 1598px;
+  height: 998px;
 
   .screen {
     align-items: center;
