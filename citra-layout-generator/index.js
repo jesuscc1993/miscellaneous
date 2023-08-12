@@ -18,26 +18,26 @@ const previewBottomEl = previewEl.find('#bottom');
 const copyOutputEl = previewEl.find('#copy-output');
 
 const generateLayout = () => {
+  if (
+    !(
+      bottomHeightEl.val() !== '' &&
+      bottomWidthEl.val() !== '' &&
+      monitorHeightEl.val() !== '' &&
+      monitorWidthEl.val() !== '' &&
+      topHeightEl.val() !== '' &&
+      topWidthEl.val() !== ''
+    )
+  ) {
+    alert('Form is incomplete.');
+    return;
+  }
+
   const monitorWidth = parseInt(monitorWidthEl.val(), 10);
   const monitorHeight = parseInt(monitorHeightEl.val(), 10);
   const topWidth = parseInt(topWidthEl.val(), 10);
   const topHeight = parseInt(topHeightEl.val(), 10);
   const bottomWidth = parseInt(bottomWidthEl.val(), 10);
   const bottomHeight = parseInt(bottomHeightEl.val(), 10);
-
-  if (
-    !(
-      bottomHeight &&
-      bottomWidth &&
-      monitorHeight &&
-      monitorWidth &&
-      topHeight &&
-      topWidth
-    )
-  ) {
-    alert('Form is incomplete.');
-    return;
-  }
 
   generateVerticalLayout({
     bottomHeight,
@@ -163,24 +163,43 @@ const copyLayout = (silent = false) => {
 
 const recalculateTopHeight = () => {
   topHeightEl.val(
-    Math.round((topWidthEl.val() / defaultTopWidth) * defaultTopHeight)
+    topWidthEl.val() === ''
+      ? ''
+      : Math.round((topWidthEl.val() / defaultTopWidth) * defaultTopHeight)
   );
 };
 const recalculateBottomHeight = () => {
   bottomHeightEl.val(
-    Math.round((bottomWidthEl.val() / defaultBottomWidth) * defaultBottomHeight)
+    bottomWidthEl.val() === ''
+      ? ''
+      : Math.round(
+          (bottomWidthEl.val() / defaultBottomWidth) * defaultBottomHeight
+        )
   );
 };
 
 const recalculateTopWidth = () => {
   topWidthEl.val(
-    Math.round((topHeightEl.val() * defaultTopWidth) / defaultTopHeight)
+    topHeightEl.val() === ''
+      ? ''
+      : Math.round((topHeightEl.val() * defaultTopWidth) / defaultTopHeight)
   );
 };
 const recalculateBottomWidth = () => {
   bottomWidthEl.val(
-    Math.round(
-      (bottomHeightEl.val() * defaultBottomWidth) / defaultBottomHeight
-    )
+    bottomHeightEl.val() === ''
+      ? ''
+      : Math.round(
+          (bottomHeightEl.val() * defaultBottomWidth) / defaultBottomHeight
+        )
   );
+};
+
+const setTopSize = (scale) => {
+  topWidthEl.val(defaultTopWidth * scale);
+  topHeightEl.val(defaultTopHeight * scale);
+};
+const setBottomSize = (scale) => {
+  bottomWidthEl.val(defaultBottomWidth * scale);
+  bottomHeightEl.val(defaultBottomHeight * scale);
 };

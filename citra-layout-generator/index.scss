@@ -14,14 +14,15 @@ body {
 
 .form-group {
   display: flex;
+  gap: 4px;
   margin-bottom: 8px;
 
   > {
+    * {
+      flex: 1;
+    }
     label {
       flex: 2;
-    }
-    input {
-      flex: 1;
     }
   }
 }
@@ -60,7 +61,7 @@ textarea {
 }
 
 button {
-  margin: 8px 0;
+  cursor: pointer;
   padding: 4px 6px;
 }
 
@@ -79,9 +80,10 @@ textarea {
   .screen {
     align-items: center;
     background: #333;
+    color: #fff;
     display: flex;
     justify-content: center;
+    overflow: hidden;
     position: absolute;
-    color: #fff;
   }
 }
