@@ -3,7 +3,8 @@
   <head>
     <title>Citra layout generator</title>
     <link rel="icon" href="https://github.com/favicon.ico" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="layout.css" />
+    <link rel="stylesheet" href="theme.css" />
   </head>
   <body>
     <h1 class="text-center">Citra layout generator</h1>
@@ -111,6 +112,15 @@
 
     <div id="output-wrapper" hidden>
       <p>
+        <label> Preview:</label>
+      </p>
+
+      <div id="preview" class="preview">
+        <div id="top" class="screen top">Top</div>
+        <div id="bottom" class="screen bottom">Bottom</div>
+      </div>
+
+      <p>
         <label for="output">Output:</label>
       </p>
       <p>
@@ -120,15 +130,6 @@
       <button id="copy-output" onclick="copyLayout()" class="center">
         Copy layout
       </button>
-
-      <p>
-        <label> Preview:</label>
-      </p>
-
-      <div id="preview" class="preview">
-        <div id="top" class="screen top">Top</div>
-        <div id="bottom" class="screen bottom">Bottom</div>
-      </div>
     </div>
 
     <p>
@@ -139,6 +140,6 @@
     </p>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="index.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

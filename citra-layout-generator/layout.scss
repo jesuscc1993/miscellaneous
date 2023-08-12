@@ -6,10 +6,7 @@ body {
   margin: 0 auto;
   max-width: max(480px, 20vw);
   font-family: 'Roboto', sans-serif;
-}
-
-.disabled {
-  opacity: 0.5;
+  overflow-y: scroll;
 }
 
 .form-group {
@@ -28,18 +25,13 @@ body {
 }
 
 .info {
-  color: #666;
+  opacity: 0.5;
 }
 
 .link {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #333;
-
-  &:hover {
-    filter: brightness(1.2);
-  }
 
   > * {
     margin: 0 2px;
@@ -71,7 +63,7 @@ textarea {
 }
 
 .preview {
-  background: #3338;
+  box-sizing: content-box;
   font-size: 80px;
   margin: auto;
   position: relative;
@@ -79,8 +71,6 @@ textarea {
 
   .screen {
     align-items: center;
-    background: #333;
-    color: #fff;
     display: flex;
     justify-content: center;
     overflow: hidden;
