@@ -12,6 +12,7 @@
       <label for="monitorWidth">Monitor width</label>
       <input id="monitorWidth" type="number" value="1920" />
     </div>
+
     <div class="form-group">
       <label for="monitorHeight">Monitor height</label>
       <input id="monitorHeight" type="number" value="1080" />
@@ -19,21 +20,58 @@
 
     <hr />
 
-    <!-- <div class="form-group">
-      <label for="topWidth">Top screen width</label>
-      <input id="topWidth" type="number" value="800" />
-    </div> -->
     <div class="form-group">
-      <label for="topHeight">Top screen height</label>
-      <input id="topHeight" type="number" value="480" />
+      <label for="topWidth"
+        >Top screen width
+        <small class="info">(default: 400px)</small>
+      </label>
+      <input
+        id="topWidth"
+        type="number"
+        value="800"
+        onchange="recalculateTopHeight()"
+      />
     </div>
-    <!-- <div class="form-group">
-      <label for="bottomWidth">Bottom screen width</label>
-      <input id="bottomWidth" type="number" value="640" />
-    </div> -->
+
     <div class="form-group">
-      <label for="bottomHeight">Bottom screen height</label>
-      <input id="bottomHeight" type="number" value="480" />
+      <label for="topHeight">
+        Top screen height
+        <small class="info">(default: 240px)</small>
+      </label>
+      <input
+        id="topHeight"
+        type="number"
+        value="480"
+        onchange="recalculateTopWidth()"
+      />
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+      <label for="bottomWidth">
+        Bottom screen width
+        <small class="info">(default: 320px)</small>
+      </label>
+      <input
+        id="bottomWidth"
+        type="number"
+        value="640"
+        onchange="recalculateBottomHeight()"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="bottomHeight">
+        Bottom screen height
+        <small class="info">(default: 240px)</small>
+      </label>
+      <input
+        id="bottomHeight"
+        type="number"
+        value="480"
+        onchange="recalculateBottomWidth()"
+      />
     </div>
 
     <br />
@@ -50,7 +88,7 @@
         <textarea id="output" readonly></textarea>
       </p>
 
-      <button id="copy" onclick="copyLayout()" class="center">
+      <button id="copy-output" onclick="copyLayout()" class="center">
         Copy layout
       </button>
 
@@ -64,34 +102,11 @@
       </div>
     </div>
 
-    <div class="info">
-      <p>Defaults:</p>
-
-      <div class="form-group">
-        <small>Top screen width:</small>
-        <small>400</small>
-      </div>
-      <div class="form-group">
-        <small>Top screen height:</small>
-        <small>240</small>
-      </div>
-
-      <div class="form-group">
-        <small>Bottom screen width:</small>
-        <small>320</small>
-      </div>
-      <div class="form-group">
-        <small>Bottom screen height:</small>
-        <small>240</small>
-      </div>
-    </div>
-
     <p>
-      <a class="link" href="https://github.com/jesuscc1993"
-        ><img src="https://github.com/favicon.ico" width="16" /><small
-          >github.com/jesuscc1993</small
-        ></a
-      >
+      <a class="link" href="https://github.com/jesuscc1993" target="_blank">
+        <img src="https://github.com/favicon.ico" width="16" />
+        <small>github.com/jesuscc1993</small>
+      </a>
     </p>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -16,8 +16,13 @@ body {
   display: flex;
   margin-bottom: 8px;
 
-  > * {
-    flex: 1;
+  > {
+    label {
+      flex: 2;
+    }
+    input {
+      flex: 1;
+    }
   }
 }
 
