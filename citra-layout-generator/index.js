@@ -17,7 +17,7 @@ const previewTopEl = previewEl.find('#top');
 const previewBottomEl = previewEl.find('#bottom');
 const copyOutputEl = previewEl.find('#copy-output');
 
-const generateLayout = () => {
+const getFormValues = () => {
   if (
     !(
       bottomHeightEl.val() !== '' &&
@@ -39,25 +39,27 @@ const generateLayout = () => {
   const bottomWidth = parseInt(bottomWidthEl.val(), 10);
   const bottomHeight = parseInt(bottomHeightEl.val(), 10);
 
-  generateVerticalLayout({
+  return {
     bottomHeight,
     bottomWidth,
     monitorHeight,
     monitorWidth,
     topHeight,
     topWidth,
-  });
+  };
 };
 
-const generateVerticalLayout = ({
-  bottomHeight,
-  bottomWidth,
-  monitorHeight,
-  monitorWidth,
-  topHeight,
-  topWidth,
-}) => {
-  if (topWidth > monitorWidth || bottomWidth > monitorWidth) {
+const generateVerticalLayout = () => {
+  const {
+    bottomHeight,
+    bottomWidth,
+    monitorHeight,
+    monitorWidth,
+    topHeight,
+    topWidth,
+  } = getFormValues();
+
+  if (Math.max(topWidth, bottomWidth) > monitorWidth) {
     alert('Screens are too wide to fit your monitor.');
     return;
   }
@@ -79,6 +81,62 @@ const generateVerticalLayout = ({
   const bottomTop = topBottom + centerSpace;
   const bottomBottom = bottomTop + bottomHeight;
   const bottomLeft = (monitorWidth - bottomWidth) / 2;
+  const bottomRight = bottomLeft + bottomWidth;
+
+  outputLayout({
+    bottomHeight,
+    bottomWidth,
+    monitorHeight,
+    monitorWidth,
+    topHeight,
+    topWidth,
+
+    bottomBottom,
+    bottomLeft,
+    bottomRight,
+    bottomTop,
+    bottomWidth,
+
+    topBottom,
+    topHeight,
+    topLeft,
+    topRight,
+    topTop,
+  });
+};
+
+const generateHorizontalLayout = () => {
+  const {
+    bottomHeight,
+    bottomWidth,
+    monitorHeight,
+    monitorWidth,
+    topHeight,
+    topWidth,
+  } = getFormValues();
+
+  if (topWidth + bottomWidth > monitorWidth) {
+    alert('Screens are too wide to fit your monitor.');
+    return;
+  }
+
+  if (Math.max(topHeight, bottomHeight) > monitorWidth) {
+    alert('Screens are too tall to fit your monitor.');
+    return;
+  }
+
+  const emptySpace = monitorWidth - topWidth - bottomWidth;
+  const borderSpacing = Math.round(emptySpace / 3);
+  const centerSpace = emptySpace - borderSpacing * 2;
+
+  const topTop = (monitorHeight - topHeight) / 2;
+  const topBottom = topTop + topHeight;
+  const topLeft = borderSpacing;
+  const topRight = topLeft + topWidth;
+
+  const bottomTop = (monitorHeight - bottomHeight) / 2;
+  const bottomBottom = bottomTop + bottomHeight;
+  const bottomLeft = topRight + centerSpace;
   const bottomRight = bottomLeft + bottomWidth;
 
   outputLayout({
