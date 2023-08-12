@@ -234,8 +234,8 @@ custom_bottom_bottom\\default=false
 custom_bottom_bottom=${bottomBottom}`
   );
 
-  const xScale = (100 * 16) / monitorWidth;
-  const yScale = (100 * 9) / monitorHeight;
+  const xScale = 478 / monitorWidth;
+  const yScale = 268 / monitorHeight;
 
   previewTopEl.css({
     left: topLeft * xScale,

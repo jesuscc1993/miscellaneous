@@ -62,13 +62,15 @@ textarea {
   font-family: 'Roboto Mono', monospace;
 }
 
+hr {
+  margin: 12px -16px;
+}
+
 .preview {
-  font-size: 3.5rem;
   margin: auto;
   position: relative;
-  zoom: 0.3;
-  width: 1598px;
-  height: 998px;
+  width: 480px;
+  height: 270px;
 
   .screen {
     align-items: center;
