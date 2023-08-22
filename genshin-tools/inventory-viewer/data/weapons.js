@@ -35,6 +35,7 @@ const weapons = [
   { id: 'Troupe',         level: 90, rarity: 4, uncap: 3, type: 'Catalyst', name: 'The Widsith' },
   { id: 'Windvane',       level: 90, rarity: 4, uncap: 5, type: 'Pole',     name: 'Missive Windspear' },
   { id: 'Wolfmound',      level: 90, rarity: 5, uncap: 1, type: 'Claymore', name: "Wolf's Gravestone" },
+  { id: 'Zephyrus',       level: 90, rarity: 4, uncap: 4, type: 'Sword',    name: 'Favonius Sword' },
   { id: 'Zephyrus',       level: 90, rarity: 4, uncap: 5, type: 'Bow',      name: 'Favonius Warbow' },
   { id: 'Zephyrus',       level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Favonius Codex' },
   { id: 'Zephyrus',       level: 90, rarity: 4, uncap: 5, type: 'Claymore', name: 'Favonius Greatsword' },
