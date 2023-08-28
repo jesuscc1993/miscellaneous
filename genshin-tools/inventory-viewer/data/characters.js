@@ -4,7 +4,7 @@ const characters = [
   { id: 'Ayaka',          level: 90, rarity: 5, uncap: 0, type: 'Sword',    element: 'Cryo', name: 'Ayaka' },
   { id: 'Barbara',        level: 80, rarity: 4, uncap: 6, type: 'Catalyst', element: 'Hydro' },
   { id: 'Beidou',         level: 80, rarity: 4, uncap: 6, type: 'Claymore', element: 'Electro' },
-  { id: 'Bennett',        level: 90, rarity: 4, uncap: 4, type: 'Sword',    element: 'Pyro' },
+  { id: 'Bennett',        level: 90, rarity: 4, uncap: 5, type: 'Sword',    element: 'Pyro' },
   { id: 'Chongyun',       level: 80, rarity: 4, uncap: 6, type: 'Claymore', element: 'Cryo' },
   { id: 'Collei',         level: 50, rarity: 4, uncap: 1, type: 'Bow',      element: 'Dendro' },
   { id: 'Dehya',          level: 80, rarity: 5, uncap: 0, type: 'Claymore', element: 'Pyro' },
