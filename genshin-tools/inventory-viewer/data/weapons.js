@@ -1,7 +1,7 @@
 const weapons = [
   { id: 'Amenoma',        level: 90, rarity: 5, uncap: 1, type: 'Sword',    name: 'Haran Geppaku...', fullName: 'Haran Geppaku Futsu' },
   { id: 'Amos',           level: 90, rarity: 5, uncap: 2, type: 'Bow',      name: "Amos' Bow" },
-  { id: 'Bakufu',         level: 80, rarity: 4, uncap: 5, type: 'Claymore', name: 'Katsuragi Kirinaga...', fullName: 'Katsuragi Kirinagamasa' },
+  { id: 'Bakufu',         level: 90, rarity: 4, uncap: 5, type: 'Claymore', name: 'Katsuragi Kirinaga...', fullName: 'Katsuragi Kirinagamasa' },
   { id: 'Bakufu',         level: 90, rarity: 4, uncap: 5, type: 'Bow',      name: 'Hamayumi' },
   { id: 'Bakufu',         level: 90, rarity: 4, uncap: 5, type: 'Pole',     name: 'Kitain Cross Spear' },
   { id: 'Bakufu',         level: 90, rarity: 4, uncap: 5, type: 'Sword',    name: 'Amenoma Kageuchi' },
