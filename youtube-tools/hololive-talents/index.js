@@ -1,4 +1,20 @@
-const query = `https://www.youtube.com/results?sp=CAI%3D&search_query=-MMD+-reaction+-español+-subespañol+-idsub+-vietsub+-"sub+indo"+-"ru+sub"+-中文+-ซับไทย+`;
+const blacklist = [
+  'MMD',
+  'español',
+  'idsub',
+  'indo',
+  'reaction',
+  'ru',
+  'russian',
+  'spanish',
+  'subespañol',
+  'vietsub',
+  'ซับไทย',
+  '中文',
+];
+
+const searchUrl = `https://www.youtube.com/results?search_query=`;
+const query = `${searchUrl}-${blacklist.join('+-')}+`;
 
 const fetchJson = (url) => {
   return fetch(url).then((response) => response.json());

@@ -1,4 +1,13 @@
 {
+  "DEV_IS": {
+    "ReGLOSS": [
+      { "name": "Hiodoshi Ao" },
+      { "name": "Ichijou Ririka" },
+      { "name": "Juufuutei Raden" },
+      { "name": "Otonose Kanade" },
+      { "name": "Todoroki Hajime" }
+    ]
+  },
   "JP": {
     "Gen 0": [
       { "name": "AZKi" },
@@ -53,15 +62,6 @@
       { "name": "Laplus Darkness" },
       { "name": "Sakamata Chloe" },
       { "name": "Takane Lui" }
-    ]
-  },
-  "DEV_IS": {
-    "ReGLOSS": [
-      { "name": "Hiodoshi Ao" },
-      { "name": "Ichijou Ririka" },
-      { "name": "Juufuutei Raden" },
-      { "name": "Otonose Kanade" },
-      { "name": "Todoroki Hajime" }
     ]
   },
   "ID": {
