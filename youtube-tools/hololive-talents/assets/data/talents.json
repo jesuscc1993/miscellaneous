@@ -2,106 +2,106 @@
   "DEV_IS": {
     "ReGLOSS": [
       { "name": "Hiodoshi Ao" },
-      { "name": "Ichijou Ririka" },
-      { "name": "Juufuutei Raden" },
-      { "name": "Otonose Kanade" },
+      { "name": "Ichijou Ririka", "keyword": "Ririka" },
+      { "name": "Juufuutei Raden", "keyword": "Raden" },
+      { "name": "Otonose Kanade", "keyword": "Kanade" },
       { "name": "Todoroki Hajime" }
     ]
   },
   "JP": {
     "Gen 0": [
-      { "name": "AZKi" },
-      { "name": "Hoshimachi Suisei" },
-      { "name": "Roboco" },
-      { "name": "Sakura Miko" },
-      { "name": "Tokino Sora" }
+      { "name": "AZKi", "keyword": "AZKi" },
+      { "name": "Hoshimachi Suisei", "keyword": "Suisei" },
+      { "name": "Roboco", "keyword": "Roboco" },
+      { "name": "Sakura Miko", "keyword": "Miko" },
+      { "name": "Tokino Sora", "keyword": "Sora" }
     ],
     "Gen 1": [
-      { "name": "Akai Haato" },
-      { "name": "Aki Rosenthal" },
-      { "name": "Natsuiro Matsuri" },
-      { "name": "Shirakami Fubuki" },
-      { "name": "Yozora Mel" }
+      { "name": "Akai Haato", "keyword": "Haachama" },
+      { "name": "Aki Rosenthal", "keyword": "Aki" },
+      { "name": "Natsuiro Matsuri", "keyword": "Matsuri" },
+      { "name": "Shirakami Fubuki", "keyword": "Fubuki" },
+      { "name": "Yozora Mel", "keyword": "Mel" }
     ],
     "Gen 2": [
-      { "name": "Minato Aqua" },
-      { "name": "Murasaki Shion" },
-      { "name": "Nakiri Ayame" },
-      { "name": "Oozora Subaru" },
-      { "name": "Yuzuki Choco" }
+      { "name": "Minato Aqua", "keyword": "Aqua" },
+      { "name": "Murasaki Shion", "keyword": "Shion" },
+      { "name": "Nakiri Ayame", "keyword": "Ayame" },
+      { "name": "Oozora Subaru", "keyword": "Subaru" },
+      { "name": "Yuzuki Choco", "keyword": "Choco" }
     ],
     "Gamers": [
-      { "name": "Inugami Korone" },
-      { "name": "Nekomata Okayu" },
-      { "name": "Ookami Mio" },
-      { "name": "Shirakami Fubuki" }
+      { "name": "Inugami Korone", "keyword": "Korone" },
+      { "name": "Nekomata Okayu", "keyword": "Okayu" },
+      { "name": "Ookami Mio", "keyword": "Mio" },
+      { "name": "Shirakami Fubuki", "keyword": "Fubuki" }
     ],
     "Gen 3": [
-      { "name": "Houshou Marine" },
-      { "name": "Shiranui Flare" },
-      { "name": "Shirogane Noel" },
-      { "name": "Uruha Rushia", "graduated": true },
-      { "name": "Usada Pekora" }
+      { "name": "Houshou Marine", "keyword": "Marine" },
+      { "name": "Shiranui Flare", "keyword": "Flare" },
+      { "name": "Shirogane Noel", "keyword": "Noel" },
+      { "name": "Uruha Rushia", "keyword": "Rushia", "graduated": true },
+      { "name": "Usada Pekora", "keyword": "Pekora" }
     ],
     "Gen 4": [
-      { "name": "Amane Kanata" },
-      { "name": "Himemori Luna" },
-      { "name": "Kiryu Coco", "graduated": true },
-      { "name": "Tokoyami Towa" },
-      { "name": "Tsunomaki Watame" }
+      { "name": "Amane Kanata", "keyword": "Kanata" },
+      { "name": "Himemori Luna", "keyword": "Luna" },
+      { "name": "Kiryu Coco", "keyword": "Coco", "graduated": true },
+      { "name": "Tokoyami Towa", "keyword": "Towa" },
+      { "name": "Tsunomaki Watame", "keyword": "Watame" }
     ],
     "Gen 5": [
-      { "name": "Momosuzu Nene" },
-      { "name": "Omaru Polka" },
-      { "name": "Shishiro Botan" },
-      { "name": "Yukihana Lamy" }
+      { "name": "Momosuzu Nene", "keyword": "Nene" },
+      { "name": "Omaru Polka", "keyword": "Polka" },
+      { "name": "Shishiro Botan", "keyword": "Botan" },
+      { "name": "Yukihana Lamy", "keyword": "Lamy" }
     ],
     "Gen 6": [
-      { "name": "Hakui Koyori" },
-      { "name": "Kazama Iroha" },
-      { "name": "Laplus Darkness" },
-      { "name": "Sakamata Chloe" },
-      { "name": "Takane Lui" }
+      { "name": "Hakui Koyori", "keyword": "Koyori" },
+      { "name": "Kazama Iroha", "keyword": "Iroha" },
+      { "name": "Laplus Darkness", "keyword": "Laplus" },
+      { "name": "Sakamata Chloe", "keyword": "Chloe" },
+      { "name": "Takane Lui", "keyword": "Lui" }
     ]
   },
   "ID": {
     "Gen 1": [
-      { "name": "Airani Iofifteen" },
-      { "name": "Ayunda Risu" },
-      { "name": "Moona Hoshinova" }
+      { "name": "Airani Iofifteen", "keyword": "Iofi" },
+      { "name": "Ayunda Risu", "keyword": "Risu" },
+      { "name": "Moona Hoshinova", "keyword": "Moona" }
     ],
     "Gen 2": [
-      { "name": "Anya Melfissa" },
-      { "name": "Kureiji Ollie" },
-      { "name": "Pavolia Reine" }
+      { "name": "Anya Melfissa", "keyword": "Anya" },
+      { "name": "Kureiji Ollie", "keyword": "Ollie" },
+      { "name": "Pavolia Reine", "keyword": "Reine" }
     ],
     "Gen 3": [
-      { "name": "Kaela Kovalskia" },
-      { "name": "Kobo Kanaeru" },
-      { "name": "Vestia Zeta" }
+      { "name": "Kaela Kovalskia", "keyword": "Kaela" },
+      { "name": "Kobo Kanaeru", "keyword": "Kobo" },
+      { "name": "Vestia Zeta", "keyword": "Zeta" }
     ]
   },
   "EN": {
     "Myth": [
-      { "name": "Gawr Gura" },
-      { "name": "Mori Calliope" },
-      { "name": "Ninomae Ina'nis" },
-      { "name": "Takanashi Kiara" },
-      { "name": "Watson Amelia" }
+      { "name": "Gawr Gura", "keyword": "Gura" },
+      { "name": "Mori Calliope", "keyword": "Calli" },
+      { "name": "Ninomae Ina'nis", "keyword": "Ina" },
+      { "name": "Takanashi Kiara", "keyword": "Kiara" },
+      { "name": "Watson Amelia", "keyword": "Ame" }
     ],
-    "Project: HOPE": [{ "name": "IRyS" }],
+    "Project: HOPE": [{ "name": "IRyS", "keyword": "IRyS" }],
     "Council": [
-      { "name": "Ceres Fauna" },
-      { "name": "Hakos Baelz" },
-      { "name": "Nanashi Mumei" },
-      { "name": "Ouro Kronii" },
-      { "name": "Tsukumo Sana", "graduated": true }
+      { "name": "Ceres Fauna", "keyword": "Fauna" },
+      { "name": "Hakos Baelz", "keyword": "Bae" },
+      { "name": "Nanashi Mumei", "keyword": "Mumei" },
+      { "name": "Ouro Kronii", "keyword": "Kronii" },
+      { "name": "Tsukumo Sana", "keyword": "Sana", "graduated": true }
     ],
     "Advent": [
-      { "name": "FuwaMoco Abyssgard" },
-      { "name": "Koseki Bijou" },
-      { "name": "Nerissa Ravencroft" },
-      { "name": "Shiori Novella" }
+      { "name": "FuwaMoco Abyssgard", "keyword": "FuwaMoco" },
+      { "name": "Koseki Bijou", "keyword": "Bijou" },
+      { "name": "Nerissa Ravencroft", "keyword": "Nerissa" },
+      { "name": "Shiori Novella", "keyword": "Shiori" }
     ]
   }
 }

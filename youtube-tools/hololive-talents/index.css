@@ -4,6 +4,8 @@
   --c-primary: #49c8f0;
   --c-link: #49c8f088;
   --c-link-hover: #49c8f0;
+
+  --talent-image-size: 192px;
   --transition: 0.15s;
 }
 
@@ -61,6 +63,7 @@ a:hover {
 .talent img {
   border-radius: 6px;
   border: 1px solid #0002;
+  width: var(--talent-image-size);
 }
 
 .talent-text {

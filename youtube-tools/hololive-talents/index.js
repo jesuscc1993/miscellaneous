@@ -14,7 +14,7 @@ const blacklist = [
 ];
 
 const searchUrl = `https://www.youtube.com/results?search_query=`;
-const query = `${searchUrl}-${blacklist.join('+-')}+`;
+const blackListParams = blacklist.join('+-');
 
 const fetchJson = (url) => {
   return fetch(url).then((response) => response.json());
@@ -54,10 +54,15 @@ const initialize = () => {
           `);
 
           talentsList.forEach((talent) => {
+            const talentKeyword = sanitizeSpaces(talent.keyword || talent.name);
+            const talentQuery = `${encodeURI(
+              `${searchUrl}${talentKeyword}+-${blacklist.join('+-')}`
+            )}`;
+
             const talentContainer = jQuery(
               `<a class="talent ${
                 talent.graduated ? 'graduated' : ''
-              }" href="${encodeURI(query)}${sanitizeSpaces(talent.name)}"></a>`
+              }" href="${talentQuery}"></a>`
             );
 
             const talentImage = jQuery(
