@@ -38,21 +38,25 @@ a:hover {
   border-radius: 12px;
   color: var(--c-primary);
   display: inline-block;
-  padding: 8px 8px 2px;
+  padding: 6px 6px 2px;
   position: relative;
   transition: var(--transition);
+  margin: 0 2px;
 }
 .talent.graduated img {
   filter: grayscale(.8) brightness(.5);
 }
 .talent.graduated:after {
-  background: url(assets/images/graduation_hat.png);
+  --size: 56px;
+  --spacing: -8px;
+  background-image: url(assets/images/graduation_hat.png);
+  background-size: contain;
   content: '';
-  height: 96px;
+  height: var(--size);
   position: absolute;
-  right: -24px;
-  top: -24px;
-  width: 96px;
+  right: var(--spacing);
+  top: var(--spacing);
+  width: var(--size);
   z-index: 1;
 }
 .talent:hover {
