@@ -40,6 +40,9 @@ a:hover {
   position: relative;
   transition: var(--transition);
 }
+.talent.graduated img {
+  filter: grayscale(.8) brightness(.5);
+}
 .talent.graduated:after {
   background: url(assets/images/graduation_hat.png);
   content: '';
