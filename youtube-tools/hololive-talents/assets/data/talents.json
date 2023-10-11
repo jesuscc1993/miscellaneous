@@ -55,6 +55,15 @@
       { "name": "Takane Lui" }
     ]
   },
+  "DEV_IS": {
+    "ReGLOSS": [
+      { "name": "Hiodoshi Ao" },
+      { "name": "Ichijou Ririka" },
+      { "name": "Juufuutei Raden" },
+      { "name": "Otonose Kanade" },
+      { "name": "Todoroki Hajime" }
+    ]
+  },
   "ID": {
     "Gen 1": [
       { "name": "Airani Iofifteen" },
@@ -73,7 +82,7 @@
     ]
   },
   "EN": {
-    "Gen 1": [
+    "Myth": [
       { "name": "Gawr Gura" },
       { "name": "Mori Calliope" },
       { "name": "Ninomae Ina'nis" },
@@ -81,12 +90,18 @@
       { "name": "Watson Amelia" }
     ],
     "Project: HOPE": [{ "name": "IRyS" }],
-    "Gen 2": [
+    "Council": [
       { "name": "Ceres Fauna" },
       { "name": "Hakos Baelz" },
       { "name": "Nanashi Mumei" },
       { "name": "Ouro Kronii" },
       { "name": "Tsukumo Sana", "graduated": true }
+    ],
+    "Advent": [
+      { "name": "FuwaMoco Abyssgard" },
+      { "name": "Koseki Bijou" },
+      { "name": "Nerissa Ravencroft" },
+      { "name": "Shiori Novella" }
     ]
   }
 }

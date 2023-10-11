@@ -25,15 +25,16 @@ const initialize = () => {
       Object.keys(countryMap)
         .reverse()
         .forEach((groupKey, i) => {
+          const id = sanitizeSpaces(`${countryKey}-${groupKey}`);
           const talentsList = countryMap[groupKey];
           const groupContainer = jQuery(`
             <div class="talent-group">
-               <h3 id="${sanitizeSpaces(groupKey)}">${groupKey}</h3>
+               <h3 id="${id}">${groupKey}</h3>
             </div>
           `);
           countryLinksContainer.append(`
             ${i > 0 ? ' | ' : ''}
-            <a href="#${sanitizeSpaces(groupKey)}">${groupKey}</a>
+            <a href="#${id}">${groupKey}</a>
           `);
 
           talentsList.forEach((talent) => {
