@@ -13,7 +13,7 @@ const blacklist = [
   '中文',
 ];
 
-const searchUrl = `https://www.youtube.com/results?search_query=`;
+const searchUrl = `https://www.youtube.com/results?search_query={{ QUERY }}&sp=CAI%253D`;
 const blackListParams = blacklist.join('+-');
 
 const fetchJson = (url) => {
@@ -54,10 +54,12 @@ const initialize = () => {
           `);
 
           talentsList.forEach((talent) => {
-            const talentKeyword = sanitizeSpaces(talent.keyword || talent.name);
-            const talentQuery = `${encodeURI(
-              `${searchUrl}${talentKeyword}+-${blacklist.join('+-')}`
-            )}`;
+            // const talentKeyword = sanitizeSpaces(talent.keyword || talent.name);
+            const talentKeyword = sanitizeSpaces(talent.name);
+            const talentQuery = searchUrl.replace(
+              /\{\{ QUERY \}\}/g,
+              encodeURI(`${talentKeyword}+-${blacklist.join('+-')}`)
+            );
 
             const talentContainer = jQuery(
               `<a class="talent ${
