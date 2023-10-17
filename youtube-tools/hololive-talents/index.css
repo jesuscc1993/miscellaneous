@@ -70,6 +70,8 @@ a:hover {
 .talent:hover {
   background: var(--c-primary);
   color: var(--c-background);
+  margin: 0 12px;
+  scale: 1.05;
 }
 
 .talent img {
