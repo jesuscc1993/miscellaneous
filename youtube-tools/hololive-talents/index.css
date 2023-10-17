@@ -2,6 +2,7 @@
   --c-background: #181818;
   --c-foreground: #aaa;
   --c-primary: #4ac4ef;
+  --c-hover: #75e3ff;
 
   --talent-image-size: 192px;
   --transition: 0.15s;
@@ -28,7 +29,7 @@ a {
   transition: var(--transition);
 }
 a:hover {
-  filter: brightness(1.5)
+  color: var(--c-hover);
 }
 
 .title {
