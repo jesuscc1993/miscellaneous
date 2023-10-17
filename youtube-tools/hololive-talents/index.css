@@ -2,7 +2,7 @@
   --c-background: #181818;
   --c-foreground: #aaa;
   --c-primary: #49c8f0;
-  --c-link: #49c8f088;
+  --c-link: #49c8f0;
   --c-link-hover: #49c8f0;
 
   --talent-image-size: 192px;
@@ -30,7 +30,7 @@ a {
   transition: var(--transition);
 }
 a:hover {
-  color: var(--c-link-hover);
+  filter: brightness(1.5)
 }
 
 .talent {
