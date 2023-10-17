@@ -53,32 +53,36 @@ const initialize = () => {
             <a href="#${id}">${groupKey}</a>
           `);
 
-          talentsList.forEach((talent) => {
-            // const talentKeyword = sanitizeSpaces(talent.keyword || talent.name);
-            const talentKeyword = sanitizeSpaces(talent.name);
-            const talentQuery = searchUrl.replace(
-              /\{\{ QUERY \}\}/g,
-              encodeURI(`${talentKeyword}+-${blacklist.join('+-')}`)
-            );
+          talentsList
+            .sort((a, b) =>
+              a.graduated === b.graduated ? 0 : a.graduated ? 1 : -1
+            )
+            .forEach((talent) => {
+              // const talentKeyword = sanitizeSpaces(talent.keyword || talent.name);
+              const talentKeyword = sanitizeSpaces(talent.name);
+              const talentQuery = searchUrl.replace(
+                /\{\{ QUERY \}\}/g,
+                encodeURI(`${talentKeyword}+-${blacklist.join('+-')}`)
+              );
 
-            const talentContainer = jQuery(
-              `<a class="talent ${
-                talent.graduated ? 'graduated' : ''
-              }" href="${talentQuery}"></a>`
-            );
+              const talentContainer = jQuery(
+                `<a class="talent ${
+                  talent.graduated ? 'graduated' : ''
+                }" href="${talentQuery}"></a>`
+              );
 
-            const talentImage = jQuery(
-              `<img src="assets/images/portraits/${talent.name}.jpg">`
-            );
-            talentContainer.append(talentImage);
+              const talentImage = jQuery(
+                `<img src="assets/images/portraits/${talent.name}.jpg">`
+              );
+              talentContainer.append(talentImage);
 
-            const talentText = jQuery(
-              `<div class="talent-text">${talent.name}</div>`
-            );
-            talentContainer.append(talentText);
+              const talentText = jQuery(
+                `<div class="talent-text">${talent.name}</div>`
+              );
+              talentContainer.append(talentText);
 
-            groupContainer.append(talentContainer);
-          });
+              groupContainer.append(talentContainer);
+            });
 
           countryContainer.append(groupContainer);
           linksContainer.append(countryLinksContainer);

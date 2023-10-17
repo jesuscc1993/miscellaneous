@@ -89,10 +89,10 @@
       { "name": "Takanashi Kiara", "keyword": "Kiara" },
       { "name": "Watson Amelia", "keyword": "Ame" }
     ],
-    "Project: HOPE": [{ "name": "IRyS", "keyword": "IRyS" }],
-    "Council": [
+    "Promise": [
       { "name": "Ceres Fauna", "keyword": "Fauna" },
       { "name": "Hakos Baelz", "keyword": "Bae" },
+      { "name": "IRyS", "keyword": "IRyS" },
       { "name": "Nanashi Mumei", "keyword": "Mumei" },
       { "name": "Ouro Kronii", "keyword": "Kronii" },
       { "name": "Tsukumo Sana", "keyword": "Sana", "graduated": true }
