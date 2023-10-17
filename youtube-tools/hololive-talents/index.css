@@ -43,7 +43,7 @@ a:hover {
 
 .talent {
   background: transparent;
-  border-radius: 12px;
+  border-radius: 8px;
   color: var(--c-primary);
   display: inline-block;
   padding: 6px 6px 2px;
@@ -73,7 +73,7 @@ a:hover {
 }
 
 .talent img {
-  border-radius: 6px;
+  border-radius: 4px;
   border: 1px solid #0002;
   width: var(--talent-image-size);
 }
