@@ -51,6 +51,12 @@ a:hover {
   transition: var(--transition);
   margin: 0 2px;
 }
+.talent:hover {
+  background: var(--c-primary);
+  color: var(--c-background);
+  margin: 0 12px;
+  scale: 1.05;
+}
 .talent.graduated img {
   filter: grayscale(.8) brightness(.5);
 }
@@ -66,12 +72,6 @@ a:hover {
   top: var(--spacing);
   width: var(--size);
   z-index: 1;
-}
-.talent:hover {
-  background: var(--c-primary);
-  color: var(--c-background);
-  margin: 0 12px;
-  scale: 1.05;
 }
 
 .talent img {
