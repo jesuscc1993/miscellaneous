@@ -2,6 +2,9 @@ $weaponTypes: 'bow', 'catalyst', 'claymore', 'pole', 'sword';
 $elements: 'anemo', 'cryo', 'dendro', 'electro', 'geo', 'hydro', 'pyro';
 
 :root {
+  --c-dark-bg: #1c1c22;
+  --c-dark-fg-medium: #d3bc8e;
+  --c-dark-fg-light: #ece5d8;
   --c-item-bg: #e9e5dc;
   --c-item-fg: #495366;
 
