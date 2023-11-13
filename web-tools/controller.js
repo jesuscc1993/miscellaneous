@@ -449,6 +449,34 @@ const getTriangularSum = (start, end) => {
 };
 
 // ==================================================================================================================
+// HTML cleaner
+// ==================================================================================================================
+
+const htmlCleanerInput = jQuery('#htmlCleanerInput');
+const htmlCleanerOutput = jQuery('#htmlCleanerOutput');
+
+const htmlCleaner = () => {
+  const inputHTML = htmlCleanerInput.val();
+
+  const outputString = getCleanHTML(inputHTML);
+  htmlCleanerOutput.val(outputString);
+
+  replicateHeight(htmlCleanerInput, htmlCleanerOutput);
+};
+
+const getCleanHTML = (input) => {
+  return input
+    ? input
+        .replace(/<p>&nbsp;<\/p>/g, '')
+        .replace(/&nbsp;/g, ' ')
+        .replace(/<\/strong\n*\s*>\n*\s*<strong\n*\s*>/g, '')
+        .replace(/<\/em\n*\s*>\n*\s*<em\n*\s*>/g, '')
+        .replace(/\n+/g, '\n')
+        .replace(/ {2,}/g, ' ')
+    : '';
+};
+
+// ==================================================================================================================
 // HTML to string
 // ==================================================================================================================
 

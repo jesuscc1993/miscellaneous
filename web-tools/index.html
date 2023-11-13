@@ -33,6 +33,59 @@
     </div>
 
     <div class="content-wrapper">
+      <!-- HTML cleaner -->
+      <div id="htmlCleaner" class="card">
+        <div class="card-header">
+          <span class="card-title"
+            >HTML cleaner&nbsp;
+            <small
+              >(corrects a few common issues resulting of HTML
+              conversion)</small
+            ></span
+          >
+        </div>
+
+        <div class="card-content">
+          <div class="flex">
+            <div class="flex1">
+              <textarea
+                id="htmlCleanerInput"
+                placeholder="HTML"
+                rows="8"
+                title="HTML"
+                onblur="htmlCleaner()"
+              ></textarea>
+            </div>
+            <div class="flex1">
+              <textarea
+                id="htmlCleanerOutput"
+                placeholder="String"
+                readonly
+                rows="8"
+                title="String"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="center-contents">
+            <button type="button" onclick="pasteInput('#htmlCleanerInput')">
+              Paste
+            </button>
+            <button
+              type="button"
+              onclick="clearInputs(['#htmlCleanerInput', '#htmlCleanerOutput'])"
+            >
+              Clear
+            </button>
+            <button type="button" onclick="copyOutput('#htmlCleanerOutput')">
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- HTML to string -->
       <div id="htmlToString" class="card">
         <div class="card-header">
