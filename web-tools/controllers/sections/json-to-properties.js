@@ -11,7 +11,7 @@ const jsonToProperties = () => {
 
     replicateHeight(jsonToPropertiesInput, jsonToPropertiesOutput);
   } catch {
-    jsonToPropertiesOutput.val('<Not a valid JSON object>');
+    jsonToPropertiesOutput.val(INVALID_JSON_MESSAGE);
   }
 };
 

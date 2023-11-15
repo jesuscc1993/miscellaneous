@@ -2,6 +2,7 @@
 
 const LIST_SEPARATOR = /,\s*/;
 const LINE_DELIMITER = /\n/;
+const INVALID_JSON_MESSAGE = '<Not a valid JSON object>';
 
 // Miscellaneous
 
