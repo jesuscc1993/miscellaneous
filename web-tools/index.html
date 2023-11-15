@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Web Tools</title>
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
-    <link rel="icon" type="image/x-icon" href="res/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
   </head>
 
   <body style="display: none">
@@ -16,18 +18,19 @@
     <div class="border-bottom">
       <div class="content-wrapper">
         <ul class="anchor-list">
-          <li><a href="#htmlToString"> HTML to string</a></li>
-          <li><a href="#jsonSorter"> JSON sorter</a></li>
-          <li><a href="#jsonToProperties"> JSON to *.properties</a></li>
-          <li><a href="#regexReplacer"> Regex replacer</a></li>
-          <li><a href="#ruleOfThree"> Rule of three</a></li>
-          <li><a href="#stringBuilder"> String builder</a></li>
-          <li><a href="#inlineListSorter"> List sorter (inline)</a></li>
-          <li><a href="#multilineListSorter"> List sorter (multiline)</a></li>
-          <li><a href="#tableToJson"> MD table to JSON</a></li>
-          <li><a href="#tableToCsv"> MD table to CSV</a></li>
-          <li><a href="#textCaseTransformer"> Text case transformer</a></li>
-          <li><a href="#triangularSum"> Triangular sum</a></li>
+          <li><a href="#htmlCleaner">HTML cleaner</a></li>
+          <li><a href="#htmlToString">HTML to string</a></li>
+          <li><a href="#jsonSorter">JSON sorter</a></li>
+          <li><a href="#jsonToProperties">JSON to *.properties</a></li>
+          <li><a href="#inlineListSorter">List sorter (inline)</a></li>
+          <li><a href="#multilineListSorter">List sorter (multiline)</a></li>
+          <li><a href="#tableToCsv">MD table to CSV</a></li>
+          <li><a href="#tableToJson">MD table to JSON</a></li>
+          <li><a href="#regexReplacer">Regex replacer</a></li>
+          <li><a href="#ruleOfThree">Rule of three</a></li>
+          <li><a href="#stringBuilder">String builder</a></li>
+          <li><a href="#textCaseTransformer">Text case transformer</a></li>
+          <li><a href="#triangularSum">Triangular sum</a></li>
         </ul>
       </div>
     </div>
@@ -245,6 +248,238 @@
         </div>
       </div>
 
+      <!-- List sorter (inline) -->
+      <div id="inlineListSorter" class="card">
+        <div class="card-header">
+          <span class="card-title">
+            List sorter&nbsp;
+            <small>(inline; splits by comma)</small>
+          </span>
+
+          <div>
+            <label for="inlineListSorterDiscardDuplicates">
+              Discard duplicates
+            </label>
+            <input
+              id="inlineListSorterDiscardDuplicates"
+              type="checkbox"
+              onchange="sortInlineList()"
+            />
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="flex">
+            <textarea
+              id="unsortedInlineListInput"
+              placeholder="Unordered inline list"
+              rows="4"
+              title="Unordered inline list"
+              onblur="sortInlineList()"
+            ></textarea>
+          </div>
+          <div class="flex">
+            <textarea
+              id="sortedInlineListOutput"
+              placeholder="Ordered inline list"
+              readonly
+              rows="4"
+              title="Ordered inline list"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="center-contents">
+            <button
+              type="button"
+              onclick="pasteInput('#unsortedInlineListInput')"
+            >
+              Paste
+            </button>
+            <button
+              type="button"
+              onclick="clearInputs(['#unsortedInlineListInput', '#sortedInlineListOutput'])"
+            >
+              Clear
+            </button>
+            <button
+              type="button"
+              onclick="copyOutput('#sortedInlineListOutput')"
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- List sorter (multiline) -->
+      <div id="multilineListSorter" class="card">
+        <div class="card-header">
+          <span class="card-title">
+            List sorter&nbsp;
+            <small>(multiline; splits by newline)</small>
+          </span>
+
+          <div>
+            <label for="multilineListSorterDiscardDuplicates">
+              Discard duplicates
+            </label>
+            <input
+              id="multilineListSorterDiscardDuplicates"
+              type="checkbox"
+              onchange="sortMultilineList()"
+            />
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="flex">
+            <div class="flex1">
+              <textarea
+                id="unsortedMultilineListInput"
+                placeholder="Unordered multiline list"
+                rows="8"
+                title="Unordered multiline list"
+                onblur="sortMultilineList()"
+              ></textarea>
+            </div>
+            <div class="flex1">
+              <textarea
+                id="sortedMultilineListOutput"
+                placeholder="Ordered multiline list"
+                readonly
+                rows="8"
+                title="Ordered multiline list"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="center-contents">
+            <button
+              type="button"
+              onclick="pasteInput('#unsortedMultilineListInput')"
+            >
+              Paste
+            </button>
+            <button
+              type="button"
+              onclick="clearInputs(['#unsortedMultilineListInput', '#sortedMultilineListOutput'])"
+            >
+              Clear
+            </button>
+            <button
+              type="button"
+              onclick="copyOutput('#sortedMultilineListOutput')"
+            >
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MD table to CSV -->
+      <div id="tableToCsv" class="card">
+        <div class="card-header">
+          <span class="card-title">
+            MD table to CSV&nbsp;
+            <small>(copy rows only; do not copy headers)</small>
+          </span>
+        </div>
+
+        <div class="card-content">
+          <div class="flex">
+            <div class="flex1">
+              <textarea
+                id="tableToCsvInput"
+                placeholder="Table"
+                rows="8"
+                title="Table"
+                onblur="tableToCsv()"
+              ></textarea>
+            </div>
+            <div class="flex1">
+              <textarea
+                id="tableToCsvOutput"
+                placeholder="CSV"
+                readonly
+                rows="8"
+                title="CSV"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="center-contents">
+            <button type="button" onclick="pasteInput('#tableToCsvInput')">
+              Paste
+            </button>
+            <button
+              type="button"
+              onclick="clearInputs(['#tableToCsvInput', '#tableToCsvOutput'])"
+            >
+              Clear
+            </button>
+            <button type="button" onclick="copyOutput('#tableToCsvOutput')">
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MD table to JSON -->
+      <div id="tableToJson" class="card">
+        <div class="card-header">
+          <span class="card-title">
+            MD table to JSON&nbsp;
+            <small>(copy rows only; do not copy headers)</small>
+          </span>
+        </div>
+
+        <div class="card-content">
+          <div class="flex">
+            <div class="flex1">
+              <textarea
+                id="tableToJsonInput"
+                placeholder="Table"
+                rows="8"
+                title="Table"
+                onblur="tableToJson()"
+              ></textarea>
+            </div>
+            <div class="flex1">
+              <textarea
+                id="tableToJsonOutput"
+                placeholder="JSON"
+                readonly
+                rows="8"
+                title="JSON"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="center-contents">
+            <button type="button" onclick="pasteInput('#tableToJsonInput')">
+              Paste
+            </button>
+            <button
+              type="button"
+              onclick="clearInputs(['#tableToJsonInput', '#tableToJsonOutput'])"
+            >
+              Clear
+            </button>
+            <button type="button" onclick="copyOutput('#tableToJsonOutput')">
+              Copy
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- Regex replacer -->
       <div id="regexReplacer" class="card">
         <div class="card-header">
@@ -449,238 +684,6 @@
               Clear
             </button>
             <button type="button" onclick="copyOutput('#stringBuilderOutput')">
-              Copy
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- List sorter (inline) -->
-      <div id="inlineListSorter" class="card">
-        <div class="card-header">
-          <span class="card-title">
-            List sorter&nbsp;
-            <small>(inline; splits by comma)</small>
-          </span>
-
-          <div>
-            <label for="inlineListSorterDiscardDuplicates">
-              Discard duplicates
-            </label>
-            <input
-              id="inlineListSorterDiscardDuplicates"
-              type="checkbox"
-              onchange="sortInlineList()"
-            />
-          </div>
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <textarea
-              id="unsortedInlineListInput"
-              placeholder="Unordered inline list"
-              rows="4"
-              title="Unordered inline list"
-              onblur="sortInlineList()"
-            ></textarea>
-          </div>
-          <div class="flex">
-            <textarea
-              id="sortedInlineListOutput"
-              placeholder="Ordered inline list"
-              readonly
-              rows="4"
-              title="Ordered inline list"
-            ></textarea>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="center-contents">
-            <button
-              type="button"
-              onclick="pasteInput('#unsortedInlineListInput')"
-            >
-              Paste
-            </button>
-            <button
-              type="button"
-              onclick="clearInputs(['#unsortedInlineListInput', '#sortedInlineListOutput'])"
-            >
-              Clear
-            </button>
-            <button
-              type="button"
-              onclick="copyOutput('#sortedInlineListOutput')"
-            >
-              Copy
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- List sorter (multiline) -->
-      <div id="multilineListSorter" class="card">
-        <div class="card-header">
-          <span class="card-title">
-            List sorter&nbsp;
-            <small>(multiline; splits by newline)</small>
-          </span>
-
-          <div>
-            <label for="multilineListSorterDiscardDuplicates">
-              Discard duplicates
-            </label>
-            <input
-              id="multilineListSorterDiscardDuplicates"
-              type="checkbox"
-              onchange="sortMultilineList()"
-            />
-          </div>
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <div class="flex1">
-              <textarea
-                id="unsortedMultilineListInput"
-                placeholder="Unordered multiline list"
-                rows="8"
-                title="Unordered multiline list"
-                onblur="sortMultilineList()"
-              ></textarea>
-            </div>
-            <div class="flex1">
-              <textarea
-                id="sortedMultilineListOutput"
-                placeholder="Ordered multiline list"
-                readonly
-                rows="8"
-                title="Ordered multiline list"
-              ></textarea>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="center-contents">
-            <button
-              type="button"
-              onclick="pasteInput('#unsortedMultilineListInput')"
-            >
-              Paste
-            </button>
-            <button
-              type="button"
-              onclick="clearInputs(['#unsortedMultilineListInput', '#sortedMultilineListOutput'])"
-            >
-              Clear
-            </button>
-            <button
-              type="button"
-              onclick="copyOutput('#sortedMultilineListOutput')"
-            >
-              Copy
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- MD table to JSON -->
-      <div id="tableToJson" class="card">
-        <div class="card-header">
-          <span class="card-title">
-            MD table to JSON&nbsp;
-            <small>(copy rows only; do not copy headers)</small>
-          </span>
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <div class="flex1">
-              <textarea
-                id="tableToJsonInput"
-                placeholder="Table"
-                rows="8"
-                title="Table"
-                onblur="tableToJson()"
-              ></textarea>
-            </div>
-            <div class="flex1">
-              <textarea
-                id="tableToJsonOutput"
-                placeholder="JSON"
-                readonly
-                rows="8"
-                title="JSON"
-              ></textarea>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="center-contents">
-            <button type="button" onclick="pasteInput('#tableToJsonInput')">
-              Paste
-            </button>
-            <button
-              type="button"
-              onclick="clearInputs(['#tableToJsonInput', '#tableToJsonOutput'])"
-            >
-              Clear
-            </button>
-            <button type="button" onclick="copyOutput('#tableToJsonOutput')">
-              Copy
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- MD table to CSV -->
-      <div id="tableToCsv" class="card">
-        <div class="card-header">
-          <span class="card-title">
-            MD table to CSV&nbsp;
-            <small>(copy rows only; do not copy headers)</small>
-          </span>
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <div class="flex1">
-              <textarea
-                id="tableToCsvInput"
-                placeholder="Table"
-                rows="8"
-                title="Table"
-                onblur="tableToCsv()"
-              ></textarea>
-            </div>
-            <div class="flex1">
-              <textarea
-                id="tableToCsvOutput"
-                placeholder="CSV"
-                readonly
-                rows="8"
-                title="CSV"
-              ></textarea>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="center-contents">
-            <button type="button" onclick="pasteInput('#tableToCsvInput')">
-              Paste
-            </button>
-            <button
-              type="button"
-              onclick="clearInputs(['#tableToCsvInput', '#tableToCsvOutput'])"
-            >
-              Clear
-            </button>
-            <button type="button" onclick="copyOutput('#tableToCsvOutput')">
               Copy
             </button>
           </div>
