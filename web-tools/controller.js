@@ -472,6 +472,7 @@ const getCleanHTML = (input) => {
         .replace(/<\/strong\n*\s*>\n*\s*<strong\n*\s*>/g, '')
         .replace(/<\/em\n*\s*>\n*\s*<em\n*\s*>/g, '')
         .replace(/\n+/g, '\n')
+        .replace(/http:\/\//g, 'https://')
         .replace(/ {2,}/g, ' ')
     : '';
 };
