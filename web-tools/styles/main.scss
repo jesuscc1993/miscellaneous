@@ -161,7 +161,7 @@ footer {
   }
 }
 
-[title] {
+[title]:not(input):not(textarea) {
   cursor: help;
 }
 
