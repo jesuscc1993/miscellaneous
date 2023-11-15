@@ -706,7 +706,7 @@
               placeholder="Sentence case"
               title="Sentence case"
               type="text"
-              onblur="transformFromSentenceCase()"
+              oninput="transformFromSentenceCase()"
             />
           </div>
           <div class="flex">
@@ -715,7 +715,7 @@
               placeholder="Capital case"
               title="Capital case"
               type="text"
-              onblur="transformFromCapitalCase()"
+              oninput="transformFromCapitalCase()"
             />
           </div>
           <div class="flex">
@@ -724,7 +724,7 @@
               placeholder="Lowercase"
               title="Lowercase"
               type="text"
-              onblur="transformFromLowercase()"
+              oninput="transformFromLowercase()"
             />
           </div>
           <div class="flex">
@@ -733,7 +733,7 @@
               placeholder="Uppercase"
               title="Uppercase"
               type="text"
-              onblur="transformFromUppercase()"
+              oninput="transformFromUppercase()"
             />
           </div>
           <div class="flex">
@@ -742,7 +742,7 @@
               placeholder="Camel case"
               title="Camel case"
               type="text"
-              onblur="transformFromCamelCase()"
+              oninput="transformFromCamelCase()"
             />
           </div>
           <div class="flex">
@@ -751,7 +751,7 @@
               placeholder="Snake case"
               title="Snake case"
               type="text"
-              onblur="transformFromSnakeCase()"
+              oninput="transformFromSnakeCase()"
             />
           </div>
           <div class="flex">
@@ -760,7 +760,7 @@
               placeholder="Kebab case"
               title="Kebab case"
               type="text"
-              onblur="transformFromKebabCase()"
+              oninput="transformFromKebabCase()"
             />
           </div>
         </div>
@@ -854,6 +854,20 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="controller.js"></script>
+
+    <script src="controllers/main.js"></script>
+    <script src="controllers/sections/case-transformer.js"></script>
+    <script src="controllers/sections/html-cleaner.js"></script>
+    <script src="controllers/sections/html-to-string.js"></script>
+    <script src="controllers/sections/inline-list-sorter.js"></script>
+    <script src="controllers/sections/json-sorter.js"></script>
+    <script src="controllers/sections/json-to-properties.js"></script>
+    <script src="controllers/sections/md-table-to-csv.js"></script>
+    <script src="controllers/sections/md-table-to-json.js"></script>
+    <script src="controllers/sections/multiline-list-sorter.js"></script>
+    <script src="controllers/sections/regex-replacer.js"></script>
+    <script src="controllers/sections/rule-of-three.js"></script>
+    <script src="controllers/sections/string-builder.js"></script>
+    <script src="controllers/sections/triangular-sum.js"></script>
   </body>
 </html>
