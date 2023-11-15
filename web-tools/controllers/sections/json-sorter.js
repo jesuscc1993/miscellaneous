@@ -9,7 +9,7 @@ const sortJson = () => {
     const sortedJson = getSortedJson(unsortedJson);
     sortedJsonOutput.val(sortedJson);
   } catch {
-    sortedJsonOutput.val('');
+    sortedJsonOutput.val('<Not a valid JSON object>');
   }
 
   replicateHeight(unsortedJsonInput, sortedJsonOutput);
