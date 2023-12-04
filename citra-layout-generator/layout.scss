@@ -9,6 +9,41 @@ body {
   overflow-y: scroll;
 }
 
+button,
+textarea {
+  width: 100%;
+}
+
+button {
+  padding: 4px 6px;
+}
+
+button,
+input {
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+}
+
+textarea {
+  min-height: 336px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+hr {
+  margin: 12px -16px;
+}
+
+label {
+  &[for] {
+    cursor: pointer;
+  }
+}
+
+[title] {
+  cursor: help;
+}
+
 .form-group {
   display: flex;
   gap: 4px;
@@ -21,6 +56,14 @@ body {
     label {
       flex: 2;
     }
+  }
+}
+
+.flex {
+  display: flex;
+
+  &.justify-between {
+    justify-content: space-between;
   }
 }
 
@@ -45,25 +88,6 @@ body {
 .center {
   display: block;
   margin: 0 auto;
-}
-
-button,
-textarea {
-  width: 100%;
-}
-
-button {
-  cursor: pointer;
-  padding: 4px 6px;
-}
-
-textarea {
-  min-height: 336px;
-  font-family: 'Roboto Mono', monospace;
-}
-
-hr {
-  margin: 12px -16px;
 }
 
 .preview {

@@ -5,19 +5,20 @@ const defaultTopHeight = 240;
 const defaultBottomWidth = 320;
 const defaultBottomHeight = 240;
 
-const monitorWidthEl = jQuery('#monitorWidth');
-const monitorHeightEl = jQuery('#monitorHeight');
-const topWidthEl = jQuery('#topWidth');
-const topHeightEl = jQuery('#topHeight');
-const bottomWidthEl = jQuery('#bottomWidth');
-const bottomHeightEl = jQuery('#bottomHeight');
+const monitorWidthEl = jQuery('#monitor-width');
+const monitorHeightEl = jQuery('#monitor-height');
+const topWidthEl = jQuery('#top-width');
+const topHeightEl = jQuery('#top-height');
+const bottomWidthEl = jQuery('#bottom-width');
+const bottomHeightEl = jQuery('#bottom-height');
 
+const copyOutputEl = jQuery('#copy-output');
 const outputEl = jQuery('#output');
 const outputWrapperEl = jQuery('#output-wrapper');
 const previewEl = jQuery('#preview');
+const swapScreensEl = jQuery('#swap-screens');
 const previewTopEl = previewEl.find('#top');
 const previewBottomEl = previewEl.find('#bottom');
-const copyOutputEl = previewEl.find('#copy-output');
 
 const getFormValues = () => {
   if (
@@ -40,178 +41,174 @@ const getFormValues = () => {
   const topHeight = parseInt(topHeightEl.val(), 10);
   const bottomWidth = parseInt(bottomWidthEl.val(), 10);
   const bottomHeight = parseInt(bottomHeightEl.val(), 10);
+  const swapScreens = swapScreensEl.prop('checked');
+
+  const topScreen = { width: topWidth, height: topHeight };
+  const bottomScreen = { width: bottomWidth, height: bottomHeight };
+  const monitor = { width: monitorWidth, height: monitorHeight };
 
   return {
-    bottomHeight,
-    bottomWidth,
-    monitorHeight,
-    monitorWidth,
-    topHeight,
-    topWidth,
+    bottomScreen,
+    monitor,
+    swapScreens,
+    topScreen,
   };
 };
 
 const generateVerticalLayout = () => {
-  const {
-    bottomHeight,
-    bottomWidth,
-    monitorHeight,
-    monitorWidth,
-    topHeight,
-    topWidth,
-  } = getFormValues();
+  const { bottomScreen, monitor, swapScreens, topScreen } = getFormValues();
 
-  if (Math.max(topWidth, bottomWidth) > monitorWidth) {
+  if (Math.max(topScreen.width, bottomScreen.width) > monitor.width) {
     alert('Screens are too wide to fit your monitor.');
     return;
   }
 
-  if (topHeight + bottomHeight > monitorHeight) {
+  if (topScreen.height + bottomScreen.height > monitor.height) {
     alert('Screens are too tall to fit your monitor.');
     return;
   }
 
-  const emptySpace = monitorHeight - topHeight - bottomHeight;
+  const emptySpace = monitor.height - topScreen.height - bottomScreen.height;
   const borderSpacing = Math.round(emptySpace / 3);
   const centerSpace = emptySpace - borderSpacing * 2;
 
+  const firstScreen = swapScreens ? bottomScreen : topScreen;
+  const secondScreen = swapScreens ? topScreen : bottomScreen;
+
+  const monitorHeight = monitor.height;
+  const monitorWidth = monitor.width;
+
   const topTop = borderSpacing;
-  const topBottom = topTop + topHeight;
-  const topLeft = (monitorWidth - topWidth) / 2;
-  const topRight = topLeft + topWidth;
+  const topBottom = topTop + firstScreen.height;
+  const topLeft = (monitor.width - firstScreen.width) / 2;
+  const topRight = topLeft + firstScreen.width;
 
   const bottomTop = topBottom + centerSpace;
-  const bottomBottom = bottomTop + bottomHeight;
-  const bottomLeft = (monitorWidth - bottomWidth) / 2;
-  const bottomRight = bottomLeft + bottomWidth;
+  const bottomBottom = bottomTop + secondScreen.height;
+  const bottomLeft = (monitor.width - secondScreen.width) / 2;
+  const bottomRight = bottomLeft + secondScreen.width;
 
   outputLayout({
     monitorHeight,
     monitorWidth,
+    swapScreens,
 
     topBottom,
-    topHeight,
     topLeft,
     topRight,
     topTop,
-    topWidth,
 
     bottomBottom,
-    bottomHeight,
     bottomLeft,
     bottomRight,
     bottomTop,
-    bottomWidth,
   });
 };
 
 const generateHorizontalLayout = () => {
-  const {
-    bottomHeight,
-    bottomWidth,
-    monitorHeight,
-    monitorWidth,
-    topHeight,
-    topWidth,
-  } = getFormValues();
+  const { bottomScreen, monitor, swapScreens, topScreen } = getFormValues();
 
-  if (topWidth + bottomWidth > monitorWidth) {
+  if (topScreen.width + bottomScreen.width > monitor.width) {
     alert('Screens are too wide to fit your monitor.');
     return;
   }
 
-  if (Math.max(topHeight, bottomHeight) > monitorWidth) {
+  if (Math.max(topScreen.height, bottomScreen.height) > monitor.width) {
     alert('Screens are too tall to fit your monitor.');
     return;
   }
 
-  const emptySpace = monitorWidth - topWidth - bottomWidth;
+  const emptySpace = monitor.width - topScreen.width - bottomScreen.width;
   const borderSpacing = Math.round(emptySpace / 3);
   const centerSpace = emptySpace - borderSpacing * 2;
 
-  const topTop = (monitorHeight - topHeight) / 2;
-  const topBottom = topTop + topHeight;
-  const topLeft = borderSpacing;
-  const topRight = topLeft + topWidth;
+  const firstScreen = swapScreens ? bottomScreen : topScreen;
+  const secondScreen = swapScreens ? topScreen : bottomScreen;
 
-  const bottomTop = (monitorHeight - bottomHeight) / 2;
-  const bottomBottom = bottomTop + bottomHeight;
+  const monitorHeight = monitor.height;
+  const monitorWidth = monitor.width;
+
+  const topTop = (monitor.height - firstScreen.height) / 2;
+  const topBottom = topTop + firstScreen.height;
+  const topLeft = borderSpacing;
+  const topRight = topLeft + firstScreen.width;
+
+  const bottomTop = (monitor.height - secondScreen.height) / 2;
+  const bottomBottom = bottomTop + secondScreen.height;
   const bottomLeft = topRight + centerSpace;
-  const bottomRight = bottomLeft + bottomWidth;
+  const bottomRight = bottomLeft + secondScreen.width;
 
   outputLayout({
     monitorHeight,
     monitorWidth,
+    swapScreens,
 
     topBottom,
-    topHeight,
     topLeft,
     topRight,
     topTop,
-    topWidth,
 
     bottomBottom,
-    bottomHeight,
     bottomLeft,
     bottomRight,
     bottomTop,
-    bottomWidth,
   });
 };
 
 const generateSingleScreenLayout = () => {
-  const { monitorHeight, monitorWidth, topHeight, topWidth } = getFormValues();
+  const { bottomScreen, monitor, swapScreens, topScreen } = getFormValues();
 
-  if (topWidth > monitorWidth) {
+  const firstScreen = swapScreens ? bottomScreen : topScreen;
+
+  if (firstScreen.width > monitor.width) {
     alert('Screen is too wide to fit your monitor.');
     return;
   }
 
-  if (topHeight > monitorWidth) {
+  if (firstScreen.height > monitor.width) {
     alert('Screen is too tall to fit your monitor.');
     return;
   }
 
-  const topTop = (monitorHeight - topHeight) / 2;
-  const topBottom = topTop + topHeight;
-  const topLeft = (monitorWidth - topWidth) / 2;
-  const topRight = topLeft + topWidth;
+  const monitorHeight = monitor.height;
+  const monitorWidth = monitor.width;
+
+  const topTop = (monitor.height - firstScreen.height) / 2;
+  const topBottom = topTop + firstScreen.height;
+  const topLeft = (monitor.width - firstScreen.width) / 2;
+  const topRight = topLeft + firstScreen.width;
 
   outputLayout({
     monitorHeight,
     monitorWidth,
+    swapScreens,
 
     topBottom,
-    topHeight,
     topLeft,
     topRight,
     topTop,
-    topWidth,
 
     bottomBottom: 0,
-    bottomHeight: 0,
     bottomLeft: 0,
     bottomRight: 0,
     bottomTop: 0,
-    bottomWidth: 0,
   });
 };
 
 const outputLayout = ({
-  bottomBottom,
-  bottomHeight,
-  bottomLeft,
-  bottomRight,
-  bottomTop,
-  bottomWidth,
   monitorHeight,
   monitorWidth,
+  swapScreens,
+
   topBottom,
-  topHeight,
   topLeft,
   topRight,
   topTop,
-  topWidth,
+
+  bottomBottom,
+  bottomLeft,
+  bottomRight,
+  bottomTop,
 }) => {
   outputEl.text(
     `custom_layout\\default=false
@@ -240,16 +237,20 @@ custom_bottom_bottom=${bottomBottom}`
   previewTopEl.css({
     left: topLeft * xScale,
     top: topTop * yScale,
-    width: topWidth * xScale,
-    height: topHeight * yScale,
+    width: (topRight - topLeft) * xScale,
+    height: (topBottom - topTop) * yScale,
   });
+  previewTopEl.attr('title', swapScreens ? 'Bottom' : 'Top');
+  previewTopEl.html(swapScreens ? 'B' : 'T');
 
   previewBottomEl.css({
     left: bottomLeft * xScale,
     top: bottomTop * yScale,
-    width: bottomWidth * xScale,
-    height: bottomHeight * yScale,
+    width: (bottomRight - bottomLeft) * xScale,
+    height: (bottomBottom - bottomTop) * yScale,
   });
+  previewBottomEl.attr('title', swapScreens ? 'Top' : 'Bottom');
+  previewBottomEl.html(swapScreens ? 'T' : 'B');
 
   outputWrapperEl.removeAttr('hidden');
   copyOutputEl.text('Copy layout.');
@@ -259,7 +260,10 @@ custom_bottom_bottom=${bottomBottom}`
 
 const copyLayout = (silent = false) => {
   navigator.clipboard.writeText(outputEl.text());
-  if (!silent) copyOutputEl.text('Layout copied.');
+  if (!silent) {
+    copyOutputEl.text('Layout copied.');
+    setTimeout(() => copyOutputEl.text('Copy layout.'), 2000);
+  }
 };
 
 const recalculateTopHeight = () => {

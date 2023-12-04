@@ -10,13 +10,13 @@
     <h1 class="text-center">Citra layout generator</h1>
 
     <div class="form-group">
-      <label for="monitorWidth">Monitor width</label>
-      <input id="monitorWidth" type="number" value="1920" />
+      <label for="monitor-width">Monitor width</label>
+      <input id="monitor-width" type="number" value="1920" />
     </div>
 
     <div class="form-group">
-      <label for="monitorHeight">Monitor height</label>
-      <input id="monitorHeight" type="number" value="1080" />
+      <label for="monitor-height">Monitor height</label>
+      <input id="monitor-height" type="number" value="1080" />
     </div>
 
     <div class="form-group">
@@ -32,12 +32,12 @@
     <hr />
 
     <div class="form-group">
-      <label for="topWidth"
+      <label for="top-width"
         >Top screen width
         <small class="info">(default: 400px)</small>
       </label>
       <input
-        id="topWidth"
+        id="top-width"
         type="number"
         value="800"
         onchange="recalculateTopHeight()"
@@ -45,12 +45,12 @@
     </div>
 
     <div class="form-group">
-      <label for="topHeight">
+      <label for="top-height">
         Top screen height
         <small class="info">(default: 240px)</small>
       </label>
       <input
-        id="topHeight"
+        id="top-height"
         type="number"
         value="480"
         onchange="recalculateTopWidth()"
@@ -72,12 +72,12 @@
     <hr />
 
     <div class="form-group">
-      <label for="bottomWidth">
+      <label for="bottom-width">
         Bottom screen width
         <small class="info">(default: 320px)</small>
       </label>
       <input
-        id="bottomWidth"
+        id="bottom-width"
         type="number"
         value="640"
         onchange="recalculateBottomHeight()"
@@ -85,12 +85,12 @@
     </div>
 
     <div class="form-group">
-      <label for="bottomHeight">
+      <label for="bottom-height">
         Bottom screen height
         <small class="info">(default: 240px)</small>
       </label>
       <input
-        id="bottomHeight"
+        id="bottom-height"
         type="number"
         value="480"
         onchange="recalculateBottomWidth()"
@@ -109,8 +109,16 @@
       <button onclick="setBottomSize(-1)">100%</button>
     </div>
 
-    <p>
-      <label for="output">Generate:</label>
+    <hr />
+
+    <p class="flex justify-between">
+      <span>
+        <label>Generate:</label>
+      </span>
+      <span>
+        <label for="swap-screens">Swap screens</label>
+        <input id="swap-screens" type="checkbox" />
+      </span>
     </p>
     <div class="form-group">
       <button onclick="generateVerticalLayout()" class="center">
@@ -147,6 +155,8 @@
         Copy layout
       </button>
     </div>
+
+    <hr />
 
     <p>
       <label> About:</label>
