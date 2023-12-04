@@ -235,22 +235,26 @@ custom_bottom_bottom=${bottomBottom}`
   const yScale = 268 / monitorHeight;
 
   previewTopEl.css({
+    backgroundImage: `url(./assets/images/${
+      swapScreens ? 'bottom' : 'top'
+    }.jpg)`,
     left: topLeft * xScale,
     top: topTop * yScale,
     width: (topRight - topLeft) * xScale,
     height: (topBottom - topTop) * yScale,
   });
   previewTopEl.attr('title', swapScreens ? 'Bottom' : 'Top');
-  previewTopEl.html(swapScreens ? 'B' : 'T');
 
   previewBottomEl.css({
+    backgroundImage: `url(./assets/images/${
+      swapScreens ? 'top' : 'bottom'
+    }.jpg)`,
     left: bottomLeft * xScale,
     top: bottomTop * yScale,
     width: (bottomRight - bottomLeft) * xScale,
     height: (bottomBottom - bottomTop) * yScale,
   });
   previewBottomEl.attr('title', swapScreens ? 'Top' : 'Bottom');
-  previewBottomEl.html(swapScreens ? 'T' : 'B');
 
   outputWrapperEl.removeAttr('hidden');
   copyOutputEl.text('Copy layout.');
