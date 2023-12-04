@@ -25,8 +25,13 @@ input {
   }
 }
 
+input {
+  &[type='number'] {
+    width: 72px;
+  }
+}
+
 textarea {
-  min-height: 336px;
   font-family: 'Roboto Mono', monospace;
 }
 
@@ -46,17 +51,10 @@ label {
 
 .form-group {
   display: flex;
+  justify-content: space-between;
   gap: 4px;
-  margin-bottom: 8px;
 
-  > {
-    * {
-      flex: 1;
-    }
-    label {
-      flex: 2;
-    }
-  }
+  margin-bottom: 8px;
 }
 
 .flex {
