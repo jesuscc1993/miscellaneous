@@ -14,6 +14,7 @@ const bottomHeightEl = jQuery('#bottom-height');
 
 const copyOutputEl = jQuery('#copy-output');
 const outputEl = jQuery('#output');
+const outputHeaderNode = document.querySelector('#output-header');
 const outputWrapperEl = jQuery('#output-wrapper');
 const previewEl = jQuery('#preview');
 const swapScreensEl = jQuery('#swap-screens');
@@ -203,7 +204,7 @@ const generateLayout = () => {
     horizontal: generateHorizontalLayout,
   })[layoutType]();
 
-  previewEl.parents('.card').get(0).scrollIntoView();
+  outputHeaderNode.scrollIntoView();
 };
 
 const outputLayout = ({
