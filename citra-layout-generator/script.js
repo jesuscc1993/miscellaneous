@@ -329,34 +329,32 @@ const swapMonitorSizes = () => {
   monitorHeightEl.val(width);
 };
 
-const setTopSize = (scale) => {
-  let _scale = scale;
+const setTopSize = (multiplier) => {
+  let _multiplier = multiplier;
 
-  const fullscreen = scale < 0;
-  if (fullscreen) {
-    _scale = Math.min(
+  if (!_multiplier) {
+    _multiplier = Math.min(
       monitorWidthEl.val() / defaultTopWidth,
       monitorHeightEl.val() / defaultTopHeight
     );
   }
 
-  topWidthEl.val(defaultTopWidth * _scale);
-  topHeightEl.val(defaultTopHeight * _scale);
+  topWidthEl.val(defaultTopWidth * _multiplier);
+  topHeightEl.val(defaultTopHeight * _multiplier);
 };
 
-const setBottomSize = (scale) => {
-  let _scale = scale;
+const setBottomSize = (multiplier) => {
+  let _multiplier = multiplier;
 
-  const fullscreen = scale < 0;
-  if (fullscreen) {
-    _scale = Math.min(
+  if (!_multiplier) {
+    _multiplier = Math.min(
       monitorWidthEl.val() / defaultBottomWidth,
       monitorHeightEl.val() / defaultBottomHeight
     );
   }
 
-  bottomWidthEl.val(defaultBottomWidth * _scale);
-  bottomHeightEl.val(defaultBottomHeight * _scale);
+  bottomWidthEl.val(defaultBottomWidth * _multiplier);
+  bottomHeightEl.val(defaultBottomHeight * _multiplier);
 };
 
 const detectMonitorSize = () => {
