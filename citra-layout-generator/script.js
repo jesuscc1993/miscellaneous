@@ -319,6 +319,13 @@ const setMonitorSize = (scale) => {
   monitorHeightEl.val(oneKHeight * scale);
 };
 
+const swapMonitorSizes = () => {
+  const width = monitorWidthEl.val();
+  const height = monitorHeightEl.val();
+  monitorWidthEl.val(height);
+  monitorHeightEl.val(width);
+};
+
 const setTopSize = (scale) => {
   let _scale = scale;
 
