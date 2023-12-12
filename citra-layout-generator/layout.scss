@@ -50,11 +50,16 @@ label {
 }
 
 .form-group {
+  align-items: center;
   display: flex;
-  justify-content: space-between;
   gap: 4px;
+  justify-content: space-between;
 
   margin-bottom: 8px;
+
+  label {
+    flex: 1;
+  }
 }
 
 .flex {
@@ -92,7 +97,6 @@ label {
   margin: auto;
   position: relative;
   width: 480px;
-  height: 270px;
 
   .screen {
     align-items: center;

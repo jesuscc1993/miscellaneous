@@ -111,27 +111,44 @@
 
     <hr />
 
-    <p class="flex justify-between">
-      <span>
-        <label>Generate:</label>
-      </span>
-      <span>
-        <label for="swap-screens">Swap screens</label>
-        <input id="swap-screens" type="checkbox" />
-      </span>
-    </p>
     <div class="form-group">
-      <button onclick="generateVerticalLayout()" class="center">
-        Vertical layout
-      </button>
+      <label>Generate...</label>
+    </div>
 
-      <button onclick="generateSingleScreenLayout()" class="center">
-        Single screen layout
-      </button>
+    <div class="form-group">
+      <input
+        id="layout-vertical"
+        name="layout-type"
+        type="radio"
+        value="vertical"
+        checked
+      />
+      <label for="layout-vertical">Vertical layout</label>
 
-      <button onclick="generateHorizontalLayout()" class="center">
-        Horizontal layout
-      </button>
+      <input
+        id="layout-single-screen"
+        name="layout-type"
+        type="radio"
+        value="single"
+      />
+      <label for="layout-single-screen">Single screen</label>
+
+      <input
+        id="layout-horizontal"
+        name="layout-type"
+        type="radio"
+        value="horizontal"
+      />
+      <label for="layout-horizontal">Horizontal layout</label>
+    </div>
+
+    <div class="form-group">
+      <input id="swap-screens" type="checkbox" />
+      <label for="swap-screens">Swap screens</label>
+    </div>
+
+    <div class="form-group">
+      <button onclick="generateLayout()">Generate layout</button>
     </div>
 
     <div id="output-wrapper" hidden>

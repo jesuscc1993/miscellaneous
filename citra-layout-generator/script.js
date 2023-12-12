@@ -195,6 +195,15 @@ const generateSingleScreenLayout = () => {
   });
 };
 
+const generateLayout = () => {
+  const layoutType = jQuery('input[name="layout-type"]:checked').val();
+  ({
+    vertical: generateVerticalLayout,
+    single: generateSingleScreenLayout,
+    horizontal: generateHorizontalLayout,
+  })[layoutType]();
+};
+
 const outputLayout = ({
   monitorHeight,
   monitorWidth,
@@ -231,17 +240,18 @@ custom_bottom_bottom\\default=false
 custom_bottom_bottom=${bottomBottom}`
   );
 
-  const xScale = 478 / monitorWidth;
-  const yScale = 268 / monitorHeight;
+  const scale = 478 / monitorWidth;
+
+  previewEl.css('height', monitorHeight * scale + 2);
 
   previewTopEl.css({
     backgroundImage: `url(./assets/images/${
       swapScreens ? 'bottom' : 'top'
     }.jpg)`,
-    left: topLeft * xScale,
-    top: topTop * yScale,
-    width: (topRight - topLeft) * xScale,
-    height: (topBottom - topTop) * yScale,
+    left: topLeft * scale,
+    top: topTop * scale,
+    width: (topRight - topLeft) * scale,
+    height: (topBottom - topTop) * scale,
   });
   previewTopEl.attr('title', swapScreens ? 'Bottom' : 'Top');
 
@@ -249,10 +259,10 @@ custom_bottom_bottom=${bottomBottom}`
     backgroundImage: `url(./assets/images/${
       swapScreens ? 'top' : 'bottom'
     }.jpg)`,
-    left: bottomLeft * xScale,
-    top: bottomTop * yScale,
-    width: (bottomRight - bottomLeft) * xScale,
-    height: (bottomBottom - bottomTop) * yScale,
+    left: bottomLeft * scale,
+    top: bottomTop * scale,
+    width: (bottomRight - bottomLeft) * scale,
+    height: (bottomBottom - bottomTop) * scale,
   });
   previewBottomEl.attr('title', swapScreens ? 'Top' : 'Bottom');
 
