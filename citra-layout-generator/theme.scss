@@ -3,8 +3,8 @@
   --c-bg-10: #171a1c;
   --c-bg-15: #232629;
   --c-bg-20: #31363b;
-  --c-fg-100: #fff;
   --c-fg-60: #999;
+  --c-fg-100: #fff;
   --c-anchor: #0cd;
 
   --border-radius: 3px;
@@ -55,6 +55,14 @@ a {
 
   &:hover {
     filter: brightness(1.2);
+  }
+}
+
+.card {
+  border: 1px solid var(--c-border);
+
+  .header {
+    background: var(--c-bg-15);
   }
 }
 

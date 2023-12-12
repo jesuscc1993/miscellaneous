@@ -9,210 +9,231 @@
   <body>
     <h1 class="text-center">Citra layout generator</h1>
 
-    <div class="form-group">
-      <label for="monitor-width">Monitor width</label>
-      <input id="monitor-width" type="number" />
+    <div class="card">
+      <div class="header">
+        <small>Layout</small>
+      </div>
+
+      <div class="form-group">
+        <input
+          id="layout-vertical"
+          name="layout-type"
+          type="radio"
+          value="vertical"
+          checked
+        />
+        <label for="layout-vertical">Vertical layout</label>
+
+        <input
+          id="layout-single-screen"
+          name="layout-type"
+          type="radio"
+          value="single"
+        />
+        <label for="layout-single-screen">Single screen</label>
+
+        <input
+          id="layout-horizontal"
+          name="layout-type"
+          type="radio"
+          value="horizontal"
+        />
+        <label for="layout-horizontal">Horizontal layout</label>
+      </div>
+
+      <div class="form-group">
+        <input id="swap-screens" type="checkbox" />
+        <label for="swap-screens">Swap screens</label>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label for="monitor-height">Monitor height</label>
-      <input id="monitor-height" type="number" />
+    <div class="card">
+      <div class="header">
+        <small>Monitor</small>
+      </div>
+
+      <div class="form-group">
+        <label for="monitor-width">Width</label>
+        <input id="monitor-width" type="number" />
+      </div>
+
+      <div class="form-group">
+        <label for="monitor-height">Height</label>
+        <input id="monitor-height" type="number" />
+      </div>
+
+      <div class="form-group">
+        <button onclick="detectMonitorSize()">↻</button>
+        <button onclick="setMonitorSize(2)">2k</button>
+        <button onclick="setMonitorSize(3)">3k</button>
+        <button onclick="setMonitorSize(4)">4k</button>
+        <button onclick="setMonitorSize(5)">5k</button>
+        <button onclick="setMonitorSize(6)">6k</button>
+        <button onclick="setMonitorSize(7)">7k</button>
+        <button onclick="setMonitorSize(8)">8k</button>
+        <button onclick="swapMonitorSizes()">⇅</button>
+      </div>
     </div>
 
-    <div class="form-group">
-      <button onclick="detectMonitorSize()">↻</button>
-      <button onclick="setMonitorSize(2)">2k</button>
-      <button onclick="setMonitorSize(3)">3k</button>
-      <button onclick="setMonitorSize(4)">4k</button>
-      <button onclick="setMonitorSize(5)">5k</button>
-      <button onclick="setMonitorSize(6)">6k</button>
-      <button onclick="setMonitorSize(7)">7k</button>
-      <button onclick="setMonitorSize(8)">8k</button>
-      <button onclick="swapMonitorSizes()">⇅</button>
+    <div class="card">
+      <div class="header">
+        <small>Top screen</small>
+      </div>
+
+      <div class="form-group">
+        <label for="top-width"
+          >Width
+          <small class="info">(default: 400px)</small>
+        </label>
+        <input
+          id="top-width"
+          type="number"
+          value="800"
+          onchange="recalculateTopHeight()"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="top-height">
+          Height
+          <small class="info">(default: 240px)</small>
+        </label>
+        <input
+          id="top-height"
+          type="number"
+          value="480"
+          onchange="recalculateTopWidth()"
+        />
+      </div>
+
+      <div class="form-group">
+        <button onclick="setTopSize(1)">1x</button>
+        <button onclick="setTopSize(2)">2x</button>
+        <button onclick="setTopSize(3)">3x</button>
+        <button onclick="setTopSize(4)">4x</button>
+        <button onclick="setTopSize(5)">5x</button>
+        <button onclick="setTopSize(6)">6x</button>
+        <button onclick="setTopSize(7)">7x</button>
+        <button onclick="setTopSize(8)">8x</button>
+        <button onclick="setTopSize(9)">9x</button>
+        <button onclick="setTopSize(10)">10x</button>
+        <button onclick="setTopSize(-1)">100%</button>
+      </div>
     </div>
 
-    <hr />
+    <div class="card">
+      <div class="header">
+        <small>Bottom screen</small>
+      </div>
 
-    <div class="form-group">
-      <label for="top-width"
-        >Top screen width
-        <small class="info">(default: 400px)</small>
-      </label>
-      <input
-        id="top-width"
-        type="number"
-        value="800"
-        onchange="recalculateTopHeight()"
-      />
+      <div class="form-group">
+        <label for="bottom-width">
+          Width
+          <small class="info">(default: 320px)</small>
+        </label>
+        <input
+          id="bottom-width"
+          type="number"
+          value="640"
+          onchange="recalculateBottomHeight()"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="bottom-height">
+          Height
+          <small class="info">(default: 240px)</small>
+        </label>
+        <input
+          id="bottom-height"
+          type="number"
+          value="480"
+          onchange="recalculateBottomWidth()"
+        />
+      </div>
+
+      <div class="form-group">
+        <button onclick="setBottomSize(1)">1x</button>
+        <button onclick="setBottomSize(2)">2x</button>
+        <button onclick="setBottomSize(3)">3x</button>
+        <button onclick="setBottomSize(4)">4x</button>
+        <button onclick="setBottomSize(5)">5x</button>
+        <button onclick="setBottomSize(6)">6x</button>
+        <button onclick="setBottomSize(7)">7x</button>
+        <button onclick="setBottomSize(8)">8x</button>
+        <button onclick="setBottomSize(9)">9x</button>
+        <button onclick="setBottomSize(10)">10x</button>
+        <button onclick="setBottomSize(-1)">100%</button>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label for="top-height">
-        Top screen height
-        <small class="info">(default: 240px)</small>
-      </label>
-      <input
-        id="top-height"
-        type="number"
-        value="480"
-        onchange="recalculateTopWidth()"
-      />
+    <div class="card">
+      <div class="header">
+        <small>Output</small>
+      </div>
+
+      <div class="form-group">
+        <button onclick="generateLayout()">Generate layout</button>
+      </div>
+
+      <div id="output-wrapper" hidden>
+        <p>
+          <label> Preview:</label>
+        </p>
+
+        <div id="preview" class="preview">
+          <div id="top" class="screen top"></div>
+          <div id="bottom" class="screen bottom"></div>
+        </div>
+
+        <p>
+          <label for="output">Code:</label>
+        </p>
+        <p>
+          <textarea id="output" readonly rows="18"></textarea>
+        </p>
+
+        <button id="copy-output" onclick="copyLayout()" class="center">
+          Copy layout
+        </button>
+      </div>
     </div>
 
-    <div class="form-group">
-      <button onclick="setTopSize(1)">1x</button>
-      <button onclick="setTopSize(2)">2x</button>
-      <button onclick="setTopSize(3)">3x</button>
-      <button onclick="setTopSize(4)">4x</button>
-      <button onclick="setTopSize(5)">5x</button>
-      <button onclick="setTopSize(6)">6x</button>
-      <button onclick="setTopSize(7)">7x</button>
-      <button onclick="setTopSize(8)">8x</button>
-      <button onclick="setTopSize(9)">9x</button>
-      <button onclick="setTopSize(10)">10x</button>
-      <button onclick="setTopSize(-1)">100%</button>
-    </div>
+    <div class="card">
+      <div class="header">
+        <small>About</small>
+      </div>
 
-    <hr />
+      <div class="info small">
+        <p>
+          Generating custom layouts by hand is tricky and time consuming, so I
+          made this tool to automate the process.
+        </p>
 
-    <div class="form-group">
-      <label for="bottom-width">
-        Bottom screen width
-        <small class="info">(default: 320px)</small>
-      </label>
-      <input
-        id="bottom-width"
-        type="number"
-        value="640"
-        onchange="recalculateBottomHeight()"
-      />
-    </div>
+        Some features include:
+        <ul>
+          <li>support for vertical, horizontal and single screen layouts</li>
+          <li>support for swapped screens</li>
+          <li>it automatically keeps the screen aspect ratios</li>
+          <li>it makes sure screens fit within the bounds of your monitor</li>
+          <li>it provides preset integer scaling levels for convenience</li>
+        </ul>
 
-    <div class="form-group">
-      <label for="bottom-height">
-        Bottom screen height
-        <small class="info">(default: 240px)</small>
-      </label>
-      <input
-        id="bottom-height"
-        type="number"
-        value="480"
-        onchange="recalculateBottomWidth()"
-      />
-    </div>
-
-    <div class="form-group">
-      <button onclick="setBottomSize(1)">1x</button>
-      <button onclick="setBottomSize(2)">2x</button>
-      <button onclick="setBottomSize(3)">3x</button>
-      <button onclick="setBottomSize(4)">4x</button>
-      <button onclick="setBottomSize(5)">5x</button>
-      <button onclick="setBottomSize(6)">6x</button>
-      <button onclick="setBottomSize(7)">7x</button>
-      <button onclick="setBottomSize(8)">8x</button>
-      <button onclick="setBottomSize(9)">9x</button>
-      <button onclick="setBottomSize(10)">10x</button>
-      <button onclick="setBottomSize(-1)">100%</button>
-    </div>
-
-    <hr />
-
-    <div class="form-group">
-      <label>Generate...</label>
-    </div>
-
-    <div class="form-group">
-      <input
-        id="layout-vertical"
-        name="layout-type"
-        type="radio"
-        value="vertical"
-        checked
-      />
-      <label for="layout-vertical">Vertical layout</label>
-
-      <input
-        id="layout-single-screen"
-        name="layout-type"
-        type="radio"
-        value="single"
-      />
-      <label for="layout-single-screen">Single screen</label>
-
-      <input
-        id="layout-horizontal"
-        name="layout-type"
-        type="radio"
-        value="horizontal"
-      />
-      <label for="layout-horizontal">Horizontal layout</label>
-    </div>
-
-    <div class="form-group">
-      <input id="swap-screens" type="checkbox" />
-      <label for="swap-screens">Swap screens</label>
-    </div>
-
-    <div class="form-group">
-      <button onclick="generateLayout()">Generate layout</button>
-    </div>
-
-    <div id="output-wrapper" hidden>
-      <p>
-        <label> Preview:</label>
-      </p>
-
-      <div id="preview" class="preview">
-        <div id="top" class="screen top"></div>
-        <div id="bottom" class="screen bottom"></div>
+        Feel free to report any issues
+        <a
+          href="https://github.com/jesuscc1993/miscellaneous/issues"
+          target="_blank"
+          >here</a
+        >.
       </div>
 
       <p>
-        <label for="output">Output:</label>
+        <a class="link" href="https://github.com/jesuscc1993" target="_blank">
+          <img src="https://github.com/favicon.ico" width="16" />
+          <small>github.com/jesuscc1993</small>
+        </a>
       </p>
-      <p>
-        <textarea id="output" readonly rows="18"></textarea>
-      </p>
-
-      <button id="copy-output" onclick="copyLayout()" class="center">
-        Copy layout
-      </button>
     </div>
-
-    <hr />
-
-    <p>
-      <label> About:</label>
-    </p>
-    <div class="info small">
-      <p>
-        Generating custom layouts by hand is tricky and time consuming, so I
-        made this tool to automate the process.
-      </p>
-
-      Some features include:
-      <ul>
-        <li>support for vertical, horizontal and single screen layouts</li>
-        <li>support for swapped screens</li>
-        <li>it automatically keeps the screen aspect ratios</li>
-        <li>it makes sure screens fit within the bounds of your monitor</li>
-        <li>it provides preset integer scaling levels for convenience</li>
-      </ul>
-
-      Feel free to report any issues
-      <a
-        href="https://github.com/jesuscc1993/miscellaneous/issues"
-        target="_blank"
-        >here</a
-      >.
-    </div>
-
-    <p>
-      <a class="link" href="https://github.com/jesuscc1993" target="_blank">
-        <img src="https://github.com/favicon.ico" width="16" />
-        <small>github.com/jesuscc1993</small>
-      </a>
-    </p>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="script.js"></script>

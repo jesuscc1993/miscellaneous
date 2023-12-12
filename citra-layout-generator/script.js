@@ -202,6 +202,8 @@ const generateLayout = () => {
     single: generateSingleScreenLayout,
     horizontal: generateHorizontalLayout,
   })[layoutType]();
+
+  previewEl.parents('.card').get(0).scrollIntoView();
 };
 
 const outputLayout = ({
