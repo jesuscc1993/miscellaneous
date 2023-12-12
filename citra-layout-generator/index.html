@@ -15,35 +15,50 @@
       </div>
 
       <div class="form-group">
-        <input
-          id="layout-vertical"
-          name="layout-type"
-          type="radio"
-          value="vertical"
-          checked
-        />
-        <label for="layout-vertical">Vertical layout</label>
+        <div>
+          <input
+            id="layout-vertical"
+            name="layout-type"
+            type="radio"
+            value="vertical"
+            checked
+          />
+          <label for="layout-vertical">Vertical layout</label>
+        </div>
 
-        <input
-          id="layout-single-screen"
-          name="layout-type"
-          type="radio"
-          value="single"
-        />
-        <label for="layout-single-screen">Single screen</label>
+        <div>
+          <input
+            id="layout-single-screen"
+            name="layout-type"
+            type="radio"
+            value="single"
+          />
+          <label for="layout-single-screen">Single screen</label>
+        </div>
 
-        <input
-          id="layout-horizontal"
-          name="layout-type"
-          type="radio"
-          value="horizontal"
-        />
-        <label for="layout-horizontal">Horizontal layout</label>
+        <div>
+          <input
+            id="layout-horizontal"
+            name="layout-type"
+            type="radio"
+            value="horizontal"
+          />
+          <label for="layout-horizontal">Horizontal layout</label>
+        </div>
       </div>
 
       <div class="form-group">
-        <input id="swap-screens" type="checkbox" />
-        <label for="swap-screens">Swap screens</label>
+        <div title="Display bottom screen on top">
+          <input id="swap-screens" type="checkbox" />
+          <label for="swap-screens">Swap screens</label>
+        </div>
+
+        <div title="Allow screens to render on top of each other">
+          <input id="overlap-screens" type="checkbox" />
+          <label for="overlap-screens">Overlap screens</label>
+        </div>
+
+        <div></div>
       </div>
     </div>
 

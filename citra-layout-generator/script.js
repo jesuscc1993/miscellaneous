@@ -18,6 +18,7 @@ const outputHeaderNode = document.querySelector('#output-header');
 const outputWrapperEl = jQuery('#output-wrapper');
 const previewEl = jQuery('#preview');
 const swapScreensEl = jQuery('#swap-screens');
+const overlapScreensEl = jQuery('#overlap-screens');
 const previewTopEl = previewEl.find('#top');
 const previewBottomEl = previewEl.find('#bottom');
 
@@ -43,6 +44,7 @@ const getFormValues = () => {
   const bottomWidth = parseInt(bottomWidthEl.val(), 10);
   const bottomHeight = parseInt(bottomHeightEl.val(), 10);
   const swapScreens = swapScreensEl.prop('checked');
+  const overlapScreens = overlapScreensEl.prop('checked');
 
   const topScreen = { width: topWidth, height: topHeight };
   const bottomScreen = { width: bottomWidth, height: bottomHeight };
@@ -51,25 +53,34 @@ const getFormValues = () => {
   return {
     bottomScreen,
     monitor,
+    overlapScreens,
     swapScreens,
     topScreen,
   };
 };
 
 const generateVerticalLayout = () => {
-  const { bottomScreen, monitor, swapScreens, topScreen } = getFormValues();
+  const { bottomScreen, monitor, overlapScreens, swapScreens, topScreen } =
+    getFormValues();
 
   if (Math.max(topScreen.width, bottomScreen.width) > monitor.width) {
     alert('Screens are too wide to fit your monitor.');
     return;
   }
 
-  if (topScreen.height + bottomScreen.height > monitor.height) {
+  if (
+    overlapScreens
+      ? Math.max(topScreen.height, bottomScreen.height) > monitor.width
+      : topScreen.height + bottomScreen.height > monitor.height
+  ) {
     alert('Screens are too tall to fit your monitor.');
     return;
   }
 
-  const emptySpace = monitor.height - topScreen.height - bottomScreen.height;
+  const emptySpace = Math.max(
+    monitor.height - topScreen.height - bottomScreen.height,
+    0
+  );
   const borderSpacing = Math.round(emptySpace / 3);
   const centerSpace = emptySpace - borderSpacing * 2;
 
@@ -84,7 +95,10 @@ const generateVerticalLayout = () => {
   const topLeft = (monitor.width - firstScreen.width) / 2;
   const topRight = topLeft + firstScreen.width;
 
-  const bottomTop = topBottom + centerSpace;
+  const bottomTop = Math.min(
+    topBottom + centerSpace,
+    monitorHeight - secondScreen.height
+  );
   const bottomBottom = bottomTop + secondScreen.height;
   const bottomLeft = (monitor.width - secondScreen.width) / 2;
   const bottomRight = bottomLeft + secondScreen.width;
@@ -107,9 +121,14 @@ const generateVerticalLayout = () => {
 };
 
 const generateHorizontalLayout = () => {
-  const { bottomScreen, monitor, swapScreens, topScreen } = getFormValues();
+  const { bottomScreen, monitor, overlapScreens, swapScreens, topScreen } =
+    getFormValues();
 
-  if (topScreen.width + bottomScreen.width > monitor.width) {
+  if (
+    overlapScreens
+      ? Math.max(topScreen.width, bottomScreen.width) > monitor.width
+      : topScreen.width + bottomScreen.width > monitor.width
+  ) {
     alert('Screens are too wide to fit your monitor.');
     return;
   }
@@ -119,7 +138,10 @@ const generateHorizontalLayout = () => {
     return;
   }
 
-  const emptySpace = monitor.width - topScreen.width - bottomScreen.width;
+  const emptySpace = Math.max(
+    monitor.width - topScreen.width - bottomScreen.width,
+    0
+  );
   const borderSpacing = Math.round(emptySpace / 3);
   const centerSpace = emptySpace - borderSpacing * 2;
 
@@ -136,7 +158,10 @@ const generateHorizontalLayout = () => {
 
   const bottomTop = (monitor.height - secondScreen.height) / 2;
   const bottomBottom = bottomTop + secondScreen.height;
-  const bottomLeft = topRight + centerSpace;
+  const bottomLeft = Math.min(
+    topRight + centerSpace,
+    monitorWidth - secondScreen.width
+  );
   const bottomRight = bottomLeft + secondScreen.width;
 
   outputLayout({
