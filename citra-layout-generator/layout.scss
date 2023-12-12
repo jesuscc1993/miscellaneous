@@ -4,18 +4,16 @@
 
 body {
   margin: 0 auto;
-  max-width: max(512px, 20vw);
+  max-width: 530px;
   font-family: 'Roboto', sans-serif;
   overflow-y: scroll;
+
+  margin-bottom: 20vh;
 }
 
 button,
 textarea {
   width: 100%;
-}
-
-button {
-  padding: 4px 6px;
 }
 
 button,
@@ -25,6 +23,10 @@ input {
   }
 }
 
+button {
+  padding: 4px 6px;
+}
+
 input {
   &[type='number'] {
     width: 72px;
@@ -32,6 +34,7 @@ input {
 }
 
 textarea {
+  resize: vertical;
   font-family: 'Roboto Mono', monospace;
 }
 
@@ -52,6 +55,7 @@ label {
 .card {
   position: relative;
 
+  margin: 0 12px;
   padding: 12px;
 
   + .card {
@@ -125,5 +129,16 @@ label {
     overflow: hidden;
     position: absolute;
     background-size: cover;
+  }
+}
+
+@media screen and (max-width: 544px) {
+  .card:not(.min-width) {
+    display: none;
+  }
+}
+@media screen and (min-width: 545px) {
+  .min-width {
+    display: none;
   }
 }
