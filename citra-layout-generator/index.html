@@ -11,15 +11,16 @@
 
     <div class="form-group">
       <label for="monitor-width">Monitor width</label>
-      <input id="monitor-width" type="number" value="1920" />
+      <input id="monitor-width" type="number" />
     </div>
 
     <div class="form-group">
       <label for="monitor-height">Monitor height</label>
-      <input id="monitor-height" type="number" value="1080" />
+      <input id="monitor-height" type="number" />
     </div>
 
     <div class="form-group">
+      <button onclick="detectMonitorSize()">↻</button>
       <button onclick="setMonitorSize(2)">2k</button>
       <button onclick="setMonitorSize(3)">3k</button>
       <button onclick="setMonitorSize(4)">4k</button>

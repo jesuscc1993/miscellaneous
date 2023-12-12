@@ -355,3 +355,14 @@ const setBottomSize = (scale) => {
   bottomWidthEl.val(defaultBottomWidth * _scale);
   bottomHeightEl.val(defaultBottomHeight * _scale);
 };
+
+const detectMonitorSize = () => {
+  monitorWidthEl.val(screen.width);
+  monitorHeightEl.val(screen.height);
+};
+
+const initialize = () => {
+  detectMonitorSize();
+};
+
+initialize();
