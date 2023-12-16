@@ -17,7 +17,7 @@ const weapons = [
   { id: 'Fossil',         level: 90, rarity: 4, uncap: 5, type: 'Claymore', name: 'Sacrificial Greatsword' },
   { id: 'Fossil',         level: 90, rarity: 4, uncap: 5, type: 'Sword',    name: 'Sacrificial Sword' },
   { id: 'Fourwinds',      level: 90, rarity: 5, uncap: 1, type: 'Catalyst', name: 'Lost Prayer to the...', fullName: 'Lost Prayer to the Sacred Winds' },
-  { id: 'Ibis',           level: 90, rarity: 4, uncap: 5, type: 'Bow',      name: 'Ibis Piercer', portrait: 'https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u587xe/d0487b5253419380af5f2afbb726fe8d.png' },
+  { id: 'Ibis',           level: 90, rarity: 4, uncap: 5, type: 'Bow',      name: 'Ibis Piercer', portrait: '587xe/d0487b5253419380af5f2afbb726fe8d' },
   { id: 'Jyanome',        level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Hakushin Ring' },
   { id: 'Kasabouzu',      level: 90, rarity: 4, uncap: 5, type: 'Sword',    name: 'Kasabouzu' },
   { id: 'Ludiharpastum',  level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Dodoco Tales' },
