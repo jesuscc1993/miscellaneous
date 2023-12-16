@@ -9,7 +9,8 @@ const processList = (identifier, items, itemType) => {
 
   sortItems(items).forEach((item) => {
     const artwork =
-      item.portrait ||
+      (item.portrait &&
+        `https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u${item.portrait}.png`) ||
       (itemType === ItemType.Weapon
         ? `https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_EquipIcon_${item.type}_${item.id}.png`
         : `https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_${item.id}.png`);
