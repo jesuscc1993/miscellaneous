@@ -21,9 +21,9 @@ $elements: 'anemo', 'cryo', 'dendro', 'electro', 'geo', 'hydro', 'pyro';
   src: url('assets/fonts/HYWenHei 85W.woff2');
 }
 
-/*body {
+body {
   cursor: url(./assets/images/cursor.png) 2 2, auto;
-}*/
+}
 
 a {
   &,
@@ -105,7 +105,7 @@ small {
   border-radius: var(--card-roundness);
   box-shadow: 0 1px 8px #0004;
   color: var(--c-item-fg);
-  cursor: pointer;
+  // cursor: pointer;
   height: var(--card-height);
   overflow: hidden;
   position: relative;
@@ -288,7 +288,7 @@ small {
   width: $size;
 
   bottom: 0;
-  cursor: pointer;
+  // cursor: pointer;
   margin: 16px;
   position: fixed;
   right: 0;
