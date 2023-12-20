@@ -21,6 +21,10 @@ $elements: 'anemo', 'cryo', 'dendro', 'electro', 'geo', 'hydro', 'pyro';
   src: url('assets/fonts/HYWenHei 85W.woff2');
 }
 
+/*body {
+  cursor: url(./assets/images/cursor.png) 2 2, auto;
+}*/
+
 a {
   &,
   &:visited {
