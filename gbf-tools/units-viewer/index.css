@@ -1,6 +1,8 @@
 :root {
   --portrait-height: 96px;
   --portrait-width: 96px;
+  --cols: 12;
+  --gap: 4px;
 }
 
 * {
@@ -30,8 +32,7 @@ h3 {
 .main {
   background-color: #201c1a;
   margin: 0 auto;
-  padding: 8px;
-  width: 1148px;
+  width: calc(var(--portrait-width) * var(--cols) + var(--gap) * (var(--cols) - 1));
 }
 
 .links-container a {
