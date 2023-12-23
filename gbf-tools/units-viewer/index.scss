@@ -1,0 +1,55 @@
+:root {
+  --portrait-height: 96px;
+  --portrait-width: 96px;
+  --cols: 12;
+  --gap: 4px;
+}
+
+* {
+  font-weight: normal;
+}
+
+body {
+  background-color: #1f1c1a;
+  color: #fff;
+  font-family: 'Delius';
+  margin: 0 0 33vh;
+}
+
+a {
+  color: #dfa071;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h3 {
+  margin: 16px 0 8px;
+  padding: 8px 0;
+}
+
+.main {
+  background-color: #201c1a;
+  margin: 0 auto;
+  width: calc(
+    var(--portrait-width) * var(--cols) + var(--gap) * (var(--cols) - 1)
+  );
+}
+
+.units-grid {
+  display: grid;
+  grid-gap: var(--gap);
+  grid-template-columns: repeat(auto-fill, var(--portrait-width));
+  grid-template-rows: repeat(auto-fill, var(--portrait-height));
+
+  .unit-link {
+    line-height: 0;
+  }
+
+  .unit-portrait {
+    height: var(--portrait-height);
+    width: var(--portrait-width);
+  }
+}

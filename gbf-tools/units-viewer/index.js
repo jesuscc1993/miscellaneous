@@ -94,8 +94,8 @@ const generateElementLinks = (elements) => {
     const label = element.toUpperCase();
 
     if (i > 0) {
-      elementAnchors.append(`/`);
-      sectionAnchors.append(`/`);
+      elementAnchors.append(` / `);
+      sectionAnchors.append(` / `);
     }
 
     elementAnchors.append(
