@@ -53,6 +53,7 @@ const initialize = () => {
       units.reverse().forEach((unit) => {
         unitsGrid.append(`
           <a
+            class="unit-link"
             target="_blank"
             href="https://gbf.wiki/index.php?search=${unit}"
           >

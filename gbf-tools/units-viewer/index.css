@@ -50,6 +50,10 @@ h3 {
   margin-top: 12px;
 }
 
+.unit-link {
+  line-height: 0;
+}
+
 .unit-portrait {
   height: var(--portrait-height);
   width: var(--portrait-width);
