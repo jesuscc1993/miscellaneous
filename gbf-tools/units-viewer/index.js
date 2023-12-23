@@ -54,7 +54,7 @@ const initialize = () => {
         unitsGrid.append(`
           <img
             class="unit-portrait"
-            src="${imageRoot}/${unit}_01.jpg"
+            src="${imageRoot}${unit}_01.jpg"
           >
         `);
       });
