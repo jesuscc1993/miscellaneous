@@ -52,10 +52,15 @@ const initialize = () => {
 
       units.reverse().forEach((unit) => {
         unitsGrid.append(`
-          <img
-            class="unit-portrait"
-            src="${imageRoot}${unit}_01.jpg"
+          <a
+            target="_blank"
+            href="https://gbf.wiki/index.php?search=${unit}"
           >
+            <img
+              class="unit-portrait"
+              src="${imageRoot}${unit}_01.jpg"
+            >
+          </a>
         `);
       });
 
