@@ -3,6 +3,7 @@
   --portrait-width: 96px;
   --cols: 12;
   --gap: 4px;
+  --transition: 150ms;
 }
 
 * {
@@ -36,6 +37,10 @@ h3 {
   width: calc(
     var(--portrait-width) * var(--cols) + var(--gap) * (var(--cols) - 1)
   );
+
+  &:has(.unit-link:hover) .unit-link:not(:hover) {
+    filter: grayscale(0.75) brightness(.75);
+  }
 }
 
 .units-grid {
@@ -46,6 +51,7 @@ h3 {
 
   .unit-link {
     line-height: 0;
+    transition: var(--transition);
   }
 
   .unit-portrait {
