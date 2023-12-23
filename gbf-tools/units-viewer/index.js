@@ -1,6 +1,5 @@
-/*
-  units replacement regex    .*\/m\/(.*?)_.*
-*/
+//  Fetcher snippet:
+//    jQuery('#lis-npc .img-item').toArray().map((e) => e.alt.match(/(\d+)/)[1])
 
 const fetchJson = (url) => {
   return fetch(url).then((response) => response.json());
@@ -50,7 +49,7 @@ const initialize = () => {
 
       units.reverse().forEach((unit) => {
         unitsGrid.append(
-          `<img class="unit-portrait" src="https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/npc/m/${unit}_01.jpg">`
+          `<img class="unit-portrait" src="https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/npc/s/${unit}_01.jpg">`
         );
       });
 
