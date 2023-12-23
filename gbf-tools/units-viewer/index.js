@@ -1,6 +1,9 @@
 //  Fetcher snippet:
 //    jQuery('#lis-npc .img-item').toArray().map((e) => e.alt.match(/(\d+)/)[1])
 
+const imageRoot =
+  'https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/npc/s/';
+
 const fetchJson = (url) => {
   return fetch(url).then((response) => response.json());
 };
@@ -48,16 +51,19 @@ const initialize = () => {
       const unitsGrid = jQuery(`<div class="units-grid"></div>`);
 
       units.reverse().forEach((unit) => {
-        unitsGrid.append(
-          `<img class="unit-portrait" src="https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/npc/s/${unit}_01.jpg">`
-        );
+        unitsGrid.append(`
+          <img
+            class="unit-portrait"
+            src="${imageRoot}/${unit}_01.jpg"
+          >
+        `);
       });
 
-      const elementUnits = jQuery(
-        `<div class="element ${element}">
+      const elementUnits = jQuery(`
+        <div class="element ${element}">
           <h3 id="${element}">${element.toUpperCase()}</h3>
-        </div>`
-      );
+        </div>
+      `);
 
       elementUnits.append(unitsGrid);
       output.append(elementUnits);
