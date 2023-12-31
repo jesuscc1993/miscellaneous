@@ -6,10 +6,16 @@ const rarityBackgrounds = {
 
 const getCharacterSprite = (item) => {
   return item.portrait
-    ? `https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u${item.portrait}.png`
+    ? getPortrait(item)
     : `https://upload-os-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_${item.id}.png`;
 };
 
 const getWeaponSprite = (item) => {
-  return `https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_EquipIcon_${item.type}_${item.id}.png`;
+  return item.portrait
+    ? getPortrait(item)
+    : `https://upload-os-bbs.mihoyo.com/game_record/genshin/equip/UI_EquipIcon_${item.type}_${item.id}.png`;
+};
+
+const getPortrait = (item) => {
+  return `https://act.hoyoverse.com/hk4e/e20200928calculate/item_icon_u${item.portrait}.png`;
 };
