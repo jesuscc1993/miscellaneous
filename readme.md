@@ -13,5 +13,6 @@ Intended as a "hub" of sorts to host several minor miscellaneous projects.
 - [/gbf-tools/support-summons/](gbf-tools/support-summons/)
 - [/gbf-tools/units-viewer/](gbf-tools/units-viewer/)
 - [/hoyoverse/genshin-impact/inventory-viewer/](hoyoverse/genshin-impact/inventory-viewer/)
+- [/hoyoverse/honkai-star-rail/inventory-viewer/](hoyoverse/honkai-star-rail/inventory-viewer/)
 - [/pokemon/types-chart/](pokemon/types-chart/)
 - [/web-tools/](web-tools/)
