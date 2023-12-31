@@ -2,8 +2,8 @@ $weaponTypes: 'bow', 'catalyst', 'claymore', 'pole', 'sword';
 $elements: 'anemo', 'cryo', 'dendro', 'electro', 'geo', 'hydro', 'pyro';
 
 @font-face {
-  font-family: 'HYWenHei 85W';
-  src: url('assets/fonts/HYWenHei 85W.woff2');
+  font-family: 'HYWenHei';
+  src: url('assets/fonts/HYWenHei/HYWenHei 85W.woff2');
 }
 
 html {
@@ -12,7 +12,7 @@ html {
 
 body {
   cursor: url(./assets/images/cursor.png) 2 2, auto;
-  font-family: 'HYWenHei 85W', non-serif;
+  font-family: 'HYWenHei', non-serif;
 }
 
 .item {
