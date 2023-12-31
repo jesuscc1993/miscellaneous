@@ -1,0 +1,40 @@
+$weaponTypes: 'bow', 'catalyst', 'claymore', 'pole', 'sword';
+$elements: 'anemo', 'cryo', 'dendro', 'electro', 'geo', 'hydro', 'pyro';
+
+@font-face {
+  font-family: 'HYWenHei 85W';
+  src: url('assets/fonts/HYWenHei 85W.woff2');
+}
+
+html {
+  background-image: url(assets/images/bg.jpg);
+}
+
+body {
+  cursor: url(./assets/images/cursor.png) 2 2, auto;
+  font-family: 'HYWenHei 85W', non-serif;
+}
+
+.item {
+  @each $element in $elements {
+    &.#{$element} {
+      .item-portrait {
+        &:before {
+          background-image: url(assets/images/elements/colored/#{$element}.png);
+        }
+      }
+    }
+  }
+
+  @each $weaponType in $weaponTypes {
+    &.#{$weaponType} {
+      .bottom-text {
+        .level {
+          &:before {
+            background-image: url(assets/images/weapons/#{$weaponType}.png);
+          }
+        }
+      }
+    }
+  }
+}
