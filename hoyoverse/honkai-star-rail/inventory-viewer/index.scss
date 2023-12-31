@@ -1,0 +1,112 @@
+$paths: 'destruction', 'hunt', 'erudition', 'harmony', 'nihility',
+  'preservation', 'abundance';
+
+$elements: 'fire', 'ice', 'imaginary', 'lightning', 'physical', 'quantum',
+  'wind';
+
+@font-face {
+  font-family: 'DIN';
+  src: url('assets/fonts/DIN/DIN Medium.ttf');
+}
+
+:root {
+  --c-item-bg: #202020;
+  --c-item-fg: #c2c2c3;
+}
+
+html {
+  background-image: url(assets/images/bg.jpg);
+}
+
+body {
+  cursor: url(./assets/images/cursor.png) 1 1, auto;
+  font-family: 'DIN', non-serif;
+  font-size: 16px;
+}
+
+.item {
+  border-radius: var(--card-roundness) 20px var(--card-roundness)
+    var(--card-roundness);
+  border-bottom: 2px solid;
+
+  @each $element in $elements {
+    &.#{$element} {
+      .item-portrait {
+        &:before {
+          background-image: url(assets/images/elements/#{$element}.png);
+        }
+      }
+    }
+  }
+
+  @each $path in $paths {
+    &.#{$path} {
+      .bottom-text {
+        .level {
+          &:before {
+            background-image: url(assets/images/paths/#{$path}.png);
+          }
+        }
+      }
+    }
+  }
+
+  &.rarity-4 {
+    border-color: #9661d5;
+  }
+
+  &.rarity-5 {
+    border-color: #d2ad72;
+  }
+
+  &.element {
+    .item-portrait {
+      &:before {
+        --size: 20px;
+        background-size: 105%;
+        border-radius: 50%;
+        background-color: #0008;
+        margin: 6px;
+      }
+    }
+  }
+
+  .uncap-text {
+    background: #000a;
+    padding: 2px;
+  }
+
+  /* 
+
+  .item-portrait {
+    $roundness: var(--card-roundness);
+    border-radius: $roundness $roundness 24px $roundness;
+  }
+
+  &:hover {
+    & .item-portrait {
+      $roundness: var(--card-roundness);
+      border-radius: $roundness $roundness 12px $roundness;
+    }
+  }
+  
+  */
+}
+
+.characters-grid,
+.weapons-grid {
+  .uncap-text {
+    border-radius: 0 var(--card-roundness) 0 var(--card-roundness);
+    right: 0;
+  }
+}
+
+.characters-grid {
+  --bottom-text-height: 24px;
+  --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
+}
+
+.weapons-grid {
+  --bottom-text-height: 38px;
+  --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
+}

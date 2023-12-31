@@ -2,8 +2,6 @@
   --c-dark-bg: #1c1c22;
   --c-dark-fg-medium: #d3bc8e;
   --c-dark-fg-light: #ece5d8;
-  --c-item-bg: #e9e5dc;
-  --c-item-fg: #495366;
 
   --artwork-size: 100px;
   --card-roundness: 4px;
@@ -49,7 +47,6 @@ body {
   background-attachment: fixed;
   background-size: auto min(640px, 100vh);
   color: #fff;
-  font-size: 14px;
   margin: 0;
   padding: 0 var(--grid-gap);
 }
@@ -88,7 +85,6 @@ small {
 
 .item {
   background: linear-gradient(0deg, var(--c-item-bg) 67%, transparent 67%);
-  border-radius: var(--card-roundness);
   box-shadow: 0 1px 8px #0004;
   color: var(--c-item-fg);
   // cursor: pointer;
@@ -98,23 +94,18 @@ small {
   transition: var(--transition);
 
   .item-portrait {
-    $roundness: var(--card-roundness);
-    border-bottom: 1px solid #0004;
-    border-radius: $roundness $roundness 24px $roundness;
     height: var(--artwork-size);
-    margin-bottom: -1px; /* compensate for border */
     transition: var(--transition);
     width: var(--artwork-size);
 
     &:before {
-      $size: 30px;
       background-position: center;
       background-repeat: no-repeat;
-      background-size: $size $size;
+      background-size: 100%;
       content: '';
       display: inline-block;
-      height: $size;
-      width: $size;
+      height: var(--size);
+      width: var(--size);
     }
   }
 
@@ -125,10 +116,8 @@ small {
   }
 
   .uncap-text {
-    background: #0006;
     color: white;
     height: var(--uncap-size);
-    padding: 0;
     position: absolute;
     top: 0;
     width: var(--uncap-size);
@@ -140,7 +129,6 @@ small {
   }
 
   .bottom-text {
-    line-height: 18px;
     overflow: hidden;
 
     .name,
@@ -177,11 +165,6 @@ small {
   &:hover {
     scale: 1.08;
 
-    & .item-portrait {
-      $roundness: var(--card-roundness);
-      border-radius: $roundness $roundness 12px $roundness;
-    }
-
     & > .bottom-text {
       scale: 0.925;
     }
@@ -189,15 +172,7 @@ small {
 }
 
 .characters-grid {
-  --bottom-text-height: 28px;
-  --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
-
   .item {
-    .uncap-text {
-      border-radius: 0 var(--card-roundness) 0 var(--card-roundness);
-      right: 0;
-    }
-
     .bottom-text {
       height: calc(var(--line-height) * 2);
 
@@ -216,15 +191,7 @@ small {
 }
 
 .weapons-grid {
-  --bottom-text-height: 46px;
-  --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
-
   .item {
-    .uncap-text {
-      border-radius: var(--card-roundness) 0 var(--card-roundness) 0;
-      left: 0;
-    }
-
     .bottom-text {
       height: calc(var(--line-height) * 3);
 
@@ -264,7 +231,7 @@ small {
     height: 100%;
 
     border-radius: 50%;
-    background: #fff;
+    background: var(--c-item-bg);
   }
 
   &:hover {

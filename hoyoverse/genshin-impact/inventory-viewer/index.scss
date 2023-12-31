@@ -6,6 +6,11 @@ $elements: 'anemo', 'cryo', 'dendro', 'electro', 'geo', 'hydro', 'pyro';
   src: url('assets/fonts/HYWenHei/HYWenHei 85W.woff2');
 }
 
+:root {
+  --c-item-bg: #e9e5dc;
+  --c-item-fg: #495366;
+}
+
 html {
   background-image: url(assets/images/bg.jpg);
 }
@@ -13,9 +18,12 @@ html {
 body {
   cursor: url(./assets/images/cursor.png) 2 2, auto;
   font-family: 'HYWenHei', non-serif;
+  font-size: 14px;
 }
 
 .item {
+  border-radius: var(--card-roundness);
+
   @each $element in $elements {
     &.#{$element} {
       .item-portrait {
@@ -36,5 +44,48 @@ body {
         }
       }
     }
+  }
+
+  &:hover {
+    & .item-portrait {
+      $roundness: var(--card-roundness);
+      border-radius: $roundness $roundness 12px $roundness;
+    }
+  }
+
+  .item-portrait {
+    $roundness: var(--card-roundness);
+    border-bottom: 1px solid #0004;
+    border-radius: $roundness $roundness 24px $roundness;
+    margin-bottom: -1px; /* compensate for border */
+
+    &:before {
+      --size: 30px;
+    }
+  }
+
+  .uncap-text {
+    background: #0006;
+    padding: 0;
+  }
+}
+
+.characters-grid {
+  --bottom-text-height: 28px;
+  --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
+
+  .uncap-text {
+    border-radius: 0 var(--card-roundness) 0 var(--card-roundness);
+    right: 0;
+  }
+}
+
+.weapons-grid {
+  --bottom-text-height: 46px;
+  --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
+
+  .uncap-text {
+    border-radius: var(--card-roundness) 0 var(--card-roundness) 0;
+    left: 0;
   }
 }

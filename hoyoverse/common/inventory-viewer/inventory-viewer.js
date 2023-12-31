@@ -17,15 +17,17 @@ const processList = (identifier, items, itemType) => {
 
     const shortItemName = item.name || item.id;
     const itemContainer = jQuery(
-      `<div class="item ${itemType} ${item.type.toLowerCase()} ${item.element?.toLowerCase()}" title="${
-        item.fullName || shortItemName
-      }"></div>`
+      `<div class="item rarity-${
+        item.rarity
+      } ${itemType} ${item.type.toLowerCase()} ${
+        item.element ? `element ${item.element.toLowerCase()}` : ''
+      }" title="${item.fullName || shortItemName}"></div>`
     );
 
     const portrait = jQuery(`<div class="item-portrait"></div>`);
     portrait.css(
       `background`,
-      `url(${artwork}) center top / 100% 100% no-repeat, url(${artworkBackground}) 0px 0px / 100% no-repeat`
+      `url(${artwork}) center top / 100% auto no-repeat, url(${artworkBackground}) 0px 0px / 100% no-repeat`
     );
     itemContainer.append(portrait);
 
@@ -74,10 +76,9 @@ const sortItems = (items) => {
 };
 
 const setItemBackground = (item) => {
-  jQuery('body').css(
-    `backgroundImage`,
-    `url(https://upload-os-bbs.mihoyo.com/game_record/genshin/character_image/UI_AvatarIcon_${item.id}@2x.png)`
-  );
+  if (!!getItemBackground) {
+    jQuery('body').css(`backgroundImage`, getItemBackground(item));
+  }
 };
 
 const scrollToTop = () => {
