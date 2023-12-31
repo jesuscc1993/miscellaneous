@@ -12,6 +12,6 @@ Intended as a "hub" of sorts to host several minor miscellaneous projects.
 - [/gbf-tools/image-viewers/town-backgrounds/](gbf-tools/image-viewers/town-backgrounds/)
 - [/gbf-tools/support-summons/](gbf-tools/support-summons/)
 - [/gbf-tools/units-viewer/](gbf-tools/units-viewer/)
-- [/hoyoverse/genshin/inventory-viewer/](hoyoverse/genshin/inventory-viewer/)
+- [/hoyoverse/genshin-impact/inventory-viewer/](hoyoverse/genshin-impact/inventory-viewer/)
 - [/pokemon/types-chart/](pokemon/types-chart/)
 - [/web-tools/](web-tools/)
