@@ -3,7 +3,6 @@
   --c-dark-fg-medium: #d3bc8e;
   --c-dark-fg-light: #ece5d8;
 
-  --artwork-size: 100px;
   --card-roundness: 4px;
   --grid-gap: 16px;
   --line-height: 20px;
@@ -57,7 +56,10 @@ small {
 
 .main {
   margin: 0 auto;
-  max-width: 1260px;
+  max-width: calc(
+    var(--artwork-size) * var(--grid-cols) + var(--grid-gap) *
+      (var(--grid-cols) - 1)
+  );
 }
 
 .item-section {

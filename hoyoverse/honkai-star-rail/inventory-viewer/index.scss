@@ -12,6 +12,8 @@ $elements: 'fire', 'ice', 'imaginary', 'lightning', 'physical', 'quantum',
 :root {
   --c-item-bg: #202020;
   --c-item-fg: #c2c2c3;
+  --artwork-size: 120px;
+  --grid-cols: 9;
 }
 
 html {

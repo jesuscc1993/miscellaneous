@@ -9,6 +9,8 @@ $elements: 'anemo', 'cryo', 'dendro', 'electro', 'geo', 'hydro', 'pyro';
 :root {
   --c-item-bg: #e9e5dc;
   --c-item-fg: #495366;
+  --artwork-size: 100px;
+  --grid-cols: 11;
 }
 
 html {
