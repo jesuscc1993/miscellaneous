@@ -154,12 +154,8 @@ small {
         content: '';
         display: inline-block;
         height: $size;
-        width: $size;
-      }
-      &:before {
-        $size: 20px;
-        background-size: $size $size;
         margin-right: 4px;
+        width: $size;
       }
     }
   }

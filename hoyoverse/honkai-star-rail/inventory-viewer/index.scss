@@ -31,28 +31,6 @@ body {
     var(--card-roundness);
   border-bottom: 2px solid;
 
-  @each $element in $elements {
-    &.#{$element} {
-      .item-portrait {
-        &:before {
-          background-image: url(assets/images/elements/#{$element}.png);
-        }
-      }
-    }
-  }
-
-  @each $path in $paths {
-    &.#{$path} {
-      .bottom-text {
-        .level {
-          &:before {
-            background-image: url(assets/images/paths/#{$path}.png);
-          }
-        }
-      }
-    }
-  }
-
   &.rarity-4 {
     border-color: #9661d5;
   }
@@ -61,15 +39,12 @@ body {
     border-color: #d2ad72;
   }
 
-  &.element {
-    .item-portrait {
-      &:before {
-        --size: 20px;
-        background-size: 105%;
-        border-radius: 50%;
-        background-color: #0008;
-        margin: 6px;
-      }
+  .item-portrait {
+    &:before {
+      --size: 24px;
+      border-radius: 50%;
+      background-color: #0008;
+      margin: 6px;
     }
   }
 
@@ -77,22 +52,6 @@ body {
     background: #000a;
     padding: 2px;
   }
-
-  /* 
-
-  .item-portrait {
-    $roundness: var(--card-roundness);
-    border-radius: $roundness $roundness 24px $roundness;
-  }
-
-  &:hover {
-    & .item-portrait {
-      $roundness: var(--card-roundness);
-      border-radius: $roundness $roundness 12px $roundness;
-    }
-  }
-  
-  */
 }
 
 .characters-grid,
@@ -106,9 +65,57 @@ body {
 .characters-grid {
   --bottom-text-height: 24px;
   --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
+
+  .item {
+    @each $element in $elements {
+      &.#{$element} {
+        .item-portrait {
+          &:before {
+            background-image: url(assets/images/elements/#{$element}.png);
+          }
+        }
+      }
+    }
+
+    @each $path in $paths {
+      &.#{$path} {
+        .bottom-text {
+          .level {
+            &:before {
+              background-image: url(assets/images/paths/#{$path}.png);
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .weapons-grid {
   --bottom-text-height: 38px;
   --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
+
+  .item {
+    @each $path in $paths {
+      &.#{$path} {
+        .item-portrait {
+          &:before {
+            background-image: url(assets/images/paths/#{$path}.png);
+          }
+        }
+      }
+    }
+
+    .level {
+      &:before {
+        display: none;
+      }
+    }
+
+    .item-portrait {
+      &:before {
+        background-size: 75%;
+      }
+    }
+  }
 }

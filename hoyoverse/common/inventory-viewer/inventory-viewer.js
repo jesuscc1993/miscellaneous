@@ -20,7 +20,7 @@ const processList = (identifier, items, itemType) => {
       `<div class="item rarity-${
         item.rarity
       } ${itemType} ${item.type.toLowerCase()} ${
-        item.element ? `element ${item.element.toLowerCase()}` : ''
+        item.element ? item.element.toLowerCase() : ''
       }" title="${item.fullName || shortItemName}"></div>`
     );
 
