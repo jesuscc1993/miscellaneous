@@ -31,10 +31,12 @@ body {
     var(--card-roundness);
   border-bottom: 2px solid;
 
+  &.rarity-3 {
+    border-color: #3e67a3;
+  }
   &.rarity-4 {
     border-color: #9661d5;
   }
-
   &.rarity-5 {
     border-color: #d2ad72;
   }
@@ -113,6 +115,8 @@ body {
     }
 
     .item-portrait {
+      background: center 4px / 100% auto no-repeat, center top / 100% auto no-repeat;
+
       &:before {
         background-size: 75%;
       }

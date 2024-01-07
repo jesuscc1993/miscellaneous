@@ -26,8 +26,8 @@ const processList = (identifier, items, itemType) => {
 
     const portrait = jQuery(`<div class="item-portrait"></div>`);
     portrait.css(
-      `background`,
-      `url(${artwork}) center top / 100% auto no-repeat, url(${artworkBackground}) 0px 0px / 100% no-repeat`
+      `background-image`,
+      `url(${artwork}), url(${artworkBackground})`
     );
     itemContainer.append(portrait);
 

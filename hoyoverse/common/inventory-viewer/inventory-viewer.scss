@@ -96,6 +96,7 @@ small {
   transition: var(--transition);
 
   .item-portrait {
+    background: center top / 100% auto no-repeat;
     height: var(--artwork-size);
     transition: var(--transition);
     width: var(--artwork-size);

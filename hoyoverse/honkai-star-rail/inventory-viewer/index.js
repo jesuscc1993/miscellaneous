@@ -1,4 +1,5 @@
 const rarityBackgrounds = {
+  3: 'https://act.hoyolab.com/app/community-game-records-sea/rpg/images/character_r_3.bdfa75d1.png',
   4: 'https://act.hoyolab.com/app/community-game-records-sea/rpg/images/character_r_4.24f329b7.png',
   5: 'https://act.hoyolab.com/app/community-game-records-sea/rpg/images/character_r_5.99d42eb7.png',
 };
@@ -16,5 +17,5 @@ const getWeaponSprite = (item) => {
 };
 
 const getPortrait = (item) => {
-  return `https://act.hoyoverse.com/darkmatter/hkrpg/prod_gf_cn/item_icon_ua57cb/${item.portrait}.png`;
+  return `https://act.hoyoverse.com/darkmatter/hkrpg/prod_gf_cn/item_icon_${item.portrait}.png`;
 };
