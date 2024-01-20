@@ -15,6 +15,7 @@ $elements: 'fire', 'ice', 'imaginary', 'lightning', 'physical', 'quantum',
 
   --artwork-size: 120px;
   --card-roundness: 0;
+  --corner-roundness: 20px;
   --grid-cols: 9;
 }
 
@@ -29,7 +30,7 @@ body {
 }
 
 .item {
-  border-radius: var(--card-roundness) 20px var(--card-roundness)
+  border-radius: var(--card-roundness) var(--corner-roundness) var(--card-roundness)
     var(--card-roundness);
   border-bottom: 2px solid;
 
@@ -73,7 +74,7 @@ body {
 .characters-grid,
 .weapons-grid {
   .uncap-text {
-    border-radius: 0 var(--card-roundness) 0 var(--card-roundness);
+    border-radius: 0 var(--corner-roundness) 0 calc(var(--corner-roundness) / 2);
     right: 0;
   }
 }
