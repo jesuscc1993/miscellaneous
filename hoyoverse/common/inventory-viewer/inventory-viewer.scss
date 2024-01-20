@@ -8,6 +8,8 @@
   --line-height: 20px;
   --transition: 150ms;
   --uncap-size: 20px;
+
+  --item-shadow: 0 1px 8px #0004;
 }
 
 a {
@@ -87,7 +89,7 @@ small {
 
 .item {
   background: linear-gradient(0deg, var(--c-item-bg) 67%, transparent 67%);
-  box-shadow: 0 1px 8px #0004;
+  box-shadow: var(--item-shadow);
   color: var(--c-item-fg);
   // cursor: pointer;
   height: var(--card-height);
@@ -133,6 +135,7 @@ small {
 
   .bottom-text {
     overflow: hidden;
+    padding: 0 4px;
 
     .name,
     .level {
@@ -160,17 +163,11 @@ small {
       }
     }
   }
-
-  &:hover {
-    scale: 1.08;
-
-    & > .bottom-text {
-      scale: 0.925;
-    }
-  }
 }
 
 .characters-grid {
+  --bottom-text-height: 26px;
+
   .item {
     .bottom-text {
       height: calc(var(--line-height) * 2);
@@ -190,6 +187,8 @@ small {
 }
 
 .weapons-grid {
+  --bottom-text-height: 46px;
+
   .item {
     .bottom-text {
       height: calc(var(--line-height) * 3);

@@ -26,6 +26,17 @@ body {
 .item {
   border-radius: var(--card-roundness);
 
+  &:hover {
+    $glow-color: #FFF;
+    $glow-size: 3px;
+    box-shadow: 0 0 $glow-size $glow-size $glow-color, var(--item-shadow);
+    scale: 1.08;
+
+    & > .bottom-text {
+      scale: 0.925;
+    }
+  }
+
   @each $element in $elements {
     &.#{$element} {
       .item-portrait {
@@ -73,7 +84,6 @@ body {
 }
 
 .characters-grid {
-  --bottom-text-height: 28px;
   --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
 
   .uncap-text {
@@ -83,7 +93,6 @@ body {
 }
 
 .weapons-grid {
-  --bottom-text-height: 46px;
   --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
 
   .uncap-text {
