@@ -64,8 +64,9 @@ small {
   );
 }
 
-.item-section {
+.vh100 {
   min-height: 100vh;
+  padding: var(--section-spacing) 0;
 }
 
 .center-text {
@@ -80,7 +81,6 @@ small {
   grid-template-columns: repeat(auto-fill, var(--artwork-size));
   grid-template-rows: repeat(auto-fill, var(--card-height));
   justify-content: center;
-  margin-bottom: 24px;
 
   &:has(.item:hover) .item:not(:hover) {
     filter: grayscale(0.75);

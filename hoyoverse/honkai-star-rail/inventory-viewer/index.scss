@@ -17,6 +17,9 @@ $elements: 'fire', 'ice', 'imaginary', 'lightning', 'physical', 'quantum',
   --card-roundness: 0;
   --corner-roundness: 20px;
   --grid-cols: 9;
+  --section-border-width: 1px;
+  --section-spacing: 24px;
+  --uncap-size: 22px;
 }
 
 html {
@@ -29,16 +32,30 @@ body {
   font-size: 16px;
 }
 
+.main {
+  max-width: calc(
+    var(--artwork-size) * var(--grid-cols) + var(--grid-gap) *
+      (var(--grid-cols) + 1) + var(--section-border-width) * 2
+  );
+}
+
+.item-section {
+  backdrop-filter: blur(16px);
+  border-radius: 4px;
+  border: var(--section-border-width) solid #fff2;
+  padding: 0 var(--grid-gap) var(--grid-gap);
+}
+
 .item {
-  border-radius: var(--card-roundness) var(--corner-roundness) var(--card-roundness)
-    var(--card-roundness);
+  border-radius: var(--card-roundness) var(--corner-roundness)
+    var(--card-roundness) var(--card-roundness);
   border-bottom: 2px solid;
 
   &:hover {
-    $glow-color: #FFF;
+    $glow-color: #fff;
     $glow-size: 3px;
     box-shadow: 0 0 $glow-size $glow-size - 1 $glow-color, var(--item-shadow);
-    outline: $glow-size solid  $glow-color;
+    outline: $glow-size solid $glow-color;
     scale: 1.05;
 
     & > .bottom-text {
@@ -67,14 +84,8 @@ body {
 
   .uncap-text {
     background: #000a;
-    padding: 2px;
-  }
-}
-
-.characters-grid,
-.weapons-grid {
-  .uncap-text {
     border-radius: 0 var(--corner-roundness) 0 calc(var(--corner-roundness) / 2);
+    padding: 2px;
     right: 0;
   }
 }
@@ -128,7 +139,8 @@ body {
     }
 
     .item-portrait {
-      background: -1px 4px / 100% auto no-repeat, center top / 100% auto no-repeat;
+      background: -1px 4px / 100% auto no-repeat,
+        center top / 100% auto no-repeat;
 
       &:before {
         background-size: 75%;

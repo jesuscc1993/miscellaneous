@@ -4,9 +4,11 @@ const ItemType = {
 };
 
 const processList = (identifier, items, itemType) => {
-  const output = jQuery(`#${identifier}Output`);
+  const output = jQuery(`#${identifier.toLowerCase()} .item-section`);
 
-  const itemsGrid = jQuery(`<div class="items-grid ${identifier}-grid"></div>`);
+  const itemsGrid = jQuery(`
+    <div class="items-grid ${identifier.toLowerCase()}-grid"></div>
+  `);
 
   sortItems(items).forEach((item) => {
     const artwork =
@@ -55,12 +57,13 @@ const processList = (identifier, items, itemType) => {
     itemsGrid.append(itemContainer);
   });
 
+  output.append(`<h2>${identifier}</h2>`);
   output.append(itemsGrid);
 };
 
 const initialize = () => {
-  processList('characters', characters, ItemType.Character);
-  processList('weapons', weapons, ItemType.Weapon);
+  processList('Characters', characters, ItemType.Character);
+  processList('Weapons', weapons, ItemType.Weapon);
 };
 
 const sortItems = (items) => {
