@@ -3,7 +3,7 @@ const characters = [
   { id: 'Asta',         level: 50,  rarity: 4, uncap: 2, type: 'Harmony',       element: 'Fire',      portrait: 'ua57cb/ce0425bc0e957690b997ae29dfaf5ebf' },
   { id: 'Dan Heng',     level: 20,  rarity: 4, uncap: 0, type: 'Hunt',          element: 'Wind',      portrait: 'ua57cb/f3a8eeefd215585ed00e9f46b01fec3a' },
   { id: 'Dr. Ratio',    level: 1 ,  rarity: 5, uncap: 0, type: 'Hunt',          element: 'Imaginary', portrait: 'u17ehb/bf890bf87a5e4a6581edc893971fbc59' },
-  { id: 'Gepard',       level: 60,  rarity: 5, uncap: 0, type: 'Preservation',  element: 'Ice',       portrait: 'ua57cb/e52ed26b017cd0d7274db7c9d50273b1' },
+  { id: 'Gepard',       level: 69,  rarity: 5, uncap: 0, type: 'Preservation',  element: 'Ice',       portrait: 'ua57cb/e52ed26b017cd0d7274db7c9d50273b1' },
   { id: 'Guinaifen',    level: 1,   rarity: 4, uncap: 1, type: 'Nihility',      element: 'Fire',      portrait: 'ua57cb/248c828e245022a1cbfce496fef9438d' },
   { id: 'Herta',        level: 1,   rarity: 4, uncap: 3, type: 'Erudition',     element: 'Ice',       portrait: 'ua57cb/6384df67f715de95c0514ac39d9ae0ac' },
   { id: 'Hook',         level: 1,   rarity: 4, uncap: 1, type: 'Destruction',   element: 'Fire',      portrait: 'u17ehb/a3fc2a11a162efee88620e3569f52906' },
