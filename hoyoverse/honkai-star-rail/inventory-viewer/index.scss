@@ -12,7 +12,9 @@ $elements: 'fire', 'ice', 'imaginary', 'lightning', 'physical', 'quantum',
 :root {
   --c-item-bg: #202020;
   --c-item-fg: #c2c2c3;
+
   --artwork-size: 120px;
+  --card-roundness: 0;
   --grid-cols: 9;
 }
 
@@ -30,6 +32,13 @@ body {
   border-radius: var(--card-roundness) 20px var(--card-roundness)
     var(--card-roundness);
   border-bottom: 2px solid;
+
+  &:hover {
+    $glow-color: #FFF;
+    $glow-size: 3px;
+    box-shadow: 0 0 $glow-size $glow-size - 1 $glow-color;
+    outline: $glow-size solid  $glow-color;
+  }
 
   &.rarity-3 {
     border-color: #3e67a3;
@@ -54,6 +63,14 @@ body {
     background: #000a;
     padding: 2px;
   }
+
+  &:hover {
+    scale: 1.05;
+
+    & > .bottom-text {
+      scale: 0.9525;
+    }
+  }
 }
 
 .characters-grid,
@@ -65,7 +82,7 @@ body {
 }
 
 .characters-grid {
-  --bottom-text-height: 24px;
+  --bottom-text-height: 26px;
   --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
 
   .item {
@@ -94,7 +111,7 @@ body {
 }
 
 .weapons-grid {
-  --bottom-text-height: 38px;
+  --bottom-text-height: 46px;
   --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
 
   .item {
