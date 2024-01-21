@@ -16,7 +16,7 @@ $elements: 'fire', 'ice', 'imaginary', 'lightning', 'physical', 'quantum',
   --artwork-size: 120px;
   --card-roundness: 0;
   --corner-roundness: 20px;
-  --grid-cols: 9;
+  --grid-cols: 7;
   --section-border-width: 1px;
   --section-spacing: 24px;
   --uncap-size: 22px;
@@ -30,6 +30,13 @@ body {
   cursor: url(./assets/images/cursor.png) 1 1, auto;
   font-family: 'DIN', non-serif;
   font-size: 16px;
+}
+
+a {
+  &,
+  &:visited {
+    color: #dbb578;
+  }
 }
 
 .main {

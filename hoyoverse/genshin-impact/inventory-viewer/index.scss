@@ -25,6 +25,13 @@ body {
   font-size: 14px;
 }
 
+a {
+  &,
+  &:visited {
+    color: #657ef8;
+  }
+}
+
 .item {
   border-radius: var(--card-roundness);
 

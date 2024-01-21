@@ -13,12 +13,9 @@
 }
 
 a {
-  &,
-  &:visited {
-    color: #657ef8;
-    transition: var(--transition);
-    text-decoration: none;
-  }
+  transition: var(--transition);
+  text-decoration: none;
+
   &:hover {
     filter: brightness(1.25);
   }
@@ -65,6 +62,7 @@ small {
 }
 
 .vh100 {
+  box-sizing: border-box;
   min-height: 100vh;
   padding: var(--section-spacing) 0;
 }
