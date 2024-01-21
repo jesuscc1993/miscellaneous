@@ -1,0 +1,20 @@
+body {
+  background: #04071a url('https://www.hoyoverse.com/_nuxt/img/star-bg.e5b2e92.png');
+  color: #FFF;
+  font-size: 20px;
+  width: 360px;
+  margin: 24px auto;
+}
+
+li {
+  margin: 4px 0;
+}
+
+a {
+  color: #FFF;
+  text-decoration: none;
+  transition: 150ms;
+}
+a:hover {
+  color: #7bb1ff
+}
