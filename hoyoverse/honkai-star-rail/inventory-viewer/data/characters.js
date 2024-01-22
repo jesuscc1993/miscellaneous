@@ -5,7 +5,7 @@ const characters = [
   { id: 'Dr. Ratio',    level: 1 ,  rarity: 5, uncap: 0, type: 'Hunt',          element: 'Imaginary', portrait: 'u17ehb/bf890bf87a5e4a6581edc893971fbc59' },
   { id: 'Gepard',       level: 69,  rarity: 5, uncap: 0, type: 'Preservation',  element: 'Ice',       portrait: 'ua57cb/e52ed26b017cd0d7274db7c9d50273b1' },
   { id: 'Guinaifen',    level: 1,   rarity: 4, uncap: 1, type: 'Nihility',      element: 'Fire',      portrait: 'ua57cb/248c828e245022a1cbfce496fef9438d' },
-  { id: 'Herta',        level: 1,   rarity: 4, uncap: 3, type: 'Erudition',     element: 'Ice',       portrait: 'ua57cb/6384df67f715de95c0514ac39d9ae0ac' },
+  { id: 'Herta',        level: 1,   rarity: 4, uncap: 4, type: 'Erudition',     element: 'Ice',       portrait: 'ua57cb/6384df67f715de95c0514ac39d9ae0ac' },
   { id: 'Hook',         level: 1,   rarity: 4, uncap: 1, type: 'Destruction',   element: 'Fire',      portrait: 'u17ehb/a3fc2a11a162efee88620e3569f52906' },
   { id: 'Kafka',        level: 1,   rarity: 5, uncap: 0, type: 'Nihility',      element: 'Lightning', portrait: 'u17ehb/ff22a7ca44c32640a91d95db629ed0af' },
   { id: 'Lynx',         level: 69,  rarity: 4, uncap: 0, type: 'Abundance',     element: 'Quantum',   portrait: 'ua57cb/a545b6df482548b4d52381e22414bcb1' },
