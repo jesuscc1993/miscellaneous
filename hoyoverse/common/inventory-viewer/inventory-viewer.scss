@@ -124,11 +124,6 @@ small {
     position: absolute;
     top: 0;
     width: var(--uncap-size);
-
-    &.maxed {
-      background: #a96759;
-      color: #ffe14b;
-    }
   }
 
   .bottom-text {

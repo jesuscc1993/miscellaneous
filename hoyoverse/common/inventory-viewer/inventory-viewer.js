@@ -36,7 +36,11 @@ const processList = (identifier, items, itemType) => {
     const uncapText = jQuery(
       `<div class="item-text uncap-text center-text ${
         itemType === ItemType.Weapon && item.uncap > 4 ? 'maxed' : ''
-      }">${item.uncap || (itemType === ItemType.Weapon ? 1 : 0)}</div>`
+      }">${
+        itemType === ItemType.Weapon
+          ? getItemUncapText(item.uncap || 1)
+          : item.uncap
+      }</div>`
     );
     itemContainer.append(uncapText);
 
@@ -70,9 +74,9 @@ const sortItems = (items) => {
   return items.sort(
     (a, b) =>
       `${b.rarity}`.localeCompare(`${a.rarity}`) ||
+      `${b.level}`.localeCompare(`${a.level}`) ||
       `${b.type}`.localeCompare(`${a.type}`) ||
       `${b.element}`.localeCompare(`${a.element}`) ||
-      `${b.level}`.localeCompare(`${a.level}`) ||
       `${b.uncap}`.localeCompare(`${a.uncap}`) ||
       `${a.name || a.id}`.localeCompare(`${b.name || b.id}`)
   );

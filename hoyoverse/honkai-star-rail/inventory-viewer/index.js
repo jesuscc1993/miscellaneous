@@ -19,3 +19,7 @@ const getWeaponSprite = (item) => {
 const getPortrait = (item) => {
   return `https://act.hoyoverse.com/darkmatter/hkrpg/prod_gf_cn/item_icon_${item.portrait}.png`;
 };
+
+const getItemUncapText = (uncap) => {
+  return ['', 'I', 'II', 'III', 'IV', 'V'][uncap];
+};

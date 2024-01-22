@@ -19,7 +19,7 @@ $elements: 'fire', 'ice', 'imaginary', 'lightning', 'physical', 'quantum',
   --grid-cols: 7;
   --section-border-width: 1px;
   --section-spacing: 24px;
-  --uncap-size: 22px;
+  --uncap-size: 24px;
 }
 
 html {
@@ -92,6 +92,7 @@ a {
   .uncap-text {
     background: #000a;
     border-radius: 0 var(--corner-roundness) 0 calc(var(--corner-roundness) / 2);
+    box-sizing: border-box;
     padding: 2px;
     right: 0;
   }
@@ -151,6 +152,18 @@ a {
 
       &:before {
         background-size: 75%;
+      }
+    }
+
+    .uncap-text {
+      background-color: #0008;
+      border-radius: 50%;
+      left: 6px;
+      top: 32px;
+
+      &.maxed {
+        background: #ffe14b;
+        color: var(--c-item-bg);
       }
     }
   }

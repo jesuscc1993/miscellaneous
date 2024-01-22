@@ -89,6 +89,11 @@ a {
   .uncap-text {
     background: #0006;
     padding: 0;
+
+    &.maxed {
+      background: #a96759;
+      color: #ffe14b;
+    }
   }
 }
 
