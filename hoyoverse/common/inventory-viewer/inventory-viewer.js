@@ -38,7 +38,7 @@ const processList = (identifier, items, itemType) => {
         itemType === ItemType.Weapon && item.uncap > 4 ? 'maxed' : ''
       }">${
         itemType === ItemType.Weapon
-          ? getItemUncapText(item.uncap || 1)
+          ? getWeaponUncapText(item.uncap || 1)
           : item.uncap
       }</div>`
     );
