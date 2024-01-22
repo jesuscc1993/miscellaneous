@@ -1,5 +1,6 @@
 const characters = [
   { id: 'Arlan',        level: 1,   rarity: 4, uncap: 1, type: 'Destruction',   element: 'Lightning', portrait: 'ua57cb/eac0d56ef4c1207feec82d8d6e4804b4' },
+  { id: 'Hanya',        level: 1,   rarity: 4, uncap: 1, type: 'Harmony',   element: 'Physical', portrait: 'u17ehb/6faa8b81b922a093aa68b05f2e57cd5d' },
   { id: 'Asta',         level: 50,  rarity: 4, uncap: 2, type: 'Harmony',       element: 'Fire',      portrait: 'ua57cb/ce0425bc0e957690b997ae29dfaf5ebf' },
   { id: 'Dan Heng',     level: 20,  rarity: 4, uncap: 0, type: 'Hunt',          element: 'Wind',      portrait: 'ua57cb/f3a8eeefd215585ed00e9f46b01fec3a' },
   { id: 'Dr. Ratio',    level: 1 ,  rarity: 5, uncap: 0, type: 'Hunt',          element: 'Imaginary', portrait: 'u17ehb/bf890bf87a5e4a6581edc893971fbc59' },
