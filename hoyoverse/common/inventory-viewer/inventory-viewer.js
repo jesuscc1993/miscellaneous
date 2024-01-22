@@ -11,10 +11,9 @@ const processList = (identifier, items, itemType) => {
   `);
 
   sortItems(items).forEach((item) => {
-    const artwork =
-      itemType === ItemType.Weapon
-        ? getWeaponSprite(item)
-        : getCharacterSprite(item);
+    const isWeapon = itemType === ItemType.Weapon;
+
+    const artwork = isWeapon ? getWeaponSprite(item) : getCharacterSprite(item);
     const artworkBackground = rarityBackgrounds[item.rarity];
 
     const shortItemName = item.name || item.id;
@@ -35,12 +34,8 @@ const processList = (identifier, items, itemType) => {
 
     const uncapText = jQuery(
       `<div class="item-text uncap-text center-text ${
-        itemType === ItemType.Weapon && item.uncap > 4 ? 'maxed' : ''
-      }">${
-        itemType === ItemType.Weapon
-          ? getWeaponUncapText(item.uncap || 1)
-          : item.uncap
-      }</div>`
+        isWeapon && item.uncap > 4 ? 'maxed' : ''
+      }">${isWeapon ? getWeaponUncapText(item.uncap || 1) : item.uncap}</div>`
     );
     itemContainer.append(uncapText);
 
