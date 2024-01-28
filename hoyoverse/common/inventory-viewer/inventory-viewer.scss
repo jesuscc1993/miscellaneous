@@ -119,11 +119,13 @@ small {
   }
 
   .uncap-text {
+    --size: var(--uncap-size);
     color: white;
-    height: var(--uncap-size);
+    height: var(--size);
+    line-height: var(--size);
     position: absolute;
     top: 0;
-    width: var(--uncap-size);
+    width: var(--size);
   }
 
   .bottom-text {
