@@ -32,15 +32,12 @@ const processList = (identifier, items, itemType) => {
     );
     itemContainer.append(portrait);
 
-    const uncapText = isWeapon
-      ? getWeaponUncapText(item.uncap || 1)
-      : item.uncap;
-
+    const uncapText = isWeapon ? getWeaponUncapText(item.uncap) : item.uncap;
     if (uncapText) {
       const uncapElement = jQuery(
         `<div class="item-text uncap-text center-text ${
           isWeapon && item.uncap > 4 ? 'maxed' : ''
-        }">${isWeapon ? getWeaponUncapText(item.uncap || 1) : item.uncap}</div>`
+        }">${uncapText}</div>`
       );
       itemContainer.append(uncapElement);
     }
