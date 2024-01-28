@@ -19,7 +19,8 @@ $elements: 'fire', 'ice', 'imaginary', 'lightning', 'physical', 'quantum',
   --grid-cols: 7;
   --section-border-width: 1px;
   --section-spacing: 24px;
-  --uncap-size: 24px;
+  --uncap-size: 28px;
+  --uncap-font-size: 18px;
 }
 
 html {
@@ -92,6 +93,7 @@ a {
   .uncap-text {
     background: #000a;
     border-radius: 0 var(--corner-roundness) 0 calc(var(--corner-roundness) / 2);
+    font-size: var(--uncap-font-size);
     line-height: var(--uncap-size);
     right: 0;
   }
