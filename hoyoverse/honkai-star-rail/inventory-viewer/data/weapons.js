@@ -11,7 +11,7 @@ const weapons = [
   { name: 'Under the Blue Sky',           level: 30, rarity: 4, uncap: 2, type: 'Destruction',  portrait: 'u17ehb/4511df9e6e3bf983f8fc999e20429478' },
   { name: 'Woof! Walk Time!',             level: 20, rarity: 4, uncap: 2, type: 'Destruction',  portrait: 'u17ehb/41c720be3b5a5f102ca1346426865ccb' },
   { name: 'Resolution Shines As...',      level:  1, rarity: 4, uncap: 2, type: 'Nihility',     portrait: 'u17ehb/a8eb4728cca7f855db3686a1543f49f0', fullName: 'Resolution Shines As Pearls of Sweat' },
-  { name: 'Fermata',                      level: 30, rarity: 4, uncap: 1, type: 'Nihility',     portrait: 'u17ehb/2f200f82b83aa7770caeda342b15c925' },
+  { name: 'Fermata',                      level: 60, rarity: 4, uncap: 1, type: 'Nihility',     portrait: 'u17ehb/2f200f82b83aa7770caeda342b15c925' },
   { name: 'Swordplay',                    level:  1, rarity: 4, uncap: 1, type: 'Hunt',         portrait: 'u17ehb/e17b4512d37b5ae2f7680ef5fb964aed' },
   { name: 'The Birth of the Self',        level:  1, rarity: 4, uncap: 1, type: 'Erudition',    portrait: 'u17ehb/a1873a727cdbe6e2a61f0178200d0146' },
 ];
