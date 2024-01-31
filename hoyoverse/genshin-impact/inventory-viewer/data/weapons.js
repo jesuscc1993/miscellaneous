@@ -39,7 +39,7 @@ const weapons = [
   { id: 'Recluse',        level: 90, rarity: 4, uncap: 5, type: 'Bow',      name: 'Rust' },
   { id: 'Santika',        level: 90, rarity: 5, uncap: 1, type: 'Pole',     name: 'Calamity Queller' },
   { id: 'Stardust',       level: 90, rarity: 4, uncap: 5, type: 'Pole',     name: "Dragon's Bane" },
-  { id: 'Troupe',         level: 90, rarity: 4, uncap: 2, type: 'Bow',      name: 'The Stringless' },
+  { id: 'Troupe',         level: 90, rarity: 4, uncap: 3, type: 'Bow',      name: 'The Stringless' },
   { id: 'Troupe',         level: 90, rarity: 4, uncap: 3, type: 'Catalyst', name: 'The Widsith' },
   { id: 'Windvane',       level: 90, rarity: 4, uncap: 5, type: 'Pole',     name: 'Missive Windspear' },
   { id: 'Wolfmound',      level: 90, rarity: 5, uncap: 1, type: 'Claymore', name: "Wolf's Gravestone" },
