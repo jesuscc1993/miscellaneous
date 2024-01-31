@@ -10,8 +10,8 @@ $elements: 'anemo', 'cryo', 'dendro', 'electro', 'geo', 'hydro', 'pyro';
   --c-item-bg: #e9e5dc;
   --c-item-fg: #495366;
 
-  --artwork-size: 100px;
-  --grid-cols: 11;
+  --artwork-size: 120px;
+  --grid-cols: 10;
 
   --section-spacing: 8px;
 }
@@ -40,11 +40,6 @@ a {
     $glow-color: #fff;
     $glow-size: 3px;
     box-shadow: 0 0 $glow-size $glow-size $glow-color, var(--item-shadow);
-    scale: 1.08;
-
-    & > .bottom-text {
-      scale: 0.925;
-    }
   }
 
   @each $element in $elements {
@@ -70,7 +65,7 @@ a {
   }
 
   &:hover {
-    & .item-portrait {
+    .item-portrait {
       $roundness: var(--card-roundness);
       border-radius: $roundness $roundness 12px $roundness;
     }

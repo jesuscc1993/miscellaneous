@@ -69,11 +69,6 @@ a {
     $glow-size: 3px;
     box-shadow: 0 0 $glow-size $glow-size - 1 $glow-color, var(--item-shadow);
     outline: $glow-size solid $glow-color;
-    scale: 1.05;
-
-    & > .bottom-text {
-      scale: 0.9525;
-    }
   }
 
   &.rarity-3 {
