@@ -30,7 +30,7 @@ const characters = [
   { id: 'Mika',           level: 50, rarity: 4, uncap: 0, type: 'Pole',     element: 'Cryo' },
   { id: 'Momoka',         level: 90, rarity: 4, uncap: 0, type: 'Sword',    element: 'Dendro', name: 'Kirara', portrait: 'u82ase/09f16853b42c95407e2071af70953556' },
   { id: 'Mona',           level: 80, rarity: 5, uncap: 0, type: 'Catalyst', element: 'Hydro' },
-  { id: 'Nahida',         level: 50, rarity: 5, uncap: 0, type: 'Catalyst', element: 'Dendro', portrait: 'u757vf/96324eae51417f2526a2a1ccd9720f06' },
+  { id: 'Nahida',         level: 90, rarity: 5, uncap: 0, type: 'Catalyst', element: 'Dendro', portrait: 'u757vf/96324eae51417f2526a2a1ccd9720f06' },
   { id: 'Ningguang',      level: 80, rarity: 4, uncap: 6, type: 'Pole',     element: 'Geo' },
   { id: 'Noel',           level: 80, rarity: 4, uncap: 6, type: 'Claymore', element: 'Geo', name: 'Noelle' },
   { id: 'PlayerGirl',     level: 80, rarity: 5, uncap: 6, type: 'Sword',    element: 'Many', name: 'Tabibito' },
