@@ -8,7 +8,7 @@ const characters = [
   { id: 'Hanya',        level: 20,  rarity: 4, uncap: 0, type: 'Harmony',       element: 'Physical',  portrait: 'u17ehb/6faa8b81b922a093aa68b05f2e57cd5d' },
   { id: 'Herta',        level: 20,  rarity: 4, uncap: 5, type: 'Erudition',     element: 'Ice',       portrait: 'ua57cb/6384df67f715de95c0514ac39d9ae0ac' },
   { id: 'Hook',         level: 20,  rarity: 4, uncap: 0, type: 'Destruction',   element: 'Fire',      portrait: 'u17ehb/a3fc2a11a162efee88620e3569f52906' },
-  { id: 'Kafka',        level: 60,  rarity: 5, uncap: 0, type: 'Nihility',      element: 'Lightning', portrait: 'u17ehb/ff22a7ca44c32640a91d95db629ed0af' },
+  { id: 'Kafka',        level: 80,  rarity: 5, uncap: 0, type: 'Nihility',      element: 'Lightning', portrait: 'u17ehb/ff22a7ca44c32640a91d95db629ed0af' },
   { id: 'Lynx',         level: 80,  rarity: 4, uncap: 0, type: 'Abundance',     element: 'Quantum',   portrait: 'ua57cb/a545b6df482548b4d52381e22414bcb1' },
   { id: 'March 7th',    level: 20,  rarity: 4, uncap: 2, type: 'Preservation',  element: 'Ice',       portrait: 'ua57cb/44dc6542764632aa9b4ffcb06e09a28f' },
   { id: 'Yukong',       level: 20,  rarity: 4, uncap: 1, type: 'Harmony',       element: 'Imaginary', portrait: 'u17ehb/d548ae544df679792c14103e57977bc7' },
