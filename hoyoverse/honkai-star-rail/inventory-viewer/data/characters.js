@@ -21,5 +21,6 @@ const characters = [
   { id: 'Tingyun',      level: 70,  rarity: 4, uncap: 0, type: 'Harmony',       element: 'Lightning', portrait: 'ua57cb/09c9db25a9759d7d586ddf22664d64fa' },
   { id: 'Trailblazer',  level: 80,  rarity: 5, uncap: 6, type: 'Preservation',  element: 'Fire',      portrait: 'ud64eb/a2c82fe65a3d3ad2fccb8b8b832ff7b7' },
   { id: 'Welt',         level: 20,  rarity: 5, uncap: 0, type: 'Nihility',      element: 'Imaginary', portrait: 'ud64eb/75a16b696f78eb9c0d02045fba7d4d0c' },
+  { id: 'Sampo',        level: 20,  rarity: 4, uncap: 0, type: 'Nihility',      element: 'Wind',      portrait: 'ud9dkb/88bbc344892a13a1229b410fd8dacf72' },
   { id: 'Xueyi',        level: 20,  rarity: 4, uncap: 1, type: 'Destruction',   element: 'Quantum',   portrait: 'ud64eb/a733a88b837f6e40e4af9c57ebc9838f' },
 ];

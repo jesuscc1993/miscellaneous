@@ -8,7 +8,7 @@ const weapons = [
   { name: 'Quid Pro Quo',                 level: 50, rarity: 4, uncap: 1, type: 'Abundance',    portrait: 'u17ehb/6b85f4dd55cd8b48ac1fe61dd81db280' },
   { name: 'Resolution Shines As...',      level:  1, rarity: 4, uncap: 2, type: 'Nihility',     portrait: 'u17ehb/a8eb4728cca7f855db3686a1543f49f0', fullName: 'Resolution Shines As Pearls of Sweat' },
   { name: 'Swordplay',                    level:  1, rarity: 4, uncap: 1, type: 'Hunt',         portrait: 'u17ehb/e17b4512d37b5ae2f7680ef5fb964aed' },
-  { name: 'Texture of Memories',          level: 80, rarity: 5, uncap: 4, type: 'Preservation', portrait: 'ud9dkb/817f2e4719fcf01d0a5b0a83f89c863f' },
+  { name: 'Texture of Memories',          level: 80, rarity: 5, uncap: 5, type: 'Preservation', portrait: 'ud9dkb/817f2e4719fcf01d0a5b0a83f89c863f' },
   { name: 'The Birth of the Self',        level:  1, rarity: 4, uncap: 1, type: 'Erudition',    portrait: 'u17ehb/a1873a727cdbe6e2a61f0178200d0146' },
   { name: 'The Seriousness...',           level: 80, rarity: 4, uncap: 3, type: 'Erudition',    portrait: 'ud64eb/cab9103e1fd3e69158fa2735e80046a1', fullName: 'The Seriousness of Breakfast' },
   { name: 'Time Waits\nfor No One',       level: 80, rarity: 5, uncap: 1, type: 'Abundance',    portrait: 'ua57cb/69871065f148ed80081894d4426e1e16' },
