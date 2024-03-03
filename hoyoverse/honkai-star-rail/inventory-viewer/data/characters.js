@@ -3,7 +3,7 @@ const characters = [
   { id: 'Asta',         level: 50,  rarity: 4, uncap: 2, type: 'Harmony',       element: 'Fire',      portrait: 'ua57cb/ce0425bc0e957690b997ae29dfaf5ebf' },
   { id: 'Clara',        level: 20,  rarity: 5, uncap: 0, type: 'Destruction',   element: 'Fire',      portrait: 'u642mb/79e076935e14b70feb8ddadb71525441' },
   { id: 'Dan Heng',     level: 20,  rarity: 4, uncap: 1, type: 'Hunt',          element: 'Wind',      portrait: 'ua57cb/f3a8eeefd215585ed00e9f46b01fec3a' },
-  { id: 'Dr. Ratio',    level: 20,  rarity: 5, uncap: 0, type: 'Hunt',          element: 'Imaginary', portrait: 'u17ehb/bf890bf87a5e4a6581edc893971fbc59' },
+  { id: 'Dr. Ratio',    level: 60,  rarity: 5, uncap: 0, type: 'Hunt',          element: 'Imaginary', portrait: 'u17ehb/bf890bf87a5e4a6581edc893971fbc59' },
   { id: 'Gepard',       level: 80,  rarity: 5, uncap: 0, type: 'Preservation',  element: 'Ice',       portrait: 'ua57cb/e52ed26b017cd0d7274db7c9d50273b1' },
   { id: 'Guinaifen',    level: 20,  rarity: 4, uncap: 1, type: 'Nihility',      element: 'Fire',      portrait: 'ua57cb/248c828e245022a1cbfce496fef9438d' },
   { id: 'Hanya',        level: 20,  rarity: 4, uncap: 6, type: 'Harmony',       element: 'Physical',  portrait: 'u17ehb/6faa8b81b922a093aa68b05f2e57cd5d' },
@@ -25,5 +25,5 @@ const characters = [
   { id: 'Trailblazer',  level: 80,  rarity: 5, uncap: 6, type: 'Preservation',  element: 'Fire',      portrait: 'ud64eb/a2c82fe65a3d3ad2fccb8b8b832ff7b7' },
   { id: 'Welt',         level: 20,  rarity: 5, uncap: 0, type: 'Nihility',      element: 'Imaginary', portrait: 'ud64eb/75a16b696f78eb9c0d02045fba7d4d0c' },
   { id: 'Xueyi',        level: 20,  rarity: 4, uncap: 1, type: 'Destruction',   element: 'Quantum',   portrait: 'ud64eb/a733a88b837f6e40e4af9c57ebc9838f' },
-  { id: 'Yukong',       level: 20,  rarity: 4, uncap: 1, type: 'Harmony',       element: 'Imaginary', portrait: 'u17ehb/d548ae544df679792c14103e57977bc7' },
+  { id: 'Yukong',       level: 20,  rarity: 4, uncap: 2, type: 'Harmony',       element: 'Imaginary', portrait: 'u17ehb/d548ae544df679792c14103e57977bc7' },
 ];
