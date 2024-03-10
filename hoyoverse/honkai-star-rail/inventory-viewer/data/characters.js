@@ -7,7 +7,7 @@ const characters = [
   { id: 'Gepard',       level: 80,  rarity: 5, uncap: 0, type: 'Preservation',  element: 'Ice',       portrait: 'ua57cb/e52ed26b017cd0d7274db7c9d50273b1' },
   { id: 'Guinaifen',    level: 20,  rarity: 4, uncap: 1, type: 'Nihility',      element: 'Fire',      portrait: 'ua57cb/248c828e245022a1cbfce496fef9438d' },
   { id: 'Hanya',        level: 20,  rarity: 4, uncap: 6, type: 'Harmony',       element: 'Physical',  portrait: 'u17ehb/6faa8b81b922a093aa68b05f2e57cd5d' },
-  { id: 'Herta',        level: 20,  rarity: 4, uncap: 5, type: 'Erudition',     element: 'Ice',       portrait: 'ua57cb/6384df67f715de95c0514ac39d9ae0ac' },
+  { id: 'Herta',        level: 70,  rarity: 4, uncap: 5, type: 'Erudition',     element: 'Ice',       portrait: 'ua57cb/6384df67f715de95c0514ac39d9ae0ac' },
   { id: 'Himeko',       level: 20,  rarity: 5, uncap: 0, type: 'Erudition',     element: 'Fire',      portrait: 'u642mb/1d631dbfb3fcf62d271353bb12c56e11' },
   { id: 'Hook',         level: 20,  rarity: 4, uncap: 0, type: 'Destruction',   element: 'Fire',      portrait: 'u17ehb/a3fc2a11a162efee88620e3569f52906' },
   { id: 'Kafka',        level: 80,  rarity: 5, uncap: 0, type: 'Nihility',      element: 'Lightning', portrait: 'u17ehb/ff22a7ca44c32640a91d95db629ed0af' },
