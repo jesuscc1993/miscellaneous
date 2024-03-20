@@ -21,7 +21,10 @@ const getHTMLAsString = (input, useDoubleQuotes) => {
         .replace(/\n/g, ' ')
         .replace(/\s{2,}/g, ' ')
         .replace(/\s+>/g, '>')
-        .replace(/\s*(<\/p>|<p>|<br\s*\/*>)\s*/g, '$1')
+        .replace(
+          /\s*<(\/?(?:article|aside|blockquote|div|figure|footer|form|header|li|nav|ol|p|section|table|th|td|tr|ul)|br\s*\/*)>\s*/g,
+          '<$1>'
+        )
         .replace(/^\s+|\s+$/g, '')
         .replace(/^|$/g, quote)
     : '';
