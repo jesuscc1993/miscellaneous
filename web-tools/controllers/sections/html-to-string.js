@@ -22,7 +22,7 @@ const getHTMLAsString = (input, useDoubleQuotes) => {
         .replace(/\s{2,}/g, ' ')
         .replace(/\s+>/g, '>')
         .replace(
-          /\s*<(\/?(?:article|aside|blockquote|div|figure|footer|form|header|li|nav|ol|p|section|table|th|td|tr|ul)|br\s*\/*)>\s*/g,
+          /\s*<(\/?(?:article|aside|blockquote|div|figure|footer|form|header|html|li|meta|nav|ol|p|script|section|style|table|th|td|tr|ul).*?|br\s*\/*)>\s*/g,
           '<$1>'
         )
         .replace(/^\s+|\s+$/g, '')
