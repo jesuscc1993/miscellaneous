@@ -21,7 +21,7 @@
       { "name": "Aki Rosenthal", "keyword": "Aki" },
       { "name": "Natsuiro Matsuri", "keyword": "Matsuri" },
       { "name": "Shirakami Fubuki", "keyword": "Fubuki" },
-      { "name": "Yozora Mel", "keyword": "Mel" }
+      { "name": "Yozora Mel", "keyword": "Mel", "graduated": true }
     ],
     "Gen 2": [
       { "name": "Minato Aqua", "keyword": "Aqua" },
@@ -98,7 +98,7 @@
       { "name": "Tsukumo Sana", "keyword": "Sana", "graduated": true }
     ],
     "Advent": [
-      { "name": "FuwaMoco Abyssgard", "keyword": "FuwaMoco" },
+      { "name": "Fuwamoco Abyssgard", "keyword": "Fuwamoco" },
       { "name": "Koseki Bijou", "keyword": "Bijou" },
       { "name": "Nerissa Ravencroft", "keyword": "Nerissa" },
       { "name": "Shiori Novella", "keyword": "Shiori" }
