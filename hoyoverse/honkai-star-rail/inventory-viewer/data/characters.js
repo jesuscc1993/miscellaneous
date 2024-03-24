@@ -19,7 +19,7 @@ const characters = [
   { id: 'Ruan Mei',     level: 80,  rarity: 5, uncap: 0, type: 'Harmony',       element: 'Ice',       portrait: 'ud64eb/62f7576eba1d899f34d9ad6e314257f2' },
   { id: 'Sampo',        level: 20,  rarity: 4, uncap: 6, type: 'Nihility',      element: 'Wind',      portrait: 'ud9dkb/88bbc344892a13a1229b410fd8dacf72' },
   { id: 'Serval',       level: 40,  rarity: 4, uncap: 0, type: 'Erudition',     element: 'Lightning', portrait: 'ua57cb/831f9c13e7e917e385ec741f483a60da' },
-  { id: 'Sparkle',      level: 20,  rarity: 5, uncap: 0, type: 'Harmony',       element: 'Quantum',   portrait: 'u642mb/ccca19b6318351ee87ad26bb8141a8a0' },
+  { id: 'Sparkle',      level: 50,  rarity: 5, uncap: 0, type: 'Harmony',       element: 'Quantum',   portrait: 'u642mb/ccca19b6318351ee87ad26bb8141a8a0' },
   { id: 'Sushang',      level: 20,  rarity: 4, uncap: 2, type: 'Hunt',          element: 'Fire',      portrait: 'ua57cb/a1b88d61f98bf9ac64d734162b6d095e' },
   { id: 'Tingyun',      level: 80,  rarity: 4, uncap: 0, type: 'Harmony',       element: 'Lightning', portrait: 'ua57cb/09c9db25a9759d7d586ddf22664d64fa' },
   { id: 'Trailblazer',  level: 80,  rarity: 5, uncap: 6, type: 'Preservation',  element: 'Fire',      portrait: 'ud64eb/a2c82fe65a3d3ad2fccb8b8b832ff7b7' },

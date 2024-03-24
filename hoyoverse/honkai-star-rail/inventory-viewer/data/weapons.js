@@ -3,6 +3,7 @@ const weapons = [
   { name: 'Cruising in the Stellar Sea',  level:  1, rarity: 5, uncap: 1, type: 'The Hunt',     portrait: 'ud9dkb/55d7ea27e1ab8446858bbf61942199c4' },
   { name: 'Dance! Dance! Dance!',         level:  1, rarity: 4, uncap: 1, type: 'Harmony',      portrait: 'u17ehb/52d770fa100b92968f199f0cf83db7e8' },
   { name: 'Fermata',                      level: 80, rarity: 4, uncap: 5, type: 'Nihility',     portrait: 'u17ehb/2f200f82b83aa7770caeda342b15c925' },
+  { name: 'Memories of the Past',         level: 80, rarity: 4, uncap: 2, type: 'Harmony',      portrait: 'u642mb/a7a1069df34e8b775d4d85c1be8e1ddd' },
   { name: 'Meshing Cogs',                 level: 80, rarity: 3, uncap: 5, type: 'Harmony',      portrait: 'ud64eb/21baf4cbb3fcc34fa849a9db9fa91750' },
   { name: 'Only Silence Remains',         level:  1, rarity: 4, uncap: 1, type: 'Hunt',         portrait: 'u17ehb/7052688f5361d55c0e4ea95e5ac26edb' },
   { name: 'Quid Pro Quo',                 level: 50, rarity: 4, uncap: 1, type: 'Abundance',    portrait: 'u17ehb/6b85f4dd55cd8b48ac1fe61dd81db280' },
