@@ -28,6 +28,7 @@ $elements: 'fire', 'ice', 'imaginary', 'lightning', 'physical', 'quantum',
   --uncap-size: 28px;
 
   @media (max-width: 960px) {
+    --font-size: 14px;
     --artwork-size: 90px;
   }
 }
