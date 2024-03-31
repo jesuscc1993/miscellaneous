@@ -1,7 +1,7 @@
 const characters = [
   { id: 'Aloy',           level: 50, rarity: 3, uncap: 0, type: 'Bow',      element: 'Cryo' },
   { id: 'Ambor',          level: 50, rarity: 4, uncap: 4, type: 'Bow',      element: 'Pyro', name: 'Amber' },
-  { id: 'Ayaka',          level: 90, rarity: 5, uncap: 0, type: 'Sword',    element: 'Cryo', name: 'Ayaka' },
+  { id: 'Ayaka',          level: 90, rarity: 5, uncap: 0, type: 'Sword',    element: 'Cryo', fullName: 'Kamisato Ayaka' },
   { id: 'Barbara',        level: 80, rarity: 4, uncap: 6, type: 'Catalyst', element: 'Hydro' },
   { id: 'Beidou',         level: 80, rarity: 4, uncap: 6, type: 'Claymore', element: 'Electro' },
   { id: 'Bennett',        level: 90, rarity: 4, uncap: 5, type: 'Sword',    element: 'Pyro' },
@@ -38,7 +38,7 @@ const characters = [
   { id: 'Qiqi',           level: 80, rarity: 5, uncap: 0, type: 'Sword',    element: 'Cryo' },
   { id: 'Razor',          level: 50, rarity: 4, uncap: 6, type: 'Claymore', element: 'Electro' },
   { id: 'Rosaria',        level: 80, rarity: 4, uncap: 2, type: 'Pole',     element: 'Cryo' },
-  { id: 'Sara',           level: 80, rarity: 4, uncap: 2, type: 'Bow',      element: 'Electro', name: 'Kujou Sara' },
+  { id: 'Sara',           level: 80, rarity: 4, uncap: 2, type: 'Bow',      element: 'Electro', fullName: 'Kujou Sara' },
   { id: 'Sayu',           level: 50, rarity: 4, uncap: 5, type: 'Claymore', element: 'Anemo' },
   { id: 'Shenhe',         level: 90, rarity: 5, uncap: 0, type: 'Pole',     element: 'Cryo' },
   { id: 'Shougun',        level: 90, rarity: 5, uncap: 0, type: 'Pole',     element: 'Electro', name: 'Shogun', fullName: 'Raiden Shogun' },

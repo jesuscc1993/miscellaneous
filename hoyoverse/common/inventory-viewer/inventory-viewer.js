@@ -7,7 +7,9 @@ const processList = (identifier, items, itemType) => {
   const output = jQuery(`#${identifier.toLowerCase()} .item-section`);
 
   const itemsGrid = jQuery(`
-    <div class="items-grid ${identifier.toLowerCase()}-grid"></div>
+    <div class="items-grid ${identifier.toLowerCase()}-grid">
+      <h2 class="grid-heading">${identifier}</h2>
+    </div>
   `);
 
   sortItems(items).forEach((item) => {
@@ -59,7 +61,6 @@ const processList = (identifier, items, itemType) => {
     itemsGrid.append(itemContainer);
   });
 
-  output.append(`<h2>${identifier}</h2>`);
   output.append(itemsGrid);
 };
 

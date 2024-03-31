@@ -100,6 +100,13 @@ a {
   }
 }
 
+.items-grid {
+  .grid-heading {
+    grid-column: 1 / -1;
+    padding: 1rem 0 0;
+  }
+}
+
 .characters-grid {
   --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
 

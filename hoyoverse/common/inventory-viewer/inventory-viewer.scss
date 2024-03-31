@@ -11,6 +11,22 @@
   --weapon-type-icon-size: 20px;
 
   --item-shadow: 0 1px 8px #0004;
+
+  @media (max-width: 960px) {
+    --grid-gap: 12px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  text-align: center;
+
+  h1 {
+    padding: 1rem 0 0.25rem;
+  }
 }
 
 a {
@@ -78,11 +94,15 @@ small {
   display: grid;
   grid-gap: var(--grid-gap);
   grid-template-columns: repeat(auto-fill, var(--artwork-size));
-  grid-template-rows: repeat(auto-fill, var(--card-height));
   justify-content: center;
 
   &:has(.item:hover) .item:not(:hover) {
     filter: grayscale(0.75);
+  }
+
+  .grid-heading {
+    grid-column: 1 / -1;
+    padding: 0;
   }
 }
 
