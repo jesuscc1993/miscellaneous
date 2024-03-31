@@ -10,10 +10,21 @@ $elements: 'anemo', 'cryo', 'dendro', 'electro', 'geo', 'hydro', 'pyro';
   --c-item-bg: #e9e5dc;
   --c-item-fg: #495366;
 
+  --font-size: 16px;
+
   --artwork-size: 120px;
   --grid-cols: 10;
 
   --section-spacing: 8px;
+
+  --element-icon-size: 30px;
+
+  @media (max-width: 960px) {
+    --font-size: 11px;
+    --artwork-size: 80px;
+    --element-icon-size: 15px;
+    --uncap-size: 15px;
+  }
 }
 
 html {
@@ -23,7 +34,7 @@ html {
 body {
   cursor: url(./assets/images/cursor.png) 2 2, auto;
   font-family: 'HYWenHei', non-serif;
-  font-size: 14px;
+  font-size: var(--font-size);
 }
 
 a {
@@ -78,7 +89,7 @@ a {
     margin-bottom: -1px; /* compensate for border */
 
     &:before {
-      --size: 30px;
+      --size: var(--element-icon-size);
     }
   }
 

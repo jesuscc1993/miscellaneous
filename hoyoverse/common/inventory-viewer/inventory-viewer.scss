@@ -5,9 +5,10 @@
 
   --card-roundness: 4px;
   --grid-gap: 16px;
-  --line-height: 20px;
+  --line-height: 1.5;
   --transition: 150ms;
   --uncap-size: 20px;
+  --weapon-type-icon-size: 20px;
 
   --item-shadow: 0 1px 8px #0004;
 }
@@ -154,7 +155,7 @@ small {
 
     .level {
       &:before {
-        $size: 20px;
+        $size: var(--weapon-type-icon-size);
         background-position: center;
         background-repeat: no-repeat;
         background-size: $size $size;
