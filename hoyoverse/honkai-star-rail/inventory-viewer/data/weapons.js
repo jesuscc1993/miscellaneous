@@ -1,6 +1,6 @@
 const weapons = [
   { name: 'Chorus',                       level: 60, rarity: 3, uncap: 5, type: 'Harmony',      portrait: 'u17ehb/9481816b3907d41d32bd1cae8133461b' },
-  { name: 'Cruising in the Stellar Sea',  level:  1, rarity: 5, uncap: 1, type: 'The Hunt',     portrait: 'ud9dkb/55d7ea27e1ab8446858bbf61942199c4' },
+  { name: 'Cruising in the Stellar Sea',  level: 80, rarity: 5, uncap: 5, type: 'The Hunt',     portrait: 'ud9dkb/55d7ea27e1ab8446858bbf61942199c4' },
   { name: 'Dance! Dance! Dance!',         level:  1, rarity: 4, uncap: 1, type: 'Harmony',      portrait: 'u17ehb/52d770fa100b92968f199f0cf83db7e8' },
   { name: 'Fermata',                      level: 80, rarity: 4, uncap: 5, type: 'Nihility',     portrait: 'u17ehb/2f200f82b83aa7770caeda342b15c925' },
   { name: 'Memories of the Past',         level: 80, rarity: 4, uncap: 2, type: 'Harmony',      portrait: 'u642mb/a7a1069df34e8b775d4d85c1be8e1ddd' },
