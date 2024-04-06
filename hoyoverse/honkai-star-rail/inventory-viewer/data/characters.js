@@ -1,7 +1,7 @@
 const characters = [
   { id: 'Arlan',        level: 20,  rarity: 4, uncap: 1, type: 'Destruction',   element: 'Lightning', portrait: 'ua57cb/eac0d56ef4c1207feec82d8d6e4804b4' },
   { id: 'Acheron',      level: 50,  rarity: 5, uncap: 0, type: 'Nihility',      element: 'Lightning', portrait: 'u9a1qb/dc6f2ef358cd233cb72a1eb576712d85' },
-  { id: 'Asta',         level: 50,  rarity: 4, uncap: 2, type: 'Harmony',       element: 'Fire',      portrait: 'ua57cb/ce0425bc0e957690b997ae29dfaf5ebf' },
+  { id: 'Asta',         level: 50,  rarity: 4, uncap: 3, type: 'Harmony',       element: 'Fire',      portrait: 'ua57cb/ce0425bc0e957690b997ae29dfaf5ebf' },
   { id: 'Clara',        level: 20,  rarity: 5, uncap: 0, type: 'Destruction',   element: 'Fire',      portrait: 'u642mb/79e076935e14b70feb8ddadb71525441' },
   { id: 'Dan Heng',     level: 20,  rarity: 4, uncap: 2, type: 'Hunt',          element: 'Wind',      portrait: 'ua57cb/f3a8eeefd215585ed00e9f46b01fec3a' },
   { id: 'Dr. Ratio',    level: 80,  rarity: 5, uncap: 0, type: 'Hunt',          element: 'Imaginary', portrait: 'u17ehb/bf890bf87a5e4a6581edc893971fbc59' },
