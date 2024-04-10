@@ -118,6 +118,10 @@ a {
 .weapons-grid {
   --card-height: calc(var(--artwork-size) + var(--bottom-text-height));
 
+  .item-portrait {
+    background-position: center center;
+  }
+
   .uncap-text {
     border-radius: var(--card-roundness) 0 var(--card-roundness) 0;
     left: 0;
