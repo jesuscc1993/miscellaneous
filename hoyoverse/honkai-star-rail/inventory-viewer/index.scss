@@ -172,8 +172,7 @@ a {
     }
 
     .item-portrait {
-      background: -1px 4px / 100% auto no-repeat,
-        center top / 100% auto no-repeat;
+      background-position: top center;
 
       &:before {
         background-size: 75%;

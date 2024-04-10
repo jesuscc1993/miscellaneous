@@ -119,8 +119,12 @@ small {
   &:hover {
     scale: 1.05;
 
-    & > .bottom-text {
+    > .bottom-text {
       scale: 0.9525;
+    }
+
+    .item-portrait {
+      background-size: 107.5%, 100%;
     }
   }
 
@@ -203,10 +207,6 @@ small {
     }
 
     &:hover {
-      .item-portrait {
-        background-size: 107.5%, 100%;
-      }
-
       .name {
         margin-top: calc(var(--bottom-text-height) * -1);
       }
