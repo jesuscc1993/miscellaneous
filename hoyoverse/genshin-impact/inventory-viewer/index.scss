@@ -11,6 +11,7 @@ $elements: 'anemo', 'cryo', 'dendro', 'electro', 'geo', 'hydro', 'pyro';
   --c-item-fg: #495366;
 
   --font-size: 14px;
+  --line-height: 1.33;
 
   --artwork-size: 100px;
   --grid-cols: 12;
@@ -21,6 +22,7 @@ $elements: 'anemo', 'cryo', 'dendro', 'electro', 'geo', 'hydro', 'pyro';
 
   @media (max-width: 960px) {
     --font-size: 11px;
+    --line-height: 1.5;
     --artwork-size: 80px;
     --element-icon-size: 20px;
     --uncap-size: 15px;
