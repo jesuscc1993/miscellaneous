@@ -9,6 +9,7 @@ const characters = [
   { id: 'Collei',     level: 50, rarity: 4, uncap: 1, type: 'Bow',      element: 'Dendro' },
   { id: 'Dehya',      level: 80, rarity: 5, uncap: 0, type: 'Claymore', element: 'Pyro' },
   { id: 'Diluc',      level: 90, rarity: 5, uncap: 0, type: 'Claymore', element: 'Pyro' },
+  { id: 'Arlecchino', level: 40, rarity: 5, uncap: 0, type: 'Pole',     element: 'Pyro',    portrait: 'ueb15f/6e91fd2e2bc1022882e9b1069094a161' },
   { id: 'Diona',      level: 90, rarity: 4, uncap: 6, type: 'Bow',      element: 'Cryo' },
   { id: 'Dori',       level: 50, rarity: 4, uncap: 1, type: 'Claymore', element: 'Electro' },
   { id: 'Eula',       level: 90, rarity: 5, uncap: 0, type: 'Claymore', element: 'Cryo' },
@@ -19,13 +20,13 @@ const characters = [
   { id: 'Gaming',     level: 50, rarity: 4, uncap: 2, type: 'Claymore', element: 'Pyro',    portrait: 'u757vf/5caf783cd8140c2f075be59c1fd0e952' },
   { id: 'Ganyu',      level: 90, rarity: 5, uncap: 0, type: 'Bow',      element: 'Cryo' },
   { id: 'Gorou',      level: 50, rarity: 4, uncap: 1, type: 'Bow',      element: 'Geo' },
-  { id: 'Heizo',      level: 50, rarity: 4, uncap: 0, type: 'Catalyst', element: 'Anemo',   name: 'Heizou' },
+  { id: 'Heizo',      level: 50, rarity: 4, uncap: 3, type: 'Catalyst', element: 'Anemo',   name: 'Heizou', fullName: 'Shikanoin Heizou' },
   { id: 'Kaeya',      level: 50, rarity: 4, uncap: 1, type: 'Sword',    element: 'Cryo' },
   { id: 'Kazuha',     level: 90, rarity: 5, uncap: 0, type: 'Sword',    element: 'Anemo',   fullName: 'Kaedehara Kazuha' },
   { id: 'Keqing',     level: 80, rarity: 5, uncap: 1, type: 'Sword',    element: 'Electro' },
   { id: 'Kokomi',     level: 90, rarity: 5, uncap: 0, type: 'Catalyst', element: 'Hydro',   fullName: 'Sangonomiya Kokomi' },
   { id: 'Layla',      level: 50, rarity: 4, uncap: 0, type: 'Sword',    element: 'Hydro' },
-  { id: 'Linette',    level: 50, rarity: 4, uncap: 0, type: 'Sword',    element: 'Anemo',   name: 'Lynette', portrait: 'u1490e/7944296bee57324622e469842b498f00' },
+  { id: 'Linette',    level: 50, rarity: 4, uncap: 1, type: 'Sword',    element: 'Anemo',   name: 'Lynette', portrait: 'u1490e/7944296bee57324622e469842b498f00' },
   { id: 'Lisa',       level: 50, rarity: 4, uncap: 2, type: 'Catalyst', element: 'Electro' },
   { id: 'Mika',       level: 50, rarity: 4, uncap: 3, type: 'Pole',     element: 'Cryo' },
   { id: 'Momoka',     level: 90, rarity: 4, uncap: 0, type: 'Sword',    element: 'Dendro',  name: 'Kirara', portrait: 'u82ase/09f16853b42c95407e2071af70953556' },
@@ -53,7 +54,7 @@ const characters = [
   { id: 'Xinyan',     level: 50, rarity: 4, uncap: 4, type: 'Claymore', element: 'Pyro' },
   { id: 'Yaoyao',     level: 50, rarity: 4, uncap: 1, type: 'Pole',     element: 'Dendro' },
   { id: 'Yelan',      level: 90, rarity: 5, uncap: 0, type: 'Pole',     element: 'Hydro' },
-  { id: 'Yunjin',     level: 50, rarity: 4, uncap: 0, type: 'Pole',     element: 'Geo',     name: 'Yun Jin' },
+  { id: 'Yunjin',     level: 50, rarity: 4, uncap: 2, type: 'Pole',     element: 'Geo',     name: 'Yun Jin' },
 ];
 
 /* https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/image/characters.json */
