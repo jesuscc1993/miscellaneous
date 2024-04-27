@@ -1,11 +1,20 @@
 const weapons = [
-  { id: 'Amenoma',       level: 90, rarity: 5, uncap: 1, type: 'Sword',    name: 'Haran Geppaku...', fullName: 'Haran Geppaku Futsu' },
+  { id: '',              level: 20, rarity: 5, uncap: 1, type: 'Catalyst', name: "Tome of the Eternal Flow", portrait: 'u1536f/3b33215d689ffd95b29a472f85f3888e' },
+  { id: '',              level: 60, rarity: 5, uncap: 1, type: 'Pole',     name: "Crimson Moon's Semblance", portrait: 'ueb15f/173e539a1a8e123bf7523efeda070d91' },
+  { id: '',              level: 90, rarity: 4, uncap: 5, type: 'Bow',      name: 'Ibis Piercer', portrait: 'u587xe/d0487b5253419380af5f2afbb726fe8d' },
+  { id: '',              level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: "Ballad of the Boundless Blue", portrait: 'u1536f/4e58e78885c6669c3e60336a0864b68b' },
+  { id: '',              level: 90, rarity: 4, uncap: 5, type: 'Claymore', name: '"Ultimate Overlord\'s Mega Magic Sword"', portrait: 'u1536f/28a736c7b99f254c4fd6ca20e7f3e917' },
+  { id: '',              level: 90, rarity: 4, uncap: 5, type: 'Pole',     name: 'Dialogues of the Desert Sages', portrait: 'u1536f/6a88ba668f732e984dd68c6e2387b6a3' },
+  { id: '',              level: 90, rarity: 5, uncap: 1, type: 'Sword',    name: "Freedom-Sworn", portrait: 'u1536f/37a03bd83492188113a38061e40bcd3c' },
+  { id: 'Amenoma',       level: 90, rarity: 5, uncap: 1, type: 'Sword',    name: 'Haran Geppaku Futsu' },
   { id: 'Amos',          level: 90, rarity: 5, uncap: 2, type: 'Bow',      name: "Amos' Bow" },
+  { id: 'Bakufu',        level: 90, rarity: 4, uncap: 1, type: 'Catalyst', name: 'Hakushin Ring' },
   { id: 'Bakufu',        level: 90, rarity: 4, uncap: 5, type: 'Bow',      name: 'Hamayumi' },
-  { id: 'Bakufu',        level: 90, rarity: 4, uncap: 5, type: 'Claymore', name: 'Katsuragi Kirinaga...', fullName: 'Katsuragi Kirinagamasa' },
+  { id: 'Bakufu',        level: 90, rarity: 4, uncap: 5, type: 'Claymore', name: 'Katsuragi Kirinagamasa' },
   { id: 'Bakufu',        level: 90, rarity: 4, uncap: 5, type: 'Pole',     name: 'Kitain Cross Spear' },
   { id: 'Bakufu',        level: 90, rarity: 4, uncap: 5, type: 'Sword',    name: 'Amenoma Kageuchi' },
-  { id: 'Bakufu',        level: 90, rarity: 4, uncap: 1, type: 'Catalyst', name: 'Hakushin Ring' },
+  { id: 'Dvalin',        level: 20, rarity: 5, uncap: 1, type: 'Pole',     name: "Skyward Spine" },
+  { id: 'Dvalin',        level: 90, rarity: 5, uncap: 1, type: 'Catalyst', name: "Skyward Atlas" },
   { id: 'Exotic',        level: 90, rarity: 4, uncap: 5, type: 'Bow',      name: 'Composite Bow' },
   { id: 'Exotic',        level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Mappa Mare' },
   { id: 'Exotic',        level: 90, rarity: 4, uncap: 5, type: 'Pole',     name: 'Crescent Pike' },
@@ -18,8 +27,7 @@ const weapons = [
   { id: 'Fossil',        level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Sacrificial Fragments' },
   { id: 'Fossil',        level: 90, rarity: 4, uncap: 5, type: 'Claymore', name: 'Sacrificial Greatsword' },
   { id: 'Fossil',        level: 90, rarity: 4, uncap: 5, type: 'Sword',    name: 'Sacrificial Sword' },
-  { id: 'Fourwinds',     level: 90, rarity: 5, uncap: 1, type: 'Catalyst', name: 'Lost Prayer to the...', fullName: 'Lost Prayer to the Sacred Winds' },
-  { id: '',              level: 90, rarity: 4, uncap: 5, type: 'Bow',      name: 'Ibis Piercer', portrait: 'u587xe/d0487b5253419380af5f2afbb726fe8d' },
+  { id: 'Fourwinds',     level: 90, rarity: 5, uncap: 1, type: 'Catalyst', name: 'Lost Prayer to the Sacred Winds' },
   { id: 'Jyanome',       level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Oathsworn Eye' },
   { id: 'Kasabouzu',     level: 90, rarity: 4, uncap: 5, type: 'Sword',    name: 'Kasabouzu' },
   { id: 'Ludiharpastum', level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Dodoco Tales' },
@@ -43,7 +51,6 @@ const weapons = [
   { id: 'Troupe',        level: 90, rarity: 4, uncap: 3, type: 'Catalyst', name: 'The Widsith' },
   { id: 'Windvane',      level: 90, rarity: 4, uncap: 5, type: 'Pole',     name: 'Missive Windspear' },
   { id: 'Wolfmound',     level: 90, rarity: 5, uncap: 1, type: 'Claymore', name: "Wolf's Gravestone" },
-  { id: '',              level: 20, rarity: 5, uncap: 1, type: 'Pole',     name: "Crimson Moon's...", fullName: "Crimson Moon's Semblance", portrait: 'ueb15f/173e539a1a8e123bf7523efeda070d91' },
   { id: 'Zephyrus',      level: 90, rarity: 4, uncap: 4, type: 'Sword',    name: 'Favonius Sword' },
   { id: 'Zephyrus',      level: 90, rarity: 4, uncap: 5, type: 'Bow',      name: 'Favonius Warbow' },
   { id: 'Zephyrus',      level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Favonius Codex' },
@@ -51,4 +58,5 @@ const weapons = [
   { id: 'Zephyrus',      level: 90, rarity: 4, uncap: 5, type: 'Pole',     name: 'Favonius Lance' },
 ];
 
+/* https://act.hoyolab.com/ys/event/calculator-sea/index.html */
 /* https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/image/weapons.json */

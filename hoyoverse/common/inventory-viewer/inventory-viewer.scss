@@ -275,3 +275,15 @@ small {
 .no-padding-bottom {
   padding-bottom: 0;
 }
+
+.clamp {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  word-break: break-word;
+
+  &.clamp-2 {
+    -webkit-line-clamp: 2;
+  }
+}

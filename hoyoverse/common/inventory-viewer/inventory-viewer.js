@@ -47,7 +47,9 @@ const processList = (identifier, items, itemType) => {
     const bottomText = jQuery(`<div class="item-text bottom-text"></div>`);
 
     const nameLine = jQuery(
-      `<span class="center-text name">${shortItemName}</span>`
+      `<span class="center-text name">
+        <span class="clamp ${isWeapon ? 'clamp-2' : ''}">${shortItemName}</span>
+      </span>`
     );
     bottomText.append(nameLine);
 
