@@ -1,47 +1,54 @@
-const sentenceCaseInput = jQuery('#sentenceCaseInput');
-const lowercaseInput = jQuery('#lowercaseInput');
-const uppercaseInput = jQuery('#uppercaseInput');
-const capitalCaseInput = jQuery('#capitalCaseInput');
-const camelCaseInput = jQuery('#camelCaseInput');
-const snakeCaseInput = jQuery('#snakeCaseInput');
-const kebabCaseInput = jQuery('#kebabCaseInput');
+const sentenceCaseInput = querySelector('#sentenceCaseInput');
+const lowercaseInput = querySelector('#lowercaseInput');
+const uppercaseInput = querySelector('#uppercaseInput');
+const capitalCaseInput = querySelector('#capitalCaseInput');
+const camelCaseInput = querySelector('#camelCaseInput');
+const snakeCaseInput = querySelector('#snakeCaseInput');
+const kebabCaseInput = querySelector('#kebabCaseInput');
 
 const transformFromSentenceCase = () => {
-  lowercaseInput.val(sentenceCaseInput.val().toLowerCase());
-  uppercaseInput.val(sentenceCaseInput.val().toUpperCase());
-  capitalCaseInput.val(transformSentenceToCapitalCase(sentenceCaseInput.val()));
-  camelCaseInput.val(transformSentenceToCamelCase(sentenceCaseInput.val()));
-  snakeCaseInput.val(transformSentenceToSnakeCase(sentenceCaseInput.val()));
-  kebabCaseInput.val(transformSentenceToKebabCase(sentenceCaseInput.val()));
+  const sentenceValue = sentenceCaseInput.value;
+  lowercaseInput.value = sentenceValue.toLowerCase();
+  uppercaseInput.value = sentenceValue.toUpperCase();
+  capitalCaseInput.value = transformSentenceToCapitalCase(sentenceValue);
+  camelCaseInput.value = transformSentenceToCamelCase(sentenceValue);
+  snakeCaseInput.value = transformSentenceToSnakeCase(sentenceValue);
+  kebabCaseInput.value = transformSentenceToKebabCase(sentenceValue);
 };
 
 const transformFromCapitalCase = () => {
-  sentenceCaseInput.val(transformCapitalToSentenceCase(capitalCaseInput.val()));
+  const capitalValue = capitalCaseInput.value;
+  sentenceCaseInput.value = transformCapitalToSentenceCase(capitalValue);
   transformFromSentenceCase();
 };
 
 const transformFromLowercase = () => {
-  sentenceCaseInput.val(transformCapitalToSentenceCase(lowercaseInput.val()));
+  const lowercaseValue = lowercaseInput.value;
+  sentenceCaseInput.value = transformCapitalToSentenceCase(lowercaseValue);
   transformFromSentenceCase();
 };
 
 const transformFromUppercase = () => {
-  sentenceCaseInput.val(transformCapitalToSentenceCase(uppercaseInput.val()));
+  const uppercaseValue = uppercaseInput.value;
+  sentenceCaseInput.value = transformCapitalToSentenceCase(uppercaseValue);
   transformFromSentenceCase();
 };
 
 const transformFromCamelCase = () => {
-  sentenceCaseInput.val(transformCamelToSentenceCase(camelCaseInput.val()));
+  const camelValue = camelCaseInput.value;
+  sentenceCaseInput.value = transformCamelToSentenceCase(camelValue);
   transformFromSentenceCase();
 };
 
 const transformFromSnakeCase = () => {
-  sentenceCaseInput.val(transformSnakeToSentenceCase(snakeCaseInput.val()));
+  const snakeValue = snakeCaseInput.value;
+  sentenceCaseInput.value = transformSnakeToSentenceCase(snakeValue);
   transformFromSentenceCase();
 };
 
 const transformFromKebabCase = () => {
-  sentenceCaseInput.val(transformKebabToSentenceCase(kebabCaseInput.val()));
+  const kebabValue = kebabCaseInput.value;
+  sentenceCaseInput.value = transformKebabToSentenceCase(kebabValue);
   transformFromSentenceCase();
 };
 

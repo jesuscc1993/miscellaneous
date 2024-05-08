@@ -1,14 +1,14 @@
-const unsortedInlineListInput = jQuery('#unsortedInlineListInput');
-const sortedInlineListOutput = jQuery('#sortedInlineListOutput');
-const inlineListSorterDiscardDuplicates = jQuery(
+const unsortedInlineListInput = querySelector('#unsortedInlineListInput');
+const sortedInlineListOutput = querySelector('#sortedInlineListOutput');
+const inlineListSorterDiscardDuplicates = querySelector(
   '#inlineListSorterDiscardDuplicates'
 );
 
 const sortInlineList = () => {
-  const unsortedInlineList = unsortedInlineListInput.val();
+  const unsortedInlineList = unsortedInlineListInput.value;
 
   const sortedLines = getSortedInlineList(unsortedInlineList);
-  sortedInlineListOutput.val(sortedLines);
+  sortedInlineListOutput.value = sortedLines;
 
   replicateHeight(unsortedInlineListInput, sortedInlineListOutput);
 };
@@ -16,7 +16,7 @@ const sortInlineList = () => {
 const getSortedInlineListLine = (line) => {
   let array = line.split(LIST_SEPARATOR);
 
-  if (inlineListSorterDiscardDuplicates.prop('checked')) {
+  if (inlineListSorterDiscardDuplicates.checked) {
     array = getDuplicateFreeArray(array);
   }
 

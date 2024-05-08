@@ -2,6 +2,11 @@ const getDuplicateFreeArray = (array) => {
   return array.filter((entry, i) => array.indexOf(entry) === i);
 };
 
+const stringToJson = (string) => {
+  const sanitizedString = string.replace(/,\s*}/g, '}');
+  return JSON.parse(sanitizedString);
+};
+
 const stringify = (json) => {
   return JSON.stringify(json, undefined, 2);
 };

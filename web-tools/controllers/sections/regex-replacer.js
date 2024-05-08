@@ -1,16 +1,16 @@
-const regexReplacerInput = jQuery('#regexReplacerInput');
-const regexReplacerOutput = jQuery('#regexReplacerOutput');
-const regexpInput = jQuery('#regexpInput');
-const regexpOptions = jQuery('#regexpOptionsInput');
-const regexReplacementInput = jQuery('#regexReplacementInput');
+const regexReplacerInput = querySelector('#regexReplacerInput');
+const regexReplacerOutput = querySelector('#regexReplacerOutput');
+const regexpInput = querySelector('#regexpInput');
+const regexpOptions = querySelector('#regexpOptionsInput');
+const regexReplacementInput = querySelector('#regexReplacementInput');
 
 const applyRegexReplacement = () => {
-  const inputString = regexReplacerInput.val();
-  const regexp = new RegExp(regexpInput.val(), regexpOptions.val() || 'gm');
-  const replacement = regexReplacementInput.val();
+  const inputString = regexReplacerInput.value;
+  const regexp = new RegExp(regexpInput.value, regexpOptions.value || 'gm');
+  const replacement = regexReplacementInput.value;
 
   const replacedString = replaceByRegex(inputString, regexp, replacement);
-  regexReplacerOutput.val(replacedString);
+  regexReplacerOutput.value = replacedString;
 
   replicateHeight(regexReplacerInput, regexReplacerOutput);
 };

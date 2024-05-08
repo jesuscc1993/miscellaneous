@@ -1,22 +1,26 @@
-const unsortedMultilineListInput = jQuery('#unsortedMultilineListInput');
-const sortedMultilineListOutput = jQuery('#sortedMultilineListOutput');
-const multilineListSorterDiscardDuplicates = jQuery(
+const unsortedMultilineListInput = querySelector('#unsortedMultilineListInput');
+const sortedMultilineListOutput = querySelector('#sortedMultilineListOutput');
+const multilineListSorterDiscardDuplicates = querySelector(
   '#multilineListSorterDiscardDuplicates'
 );
 
 const sortMultilineList = () => {
-  const unsortedMultilineList = unsortedMultilineListInput.val();
+  const unsortedMultilineList = unsortedMultilineListInput.value;
+  const duplicateFree = multilineListSorterDiscardDuplicates.checked;
 
-  const sortedLines = getSortedMultilineList(unsortedMultilineList);
-  sortedMultilineListOutput.val(sortedLines);
+  const sortedLines = getSortedMultilineList(
+    unsortedMultilineList,
+    duplicateFree
+  );
+  sortedMultilineListOutput.value = sortedLines;
 
   replicateHeight(unsortedMultilineListInput, sortedMultilineListOutput);
 };
 
-const getSortedMultilineList = (inputString) => {
-  let array = inputString.split(LINE_DELIMITER);
+const getSortedMultilineList = (inputString, duplicateFree) => {
+  let array = inputString.split('\n');
 
-  if (multilineListSorterDiscardDuplicates.prop('checked')) {
+  if (duplicateFree) {
     array = getDuplicateFreeArray(array);
   }
 

@@ -1,13 +1,13 @@
-const htmlToStringInput = jQuery('#htmlToStringInput');
-const htmlToStringOutput = jQuery('#htmlToStringOutput');
-const htmlToStringDoubleQuotes = jQuery('#htmlToStringDoubleQuotes');
+const htmlToStringInput = querySelector('#htmlToStringInput');
+const htmlToStringOutput = querySelector('#htmlToStringOutput');
+const htmlToStringDoubleQuotes = querySelector('#htmlToStringDoubleQuotes');
 
 const htmlToString = () => {
-  const inputHTML = htmlToStringInput.val();
-  const useDoubleQuotes = htmlToStringDoubleQuotes.prop('checked');
+  const inputHTML = htmlToStringInput.value;
+  const useDoubleQuotes = htmlToStringDoubleQuotes.checked;
 
   const outputString = getHTMLAsString(inputHTML, useDoubleQuotes);
-  htmlToStringOutput.val(outputString);
+  htmlToStringOutput.value = outputString;
 
   replicateHeight(htmlToStringInput, htmlToStringOutput);
 };

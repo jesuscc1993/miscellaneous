@@ -1,11 +1,11 @@
-const tableToJsonInput = jQuery('#tableToJsonInput');
-const tableToJsonOutput = jQuery('#tableToJsonOutput');
+const tableToJsonInput = querySelector('#tableToJsonInput');
+const tableToJsonOutput = querySelector('#tableToJsonOutput');
 
 const tableToJson = () => {
-  const table = tableToJsonInput.val();
+  const table = tableToJsonInput.value;
 
   const json = replaceTableWithJson(table);
-  tableToJsonOutput.val(json);
+  tableToJsonOutput.value = json;
 
   replicateHeight(tableToJsonInput, tableToJsonOutput);
 };

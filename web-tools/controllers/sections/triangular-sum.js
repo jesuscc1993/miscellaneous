@@ -1,13 +1,13 @@
-const triangularSumStartInput = jQuery('#triangularSumStartInput');
-const triangularSumEndInput = jQuery('#triangularSumEndInput');
-const triangularSumOutput = jQuery('#triangularSumOutput');
+const triangularSumStartInput = querySelector('#triangularSumStartInput');
+const triangularSumEndInput = querySelector('#triangularSumEndInput');
+const triangularSumOutput = querySelector('#triangularSumOutput');
 
 const calculateTriangularSum = () => {
-  const start = toNumber(triangularSumStartInput.val()) || 1;
-  const end = toNumber(triangularSumEndInput.val());
+  const start = toNumber(triangularSumStartInput.value) || 1;
+  const end = toNumber(triangularSumEndInput.value);
 
   const triangularSum = getTriangularSum(start, end);
-  triangularSumOutput.val(triangularSum);
+  triangularSumOutput.value = triangularSum || '';
 };
 
 const getTriangularSum = (start, end) => {

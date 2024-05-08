@@ -1,23 +1,22 @@
-const jsonToPropertiesInput = jQuery('#jsonToPropertiesInput');
-const jsonToPropertiesOutput = jQuery('#jsonToPropertiesOutput');
+const jsonToPropertiesInput = querySelector('#jsonToPropertiesInput');
+const jsonToPropertiesOutput = querySelector('#jsonToPropertiesOutput');
 
 const jsonToProperties = () => {
   try {
-    const json = jsonToPropertiesInput.val();
-    JSON.parse(json);
+    const json = jsonToPropertiesInput.value;
 
     const properties = replaceJsonWithProperties(json);
-    jsonToPropertiesOutput.val(properties);
+    jsonToPropertiesOutput.value = properties;
 
     replicateHeight(jsonToPropertiesInput, jsonToPropertiesOutput);
   } catch {
-    jsonToPropertiesOutput.val(INVALID_JSON_MESSAGE);
+    jsonToPropertiesOutput.value = INVALID_JSON_MESSAGE;
   }
 };
 
 const replaceJsonWithProperties = (string) => {
   return string
     .replace(/(^{\s*|\s*}$)/g, '')
-    .replace(/"(.*?)":"(.*?)",?/g, '$1=$2')
+    .replace(/"(.*?)":\s*"(.*?)",?/g, '$1=$2')
     .replace(/\n? +/g, '\n');
 };

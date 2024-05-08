@@ -1,24 +1,26 @@
-const unsortedJsonInput = jQuery('#unsortedJsonInput');
-const sortedJsonOutput = jQuery('#sortedJsonOutput');
-const jsonSorterDiscardDuplicates = jQuery('#jsonSorterDiscardDuplicates');
+const unsortedJsonInput = querySelector('#unsortedJsonInput');
+const sortedJsonOutput = querySelector('#sortedJsonOutput');
+const jsonSorterDiscardDuplicates = querySelector(
+  '#jsonSorterDiscardDuplicates'
+);
 
 const sortJson = () => {
-  const unsortedJson = unsortedJsonInput.val();
+  const unsortedJson = unsortedJsonInput.value;
 
   try {
     const sortedJson = getSortedJson(unsortedJson);
-    sortedJsonOutput.val(sortedJson);
+    sortedJsonOutput.value = sortedJson;
   } catch {
-    sortedJsonOutput.val(INVALID_JSON_MESSAGE);
+    sortedJsonOutput.value = INVALID_JSON_MESSAGE;
   }
 
   replicateHeight(unsortedJsonInput, sortedJsonOutput);
 };
 
 const getSortedJson = (inputString) => {
-  const json = JSON.parse(inputString);
+  const json = stringToJson(inputString);
   const sortedJson = getPropertiesRecursivelySorted(json);
-  return stringify(sortedJson, undefined, 2);
+  return stringify(sortedJson);
 };
 
 const getPropertiesRecursivelySorted = (json) => {

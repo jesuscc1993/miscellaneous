@@ -1,13 +1,13 @@
-const tableToCsvInput = jQuery('#tableToCsvInput');
-const tableToCsvOutput = jQuery('#tableToCsvOutput');
+const tableToCsvInput = querySelector('#tableToCsvInput');
+const tableToCsvOutput = querySelector('#tableToCsvOutput');
 
 const tableToCsv = () => {
-  const table = tableToCsvInput.val();
+  const table = tableToCsvInput.value;
 
   const csv = table.includes(';')
     ? replaceTableWithEscapedCsv(table)
     : replaceTableWithCsv(table);
-  tableToCsvOutput.val(csv);
+  tableToCsvOutput.value = csv;
 
   replicateHeight(tableToCsvInput, tableToCsvOutput);
 };

@@ -1,11 +1,11 @@
-const htmlCleanerInput = jQuery('#htmlCleanerInput');
-const htmlCleanerOutput = jQuery('#htmlCleanerOutput');
+const htmlCleanerInput = querySelector('#htmlCleanerInput');
+const htmlCleanerOutput = querySelector('#htmlCleanerOutput');
 
 const htmlCleaner = () => {
-  const inputHTML = htmlCleanerInput.val();
+  const inputHTML = htmlCleanerInput.value;
 
   const outputString = getCleanHTML(inputHTML);
-  htmlCleanerOutput.val(outputString);
+  htmlCleanerOutput.value = outputString;
 
   replicateHeight(htmlCleanerInput, htmlCleanerOutput);
 };

@@ -1,20 +1,23 @@
-const stringBuilderInput = jQuery('#stringBuilderInput');
-const stringBuilderOutput = jQuery('#stringBuilderOutput');
-const stringBuilderKeepLineBreaks = jQuery('#stringBuilderKeepLineBreaks');
+const stringBuilderInput = querySelector('#stringBuilderInput');
+const stringBuilderOutput = querySelector('#stringBuilderOutput');
+const stringBuilderKeepLineBreaks = querySelector(
+  '#stringBuilderKeepLineBreaks'
+);
 
 const buildString = () => {
-  const stringInput = stringBuilderInput.val();
+  const stringInput = stringBuilderInput.value;
+  const keepLineBreaks = stringBuilderKeepLineBreaks.checked;
 
-  const builtString = getBuiltString(stringInput);
-  stringBuilderOutput.val(builtString);
+  const builtString = getBuiltString(stringInput, keepLineBreaks);
+  stringBuilderOutput.value = builtString;
 
   replicateHeight(stringBuilderInput, stringBuilderOutput);
 };
 
-const getBuiltString = (input) => {
+const getBuiltString = (input, keepLineBreaks) => {
   let lineBreakCharacter = '';
 
-  if (stringBuilderKeepLineBreaks.prop('checked')) {
+  if (keepLineBreaks) {
     lineBreakCharacter = '\\n';
   }
 

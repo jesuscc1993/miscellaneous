@@ -1,19 +1,23 @@
 const initialize = () => {
   if (typeof autosize === 'function') {
-    autosize(jQuery('textarea'));
+    const textAreas = querySelectorAll('textarea');
+    textAreas.forEach((textarea) => {
+      autosize(textarea);
+    });
   }
 
-  jQuery(document).ready(() => {
-    jQuery('body').fadeIn();
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.style.display = 'block';
   });
 
-  jQuery('.anchor-list a').each((i, anchor) => {
-    jQuery(anchor).click((event) => {
+  const anchorLinks = querySelectorAll('.anchor-list a');
+  anchorLinks.forEach((anchor) => {
+    anchor.addEventListener('click', (event) => {
       event.preventDefault();
 
-      const target = jQuery(anchor).attr('href');
-      jQuery(target)
-        .get(0)
+      const target = anchor.getAttribute('href');
+      document
+        .querySelector(target)
         .scrollIntoView({ behavior: 'smooth', block: 'start' });
 
       window.history.pushState('', '', target);
