@@ -5,46 +5,46 @@ const defaultTopHeight = 240;
 const defaultBottomWidth = 320;
 const defaultBottomHeight = 240;
 
-const monitorWidthEl = jQuery('#monitor-width');
-const monitorHeightEl = jQuery('#monitor-height');
-const topWidthEl = jQuery('#top-width');
-const topHeightEl = jQuery('#top-height');
-const bottomWidthEl = jQuery('#bottom-width');
-const bottomHeightEl = jQuery('#bottom-height');
+const monitorWidthEl = document.querySelector('#monitor-width');
+const monitorHeightEl = document.querySelector('#monitor-height');
+const topWidthEl = document.querySelector('#top-width');
+const topHeightEl = document.querySelector('#top-height');
+const bottomWidthEl = document.querySelector('#bottom-width');
+const bottomHeightEl = document.querySelector('#bottom-height');
 
-const copyOutputEl = jQuery('#copy-output');
-const outputEl = jQuery('#output');
+const copyOutputEl = document.querySelector('#copy-output');
+const outputEl = document.querySelector('#output');
 const outputHeaderNode = document.querySelector('#output-header');
-const outputWrapperEl = jQuery('#output-wrapper');
-const previewEl = jQuery('#preview');
-const swapScreensEl = jQuery('#swap-screens');
-const overlapScreensEl = jQuery('#overlap-screens');
-const previewTopEl = previewEl.find('#top');
-const previewBottomEl = previewEl.find('#bottom');
+const outputWrapperEl = document.querySelector('#output-wrapper');
+const previewEl = document.querySelector('#preview');
+const swapScreensEl = document.querySelector('#swap-screens');
+const overlapScreensEl = document.querySelector('#overlap-screens');
+const previewTopEl = previewEl.querySelector('#top');
+const previewBottomEl = previewEl.querySelector('#bottom');
 
 const getFormValues = () => {
   if (
     !(
-      bottomHeightEl.val() !== '' &&
-      bottomWidthEl.val() !== '' &&
-      monitorHeightEl.val() !== '' &&
-      monitorWidthEl.val() !== '' &&
-      topHeightEl.val() !== '' &&
-      topWidthEl.val() !== ''
+      bottomHeightEl.value !== '' &&
+      bottomWidthEl.value !== '' &&
+      monitorHeightEl.value !== '' &&
+      monitorWidthEl.value !== '' &&
+      topHeightEl.value !== '' &&
+      topWidthEl.value !== ''
     )
   ) {
     alert('Form is incomplete.');
     return;
   }
 
-  const monitorWidth = parseInt(monitorWidthEl.val(), 10);
-  const monitorHeight = parseInt(monitorHeightEl.val(), 10);
-  const topWidth = parseInt(topWidthEl.val(), 10);
-  const topHeight = parseInt(topHeightEl.val(), 10);
-  const bottomWidth = parseInt(bottomWidthEl.val(), 10);
-  const bottomHeight = parseInt(bottomHeightEl.val(), 10);
-  const swapScreens = swapScreensEl.prop('checked');
-  const overlapScreens = overlapScreensEl.prop('checked');
+  const monitorWidth = parseInt(monitorWidthEl.value, 10);
+  const monitorHeight = parseInt(monitorHeightEl.value, 10);
+  const topWidth = parseInt(topWidthEl.value, 10);
+  const topHeight = parseInt(topHeightEl.value, 10);
+  const bottomWidth = parseInt(bottomWidthEl.value, 10);
+  const bottomHeight = parseInt(bottomHeightEl.value, 10);
+  const swapScreens = swapScreensEl.checked;
+  const overlapScreens = overlapScreensEl.checked;
 
   const topScreen = { width: topWidth, height: topHeight };
   const bottomScreen = { width: bottomWidth, height: bottomHeight };
@@ -118,6 +118,8 @@ const generateVerticalLayout = () => {
     bottomRight,
     bottomTop,
   });
+
+  return true;
 };
 
 const generateHorizontalLayout = () => {
@@ -179,6 +181,8 @@ const generateHorizontalLayout = () => {
     bottomRight,
     bottomTop,
   });
+
+  return true;
 };
 
 const generateSingleScreenLayout = () => {
@@ -219,36 +223,39 @@ const generateSingleScreenLayout = () => {
     bottomRight: 0,
     bottomTop: 0,
   });
+
+  return true;
 };
 
 const generateLayout = () => {
-  const layoutType = jQuery('input[name="layout-type"]:checked').val();
-  ({
+  const layoutType = document.querySelector(
+    'input[name="layout-type"]:checked'
+  ).value;
+  const layouts = {
     vertical: generateVerticalLayout,
     single: generateSingleScreenLayout,
     horizontal: generateHorizontalLayout,
-  })[layoutType]();
-
-  outputHeaderNode.scrollIntoView();
+  };
+  const success = layouts[layoutType]();
+  if (success) {
+    outputHeaderNode.scrollIntoView();
+  }
 };
 
 const outputLayout = ({
   monitorHeight,
   monitorWidth,
   swapScreens,
-
   topBottom,
   topLeft,
   topRight,
   topTop,
-
   bottomBottom,
   bottomLeft,
   bottomRight,
   bottomTop,
 }) => {
-  outputEl.text(
-    `custom_layout\\default=false
+  outputEl.textContent = `custom_layout\\default=false
 custom_layout=true
 custom_top_left\\default=false
 custom_top_left=${topLeft}
@@ -265,93 +272,86 @@ custom_bottom_top=${bottomTop}
 custom_bottom_right\\default=false
 custom_bottom_right=${bottomRight}
 custom_bottom_bottom\\default=false
-custom_bottom_bottom=${bottomBottom}`
-  );
+custom_bottom_bottom=${bottomBottom}`;
 
   const scale = 478 / monitorWidth;
 
-  previewEl.css('height', monitorHeight * scale + 2);
+  previewEl.style.height = monitorHeight * scale + 2 + 'px';
 
-  previewTopEl.css({
-    backgroundImage: `url(./assets/images/${
-      swapScreens ? 'bottom' : 'top'
-    }.jpg)`,
-    left: topLeft * scale,
-    top: topTop * scale,
-    width: (topRight - topLeft) * scale,
-    height: (topBottom - topTop) * scale,
-  });
-  previewTopEl.attr('title', swapScreens ? 'Bottom' : 'Top');
+  previewTopEl.style.backgroundImage = `url(./assets/images/${
+    swapScreens ? 'bottom' : 'top'
+  }.jpg)`;
+  previewTopEl.style.left = topLeft * scale + 'px';
+  previewTopEl.style.top = topTop * scale + 'px';
+  previewTopEl.style.width = (topRight - topLeft) * scale + 'px';
+  previewTopEl.style.height = (topBottom - topTop) * scale + 'px';
+  previewTopEl.title = swapScreens ? 'Bottom' : 'Top';
 
-  previewBottomEl.css({
-    backgroundImage: `url(./assets/images/${
-      swapScreens ? 'top' : 'bottom'
-    }.jpg)`,
-    left: bottomLeft * scale,
-    top: bottomTop * scale,
-    width: (bottomRight - bottomLeft) * scale,
-    height: (bottomBottom - bottomTop) * scale,
-  });
-  previewBottomEl.attr('title', swapScreens ? 'Top' : 'Bottom');
+  previewBottomEl.style.backgroundImage = `url(./assets/images/${
+    swapScreens ? 'top' : 'bottom'
+  }.jpg)`;
+  previewBottomEl.style.left = bottomLeft * scale + 'px';
+  previewBottomEl.style.top = bottomTop * scale + 'px';
+  previewBottomEl.style.width = (bottomRight - bottomLeft) * scale + 'px';
+  previewBottomEl.style.height = (bottomBottom - bottomTop) * scale + 'px';
+  previewBottomEl.title = swapScreens ? 'Top' : 'Bottom';
 
-  outputWrapperEl.removeAttr('hidden');
-  copyOutputEl.text('Copy layout.');
+  outputWrapperEl.removeAttribute('hidden');
+  copyOutputEl.textContent = 'Copy layout.';
 
   copyLayout(true);
 };
 
 const copyLayout = (silent = false) => {
-  navigator.clipboard.writeText(outputEl.text());
+  navigator.clipboard.writeText(outputEl.textContent);
   if (!silent) {
-    copyOutputEl.text('Layout copied.');
-    setTimeout(() => copyOutputEl.text('Copy layout.'), 2000);
+    copyOutputEl.textContent = 'Layout copied.';
+    setTimeout(() => (copyOutputEl.textContent = 'Copy layout.'), 2000);
   }
 };
 
 const recalculateTopHeight = () => {
-  topHeightEl.val(
-    topWidthEl.val() === ''
+  topHeightEl.value =
+    topWidthEl.value === ''
       ? ''
-      : Math.round((topWidthEl.val() / defaultTopWidth) * defaultTopHeight)
-  );
+      : Math.round((topWidthEl.value / defaultTopWidth) * defaultTopHeight);
 };
+
 const recalculateBottomHeight = () => {
-  bottomHeightEl.val(
-    bottomWidthEl.val() === ''
+  bottomHeightEl.value =
+    bottomWidthEl.value === ''
       ? ''
       : Math.round(
-          (bottomWidthEl.val() / defaultBottomWidth) * defaultBottomHeight
-        )
-  );
+          (bottomWidthEl.value / defaultBottomWidth) * defaultBottomHeight
+        );
 };
 
 const recalculateTopWidth = () => {
-  topWidthEl.val(
-    topHeightEl.val() === ''
+  topWidthEl.value =
+    topHeightEl.value === ''
       ? ''
-      : Math.round((topHeightEl.val() * defaultTopWidth) / defaultTopHeight)
-  );
+      : Math.round((topHeightEl.value * defaultTopWidth) / defaultTopHeight);
 };
+
 const recalculateBottomWidth = () => {
-  bottomWidthEl.val(
-    bottomHeightEl.val() === ''
+  bottomWidthEl.value =
+    bottomHeightEl.value === ''
       ? ''
       : Math.round(
-          (bottomHeightEl.val() * defaultBottomWidth) / defaultBottomHeight
-        )
-  );
+          (bottomHeightEl.value * defaultBottomWidth) / defaultBottomHeight
+        );
 };
 
 const setMonitorSize = (scale) => {
-  monitorWidthEl.val(oneKWidth * scale);
-  monitorHeightEl.val(oneKHeight * scale);
+  monitorWidthEl.value = oneKWidth * scale;
+  monitorHeightEl.value = oneKHeight * scale;
 };
 
 const swapMonitorSizes = () => {
-  const width = monitorWidthEl.val();
-  const height = monitorHeightEl.val();
-  monitorWidthEl.val(height);
-  monitorHeightEl.val(width);
+  const width = monitorWidthEl.value;
+  const height = monitorHeightEl.value;
+  monitorWidthEl.value = height;
+  monitorHeightEl.value = width;
 };
 
 const setTopSize = (multiplier) => {
@@ -359,13 +359,13 @@ const setTopSize = (multiplier) => {
 
   if (!_multiplier) {
     _multiplier = Math.min(
-      monitorWidthEl.val() / defaultTopWidth,
-      monitorHeightEl.val() / defaultTopHeight
+      monitorWidthEl.value / defaultTopWidth,
+      monitorHeightEl.value / defaultTopHeight
     );
   }
 
-  topWidthEl.val(defaultTopWidth * _multiplier);
-  topHeightEl.val(defaultTopHeight * _multiplier);
+  topWidthEl.value = defaultTopWidth * _multiplier;
+  topHeightEl.value = defaultTopHeight * _multiplier;
 };
 
 const setBottomSize = (multiplier) => {
@@ -373,18 +373,18 @@ const setBottomSize = (multiplier) => {
 
   if (!_multiplier) {
     _multiplier = Math.min(
-      monitorWidthEl.val() / defaultBottomWidth,
-      monitorHeightEl.val() / defaultBottomHeight
+      monitorWidthEl.value / defaultBottomWidth,
+      monitorHeightEl.value / defaultBottomHeight
     );
   }
 
-  bottomWidthEl.val(defaultBottomWidth * _multiplier);
-  bottomHeightEl.val(defaultBottomHeight * _multiplier);
+  bottomWidthEl.value = defaultBottomWidth * _multiplier;
+  bottomHeightEl.value = defaultBottomHeight * _multiplier;
 };
 
 const detectMonitorSize = () => {
-  monitorWidthEl.val(screen.width);
-  monitorHeightEl.val(screen.height);
+  monitorWidthEl.value = screen.width;
+  monitorHeightEl.value = screen.height;
 };
 
 const initialize = () => {

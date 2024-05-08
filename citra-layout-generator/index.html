@@ -78,15 +78,19 @@
       </div>
 
       <div class="form-group">
-        <button onclick="detectMonitorSize()" title="Auto-detect">↻</button>
-        <button onclick="setMonitorSize(2)">2k</button>
-        <button onclick="setMonitorSize(3)">3k</button>
-        <button onclick="setMonitorSize(4)">4k</button>
-        <button onclick="setMonitorSize(5)">5k</button>
-        <button onclick="setMonitorSize(6)">6k</button>
-        <button onclick="setMonitorSize(7)">7k</button>
-        <button onclick="setMonitorSize(8)">8k</button>
-        <button onclick="swapMonitorSizes()" title="Swap">⇅</button>
+        <button type="button" onclick="detectMonitorSize()" title="Auto-detect">
+          ↻
+        </button>
+        <button type="button" onclick="setMonitorSize(2)">2k</button>
+        <button type="button" onclick="setMonitorSize(3)">3k</button>
+        <button type="button" onclick="setMonitorSize(4)">4k</button>
+        <button type="button" onclick="setMonitorSize(5)">5k</button>
+        <button type="button" onclick="setMonitorSize(6)">6k</button>
+        <button type="button" onclick="setMonitorSize(7)">7k</button>
+        <button type="button" onclick="setMonitorSize(8)">8k</button>
+        <button type="button" onclick="swapMonitorSizes()" title="Swap">
+          ⇅
+        </button>
       </div>
     </div>
 
@@ -122,17 +126,17 @@
       </div>
 
       <div class="form-group">
-        <button onclick="setTopSize(1)">1x</button>
-        <button onclick="setTopSize(2)">2x</button>
-        <button onclick="setTopSize(3)">3x</button>
-        <button onclick="setTopSize(4)">4x</button>
-        <button onclick="setTopSize(5)">5x</button>
-        <button onclick="setTopSize(6)">6x</button>
-        <button onclick="setTopSize(7)">7x</button>
-        <button onclick="setTopSize(8)">8x</button>
-        <button onclick="setTopSize(9)">9x</button>
-        <button onclick="setTopSize(10)">10x</button>
-        <button onclick="setTopSize()">100%</button>
+        <button type="button" onclick="setTopSize(1)">1x</button>
+        <button type="button" onclick="setTopSize(2)">2x</button>
+        <button type="button" onclick="setTopSize(3)">3x</button>
+        <button type="button" onclick="setTopSize(4)">4x</button>
+        <button type="button" onclick="setTopSize(5)">5x</button>
+        <button type="button" onclick="setTopSize(6)">6x</button>
+        <button type="button" onclick="setTopSize(7)">7x</button>
+        <button type="button" onclick="setTopSize(8)">8x</button>
+        <button type="button" onclick="setTopSize(9)">9x</button>
+        <button type="button" onclick="setTopSize(10)">10x</button>
+        <button type="button" onclick="setTopSize()">100%</button>
       </div>
     </div>
 
@@ -168,17 +172,17 @@
       </div>
 
       <div class="form-group">
-        <button onclick="setBottomSize(1)">1x</button>
-        <button onclick="setBottomSize(2)">2x</button>
-        <button onclick="setBottomSize(3)">3x</button>
-        <button onclick="setBottomSize(4)">4x</button>
-        <button onclick="setBottomSize(5)">5x</button>
-        <button onclick="setBottomSize(6)">6x</button>
-        <button onclick="setBottomSize(7)">7x</button>
-        <button onclick="setBottomSize(8)">8x</button>
-        <button onclick="setBottomSize(9)">9x</button>
-        <button onclick="setBottomSize(10)">10x</button>
-        <button onclick="setBottomSize()">100%</button>
+        <button type="button" onclick="setBottomSize(1)">1x</button>
+        <button type="button" onclick="setBottomSize(2)">2x</button>
+        <button type="button" onclick="setBottomSize(3)">3x</button>
+        <button type="button" onclick="setBottomSize(4)">4x</button>
+        <button type="button" onclick="setBottomSize(5)">5x</button>
+        <button type="button" onclick="setBottomSize(6)">6x</button>
+        <button type="button" onclick="setBottomSize(7)">7x</button>
+        <button type="button" onclick="setBottomSize(8)">8x</button>
+        <button type="button" onclick="setBottomSize(9)">9x</button>
+        <button type="button" onclick="setBottomSize(10)">10x</button>
+        <button type="button" onclick="setBottomSize()">100%</button>
       </div>
     </div>
 
@@ -188,7 +192,9 @@
       </div>
 
       <div class="form-group">
-        <button onclick="generateLayout()">Generate layout</button>
+        <button type="submit" onclick="generateLayout()">
+          Generate layout
+        </button>
       </div>
 
       <div id="output-wrapper" hidden>
@@ -208,7 +214,12 @@
           <textarea id="output" readonly rows="18"></textarea>
         </p>
 
-        <button id="copy-output" onclick="copyLayout()" class="center">
+        <button
+          type="button"
+          id="copy-output"
+          onclick="copyLayout()"
+          class="center"
+        >
           Copy layout
         </button>
       </div>
@@ -247,7 +258,11 @@
 
       <p>
         <a class="link" href="https://github.com/jesuscc1993" target="_blank">
-          <img src="https://github.com/favicon.ico" width="16" />
+          <img
+            alt="github icon"
+            src="https://github.com/favicon.ico"
+            width="16"
+          />
           <small>github.com/jesuscc1993</small>
         </a>
       </p>
@@ -255,7 +270,6 @@
 
     <div class="card min-width">Please use a window at least 544px wide.</div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
