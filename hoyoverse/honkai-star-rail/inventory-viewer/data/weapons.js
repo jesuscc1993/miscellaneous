@@ -1,4 +1,6 @@
 const weapons = [
+  { name: "Destiny's Threads Forewoven",          level:  1, rarity: 4, uncap: 1, type: 'Abundance',    portrait: 'u44f0b/f0f2164b599ce5f20b936b79d97be96f' },
+  { name: "It's Showtime",                        level:  1, rarity: 4, uncap: 1, type: 'Nihility',     portrait: 'u44f0b/b12754883b18280109f776f7855cf064' },
   { name: 'Chorus',                               level: 60, rarity: 3, uncap: 5, type: 'Harmony',      portrait: 'u17ehb/9481816b3907d41d32bd1cae8133461b' },
   { name: 'Cruising in the Stellar Sea',          level: 80, rarity: 5, uncap: 5, type: 'The Hunt',     portrait: 'ud9dkb/55d7ea27e1ab8446858bbf61942199c4' },
   { name: 'Dance! Dance! Dance!',                 level:  1, rarity: 4, uncap: 1, type: 'Harmony',      portrait: 'u17ehb/52d770fa100b92968f199f0cf83db7e8' },
@@ -15,13 +17,15 @@ const weapons = [
   { name: 'Past and Future',                      level: 50, rarity: 4, uncap: 2, type: 'Harmony',      portrait: 'ud82rb/700575a621e986175ed66cb53be689c7' },
   { name: 'Quid Pro Quo',                         level: 50, rarity: 4, uncap: 1, type: 'Abundance',    portrait: 'u17ehb/6b85f4dd55cd8b48ac1fe61dd81db280' },
   { name: 'Resolution Shines As Pearls of Sweat', level:  1, rarity: 4, uncap: 4, type: 'Nihility',     portrait: 'u17ehb/a8eb4728cca7f855db3686a1543f49f0' },
+  { name: 'Shared Feeling',                       level:  1, rarity: 4, uncap: 1, type: 'Abundance',    portrait: 'u44f0b/9b3aabd7896b1ebfed34cb81e04d4b9d' },
   { name: 'Swordplay',                            level:  1, rarity: 4, uncap: 1, type: 'Hunt',         portrait: 'u17ehb/e17b4512d37b5ae2f7680ef5fb964aed' },
   { name: 'Texture of Memories',                  level: 80, rarity: 5, uncap: 5, type: 'Preservation', portrait: 'ud9dkb/817f2e4719fcf01d0a5b0a83f89c863f' },
   { name: 'The Birth of the Self',                level: 80, rarity: 4, uncap: 4, type: 'Erudition',    portrait: 'u642mb/52de19739406be61c8685eb3be7e493c' },
   { name: 'The Seriousness of Breakfast',         level: 80, rarity: 4, uncap: 3, type: 'Erudition',    portrait: 'ud64eb/cab9103e1fd3e69158fa2735e80046a1' },
-  { name: 'Time Waits for No One',               level: 80, rarity: 5, uncap: 1, type: 'Abundance',    portrait: 'ua57cb/69871065f148ed80081894d4426e1e16' },
+  { name: 'Time Waits for No One',                level: 80, rarity: 5, uncap: 1, type: 'Abundance',    portrait: 'ua57cb/69871065f148ed80081894d4426e1e16' },
   { name: 'Trend of the Universal Market',        level: 80, rarity: 4, uncap: 2, type: 'Preservation', portrait: 'ud9dkb/af23192657d4035851bc7dda45fd1f8c' },
   { name: 'Under the Blue Sky',                   level: 30, rarity: 4, uncap: 2, type: 'Destruction',  portrait: 'u17ehb/4511df9e6e3bf983f8fc999e20429478' },
   { name: 'We Are Wildfire',                      level:  1, rarity: 4, uncap: 1, type: 'Preservation', portrait: 'u17ehb/c7cfb405f46f3c694deb3138b1fc72b8' },
+  { name: 'What Is Real?',                        level:  1, rarity: 4, uncap: 1, type: 'Abundance',    portrait: 'u44f0b/a630543b0b57f8bc4a082097e95901a4' },
   { name: 'Woof! Walk Time!',                     level: 20, rarity: 4, uncap: 2, type: 'Destruction',  portrait: 'u17ehb/41c720be3b5a5f102ca1346426865ccb' },
 ];

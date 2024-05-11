@@ -9,7 +9,7 @@ const characters = [
   { id: 'Collei',     level: 50, rarity: 4, uncap: 1, type: 'Bow',      element: 'Dendro' },
   { id: 'Dehya',      level: 80, rarity: 5, uncap: 0, type: 'Claymore', element: 'Pyro' },
   { id: 'Diluc',      level: 90, rarity: 5, uncap: 0, type: 'Claymore', element: 'Pyro' },
-  { id: 'Arlecchino', level: 40, rarity: 5, uncap: 0, type: 'Pole',     element: 'Pyro',    portrait: 'ueb15f/6e91fd2e2bc1022882e9b1069094a161' },
+  { id: 'Arlecchino', level: 90, rarity: 5, uncap: 0, type: 'Pole',     element: 'Pyro',    portrait: 'ueb15f/6e91fd2e2bc1022882e9b1069094a161' },
   { id: 'Diona',      level: 90, rarity: 4, uncap: 6, type: 'Bow',      element: 'Cryo' },
   { id: 'Dori',       level: 50, rarity: 4, uncap: 1, type: 'Claymore', element: 'Electro' },
   { id: 'Eula',       level: 90, rarity: 5, uncap: 0, type: 'Claymore', element: 'Cryo' },
