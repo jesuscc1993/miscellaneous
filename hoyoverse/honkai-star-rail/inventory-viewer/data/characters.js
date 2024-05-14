@@ -13,7 +13,7 @@ const characters = [
   { name: 'Herta',        level: 80,  rarity: 4, uncap: 6, type: 'Erudition',     element: 'Ice',       portrait: 'ua57cb/6384df67f715de95c0514ac39d9ae0ac' },
   { name: 'Himeko',       level: 20,  rarity: 5, uncap: 0, type: 'Erudition',     element: 'Fire',      portrait: 'u642mb/1d631dbfb3fcf62d271353bb12c56e11' },
   { name: 'Hook',         level: 20,  rarity: 4, uncap: 0, type: 'Destruction',   element: 'Fire',      portrait: 'u17ehb/a3fc2a11a162efee88620e3569f52906' },
-  { name: 'Jingliu',      level: 40,  rarity: 5, uncap: 0, type: 'Destruction',   element: 'Ice',       portrait: 'ub53tb/8b815b912e310481ddb5c4fe31be7958' },
+  { name: 'Jingliu',      level: 80,  rarity: 5, uncap: 0, type: 'Destruction',   element: 'Ice',       portrait: 'ub53tb/8b815b912e310481ddb5c4fe31be7958' },
   { name: 'Kafka',        level: 80,  rarity: 5, uncap: 0, type: 'Nihility',      element: 'Lightning', portrait: 'u17ehb/ff22a7ca44c32640a91d95db629ed0af' },
   { name: 'Luka',         level: 20,  rarity: 4, uncap: 0, type: 'Nihility',      element: 'Physical',  portrait: 'u44f0b/f4146c56250302dc30f5682eeabfd509' },
   { name: 'Lynx',         level: 80,  rarity: 4, uncap: 6, type: 'Abundance',     element: 'Quantum',   portrait: 'ua57cb/a545b6df482548b4d52381e22414bcb1' },
