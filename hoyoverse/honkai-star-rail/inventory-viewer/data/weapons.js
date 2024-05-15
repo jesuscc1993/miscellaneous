@@ -24,7 +24,7 @@ const weapons = [
   { name: 'The Seriousness of Breakfast',         level: 80, rarity: 4, uncap: 3, type: 'Erudition',    portrait: 'ud64eb/cab9103e1fd3e69158fa2735e80046a1' },
   { name: 'Time Waits for No One',                level: 80, rarity: 5, uncap: 1, type: 'Abundance',    portrait: 'ua57cb/69871065f148ed80081894d4426e1e16' },
   { name: 'Trend of the Universal Market',        level: 80, rarity: 4, uncap: 2, type: 'Preservation', portrait: 'ud9dkb/af23192657d4035851bc7dda45fd1f8c' },
-  { name: 'Under the Blue Sky',                   level: 30, rarity: 4, uncap: 2, type: 'Destruction',  portrait: 'u17ehb/4511df9e6e3bf983f8fc999e20429478' },
+  { name: 'Under the Blue Sky',                   level: 80, rarity: 4, uncap: 2, type: 'Destruction',  portrait: 'u17ehb/4511df9e6e3bf983f8fc999e20429478' },
   { name: 'We Are Wildfire',                      level:  1, rarity: 4, uncap: 1, type: 'Preservation', portrait: 'u17ehb/c7cfb405f46f3c694deb3138b1fc72b8' },
   { name: 'What Is Real?',                        level:  1, rarity: 4, uncap: 1, type: 'Abundance',    portrait: 'u44f0b/a630543b0b57f8bc4a082097e95901a4' },
   { name: 'Woof! Walk Time!',                     level: 20, rarity: 4, uncap: 2, type: 'Destruction',  portrait: 'u17ehb/41c720be3b5a5f102ca1346426865ccb' },
