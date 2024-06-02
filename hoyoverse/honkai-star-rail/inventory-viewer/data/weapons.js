@@ -16,7 +16,7 @@ const weapons = [
   { name: 'Only Silence Remains',                 level:  1, rarity: 4, uncap: 1, type: 'Hunt',         portrait: 'u17ehb/7052688f5361d55c0e4ea95e5ac26edb' },
   { name: 'Past and Future',                      level: 50, rarity: 4, uncap: 2, type: 'Harmony',      portrait: 'ud82rb/700575a621e986175ed66cb53be689c7' },
   { name: 'Quid Pro Quo',                         level: 50, rarity: 4, uncap: 1, type: 'Abundance',    portrait: 'u17ehb/6b85f4dd55cd8b48ac1fe61dd81db280' },
-  { name: 'Resolution Shines As Pearls of Sweat', level:  1, rarity: 4, uncap: 4, type: 'Nihility',     portrait: 'u17ehb/a8eb4728cca7f855db3686a1543f49f0' },
+  { name: 'Resolution Shines As Pearls of Sweat', level: 80, rarity: 4, uncap: 4, type: 'Nihility',     portrait: 'u17ehb/a8eb4728cca7f855db3686a1543f49f0' },
   { name: 'Shared Feeling',                       level:  1, rarity: 4, uncap: 1, type: 'Abundance',    portrait: 'u44f0b/9b3aabd7896b1ebfed34cb81e04d4b9d' },
   { name: 'Swordplay',                            level:  1, rarity: 4, uncap: 3, type: 'Hunt',         portrait: 'u17ehb/e17b4512d37b5ae2f7680ef5fb964aed' },
   { name: 'Texture of Memories',                  level: 80, rarity: 5, uncap: 5, type: 'Preservation', portrait: 'ud9dkb/817f2e4719fcf01d0a5b0a83f89c863f' },
