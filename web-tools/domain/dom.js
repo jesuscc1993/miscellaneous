@@ -27,6 +27,7 @@ const pasteInput = async (inputSelector) => {
   try {
     const text = await navigator.clipboard.readText();
     input.value = text;
+    input.focus();
     input.blur();
   } catch (error) {
     console.error('Failed to paste text: ', error);
