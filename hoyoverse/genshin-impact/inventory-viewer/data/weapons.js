@@ -24,6 +24,7 @@ const weapons = [
   { id: 'Fossil',        level: 90, rarity: 4, uncap: 5, type: 'Claymore', name: 'Sacrificial Greatsword' },
   { id: 'Fossil',        level: 90, rarity: 4, uncap: 5, type: 'Sword',    name: 'Sacrificial Sword' },
   { id: 'Fourwinds',     level: 90, rarity: 5, uncap: 1, type: 'Catalyst', name: 'Lost Prayer to the Sacred Winds' },
+  { id: 'GoldenVerdict', level: 80, rarity: 5, uncap: 1, type: 'Claymore', name: 'Verdict', portrait: 'u13fig/b73a739db93077c41ce9a70bffd2e3d9' },
   { id: 'Ibis',          level: 90, rarity: 4, uncap: 5, type: 'Bow',      name: 'Ibis Piercer', portrait: 'u587xe/d0487b5253419380af5f2afbb726fe8d' },
   { id: 'Iudex',         level: 20, rarity: 5, uncap: 1, type: 'Catalyst', name: "Tome of the Eternal Flow", portrait: 'u1536f/3b33215d689ffd95b29a472f85f3888e' },
   { id: 'Jyanome',       level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Oathsworn Eye' },
