@@ -13,6 +13,7 @@ const characters = [
   { name: 'Herta',        level: 80,  rarity: 4, uncap: 6, type: 'Erudition',     element: 'Ice',       portrait: 'ua57cb/6384df67f715de95c0514ac39d9ae0ac' },
   { name: 'Himeko',       level: 80,  rarity: 5, uncap: 1, type: 'Erudition',     element: 'Fire',      portrait: 'u642mb/1d631dbfb3fcf62d271353bb12c56e11' },
   { name: 'Hook',         level: 20,  rarity: 4, uncap: 0, type: 'Destruction',   element: 'Fire',      portrait: 'u17ehb/a3fc2a11a162efee88620e3569f52906' },
+  { name: 'Huohuo',       level: 40,  rarity: 5, uncap: 0, type: 'Abundance',      element: 'Wind',      portrait: 'ufbdec/c25e7ce320f7e31e6ad75eaaecbd9c8d' },
   { name: 'Jingliu',      level: 80,  rarity: 5, uncap: 0, type: 'Destruction',   element: 'Ice',       portrait: 'ub53tb/8b815b912e310481ddb5c4fe31be7958' },
   { name: 'Kafka',        level: 80,  rarity: 5, uncap: 0, type: 'Nihility',      element: 'Lightning', portrait: 'u17ehb/ff22a7ca44c32640a91d95db629ed0af' },
   { name: 'Luka',         level: 20,  rarity: 4, uncap: 1, type: 'Nihility',      element: 'Physical',  portrait: 'u44f0b/f4146c56250302dc30f5682eeabfd509' },
@@ -30,6 +31,6 @@ const characters = [
   { name: 'Trailblazer',  level: 80,  rarity: 5, uncap: 6, type: 'Preservation',  element: 'Fire',      portrait: 'ud64eb/a2c82fe65a3d3ad2fccb8b8b832ff7b7' },
   { name: 'Welt',         level: 20,  rarity: 5, uncap: 0, type: 'Nihility',      element: 'Imaginary', portrait: 'ud64eb/75a16b696f78eb9c0d02045fba7d4d0c' },
   { name: 'Xueyi',        level: 20,  rarity: 4, uncap: 2, type: 'Destruction',   element: 'Quantum',   portrait: 'ud64eb/a733a88b837f6e40e4af9c57ebc9838f' },
-  { name: 'Yukong',       level: 20,  rarity: 4, uncap: 2, type: 'Harmony',       element: 'Imaginary', portrait: 'u17ehb/d548ae544df679792c14103e57977bc7' },
+  { name: 'Yukong',       level: 20,  rarity: 4, uncap: 6, type: 'Harmony',       element: 'Imaginary', portrait: 'u17ehb/d548ae544df679792c14103e57977bc7' },
 ];
 /* { name: '',       level: ,  rarity: , uncap: 0, type: '',       element: '', portrait: '' }, */
