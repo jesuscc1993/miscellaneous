@@ -77,7 +77,9 @@ const initialize = () => {
               talentContainer.append(talentImage);
 
               const talentText = jQuery(
-                `<div class="talent-text">${talent.name}</div>`
+                `<div class="talent-text" style=${
+                  talent.fontSize ? `font-size:${talent.fontSize}` : ``
+                }>${talent.name}</div>`
               );
               talentContainer.append(talentText);
 

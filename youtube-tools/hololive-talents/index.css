@@ -14,7 +14,7 @@ body {
   font-family: 'Roboto', non-serif;
   font-size: 20px;
   margin: 0;
-  padding: 16px 0;
+  padding: 1em 0;
   text-align: center;
 }
 
@@ -50,6 +50,7 @@ a:hover {
   position: relative;
   transition: var(--transition);
   margin: 0 2px;
+  vertical-align: top;
 }
 .talent:hover {
   background: var(--c-primary);
@@ -86,6 +87,7 @@ a:hover {
 
 .talent-text {
   padding: 6px 0;
+  line-height: 1.2rem;
 }
 
 .back-to-top {

@@ -24,7 +24,7 @@
       { "name": "Yozora Mel", "keyword": "Mel", "graduated": true }
     ],
     "Gen 2": [
-      { "name": "Minato Aqua", "keyword": "Aqua" },
+      { "name": "Minato Aqua", "keyword": "Aqua", "graduated": true },
       { "name": "Murasaki Shion", "keyword": "Shion" },
       { "name": "Nakiri Ayame", "keyword": "Ayame" },
       { "name": "Oozora Subaru", "keyword": "Subaru" },
@@ -98,10 +98,16 @@
       { "name": "Tsukumo Sana", "keyword": "Sana", "graduated": true }
     ],
     "Advent": [
-      { "name": "Fuwamoco Abyssgard", "keyword": "Fuwamoco" },
-      { "name": "Koseki Bijou", "keyword": "Bijou" },
-      { "name": "Nerissa Ravencroft", "keyword": "Nerissa" },
+      { "name": "Fuwamoco Abyssgard", "keyword": "Fuwamoco", "fontSize": ".95em" },
+      { "name": "Koseki Bijou", "keyword": "Biboo" },
+      { "name": "Nerissa Ravencroft", "keyword": "Rissa" },
       { "name": "Shiori Novella", "keyword": "Shiori" }
+    ],
+    "Justice": [
+      { "name": "Cecilia Immergreen", "keyword": "Cecilia" },
+      { "name": "Elizabeth Rose Bloodflame", "keyword": "Liz", "fontSize": ".8em" },
+      { "name": "Gigi Murin", "keyword": "Gigi" },
+      { "name": "Raora Panthera", "keyword": "Raora" }
     ]
   }
 }
