@@ -1,0 +1,182 @@
+<!--
+regex:
+ in:
+  (.*)
+ out:
+  <li><a target="_blank" href="https://store.steampowered.com/app/$1"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/$1/header.jpg">$1</a></li>
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steam App List</title>
+    <style>
+      :root {
+        --cover-w: 18vw;
+        --cover-h: calc(var(--cover-w) * 215 / 460);
+      }
+      body {
+        background: #2c323a;
+      }
+      ul {
+        display: grid;
+        gap: 8px;
+        grid-auto-rows: calc(var(--cover-h) + 16px);
+        grid-template-columns: repeat(auto-fill, var(--cover-w));
+        justify-content: center;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      a {
+        color: white;
+        text-align: center;
+        text-decoration: none;
+      }
+      img {
+        height: var(--cover-h);
+        width: var(--cover-w);
+        background: #fff2;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="output"></ul>
+
+    <script>
+      const systemAppIds = ['2371090', '241100', '7', '760'];
+
+      let appIds = [
+        '1038300',
+        '1048540',
+        '105600',
+        '1070710',
+        '107100',
+        '1072420',
+        '1088710',
+        '1113560',
+        '115800',
+        '1168460',
+        '1205900',
+        '1255980',
+        '1325900',
+        '1440440',
+        '1475810',
+        '1501750',
+        '1530160',
+        '1588760',
+        '1621690',
+        '1623730',
+        '1716740',
+        '1817230',
+        '205100',
+        '205910',
+        '206420',
+        '211420',
+        '214870',
+        '218680',
+        '2187220',
+        '235460',
+        '2371090',
+        '238010',
+        '239140',
+        '241100',
+        '2420110',
+        '2420510',
+        '242640',
+        '248550',
+        '251150',
+        '253230',
+        '261110',
+        '275390',
+        '292030',
+        '292500',
+        '304240',
+        '322290',
+        '337000',
+        '345820',
+        '346010',
+        '367450',
+        '367500',
+        '367520',
+        '377160',
+        '379720',
+        '391220',
+        '398850',
+        '400630',
+        '411960',
+        '424840',
+        '460870',
+        '477160',
+        '48000',
+        '493900',
+        '50650',
+        '524580',
+        '548840',
+        '55230',
+        '584400',
+        '587620',
+        '595520',
+        '601150',
+        '606150',
+        '620',
+        '631510',
+        '638970',
+        '678960',
+        '692850',
+        '7',
+        '70600',
+        '738540',
+        '751780',
+        '760',
+        '774361',
+        '782330',
+        '834530',
+        '847370',
+        '889910',
+        '900270',
+        '948740',
+        '996580',
+        'config',
+        'gamerecordings',
+        'inventorymsgcache',
+        'settings',
+        'ugc',
+        'ugcmsgcache',
+      ];
+
+      appIds = appIds.filter((appId) => /^\d+$/.test(appId));
+      appIds = appIds.filter((appId) => !systemAppIds.includes(appId));
+
+      function generateAppList(appIds) {
+        const container = document.getElementById('output');
+
+        appIds.forEach((appId) => {
+          const listItem = document.createElement('li');
+
+          const anchor = document.createElement('a');
+          anchor.href = `https://store.steampowered.com/app/${appId}`;
+          anchor.target = '_blank';
+
+          const img = document.createElement('img');
+          img.src = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appId}/header.jpg`;
+
+          anchor.appendChild(img);
+          anchor.appendChild(document.createTextNode(appId));
+
+          listItem.appendChild(anchor);
+
+          container.appendChild(listItem);
+        });
+      }
+
+      // Call the function to generate the list
+      generateAppList(appIds);
+    </script>
+  </body>
+</html>
