@@ -11,47 +11,14 @@ regex:
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Steam App List</title>
-    <style>
-      :root {
-        --cover-w: 18vw;
-        --cover-h: calc(var(--cover-w) * 215 / 460);
-      }
-      body {
-        background: #2c323a;
-      }
-      ul {
-        display: grid;
-        gap: 8px;
-        grid-auto-rows: calc(var(--cover-h) + 16px);
-        grid-template-columns: repeat(auto-fill, var(--cover-w));
-        justify-content: center;
-        padding: 0;
-      }
-      li {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      a {
-        color: white;
-        text-align: center;
-        text-decoration: none;
-      }
-      img {
-        height: var(--cover-h);
-        width: var(--cover-w);
-        background: #fff2;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <ul id="output"></ul>
 
+    <script src="app-ids.js"></script>
     <script>
       const systemAppIds = ['2371090', '241100', '7', '760'];
-
-      let appIds = [''];
 
       appIds = appIds.filter((appId) => /^\d+$/.test(appId));
       appIds = appIds.filter((appId) => !systemAppIds.includes(appId));

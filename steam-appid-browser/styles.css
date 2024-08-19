@@ -1,0 +1,32 @@
+:root {
+  --cover-w: 18vw;
+  --cover-h: calc(var(--cover-w) * 215 / 460);
+}
+body {
+  background: #2c323a;
+  font-family: sans-serif;
+}
+ul {
+  display: grid;
+  gap: 8px;
+  grid-auto-rows: calc(var(--cover-h) + 20px);
+  grid-template-columns: repeat(auto-fill, var(--cover-w));
+  justify-content: center;
+  padding: 0;
+}
+li {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+img {
+  background: #fff2;
+  height: var(--cover-h);
+  width: var(--cover-w);
+}
