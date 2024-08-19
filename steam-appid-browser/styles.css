@@ -9,7 +9,7 @@ body {
 ul {
   display: grid;
   gap: 8px;
-  grid-auto-rows: calc(var(--cover-h) + 20px);
+  grid-auto-rows: calc(var(--cover-h) + 1.5em);
   grid-template-columns: repeat(auto-fill, var(--cover-w));
   justify-content: center;
   padding: 0;
