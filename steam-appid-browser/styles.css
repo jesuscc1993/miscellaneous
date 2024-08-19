@@ -1,17 +1,20 @@
 :root {
-  --cover-w: 18vw;
-  --cover-h: calc(var(--cover-w) * 215 / 460);
+  --padding: 12px;
+  --gap: 8px;
+  --cols: 5;
 }
 body {
   background: #2c323a;
   font-family: sans-serif;
+  margin: 0;
+  padding: var(--padding);
 }
 ul {
   display: grid;
-  gap: 8px;
-  grid-auto-rows: calc(var(--cover-h) + 1.5em);
-  grid-template-columns: repeat(auto-fill, var(--cover-w));
+  gap: var(--gap);
+  grid-template-columns: repeat(5, 1fr);
   justify-content: center;
+  margin: 0;
   padding: 0;
 }
 li {
@@ -26,7 +29,7 @@ a {
   text-decoration: none;
 }
 img {
+  aspect-ratio: 460 / 215;
   background: #fff2;
-  height: var(--cover-h);
-  width: var(--cover-w);
+  width: 100%;
 }
