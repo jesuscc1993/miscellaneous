@@ -48,7 +48,7 @@ const characters = [
   { id: 'Shougun',    level: 90, rarity: 5, uncap: 0, type: 'Pole',     element: 'Electro', name: 'Shogun', fullName: 'Raiden Shogun' },
   { id: 'Sucrose',    level: 60, rarity: 4, uncap: 6, type: 'Catalyst', element: 'Anemo' },
   { id: 'Tartaglia',  level: 80, rarity: 5, uncap: 0, type: 'Bow',      element: 'Hydro' },
-  { id: 'Tighnari',   level: 80, rarity: 5, uncap: 0, type: 'Bow',      element: 'Dendro' },
+  { id: 'Tighnari',   level: 80, rarity: 5, uncap: 2, type: 'Bow',      element: 'Dendro' },
   { id: 'Tohma',      level: 50, rarity: 4, uncap: 0, type: 'Pole',     element: 'Pyro',    name: 'Thoma' },
   { id: 'Venti',      level: 90, rarity: 5, uncap: 0, type: 'Bow',      element: 'Anemo' },
   { id: 'Xiangling',  level: 90, rarity: 4, uncap: 6, type: 'Pole',     element: 'Pyro' },
