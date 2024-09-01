@@ -14,7 +14,7 @@ const characters = [
   { id: 'Diona',      level: 90, rarity: 4, uncap: 6, type: 'Bow',      element: 'Cryo' },
   { id: 'Dori',       level: 50, rarity: 4, uncap: 1, type: 'Claymore', element: 'Electro' },
   { id: 'Eula',       level: 90, rarity: 5, uncap: 0, type: 'Claymore', element: 'Cryo' },
-  { id: 'Faruzan',    level: 60, rarity: 4, uncap: 5, type: 'Catalyst', element: 'Anemo' },
+  { id: 'Faruzan',    level: 60, rarity: 4, uncap: 6, type: 'Catalyst', element: 'Anemo' },
   { id: 'Feiyan',     level: 80, rarity: 4, uncap: 6, type: 'Catalyst', element: 'Pyro',    name: 'Yanfei' },
   { id: 'Fischl',     level: 80, rarity: 4, uncap: 6, type: 'Bow',      element: 'Electro' },
   { id: 'Freminet',   level: 50, rarity: 4, uncap: 0, type: 'Claymore', element: 'Cryo',    portrait: 'uceddf/7ca0ad25c2cbb36cd55a8a19c1b2a39f' },
