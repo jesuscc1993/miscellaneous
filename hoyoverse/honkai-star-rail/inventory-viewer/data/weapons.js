@@ -11,7 +11,7 @@ const weapons = [
   { name: 'Fermata',                              level: 80, rarity: 4, uncap: 5, type: 'Nihility',     portrait: 'u17ehb/2f200f82b83aa7770caeda342b15c925' },
   { name: 'Flames Afar',                          level: 80, rarity: 4, uncap: 2, type: 'Destruction',  portrait: 'ud82rb/750333d1c41df6199ed0d577aa085e02' },
   { name: 'Good Night and Sleep Well',            level: 80, rarity: 4, uncap: 2, type: 'Nihility',     portrait: 'ud82rb/3df1e65006215d8a2fe477155e7046a0' },
-  { name: 'In the Name of the World',             level: 70, rarity: 5, uncap: 1, type: 'Nihility',     portrait: 'ud82rb/641cbe07d0d7211765ca6257fca464bb' },
+  { name: 'In the Name of the World',             level: 80, rarity: 5, uncap: 1, type: 'Nihility',     portrait: 'ud82rb/641cbe07d0d7211765ca6257fca464bb' },
   { name: 'Memories of the Past',                 level: 80, rarity: 4, uncap: 3, type: 'Harmony',      portrait: 'u642mb/a7a1069df34e8b775d4d85c1be8e1ddd' },
   { name: 'Meshing Cogs',                         level: 80, rarity: 3, uncap: 5, type: 'Harmony',      portrait: 'ud64eb/21baf4cbb3fcc34fa849a9db9fa91750' },
   { name: 'Only Silence Remains',                 level:  1, rarity: 4, uncap: 1, type: 'Hunt',         portrait: 'u17ehb/7052688f5361d55c0e4ea95e5ac26edb' },
