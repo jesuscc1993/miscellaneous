@@ -22,6 +22,7 @@ const characters = [
   { id: 'Ganyu',      level: 90, rarity: 5, uncap: 0, type: 'Bow',      element: 'Cryo' },
   { id: 'Gorou',      level: 50, rarity: 4, uncap: 1, type: 'Bow',      element: 'Geo' },
   { id: 'Heizo',      level: 50, rarity: 4, uncap: 3, type: 'Catalyst', element: 'Anemo',   name: 'Heizou', fullName: 'Shikanoin Heizou' },
+  { id: 'Kachina',    level: 50, rarity: 4, uncap: 1, type: 'Pole',     element: 'Geo',     portrait: 'u9b0pg/65bda5c712894dedc44a5b7f0e2560ff' },
   { id: 'Kaeya',      level: 50, rarity: 4, uncap: 1, type: 'Sword',    element: 'Cryo' },
   { id: 'Kaveh',      level: 50, rarity: 4, uncap: 3, type: 'Claymore', element: 'Dendro',  portrait: 'u13fig/a83f0cc12f6e5f83fda34182a0303592' },
   { id: 'Kazuha',     level: 90, rarity: 5, uncap: 0, type: 'Sword',    element: 'Anemo',   fullName: 'Kaedehara Kazuha' },

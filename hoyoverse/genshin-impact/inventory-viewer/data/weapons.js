@@ -6,7 +6,7 @@ const weapons = [
   { id: 'Bakufu',        level: 90, rarity: 4, uncap: 5, type: 'Claymore', name: 'Katsuragi Kirinagamasa' },
   { id: 'Bakufu',        level: 90, rarity: 4, uncap: 5, type: 'Pole',     name: 'Kitain Cross Spear' },
   { id: 'Bakufu',        level: 90, rarity: 4, uncap: 5, type: 'Sword',    name: 'Amenoma Kageuchi' },
-  { id: 'BloodMoon',     level: 60, rarity: 5, uncap: 1, type: 'Pole',     name: "Crimson Moon's Semblance", portrait: 'ueb15f/173e539a1a8e123bf7523efeda070d91' },
+  { id: 'BloodMoon',     level: 90, rarity: 5, uncap: 1, type: 'Pole',     name: "Crimson Moon's Semblance", portrait: 'ueb15f/173e539a1a8e123bf7523efeda070d91' },
   { id: 'Caduceus',      level: 90, rarity: 4, uncap: 5, type: 'Pole',     name: 'Dialogues of the Desert Sages', portrait: 'u1536f/6a88ba668f732e984dd68c6e2387b6a3' },
   { id: 'Champion',      level: 90, rarity: 4, uncap: 5, type: 'Claymore', name: '"Ultimate Overlord\'s Mega Magic Sword"', portrait: 'u1536f/28a736c7b99f254c4fd6ca20e7f3e917' },
   { id: 'Dvalin',        level: 20, rarity: 5, uncap: 1, type: 'Pole',     name: "Skyward Spine" },
