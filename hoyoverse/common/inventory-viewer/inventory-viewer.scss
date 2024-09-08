@@ -90,6 +90,25 @@ small {
   width: 100%;
 }
 
+.flex {
+  display: flex;
+
+  &.column {
+    flex-direction: column;
+  }
+
+  &.gap {
+    gap: var(--grid-gap);
+  }
+}
+
+$sizes: 1, 2, 3;
+@each $size in $sizes {
+  .w-#{$size}r {
+    width: #{$size}rem;
+  }
+}
+
 .items-grid {
   display: grid;
   grid-gap: var(--grid-gap);

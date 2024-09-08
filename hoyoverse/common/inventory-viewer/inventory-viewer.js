@@ -12,10 +12,12 @@ const processList = (identifier, items, itemType) => {
     </div>
   `);
 
-  sortItems(items).forEach((item) => {
-    const isWeapon = itemType === ItemType.Weapon;
+  const areItemsWeapons = itemType === ItemType.Weapon;
 
-    const artwork = isWeapon ? getWeaponSprite(item) : getCharacterSprite(item);
+  sortItems(items).forEach((item) => {
+    const artwork = areItemsWeapons
+      ? getWeaponSprite(item)
+      : getCharacterSprite(item);
     const artworkBackground = rarityBackgrounds[item.rarity];
 
     const shortItemName = item.name || item.id;
@@ -34,11 +36,13 @@ const processList = (identifier, items, itemType) => {
     );
     itemContainer.append(portrait);
 
-    const uncapText = isWeapon ? getWeaponUncapText(item.uncap) : item.uncap;
+    const uncapText = areItemsWeapons
+      ? getWeaponUncapText(item.uncap)
+      : item.uncap;
     if (uncapText) {
       const uncapElement = jQuery(
         `<div class="item-text uncap-text center-text ${
-          isWeapon && item.uncap > 4 ? 'maxed' : ''
+          areItemsWeapons && item.uncap > 4 ? 'maxed' : ''
         }">${uncapText}</div>`
       );
       itemContainer.append(uncapElement);
@@ -48,7 +52,9 @@ const processList = (identifier, items, itemType) => {
 
     const nameLine = jQuery(
       `<span class="center-text name">
-        <span class="clamp ${isWeapon ? 'clamp-2' : ''}">${shortItemName}</span>
+        <span class="clamp ${
+          areItemsWeapons ? 'clamp-2' : ''
+        }">${shortItemName}</span>
       </span>`
     );
     bottomText.append(nameLine);
@@ -64,6 +70,35 @@ const processList = (identifier, items, itemType) => {
   });
 
   output.append(itemsGrid);
+
+  if (!areItemsWeapons) {
+    // processElements(identifier);
+  }
+};
+
+const processElements = (identifier) => {
+  const output = jQuery(`#${identifier.toLowerCase()} .filter-section`);
+
+  const elementsList = jQuery(`
+    <div class="flex gap"></div>
+  `);
+
+  elements.forEach((element) => {
+    elementsList.append(`
+      <div>
+        <img class="w-3r" src="${getElementImg(element)}">
+      </div>
+    `);
+  });
+
+  const elementFilters = jQuery(`
+    <div>
+      <h2 class="grid-heading">Elements</h2>
+    </div>
+    <br>
+  `);
+  elementFilters.append(elementsList);
+  output.append(elementFilters);
 };
 
 const initialize = () => {

@@ -60,5 +60,7 @@ const characters = [
   { id: 'Yunjin',     level: 50, rarity: 4, uncap: 2, type: 'Pole',     element: 'Geo',     name: 'Yun Jin' },
 ];
 
+const elements = ['Anemo', 'Cryo', 'Dendro', 'Electro', 'Geo', 'Hydro', 'Pyro'];
+
 /* https://act.hoyolab.com/ys/event/calculator-sea/index.html */
 /* https://raw.githubusercontent.com/theBowja/genshin-db/main/src/data/image/characters.json */

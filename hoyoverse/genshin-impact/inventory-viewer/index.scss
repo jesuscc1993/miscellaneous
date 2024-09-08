@@ -18,13 +18,13 @@ $elements: 'anemo', 'cryo', 'dendro', 'electro', 'geo', 'hydro', 'pyro';
 
   --section-spacing: 8px;
 
-  --element-icon-size: 30px;
+  --element-icon-size: 24px;
 
   @media (max-width: 960px) {
     --font-size: 11px;
     --line-height: 1.5;
     --artwork-size: 80px;
-    --element-icon-size: 20px;
+    --element-icon-size: 16px;
     --uncap-size: 15px;
   }
 }
@@ -92,6 +92,7 @@ a {
     margin-bottom: -1px; /* compensate for border */
 
     &:before {
+      margin: 2px;
       --size: var(--element-icon-size);
     }
   }

@@ -24,6 +24,10 @@ const getItemBackground = (item) => {
   return `url(https://upload-os-bbs.mihoyo.com/game_record/genshin/character_image/UI_AvatarIcon_${item.id}@2x.png)`;
 };
 
+const getElementImg = (element) => {
+  return `assets/images/elements/colored/${element}.png`;
+};
+
 const getWeaponUncapText = (uncap) => {
   return uncap;
 };
