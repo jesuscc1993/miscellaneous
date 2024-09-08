@@ -71,7 +71,7 @@ a {
       .bottom-text {
         .level {
           &:before {
-            background-image: url(assets/images/weapons/#{$weaponType}.png);
+            background-image: url(assets/images/weapons/cropped/#{$weaponType}.png);
           }
         }
       }
