@@ -89,14 +89,7 @@ const processElements = (identifier) => {
     elementsList.append(filter);
   });
 
-  const elementFilters = jQuery(`
-    <div>
-      <h2 class="grid-heading">Elements</h2>
-    </div>
-    <br>
-  `);
-  elementFilters.append(elementsList);
-  output.append(elementFilters);
+  output.append(elementsList);
 };
 
 const setFilter = (name, value) => {
