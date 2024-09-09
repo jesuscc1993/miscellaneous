@@ -39,17 +39,18 @@ a {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-weight: normal;
   margin: 0;
 }
 
 h1 {
-  padding: 20px 0;
+  padding: 1.25rem 0;
 }
 
 h2 {
-  padding: 16px 0;
+  padding: 1rem 0;
 }
 
 html {
@@ -108,10 +109,38 @@ small {
 }
 
 .filter-section {
+  --grid-gap: 0.5rem;
   padding: 0 1rem;
 
   .filter {
-    @extend .w-3r;
+    $size: 3.5rem;
+
+    width: $size;
+    height: $size;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.active {
+      img {
+        border-color: #fff8;
+      }
+    }
+
+    img {
+      $border: 0.2rem;
+
+      margin: $border * -1;
+      padding: $border;
+      border: $border solid transparent;
+
+      border-radius: 50%;
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%;
+      overflow: visible;
+    }
   }
 }
 
@@ -297,12 +326,12 @@ small {
 }
 
 /* utility */
-$sizes: 1, 2, 3;
-@each $size in $sizes {
-  .w-#{$size}r {
-    width: #{$size}rem;
-  }
-}
+// $sizes: 1, 2, 3;
+// @each $size in $sizes {
+//   .w-#{$size}r {
+//     width: #{$size}rem;
+//   }
+// }
 
 .no-padding {
   padding: 0;

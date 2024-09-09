@@ -77,42 +77,48 @@ const processFilter = (identifier, items) => {
     <div class="flex gap"></div>
   `);
 
+  const urlParams = new URLSearchParams(window.location.search);
+  let activeFilter = urlParams.get(identifier.toLowerCase());
+  activeFilter =
+    activeFilter && activeFilter !== 'Any' ? activeFilter : undefined;
+
   items.forEach((item) => {
     const filter = jQuery(`
-      <div class="flex align-center justify-center">
+      <div class="filter${activeFilter === item ? ' active' : ''}">
         ${
           item === 'Any'
             ? `<h2 class="no-padding">Any</h2>`
-            : `<img class="filter" src="${getFilterImg(identifier, item)}">`
+            : `<img src="${getFilterImg(identifier, item)}">`
         }
       </div>
       `);
-    filter.click(() => setFilter(identifier.toLowerCase(), item));
+    filter.click(() => toggleFilter(identifier.toLowerCase(), item));
     filterList.append(filter);
   });
 
-  output.append(filterList);
+  output.html(filterList);
 };
 
-const setFilter = (name, value) => {
+const toggleFilter = (name, value) => {
   const newUrl = new URL(window.location.href);
   const params = new URLSearchParams(newUrl.search);
-  params.set(name, value);
+  const active = params.get(name) === value;
+  if (active) {
+    params.delete(name);
+  } else {
+    params.set(name, value);
+  }
   newUrl.search = params.toString();
   history.pushState(null, '', newUrl);
 
-  processLists();
-};
-
-const processLists = () => {
-  processList('Characters', characters, ItemType.Character);
-  processList('Weapons', weapons, ItemType.Weapon);
+  initialize();
 };
 
 const initialize = () => {
   processFilter('Elements', elements);
   processFilter('Types', types);
-  processLists();
+  processList('Characters', characters, ItemType.Character);
+  processList('Weapons', weapons, ItemType.Weapon);
 };
 
 const filterItems = (items, areItemsWeapons) => {
