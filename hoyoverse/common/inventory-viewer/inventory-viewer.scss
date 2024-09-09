@@ -67,6 +67,10 @@ body {
   padding: 0 var(--grid-gap);
 }
 
+section {
+  margin-bottom: 2rem;
+}
+
 small {
   color: #999;
 }
@@ -77,12 +81,6 @@ small {
     var(--artwork-size) * var(--grid-cols) + var(--grid-gap) *
       (var(--grid-cols) - 1)
   );
-}
-
-.vh100 {
-  box-sizing: border-box;
-  min-height: 100vh;
-  padding: var(--section-spacing) 0;
 }
 
 .center-text {
@@ -326,11 +324,18 @@ small {
 }
 
 /* utility */
+
 // $sizes: 1, 2, 3;
 // @each $size in $sizes {
 //   .w-#{$size}r {
 //     width: #{$size}rem;
 //   }
+// }
+
+// .vh100 {
+//   box-sizing: border-box;
+//   min-height: 100vh;
+//   padding: var(--section-spacing) 0;
 // }
 
 .no-padding {
