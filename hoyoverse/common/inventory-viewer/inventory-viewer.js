@@ -7,14 +7,12 @@ const processList = (identifier, items, itemType) => {
   const output = jQuery(`#${identifier.toLowerCase()} .item-section`);
 
   const itemsGrid = jQuery(`
-    <div class="items-grid ${identifier.toLowerCase()}-grid">
-      <h2 class="grid-heading">${identifier}</h2>
-    </div>
+    <div class="items-grid ${identifier.toLowerCase()}-grid"></div>
   `);
 
   const areItemsWeapons = itemType === ItemType.Weapon;
 
-  sortItems(items).forEach((item) => {
+  sortItems(filterItems(items, areItemsWeapons)).forEach((item) => {
     const artwork = areItemsWeapons
       ? getWeaponSprite(item)
       : getCharacterSprite(item);
@@ -69,14 +67,12 @@ const processList = (identifier, items, itemType) => {
     itemsGrid.append(itemContainer);
   });
 
-  output.append(itemsGrid);
-
-  if (!areItemsWeapons) {
-    // processElements(identifier);
-  }
+  output.html(itemsGrid);
 };
 
 const processElements = (identifier) => {
+  if (!elements?.length) return;
+
   const output = jQuery(`#${identifier.toLowerCase()} .filter-section`);
 
   const elementsList = jQuery(`
@@ -84,11 +80,13 @@ const processElements = (identifier) => {
   `);
 
   elements.forEach((element) => {
-    elementsList.append(`
+    const filter = jQuery(`
       <div>
         <img class="w-3r" src="${getElementImg(element)}">
       </div>
     `);
+    filter.click(() => setFilter('element', element));
+    elementsList.append(filter);
   });
 
   const elementFilters = jQuery(`
@@ -101,9 +99,35 @@ const processElements = (identifier) => {
   output.append(elementFilters);
 };
 
-const initialize = () => {
+const setFilter = (name, value) => {
+  const newUrl = new URL(window.location.href);
+  const params = new URLSearchParams(newUrl.search);
+  params.set(name, value);
+  newUrl.search = params.toString();
+  history.pushState(null, '', newUrl);
+
+  processLists();
+};
+
+const processLists = () => {
   processList('Characters', characters, ItemType.Character);
   processList('Weapons', weapons, ItemType.Weapon);
+};
+
+const initialize = () => {
+  processElements('Elements');
+  processLists();
+};
+
+const filterItems = (items, areItemsWeapons) => {
+  const params = new URLSearchParams(window.location.search);
+  const elementFilter = params.get('element');
+
+  if (!areItemsWeapons && elementFilter && elementFilter !== 'Any') {
+    return items.filter(({ element }) => element === elementFilter);
+  } else {
+    return items;
+  }
 };
 
 const sortItems = (items) => {

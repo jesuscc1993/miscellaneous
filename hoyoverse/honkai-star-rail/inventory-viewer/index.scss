@@ -19,7 +19,7 @@ $elements: 'fire', 'ice', 'imaginary', 'lightning', 'physical', 'quantum',
   --badge-size: 24px;
   --card-roundness: 0;
   --corner-roundness: 20px;
-  --grid-cols: 8;
+  --grid-cols: 9;
 
   --section-border-width: 1px;
   --section-spacing: 24px;
@@ -67,7 +67,7 @@ a {
   backdrop-filter: blur(16px);
   border-radius: 4px;
   border: var(--section-border-width) solid #fff2;
-  padding: 0 var(--grid-gap) var(--grid-gap);
+  padding: var(--grid-gap) var(--grid-gap);
 }
 
 .item {
