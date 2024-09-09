@@ -96,16 +96,22 @@ small {
   &.column {
     flex-direction: column;
   }
-
+  &.align-center {
+    align-items: center;
+  }
+  &.justify-center {
+    justify-content: center;
+  }
   &.gap {
     gap: var(--grid-gap);
   }
 }
 
-$sizes: 1, 2, 3;
-@each $size in $sizes {
-  .w-#{$size}r {
-    width: #{$size}rem;
+.filter-section {
+  padding: 0 1rem;
+
+  .filter {
+    @extend .w-3r;
   }
 }
 
@@ -291,6 +297,17 @@ $sizes: 1, 2, 3;
 }
 
 /* utility */
+$sizes: 1, 2, 3;
+@each $size in $sizes {
+  .w-#{$size}r {
+    width: #{$size}rem;
+  }
+}
+
+.no-padding {
+  padding: 0;
+}
+
 .no-padding-bottom {
   padding-bottom: 0;
 }

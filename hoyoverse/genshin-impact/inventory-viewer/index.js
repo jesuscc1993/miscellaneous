@@ -3,6 +3,10 @@ const rarityBackgrounds = {
   4: 'https://webstatic-sea.hoyolab.com/app/community-game-records-sea/images/level_4_bg_s.7a6c5841.png',
   5: 'https://webstatic-sea.hoyolab.com/app/community-game-records-sea/images/level_5_bg_s.1ff411a0.png',
 };
+const filterPaths = {
+  Elements: 'assets/images/elements/colored',
+  Types: 'assets/images/weapons',
+};
 
 const getCharacterSprite = (item) => {
   return item.portrait
@@ -24,8 +28,8 @@ const getItemBackground = (item) => {
   return `url(https://upload-os-bbs.mihoyo.com/game_record/genshin/character_image/UI_AvatarIcon_${item.id}@2x.png)`;
 };
 
-const getElementImg = (element) => {
-  return `assets/images/elements/colored/${element}.png`;
+const getFilterImg = (identifier, element) => {
+  return `${filterPaths[identifier]}/${element}.png`;
 };
 
 const getWeaponUncapText = (uncap) => {

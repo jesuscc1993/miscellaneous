@@ -70,26 +70,28 @@ const processList = (identifier, items, itemType) => {
   output.html(itemsGrid);
 };
 
-const processElements = (identifier) => {
-  if (!elements?.length) return;
-
+const processFilter = (identifier, items) => {
   const output = jQuery(`#${identifier.toLowerCase()} .filter-section`);
 
-  const elementsList = jQuery(`
+  const filterList = jQuery(`
     <div class="flex gap"></div>
   `);
 
-  elements.forEach((element) => {
+  items.forEach((item) => {
     const filter = jQuery(`
-      <div>
-        <img class="w-3r" src="${getElementImg(element)}">
+      <div class="flex align-center justify-center">
+        ${
+          item === 'Any'
+            ? `<h2 class="no-padding">Any</h2>`
+            : `<img class="filter" src="${getFilterImg(identifier, item)}">`
+        }
       </div>
-    `);
-    filter.click(() => setFilter('element', element));
-    elementsList.append(filter);
+      `);
+    filter.click(() => setFilter(identifier.toLowerCase(), item));
+    filterList.append(filter);
   });
 
-  output.append(elementsList);
+  output.append(filterList);
 };
 
 const setFilter = (name, value) => {
@@ -108,19 +110,28 @@ const processLists = () => {
 };
 
 const initialize = () => {
-  processElements('Elements');
+  processFilter('Elements', elements);
+  processFilter('Types', types);
   processLists();
 };
 
 const filterItems = (items, areItemsWeapons) => {
   const params = new URLSearchParams(window.location.search);
-  const elementFilter = params.get('element');
+  const elementFilter = params.get('elements');
+  const weaponFilter = params.get('types');
+
+  let filteredItems = items;
 
   if (!areItemsWeapons && elementFilter && elementFilter !== 'Any') {
-    return items.filter(({ element }) => element === elementFilter);
-  } else {
-    return items;
+    filteredItems = filteredItems.filter(
+      ({ element }) => element === elementFilter
+    );
   }
+  if (weaponFilter && weaponFilter !== 'Any') {
+    filteredItems = filteredItems.filter(({ type }) => type === weaponFilter);
+  }
+
+  return filteredItems;
 };
 
 const sortItems = (items) => {

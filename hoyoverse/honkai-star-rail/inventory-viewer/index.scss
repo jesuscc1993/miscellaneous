@@ -133,7 +133,7 @@ a {
         .bottom-text {
           .level {
             &:before {
-              background-image: url(assets/images/paths/#{$path}.png);
+              background-image: url(assets/images/paths/small/#{$path}.png);
             }
           }
         }
@@ -159,7 +159,7 @@ a {
       &.#{$path} {
         .item-portrait {
           &:before {
-            background-image: url(assets/images/paths/#{$path}.png);
+            background-image: url(assets/images/paths/small/#{$path}.png);
           }
         }
       }
