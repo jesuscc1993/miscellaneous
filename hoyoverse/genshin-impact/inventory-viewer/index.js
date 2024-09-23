@@ -4,8 +4,8 @@ const rarityBackgrounds = {
   5: 'https://webstatic-sea.hoyolab.com/app/community-game-records-sea/images/level_5_bg_s.1ff411a0.png',
 };
 const filterPaths = {
-  Elements: 'assets/images/elements/colored',
-  Types: 'assets/images/weapons',
+  elements: 'assets/images/elements/colored',
+  types: 'assets/images/weapons',
 };
 
 const getCharacterSprite = (item) => {

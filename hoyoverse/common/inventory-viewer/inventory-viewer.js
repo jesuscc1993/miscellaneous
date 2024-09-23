@@ -3,11 +3,14 @@ const ItemType = {
   Weapon: 'weapon',
 };
 
+const filterAny = 'any';
+
 const processList = (identifier, items, itemType) => {
-  const output = jQuery(`#${identifier.toLowerCase()} .item-section`);
+  const identifierId = identifier.toLowerCase();
+  const output = jQuery(`#${identifierId} .item-section`);
 
   const itemsGrid = jQuery(`
-    <div class="items-grid ${identifier.toLowerCase()}-grid"></div>
+    <div class="items-grid ${identifierId}-grid"></div>
   `);
 
   const areItemsWeapons = itemType === ItemType.Weapon;
@@ -70,37 +73,42 @@ const processList = (identifier, items, itemType) => {
   output.html(itemsGrid);
 };
 
-const processFilter = (identifier, items) => {
-  const output = jQuery(`#${identifier.toLowerCase()} .filter-section`);
+const processFilter = (identifier, filterValues) => {
+  const identifierId = identifier.toLowerCase();
+  const output = jQuery(`#${identifierId} .filter-section`);
 
   const filterList = jQuery(`
     <div class="flex gap"></div>
   `);
 
   const urlParams = new URLSearchParams(window.location.search);
-  let activeFilter = urlParams.get(identifier.toLowerCase());
+  let activeFilter = urlParams.get(identifierId);
   activeFilter =
-    activeFilter && activeFilter !== 'Any' ? activeFilter : undefined;
+    activeFilter && activeFilter !== filterAny ? activeFilter : undefined;
 
-  items.forEach((item) => {
-    const filter = jQuery(`
-      <div class="filter${activeFilter === item ? ' active' : ''}">
+  filterValues.forEach((filterValue) => {
+    const filterId = filterValue.toLowerCase();
+    const filterElement = jQuery(`
+      <div class="filter${activeFilter === filterId ? ' active' : ''}">
         ${
-          item === 'Any'
+          filterId === filterAny
             ? `<h2 class="no-padding">Any</h2>`
-            : `<img src="${getFilterImg(identifier, item)}">`
+            : `<img
+                  src="${getFilterImg(identifierId, filterId)}"
+                  title="${filterValue}"
+               >`
         }
       </div>
       `);
-    filter.click(() => toggleFilter(identifier.toLowerCase(), item));
-    filterList.append(filter);
+    filterElement.click(() => toggleFilter(identifierId, filterId));
+    filterList.append(filterElement);
   });
 
   output.html(filterList);
 };
 
-const getFilterImg = (identifier, element) => {
-  return `${filterPaths[identifier]}/${element.toLowerCase()}.png`;
+const getFilterImg = (identifierId, filterId) => {
+  return `${filterPaths[identifierId]}/${filterId}.png`;
 };
 
 const toggleFilter = (name, value) => {
@@ -132,13 +140,15 @@ const filterItems = (items, areItemsWeapons) => {
 
   let filteredItems = items;
 
-  if (!areItemsWeapons && elementFilter && elementFilter !== 'Any') {
+  if (!areItemsWeapons && elementFilter && elementFilter !== filterAny) {
     filteredItems = filteredItems.filter(
-      ({ element }) => element === elementFilter
+      ({ element }) => element.toLowerCase() === elementFilter
     );
   }
-  if (weaponFilter && weaponFilter !== 'Any') {
-    filteredItems = filteredItems.filter(({ type }) => type === weaponFilter);
+  if (weaponFilter && weaponFilter !== filterAny) {
+    filteredItems = filteredItems.filter(
+      ({ type }) => type.toLowerCase() === weaponFilter
+    );
   }
 
   return filteredItems;

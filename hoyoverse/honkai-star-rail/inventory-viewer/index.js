@@ -4,8 +4,8 @@ const rarityBackgrounds = {
   5: 'https://act.hoyolab.com/app/community-game-records-sea/rpg/images/character_r_5.99d42eb7.png',
 };
 const filterPaths = {
-  Elements: 'assets/images/elements',
-  Types: 'assets/images/paths',
+  elements: 'assets/images/elements',
+  types: 'assets/images/paths',
 };
 
 const getCharacterSprite = (item) => {
