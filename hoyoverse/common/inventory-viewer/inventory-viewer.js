@@ -99,6 +99,10 @@ const processFilter = (identifier, items) => {
   output.html(filterList);
 };
 
+const getFilterImg = (identifier, element) => {
+  return `${filterPaths[identifier]}/${element.toLowerCase()}.png`;
+};
+
 const toggleFilter = (name, value) => {
   const newUrl = new URL(window.location.href);
   const params = new URLSearchParams(newUrl.search);
