@@ -21,6 +21,7 @@ const weapons = [
   { name: 'Resolution Shines As Pearls of Sweat', level: 80, rarity: 4, uncap: 4, type: 'Nihility',     portrait: 'u17ehb/a8eb4728cca7f855db3686a1543f49f0' },
   { name: 'Shared Feeling',                       level: 30, rarity: 4, uncap: 2, type: 'Abundance',    portrait: 'u44f0b/9b3aabd7896b1ebfed34cb81e04d4b9d' },
   { name: 'Swordplay',                            level: 80, rarity: 4, uncap: 3, type: 'Hunt',         portrait: 'u17ehb/e17b4512d37b5ae2f7680ef5fb964aed' },
+  { name: 'Final Victor',                         level: 80, rarity: 4, uncap: 1, type: 'Hunt',         portrait: 'u3efnc/3fc88f4d3d83fd83ce8315d366e99b24' },
   { name: 'Texture of Memories',                  level: 80, rarity: 5, uncap: 5, type: 'Preservation', portrait: 'ud9dkb/817f2e4719fcf01d0a5b0a83f89c863f' },
   { name: 'The Birth of the Self',                level: 80, rarity: 4, uncap: 4, type: 'Erudition',    portrait: 'u642mb/52de19739406be61c8685eb3be7e493c' },
   { name: 'The Seriousness of Breakfast',         level: 80, rarity: 4, uncap: 3, type: 'Erudition',    portrait: 'ud64eb/cab9103e1fd3e69158fa2735e80046a1' },
