@@ -18,6 +18,7 @@ body {
 }
 .form-group input,
 .form-group textarea {
+  color: #000;
   flex: 1;
 }
 .form-group textarea[readonly] {
