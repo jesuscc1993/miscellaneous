@@ -24,7 +24,7 @@ const characters = [
   { name: 'March 7th',    level: 20,  rarity: 4, uncap: 2, type: 'Preservation',  element: 'Ice',       portrait: 'ua57cb/44dc6542764632aa9b4ffcb06e09a28f' },
   { name: 'Moze',         level: 20,  rarity: 4, uncap: 3, type: 'Hunt',          element: 'Lightning', portrait: 'ufe9lc/b10458f39c11957d473e26f789b444e6' },
   { name: 'Natasha',      level: 50,  rarity: 4, uncap: 6, type: 'Abundance',     element: 'Physical',  portrait: 'ua57cb/d2e719f82a90f48091a36b4ba2246b66' },
-  { name: 'Pela',         level: 80,  rarity: 4, uncap: 5, type: 'Nihility',      element: 'Ice',       portrait: 'u17ehb/a98a733363e8b1015ef666585eb6051e' },
+  { name: 'Pela',         level: 80,  rarity: 4, uncap: 6, type: 'Nihility',      element: 'Ice',       portrait: 'u17ehb/a98a733363e8b1015ef666585eb6051e' },
   { name: 'Qingque',      level: 80,  rarity: 4, uncap: 6, type: 'Erudition',     element: 'Quantum',   portrait: 'ua57cb/67297fa3702c7025c0b6b2df6f993431' },
   { name: 'Ruan Mei',     level: 80,  rarity: 5, uncap: 0, type: 'Harmony',       element: 'Ice',       portrait: 'ud64eb/62f7576eba1d899f34d9ad6e314257f2' },
   { name: 'Sampo',        level: 20,  rarity: 4, uncap: 6, type: 'Nihility',      element: 'Wind',      portrait: 'ud9dkb/88bbc344892a13a1229b410fd8dacf72' },

@@ -1,4 +1,5 @@
 const weapons = [
+  { name: "Along the Passing Shore",              level: 80, rarity: 5, uncap: 1, type: 'Nihility',     portrait: 'u764rc/3c222368f6eff4188c17f1a07ba9a9ba' },
   { name: "Destiny's Threads Forewoven",          level:  1, rarity: 4, uncap: 1, type: 'Abundance',    portrait: 'u44f0b/f0f2164b599ce5f20b936b79d97be96f' },
   { name: "It's Showtime",                        level:  1, rarity: 4, uncap: 1, type: 'Nihility',     portrait: 'u44f0b/b12754883b18280109f776f7855cf064' },
   { name: "On the Fall of an Aeon",               level: 80, rarity: 5, uncap: 1, type: 'Destruction',  portrait: 'ufe9lc/f4306a83263ce1e7b0106125374a1262' },
@@ -10,6 +11,7 @@ const weapons = [
   { name: 'Eternal Calculus',                     level: 80, rarity: 5, uncap: 5, type: 'Erudition',    portrait: 'u32bac/254ea7676b0f07e42d96585fc4c249c0' },
   { name: 'Eyes of the Prey',                     level: 80, rarity: 4, uncap: 2, type: 'Nihility',     portrait: 'ud82rb/c8dc76feaaaba87ca67d93e0b5232adf' },
   { name: 'Fermata',                              level: 80, rarity: 4, uncap: 5, type: 'Nihility',     portrait: 'u17ehb/2f200f82b83aa7770caeda342b15c925' },
+  { name: 'Final Victor',                         level: 80, rarity: 4, uncap: 1, type: 'Hunt',         portrait: 'u3efnc/3fc88f4d3d83fd83ce8315d366e99b24' },
   { name: 'Flames Afar',                          level: 80, rarity: 4, uncap: 2, type: 'Destruction',  portrait: 'ud82rb/750333d1c41df6199ed0d577aa085e02' },
   { name: 'Good Night and Sleep Well',            level: 80, rarity: 4, uncap: 2, type: 'Nihility',     portrait: 'ud82rb/3df1e65006215d8a2fe477155e7046a0' },
   { name: 'In the Name of the World',             level: 80, rarity: 5, uncap: 1, type: 'Nihility',     portrait: 'ud82rb/641cbe07d0d7211765ca6257fca464bb' },
@@ -21,7 +23,6 @@ const weapons = [
   { name: 'Resolution Shines As Pearls of Sweat', level: 80, rarity: 4, uncap: 4, type: 'Nihility',     portrait: 'u17ehb/a8eb4728cca7f855db3686a1543f49f0' },
   { name: 'Shared Feeling',                       level: 30, rarity: 4, uncap: 2, type: 'Abundance',    portrait: 'u44f0b/9b3aabd7896b1ebfed34cb81e04d4b9d' },
   { name: 'Swordplay',                            level: 80, rarity: 4, uncap: 3, type: 'Hunt',         portrait: 'u17ehb/e17b4512d37b5ae2f7680ef5fb964aed' },
-  { name: 'Final Victor',                         level: 80, rarity: 4, uncap: 1, type: 'Hunt',         portrait: 'u3efnc/3fc88f4d3d83fd83ce8315d366e99b24' },
   { name: 'Texture of Memories',                  level: 80, rarity: 5, uncap: 5, type: 'Preservation', portrait: 'ud9dkb/817f2e4719fcf01d0a5b0a83f89c863f' },
   { name: 'The Birth of the Self',                level: 80, rarity: 4, uncap: 4, type: 'Erudition',    portrait: 'u642mb/52de19739406be61c8685eb3be7e493c' },
   { name: 'The Seriousness of Breakfast',         level: 80, rarity: 4, uncap: 3, type: 'Erudition',    portrait: 'ud64eb/cab9103e1fd3e69158fa2735e80046a1' },
