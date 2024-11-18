@@ -56,7 +56,7 @@ const characters = [
   { id: 'Xiangling',  level: 90, rarity: 4, uncap: 6, type: 'Pole',     element: 'Pyro' },
   { id: 'Xingqiu',    level: 90, rarity: 4, uncap: 6, type: 'Sword',    element: 'Hydro' },
   { id: 'Xinyan',     level: 50, rarity: 4, uncap: 5, type: 'Claymore', element: 'Pyro' },
-  { id: 'Yaoyao',     level: 50, rarity: 4, uncap: 1, type: 'Pole',     element: 'Dendro' },
+  { id: 'Yaoyao',     level: 90, rarity: 4, uncap: 1, type: 'Pole',     element: 'Dendro' },
   { id: 'Yelan',      level: 90, rarity: 5, uncap: 0, type: 'Pole',     element: 'Hydro' },
   { id: 'Yunjin',     level: 50, rarity: 4, uncap: 2, type: 'Pole',     element: 'Geo',     name: 'Yun Jin' },
 ];
