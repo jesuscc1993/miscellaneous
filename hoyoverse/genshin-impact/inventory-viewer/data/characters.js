@@ -45,7 +45,7 @@ const characters = [
   { id: 'Razor',      level: 50, rarity: 4, uncap: 6, type: 'Claymore', element: 'Electro' },
   { id: 'Rosaria',    level: 80, rarity: 4, uncap: 2, type: 'Pole',     element: 'Cryo' },
   { id: 'Sara',       level: 80, rarity: 4, uncap: 2, type: 'Bow',      element: 'Electro', fullName: 'Kujou Sara' },
-  { id: 'Sayu',       level: 50, rarity: 4, uncap: 5, type: 'Claymore', element: 'Anemo' },
+  { id: 'Sayu',       level: 50, rarity: 4, uncap: 6, type: 'Claymore', element: 'Anemo' },
   { id: 'Shenhe',     level: 90, rarity: 5, uncap: 0, type: 'Pole',     element: 'Cryo' },
   { id: 'Shougun',    level: 90, rarity: 5, uncap: 0, type: 'Pole',     element: 'Electro', name: 'Shogun', fullName: 'Raiden Shogun' },
   { id: 'Sucrose',    level: 60, rarity: 4, uncap: 6, type: 'Catalyst', element: 'Anemo' },
