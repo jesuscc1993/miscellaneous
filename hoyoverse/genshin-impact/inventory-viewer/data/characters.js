@@ -19,10 +19,10 @@ const characters = [
   { id: 'Feiyan',     level: 80, rarity: 4, uncap: 6, type: 'Catalyst', element: 'Pyro',    name: 'Yanfei' },
   { id: 'Fischl',     level: 80, rarity: 4, uncap: 6, type: 'Bow',      element: 'Electro' },
   { id: 'Freminet',   level: 50, rarity: 4, uncap: 1, type: 'Claymore', element: 'Cryo',    portrait: 'uceddf/7ca0ad25c2cbb36cd55a8a19c1b2a39f' },
-  { id: 'Gaming',     level: 50, rarity: 4, uncap: 2, type: 'Claymore', element: 'Pyro',    portrait: 'u757vf/5caf783cd8140c2f075be59c1fd0e952' },
+  { id: 'Gaming',     level: 50, rarity: 4, uncap: 3, type: 'Claymore', element: 'Pyro',    portrait: 'u757vf/5caf783cd8140c2f075be59c1fd0e952' },
   { id: 'Ganyu',      level: 90, rarity: 5, uncap: 0, type: 'Bow',      element: 'Cryo' },
   { id: 'Gorou',      level: 50, rarity: 4, uncap: 1, type: 'Bow',      element: 'Geo' },
-  { id: 'Heizo',      level: 50, rarity: 4, uncap: 3, type: 'Catalyst', element: 'Anemo',   name: 'Heizou', fullName: 'Shikanoin Heizou' },
+  { id: 'Heizo',      level: 50, rarity: 4, uncap: 6, type: 'Catalyst', element: 'Anemo',   name: 'Heizou', fullName: 'Shikanoin Heizou' },
   { id: 'Kachina',    level: 50, rarity: 4, uncap: 1, type: 'Pole',     element: 'Geo',     portrait: 'u9b0pg/65bda5c712894dedc44a5b7f0e2560ff' },
   { id: 'Kaeya',      level: 50, rarity: 4, uncap: 1, type: 'Sword',    element: 'Cryo' },
   { id: 'Kaveh',      level: 50, rarity: 4, uncap: 3, type: 'Claymore', element: 'Dendro',  portrait: 'u13fig/a83f0cc12f6e5f83fda34182a0303592' },
@@ -40,7 +40,7 @@ const characters = [
   { id: 'Ningguang',  level: 80, rarity: 4, uncap: 6, type: 'Pole',     element: 'Geo' },
   { id: 'Noel',       level: 80, rarity: 4, uncap: 6, type: 'Claymore', element: 'Geo',     name: 'Noelle' },
   { id: 'PlayerGirl', level: 80, rarity: 5, uncap: 6, type: 'Sword',    element: 'Many',    name: 'Tabibito' },
-  { id: 'Qin',        level: 80, rarity: 5, uncap: 0, type: 'Sword',    element: 'Anemo',   name: 'Jean' },
+  { id: 'Qin',        level: 80, rarity: 5, uncap: 3, type: 'Sword',    element: 'Anemo',   name: 'Jean' },
   { id: 'Qiqi',       level: 80, rarity: 5, uncap: 0, type: 'Sword',    element: 'Cryo' },
   { id: 'Razor',      level: 50, rarity: 4, uncap: 6, type: 'Claymore', element: 'Electro' },
   { id: 'Rosaria',    level: 80, rarity: 4, uncap: 2, type: 'Pole',     element: 'Cryo' },
@@ -56,9 +56,10 @@ const characters = [
   { id: 'Xiangling',  level: 90, rarity: 4, uncap: 6, type: 'Pole',     element: 'Pyro' },
   { id: 'Xingqiu',    level: 90, rarity: 4, uncap: 6, type: 'Sword',    element: 'Hydro' },
   { id: 'Xinyan',     level: 50, rarity: 4, uncap: 5, type: 'Claymore', element: 'Pyro' },
-  { id: 'Yaoyao',     level: 90, rarity: 4, uncap: 1, type: 'Pole',     element: 'Dendro' },
+  { id: 'Yaoyao',     level: 90, rarity: 4, uncap: 3, type: 'Pole',     element: 'Dendro' },
   { id: 'Yelan',      level: 90, rarity: 5, uncap: 0, type: 'Pole',     element: 'Hydro' },
   { id: 'Yunjin',     level: 50, rarity: 4, uncap: 2, type: 'Pole',     element: 'Geo',     name: 'Yun Jin' },
+  { id: 'Zhongli',    level: 50, rarity: 5, uncap: 0, type: 'Pole',     element: 'Geo',     portrait: 'u3ce5g/ec241c25f9edc77ceac671e8d8f90e2c' },
 ];
 
 /* https://act.hoyolab.com/ys/event/calculator-sea/index.html */
