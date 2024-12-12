@@ -59,7 +59,7 @@ const characters = [
   { id: 'Yaoyao',     level: 90, rarity: 4, uncap: 3, type: 'Pole',     element: 'Dendro' },
   { id: 'Yelan',      level: 90, rarity: 5, uncap: 0, type: 'Pole',     element: 'Hydro' },
   { id: 'Yunjin',     level: 50, rarity: 4, uncap: 2, type: 'Pole',     element: 'Geo',     name: 'Yun Jin' },
-  { id: 'Zhongli',    level: 50, rarity: 5, uncap: 0, type: 'Pole',     element: 'Geo',     portrait: 'u3ce5g/ec241c25f9edc77ceac671e8d8f90e2c' },
+  { id: 'Zhongli',    level: 70, rarity: 5, uncap: 0, type: 'Pole',     element: 'Geo',     portrait: 'u3ce5g/ec241c25f9edc77ceac671e8d8f90e2c' },
 ];
 
 /* https://act.hoyolab.com/ys/event/calculator-sea/index.html */

@@ -11,7 +11,7 @@ const weapons = [
   { id: 'Champion',      level: 90, rarity: 4, uncap: 5, type: 'Claymore', name: '"Ultimate Overlord\'s Mega Magic Sword"', portrait: 'u1536f/28a736c7b99f254c4fd6ca20e7f3e917' },
   { id: 'Deshret',       level: 90, rarity: 5, uncap: 1, type: 'Sword',    name: 'Key of Khaj-Nisut', portrait: 'u9b0pg/7094520e827afd5c9f358a94bec84966' },
   { id: 'Dvalin',        level: 90, rarity: 5, uncap: 1, type: 'Catalyst', name: "Skyward Atlas" },
-  { id: 'Dvalin',        level: 90, rarity: 5, uncap: 1, type: 'Pole',     name: "Skyward Spine" },
+  { id: 'Dvalin',        level: 90, rarity: 5, uncap: 2, type: 'Pole',     name: "Skyward Spine" },
   { id: 'Exotic',        level: 90, rarity: 4, uncap: 5, type: 'Bow',      name: 'Composite Bow' },
   { id: 'Exotic',        level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Mappa Mare' },
   { id: 'Exotic',        level: 90, rarity: 4, uncap: 5, type: 'Pole',     name: 'Crescent Pike' },
