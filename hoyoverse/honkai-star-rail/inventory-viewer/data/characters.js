@@ -8,7 +8,7 @@ const characters = [
   { name: 'Dan Heng',     level: 40,  rarity: 4, uncap: 2, type: 'Hunt',          element: 'Wind',      portrait: 'ua57cb/f3a8eeefd215585ed00e9f46b01fec3a' },
   { name: 'Dr. Ratio',    level: 80,  rarity: 5, uncap: 0, type: 'Hunt',          element: 'Imaginary', portrait: 'u17ehb/bf890bf87a5e4a6581edc893971fbc59' },
   { name: 'Feixiao',      level: 80,  rarity: 5, uncap: 0, type: 'Hunt',          element: 'Wind',      portrait: 'ufe9lc/0a2376cdb8455822569421cb4a73b317' },
-  { name: 'Fugue',        level: 20,  rarity: 5, uncap: 0, type: 'Nihility',      element: 'Fire',      portrait: 'u98dvc/1e1abd860a3572e3d65f38c15fabfdda' },
+  { name: 'Fugue',        level: 80,  rarity: 5, uncap: 0, type: 'Nihility',      element: 'Fire',      portrait: 'u98dvc/1e1abd860a3572e3d65f38c15fabfdda' },
   { name: 'Gallagher',    level: 40,  rarity: 4, uncap: 6, type: 'Abundance',     element: 'Fire',      portrait: 'u44f0b/92fcaf7d19ee4e10a2f6d8b15010e70e' },
   { name: 'Gepard',       level: 80,  rarity: 5, uncap: 0, type: 'Preservation',  element: 'Ice',       portrait: 'ua57cb/e52ed26b017cd0d7274db7c9d50273b1' },
   { name: 'Guinaifen',    level: 40,  rarity: 4, uncap: 1, type: 'Nihility',      element: 'Fire',      portrait: 'ua57cb/248c828e245022a1cbfce496fef9438d' },

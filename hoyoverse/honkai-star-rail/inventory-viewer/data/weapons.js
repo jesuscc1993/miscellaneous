@@ -5,6 +5,7 @@ const weapons = [
   { name: "On the Fall of an Aeon",               level: 80, rarity: 5, uncap: 1, type: 'Destruction',  portrait: 'ufe9lc/f4306a83263ce1e7b0106125374a1262' },
   { name: 'Chorus',                               level: 60, rarity: 3, uncap: 5, type: 'Harmony',      portrait: 'u17ehb/9481816b3907d41d32bd1cae8133461b' },
   { name: 'Cruising in the Stellar Sea',          level: 80, rarity: 5, uncap: 5, type: 'The Hunt',     portrait: 'ud9dkb/55d7ea27e1ab8446858bbf61942199c4' },
+  { name: 'Solitary Healing',                     level:  1, rarity: 5, uncap: 5, type: 'Nihility',     portrait: 'u98dvc/845cab459bd6c1b3e750e32a6c251237' },
   { name: 'Dance! Dance! Dance!',                 level: 80, rarity: 4, uncap: 1, type: 'Harmony',      portrait: 'u17ehb/52d770fa100b92968f199f0cf83db7e8' },
   { name: 'Day One of My New Life',               level:  1, rarity: 4, uncap: 1, type: 'Preservation', portrait: 'ud82rb/5e15e1882aef81ea2f50074a3e5b1d90' },
   { name: 'Dreamville Adventure',                 level:  1, rarity: 4, uncap: 2, type: 'Harmony',      portrait: 'ud82rb/0a5c3d64ebeb6687ca0c9eb5f0421576' },
