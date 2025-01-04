@@ -6,6 +6,13 @@
       { "name": "Juufuutei Raden", "keyword": "Raden" },
       { "name": "Otonose Kanade", "keyword": "Kanade" },
       { "name": "Todoroki Hajime" }
+    ],
+    "FLOW GLOW": [
+      { "name": "Isaki Riona" },
+      { "name": "Kikirara Vivi" },
+      { "name": "Koganei Niko" },
+      { "name": "Mizumiya Su" },
+      { "name": "Rindo Chihaya" }
     ]
   },
   "JP": {
@@ -90,7 +97,7 @@
       { "name": "Watson Amelia", "keyword": "Ame", "graduated": true }
     ],
     "Promise": [
-      { "name": "Ceres Fauna", "keyword": "Fauna" },
+      { "name": "Ceres Fauna", "keyword": "Fauna", "graduated": true },
       { "name": "Hakos Baelz", "keyword": "Bae" },
       { "name": "IRyS", "keyword": "IRyS" },
       { "name": "Nanashi Mumei", "keyword": "Mumei" },
