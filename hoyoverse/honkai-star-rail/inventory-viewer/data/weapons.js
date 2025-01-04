@@ -3,6 +3,7 @@ const weapons = [
   { name: "Destiny's Threads Forewoven",          level:  1, rarity: 4, uncap: 1, type: 'Abundance',    portrait: 'u44f0b/f0f2164b599ce5f20b936b79d97be96f' },
   { name: "It's Showtime",                        level:  1, rarity: 4, uncap: 1, type: 'Nihility',     portrait: 'u44f0b/b12754883b18280109f776f7855cf064' },
   { name: "On the Fall of an Aeon",               level: 80, rarity: 5, uncap: 1, type: 'Destruction',  portrait: 'ufe9lc/f4306a83263ce1e7b0106125374a1262' },
+  { name: "Something Irreplaceable",              level: 80, rarity: 5, uncap: 1, type: 'Destruction',  portrait: 'u98dvc/0a034f90ac18dab24070c0ddf974d50f' },
   { name: 'Chorus',                               level: 60, rarity: 3, uncap: 5, type: 'Harmony',      portrait: 'u17ehb/9481816b3907d41d32bd1cae8133461b' },
   { name: 'Cruising in the Stellar Sea',          level: 80, rarity: 5, uncap: 5, type: 'The Hunt',     portrait: 'ud9dkb/55d7ea27e1ab8446858bbf61942199c4' },
   { name: 'Solitary Healing',                     level:  1, rarity: 5, uncap: 5, type: 'Nihility',     portrait: 'u98dvc/845cab459bd6c1b3e750e32a6c251237' },
