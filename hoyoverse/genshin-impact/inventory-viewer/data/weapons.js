@@ -12,7 +12,7 @@ const weapons = [
   { id: 'Deshret',       level: 90, rarity: 5, uncap: 1, type: 'Sword',    name: 'Key of Khaj-Nisut', portrait: 'u9b0pg/7094520e827afd5c9f358a94bec84966' },
   { id: 'Dvalin',        level: 90, rarity: 5, uncap: 1, type: 'Catalyst', name: "Skyward Atlas" },
   { id: 'Dvalin',        level: 90, rarity: 5, uncap: 2, type: 'Pole',     name: "Skyward Spine" },
-  { id: 'Estoc',         level: 60, rarity: 5, uncap: 1, type: 'Sword',    name: 'Absolution', portrait: 'ub1ajh/36815e76c775c2a0918da939262d8ef8' },
+  { id: 'Estoc',         level: 60, rarity: 5, uncap: 2, type: 'Sword',    name: 'Absolution', portrait: 'ub1ajh/36815e76c775c2a0918da939262d8ef8' },
   { id: 'Exotic',        level: 90, rarity: 4, uncap: 5, type: 'Bow',      name: 'Composite Bow' },
   { id: 'Exotic',        level: 90, rarity: 4, uncap: 5, type: 'Catalyst', name: 'Mappa Mare' },
   { id: 'Exotic',        level: 90, rarity: 4, uncap: 5, type: 'Pole',     name: 'Crescent Pike' },
