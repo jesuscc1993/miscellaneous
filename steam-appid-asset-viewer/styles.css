@@ -20,6 +20,7 @@ input {
 button,
 input {
   background: #26282e;
+  margin: 0.25rem;
   padding: 0.25rem 0.5rem;
 }
 
