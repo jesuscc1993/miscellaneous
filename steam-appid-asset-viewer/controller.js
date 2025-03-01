@@ -1,6 +1,6 @@
 function updateImages(event) {
-  event.preventDefault();
-  event.stopPropagation();
+  event?.preventDefault();
+  event?.stopPropagation();
 
   const appId = parseInt(document.getElementById('appIdInput').value, 10);
 
