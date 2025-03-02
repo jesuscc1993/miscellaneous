@@ -5,8 +5,16 @@ html {
 body {
   background: #2c323a;
   font-family: sans-serif;
-  margin: 0;
+  margin: 0 0 25vh;
   text-align: center;
+}
+
+a {
+  color: white;
+  transition: color 150ms;
+}
+a:hover {
+  color: lightblue;
 }
 
 body,
@@ -33,7 +41,6 @@ img {
 }
 
 .links-container a {
-  color: white;
   font-size: 1.5rem;
   padding: 0 0.25rem;
 }
