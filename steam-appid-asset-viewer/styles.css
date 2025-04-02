@@ -32,6 +32,14 @@ input {
   padding: 0.25rem 0.5rem;
 }
 
+button {
+  cursor: pointer;
+}
+
+h1 {
+  margin: 1rem 0;
+}
+
 h2:first-child {
   margin-top: 0;
 }
@@ -40,9 +48,23 @@ img {
   max-width: 100%;
 }
 
+.links-container {
+  display: flex;
+  justify-content: center;
+}
 .links-container a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: s;
   font-size: 1.5rem;
   padding: 0 0.25rem;
+}
+.links-container .thumb {
+  width: 5vw;
+  height: 5vw;
+  object-fit: contain;
+  margin-top: .25rem;
 }
 
 .asset-group {

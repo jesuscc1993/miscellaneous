@@ -1,6 +1,8 @@
 const storeAnchor = document.getElementById('storeAnchor');
 const assetImgAnchors = document.querySelectorAll('.asset-group a');
-const assetImgs = document.querySelectorAll('.asset-group a img');
+const assetImgs = document.querySelectorAll(
+  '.links-container .thumb, .asset-group a img'
+);
 
 const updateImages = (event) => {
   event?.preventDefault();
