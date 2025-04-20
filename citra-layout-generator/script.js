@@ -227,16 +227,17 @@ const generateSingleScreenLayout = () => {
   return true;
 };
 
+const getLayoutType = () => {
+  return document.querySelector('input[name="layout-type"]:checked').value;
+};
+
 const generateLayout = () => {
-  const layoutType = document.querySelector(
-    'input[name="layout-type"]:checked'
-  ).value;
   const layouts = {
     vertical: generateVerticalLayout,
     single: generateSingleScreenLayout,
     horizontal: generateHorizontalLayout,
   };
-  const success = layouts[layoutType]();
+  const success = layouts[getLayoutType()]();
   if (success) {
     outputHeaderNode.scrollIntoView();
   }
@@ -354,13 +355,20 @@ const swapMonitorSizes = () => {
   monitorHeightEl.value = width;
 };
 
-const setTopSize = (multiplier) => {
-  let _multiplier = multiplier;
+const setTopSize = (multiplier, auto) => {
+  const layout = getLayoutType();
 
+  const subtractedWidth =
+    layout === 'horizontal' && auto === true ? bottomWidthEl.value : 0;
+
+  const subtractedHeight =
+    layout === 'vertical' && auto === true ? bottomHeightEl.value : 0;
+
+  let _multiplier = multiplier;
   if (!_multiplier) {
     _multiplier = Math.min(
-      monitorWidthEl.value / defaultTopWidth,
-      monitorHeightEl.value / defaultTopHeight
+      (monitorWidthEl.value - subtractedWidth) / defaultTopWidth,
+      (monitorHeightEl.value - subtractedHeight) / defaultTopHeight
     );
   }
 
@@ -368,13 +376,20 @@ const setTopSize = (multiplier) => {
   topHeightEl.value = defaultTopHeight * _multiplier;
 };
 
-const setBottomSize = (multiplier) => {
-  let _multiplier = multiplier;
+const setBottomSize = (multiplier, auto) => {
+  const layout = getLayoutType();
 
+  const subtractedWidth =
+    layout === 'horizontal' && auto === true ? topWidthEl.value : 0;
+
+  const subtractedHeight =
+    layout === 'vertical' && auto === true ? topHeightEl.value : 0;
+
+  let _multiplier = multiplier;
   if (!_multiplier) {
     _multiplier = Math.min(
-      monitorWidthEl.value / defaultBottomWidth,
-      monitorHeightEl.value / defaultBottomHeight
+      (monitorWidthEl.value - subtractedWidth) / defaultBottomWidth,
+      (monitorHeightEl.value - subtractedHeight) / defaultBottomHeight
     );
   }
 
