@@ -18,6 +18,8 @@ const updateImages = (event) => {
   });
 
   storeAnchor.href = storeAnchor.href.replace(/\/\d+/, `\/${appId}`);
+
+  document.body.style.backgroundImage = `url(https://cdn.cloudflare.steamstatic.com/steam/apps/${appId}/page_bg_generated_v6b.jpg)`;
 };
 
 const getUpdatedAppIdUrl = (appId, url) => {
