@@ -356,16 +356,16 @@ const swapMonitorSizes = () => {
 };
 
 const setTopSize = (multiplier, auto) => {
-  const layout = getLayoutType();
-
-  const subtractedWidth =
-    layout === 'horizontal' && auto === true ? bottomWidthEl.value : 0;
-
-  const subtractedHeight =
-    layout === 'vertical' && auto === true ? bottomHeightEl.value : 0;
-
   let _multiplier = multiplier;
   if (!_multiplier) {
+    const layout = getLayoutType();
+
+    const subtractedWidth =
+      layout === 'horizontal' && auto === true ? bottomWidthEl.value : 0;
+
+    const subtractedHeight =
+      layout === 'vertical' && auto === true ? bottomHeightEl.value : 0;
+
     _multiplier = Math.min(
       (monitorWidthEl.value - subtractedWidth) / defaultTopWidth,
       (monitorHeightEl.value - subtractedHeight) / defaultTopHeight
@@ -377,16 +377,16 @@ const setTopSize = (multiplier, auto) => {
 };
 
 const setBottomSize = (multiplier, auto) => {
-  const layout = getLayoutType();
-
-  const subtractedWidth =
-    layout === 'horizontal' && auto === true ? topWidthEl.value : 0;
-
-  const subtractedHeight =
-    layout === 'vertical' && auto === true ? topHeightEl.value : 0;
-
   let _multiplier = multiplier;
   if (!_multiplier) {
+    const layout = getLayoutType();
+
+    const subtractedWidth =
+      layout === 'horizontal' && auto === true ? topWidthEl.value : 0;
+
+    const subtractedHeight =
+      layout === 'vertical' && auto === true ? topHeightEl.value : 0;
+
     _multiplier = Math.min(
       (monitorWidthEl.value - subtractedWidth) / defaultBottomWidth,
       (monitorHeightEl.value - subtractedHeight) / defaultBottomHeight
