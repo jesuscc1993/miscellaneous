@@ -60,7 +60,7 @@ a:hover {
 }
 .talent.graduated:after {
   --size: 56px;
-  --spacing: -8px;
+  --spacing: -10px;
   background-image: url(assets/images/graduation_hat.png);
   background-size: contain;
   content: '';
