@@ -32,7 +32,7 @@
     ],
     "Gen 2": [
       { "name": "Minato Aqua", "keyword": "Aqua", "graduated": true },
-      { "name": "Murasaki Shion", "keyword": "Shion" },
+      { "name": "Murasaki Shion", "keyword": "Shion", "graduated": true },
       { "name": "Nakiri Ayame", "keyword": "Ayame" },
       { "name": "Oozora Subaru", "keyword": "Subaru" },
       { "name": "Yuzuki Choco", "keyword": "Choco" }
@@ -67,7 +67,7 @@
       { "name": "Hakui Koyori", "keyword": "Koyori" },
       { "name": "Kazama Iroha", "keyword": "Iroha" },
       { "name": "Laplus Darkness", "keyword": "Laplus" },
-      { "name": "Sakamata Chloe", "keyword": "Chloe" },
+      { "name": "Sakamata Chloe", "keyword": "Chloe", "graduated": true },
       { "name": "Takane Lui", "keyword": "Lui" }
     ]
   },
@@ -90,7 +90,7 @@
   },
   "EN": {
     "Myth": [
-      { "name": "Gawr Gura", "keyword": "Gura" },
+      { "name": "Gawr Gura", "keyword": "Gura", "graduated": true },
       { "name": "Mori Calliope", "keyword": "Calli" },
       { "name": "Ninomae Ina'nis", "keyword": "Ina" },
       { "name": "Takanashi Kiara", "keyword": "Kiara" },
@@ -100,7 +100,7 @@
       { "name": "Ceres Fauna", "keyword": "Fauna", "graduated": true },
       { "name": "Hakos Baelz", "keyword": "Bae" },
       { "name": "IRyS", "keyword": "IRyS" },
-      { "name": "Nanashi Mumei", "keyword": "Mumei" },
+      { "name": "Nanashi Mumei", "keyword": "Mumei", "graduated": true },
       { "name": "Ouro Kronii", "keyword": "Kronii" },
       { "name": "Tsukumo Sana", "keyword": "Sana", "graduated": true }
     ],
