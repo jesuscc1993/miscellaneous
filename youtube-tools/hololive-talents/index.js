@@ -6,6 +6,7 @@ const blacklist = [
   'reaction',
   'ru',
   'russian',
+  'shorts',
   'spanish',
   'subespañol',
   'vietsub',
@@ -35,7 +36,7 @@ const initialize = () => {
       const countryLinksContainer = jQuery(`<span></span>`);
 
       linksContainer.append(`
-        <a href="#${sanitizeSpaces(countryKey)}">${countryKey}</a> : 
+        <a href="#${sanitizeSpaces(countryKey)}">${countryKey}</a> :
       `);
 
       Object.keys(countryMap)
