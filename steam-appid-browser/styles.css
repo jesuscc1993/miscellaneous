@@ -1,6 +1,6 @@
 :root {
-  --padding: 12px;
-  --gap: 8px;
+  --padding: 24px;
+  --gap: 16px;
   --cols: 5;
 }
 body {
@@ -27,9 +27,9 @@ a {
   color: white;
   text-align: center;
   text-decoration: none;
+  margin-bottom: -0.33em;
 }
 img {
-  aspect-ratio: 460 / 215;
   background: #fff2;
   width: 100%;
 }
