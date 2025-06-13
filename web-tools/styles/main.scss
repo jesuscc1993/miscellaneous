@@ -9,6 +9,7 @@ $min-content-width: 1024px;
 /* chrome */
 html {
   --active-bg-color: #8bb5f829;
+  --cr-button-border-radius: 16px;
   --cr-card-background-color: #292a2d;
   --cr-card-border-radius: 8px;
   --cr-disabled-opacity: 0.38;
@@ -34,7 +35,13 @@ body {
 }
 
 h1 {
-  font-size: 170%;
+  font-size: 1.25rem;
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: normal;
 }
 
 a,
@@ -98,30 +105,6 @@ textarea {
 }
 .page-header img {
   margin-right: 12px;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar,
-::-webkit-scrollbar-corner,
-::-webkit-scrollbar-track-piece {
-  background: transparent;
-}
-
-::-webkit-resizer {
-  border: 8px solid transparent;
-  border-right-color: #444;
-  border-bottom-color: #444;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 8px;
-  border: 3px solid #1d1d1f;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #444;
-  border-width: 2px;
 }
 
 /* site */
@@ -270,7 +253,7 @@ textarea {
 button,
 .btn {
   background: transparent;
-  border-radius: var(--cr-input-border-radius);
+  border-radius: var(--cr-button-border-radius);
   border: 1px solid var(--google-grey-700);
   color: var(--google-blue-300);
   padding: 8px 16px;
@@ -286,20 +269,15 @@ button,
       background: var(--active-bg-color);
     }
   }
-  &:disabled {
-    opacity: 0.33;
+  &.invisible {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
 .card {
   max-width: 100%;
   margin: $content-margin 0;
-
-  // .card-header,
-  // .card-content,
-  // .card-footer {
-
-  // }
 
   .card-header {
     font-size: 107.6923%;
@@ -314,9 +292,10 @@ button,
 
     .card-title {
       flex: 1;
+      gap: 0.5rem;
 
       small {
-        opacity: var(--cr-disabled-opacity);
+        opacity: 0.8;
       }
     }
 
@@ -335,5 +314,21 @@ button,
 
   .card-footer {
     padding: 12px var(--cr-section-padding);
+
+    button,
+    .btn {
+      min-width: 68px;
+    }
+  }
+}
+
+/* accessibility */
+
+*:not([type='checkbox']):focus,
+.form-input:has([type='checkbox']:focus) {
+  outline: 2px solid #fffd;
+
+  &.form-input {
+    outline-offset: 2px;
   }
 }

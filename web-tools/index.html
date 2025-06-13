@@ -16,7 +16,7 @@
     </header>
 
     <div class="border-bottom">
-      <div class="content-wrapper">
+      <nav class="content-wrapper">
         <ul class="anchor-list">
           <li><a href="#htmlCleaner">HTML cleaner</a></li>
           <li><a href="#htmlToString">HTML to string</a></li>
@@ -32,20 +32,20 @@
           <li><a href="#textCaseTransformer">Text case transformer</a></li>
           <li><a href="#triangularSum">Triangular sum</a></li>
         </ul>
-      </div>
+      </nav>
     </div>
 
     <div class="content-wrapper">
       <!-- HTML cleaner -->
-      <div id="htmlCleaner" class="card">
+      <section id="htmlCleaner" class="card">
         <div class="card-header">
-          <span class="card-title"
-            >HTML cleaner&nbsp;
+          <span class="card-title">
+            <h2>HTML cleaner</h2>
             <small
               title="Removes empty tags (p), redundant closing + opening tags (em, strong) and consecutive spaces/newlines and replaces HTTP with HTTPS."
-              >(corrects a few common issues resulting of HTML
-              conversion)</small
-            ></span
+            >
+              Corrects a few common issues resulting of HTML conversion
+            </small></span
           >
         </div>
 
@@ -88,14 +88,14 @@
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- HTML to string -->
-      <div id="htmlToString" class="card">
+      <section id="htmlToString" class="card">
         <div class="card-header">
-          <span class="card-title">HTML to string</span>
+          <span class="card-title"><h2>HTML to string</h2></span>
 
-          <div>
+          <div class="form-input">
             <label for="htmlToStringDoubleQuotes">
               Use double quotes ( " )
             </label>
@@ -146,12 +146,12 @@
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- JSON sorter -->
-      <div id="jsonSorter" class="card">
+      <section id="jsonSorter" class="card">
         <div class="card-header">
-          <span class="card-title">JSON sorter</span>
+          <span class="card-title"><h2>JSON sorter</h2></span>
         </div>
 
         <div class="card-content">
@@ -193,12 +193,12 @@
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- JSON to *.properties -->
-      <div id="jsonToProperties" class="card">
+      <section id="jsonToProperties" class="card">
         <div class="card-header">
-          <span class="card-title"> JSON to *.properties </span>
+          <span class="card-title"><h2>JSON to *.properties</h2></span>
         </div>
 
         <div class="card-content">
@@ -246,17 +246,17 @@
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- List sorter (inline) -->
-      <div id="inlineListSorter" class="card">
+      <section id="inlineListSorter" class="card">
         <div class="card-header">
           <span class="card-title">
-            List sorter&nbsp;
-            <small>(inline; splits by comma or space, but never both)</small>
+            <h2>List sorter (inline)</h2>
+            <small>Splits by comma or space, but never both</small>
           </span>
 
-          <div>
+          <div class="form-input">
             <label for="inlineListSorterDiscardDuplicates">
               Discard duplicates
             </label>
@@ -311,17 +311,17 @@
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- List sorter (multiline) -->
-      <div id="multilineListSorter" class="card">
+      <section id="multilineListSorter" class="card">
         <div class="card-header">
           <span class="card-title">
-            List sorter&nbsp;
-            <small>(multiline; splits by newline)</small>
+            <h2>List sorter (multiline)</h2>
+            <small>Splits by newline</small>
           </span>
 
-          <div>
+          <div class="form-input">
             <label for="multilineListSorterDiscardDuplicates">
               Discard duplicates
             </label>
@@ -378,14 +378,14 @@
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- MD table to CSV -->
-      <div id="tableToCsv" class="card">
+      <section id="tableToCsv" class="card">
         <div class="card-header">
           <span class="card-title">
-            MD table to CSV&nbsp;
-            <small>(copy rows only; do not copy headers)</small>
+            <h2>MD table to CSV</h2>
+            <small>Paste rows only; do not paste headers</small>
           </span>
         </div>
 
@@ -428,14 +428,14 @@
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- MD table to JSON -->
-      <div id="tableToJson" class="card">
+      <section id="tableToJson" class="card">
         <div class="card-header">
           <span class="card-title">
-            MD table to JSON&nbsp;
-            <small>(copy rows only; do not copy headers)</small>
+            <h2>MD table to JSON</h2>
+            <small>Paste rows only; do not paste headers</small>
           </span>
         </div>
 
@@ -478,12 +478,12 @@
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Regex replacer -->
-      <div id="regexReplacer" class="card">
+      <section id="regexReplacer" class="card">
         <div class="card-header">
-          <span class="card-title">Regex replacer</span>
+          <span class="card-title"><h2>Regex replacer</h2></span>
         </div>
 
         <div class="card-content">
@@ -542,7 +542,7 @@
 
         <div class="card-footer">
           <div class="center-contents">
-            <button type="button" disabled>Paste</button>
+            <button type="button" class="invisible">Paste</button>
             <button
               type="button"
               onclick="clearInputs(['#regexReplacerInput', '#regexpInput', '#regexpOptionsInput', '#regexReplacementInput', '#regexReplacerOutput'])"
@@ -554,12 +554,12 @@
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Rule of three -->
-      <div id="ruleOfThree" class="card">
+      <section id="ruleOfThree" class="card">
         <div class="card-header">
-          <span class="card-title">Rule of three</span>
+          <span class="card-title"><h2>Rule of three</h2></span>
         </div>
 
         <div class="card-content">
@@ -617,7 +617,7 @@
 
         <div class="card-footer">
           <div class="center-contents">
-            <button type="button" disabled>Paste</button>
+            <button type="button" class="invisible">Paste</button>
             <button
               type="button"
               onclick="clearInputs(['#ruleOfThreeAxInput', '#ruleOfThreeAyInput', '#ruleOfThreeBxInput', '#ruleOfThreeByInput'])"
@@ -629,17 +629,17 @@
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- String builder -->
-      <div id="stringBuilder" class="card">
+      <section id="stringBuilder" class="card">
         <div class="card-header">
           <span class="card-title">
-            String builder&nbsp;
-            <small>(for Java, mostly)</small>
+            <h2>String builder</h2>
+            <small>For Java, mostly</small>
           </span>
 
-          <div>
+          <div class="form-input">
             <label for="stringBuilderKeepLineBreaks"> Keep line breaks </label>
             <input
               id="stringBuilderKeepLineBreaks"
@@ -688,14 +688,14 @@
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Text case transformer -->
-      <div id="textCaseTransformer" class="card">
+      <section id="textCaseTransformer" class="card">
         <div class="card-header">
           <span class="card-title">
-            Text case transformer&nbsp;
-            <small>(type into any of the inputs)</small>
+            <h2>Text case transformer</h2>
+            <small>Type into any of the inputs</small>
           </span>
         </div>
 
@@ -775,13 +775,14 @@
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Triangular Sum -->
-      <div id="triangularSum" class="card">
+      <section id="triangularSum" class="card">
         <div class="card-header">
-          <span class="card-title"
-            >Triangular Sum&nbsp; <small>1 + 2 + 3...</small></span
+          <span class="card-title">
+            <h2>Triangular Sum</h2>
+            <small>1 + 2 + 3...</small></span
           >
         </div>
 
@@ -827,7 +828,7 @@
 
         <div class="card-footer">
           <div class="center-contents">
-            <button type="button" disabled>Paste</button>
+            <button type="button" class="invisible">Paste</button>
             <button
               type="button"
               onclick="clearInputs(['#triangularSumStartInput', '#triangularSumEndInput', '#triangularSumOutput'])"
@@ -839,7 +840,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </section>
     </div>
 
     <footer>
