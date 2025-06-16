@@ -130,6 +130,7 @@
             <div class="flex1">
               <textarea
                 id="htmlCleanerInput"
+                aria-label="HTML"
                 placeholder="HTML"
                 rows="8"
                 title="HTML"
@@ -139,6 +140,7 @@
             <div class="flex1">
               <textarea
                 id="htmlCleanerOutput"
+                aria-label="String"
                 placeholder="String"
                 readonly
                 rows="8"
@@ -191,6 +193,7 @@
             <div class="flex1">
               <textarea
                 id="htmlToStringInput"
+                aria-label="HTML"
                 placeholder="HTML"
                 rows="8"
                 title="HTML"
@@ -200,6 +203,7 @@
             <div class="flex1">
               <textarea
                 id="htmlToStringOutput"
+                aria-label="String"
                 placeholder="String"
                 readonly
                 rows="8"
@@ -241,6 +245,7 @@
             <div class="flex1">
               <textarea
                 id="unsortedJsonInput"
+                aria-label="Unordered JSON"
                 placeholder="Unordered JSON"
                 rows="8"
                 title="Unordered JSON"
@@ -250,6 +255,7 @@
             <div class="flex1">
               <textarea
                 id="sortedJsonOutput"
+                aria-label="Ordered JSON"
                 placeholder="Ordered JSON"
                 readonly
                 rows="8"
@@ -291,6 +297,7 @@
             <div class="flex1">
               <textarea
                 id="jsonToPropertiesInput"
+                aria-label="JSON"
                 placeholder="JSON"
                 rows="8"
                 title="JSON"
@@ -300,6 +307,7 @@
             <div class="flex1">
               <textarea
                 id="jsonToPropertiesOutput"
+                aria-label="Properties"
                 placeholder="Properties"
                 readonly
                 rows="8"
@@ -357,6 +365,7 @@
           <div class="flex">
             <textarea
               id="unsortedInlineListInput"
+              aria-label="Unordered inline list"
               placeholder="Unordered inline list"
               rows="4"
               title="Unordered inline list"
@@ -366,6 +375,7 @@
           <div class="flex">
             <textarea
               id="sortedInlineListOutput"
+              aria-label="Ordered inline list"
               placeholder="Ordered inline list"
               readonly
               rows="4"
@@ -423,6 +433,7 @@
             <div class="flex1">
               <textarea
                 id="unsortedMultilineListInput"
+                aria-label="Unordered multiline list"
                 placeholder="Unordered multiline list"
                 rows="8"
                 title="Unordered multiline list"
@@ -432,6 +443,7 @@
             <div class="flex1">
               <textarea
                 id="sortedMultilineListOutput"
+                aria-label="Ordered multiline list"
                 placeholder="Ordered multiline list"
                 readonly
                 rows="8"
@@ -479,6 +491,7 @@
             <div class="flex1">
               <textarea
                 id="tableToCsvInput"
+                aria-label="Table"
                 placeholder="Table"
                 rows="8"
                 title="Table"
@@ -488,6 +501,7 @@
             <div class="flex1">
               <textarea
                 id="tableToCsvOutput"
+                aria-label="CSV"
                 placeholder="CSV"
                 readonly
                 rows="8"
@@ -532,6 +546,7 @@
             <div class="flex1">
               <textarea
                 id="tableToJsonInput"
+                aria-label="Table"
                 placeholder="Table"
                 rows="8"
                 title="Table"
@@ -541,6 +556,7 @@
             <div class="flex1">
               <textarea
                 id="tableToJsonOutput"
+                aria-label="JSON"
                 placeholder="JSON"
                 readonly
                 rows="8"
@@ -582,6 +598,7 @@
             <textarea
               id="regexReplacerInput"
               onkeyup="applyRegexReplacement()"
+              aria-label="Input string"
               placeholder="Input string"
               rows="1"
               title="Input string"
@@ -592,6 +609,7 @@
             <span class="flex1">
               <input
                 id="regexpInput"
+                aria-label="Regex expression"
                 placeholder="Regex expression"
                 title="Regex expression"
                 type="text"
@@ -602,6 +620,7 @@
             <span class="flex1">
               <input
                 id="regexpOptionsInput"
+                aria-label="Regex options (default = gm)"
                 placeholder="Regex options (default = gm)"
                 title="Regex options"
                 type="text"
@@ -613,6 +632,7 @@
           <div class="flex">
             <input
               id="regexReplacementInput"
+              aria-label="Replacement"
               placeholder="Replacement"
               title="Replacement"
               type="text"
@@ -623,6 +643,7 @@
           <div class="flex">
             <textarea
               id="regexReplacerOutput"
+              aria-label="Output string"
               placeholder="Output string"
               readonly
               rows="1"
@@ -659,6 +680,7 @@
               <input
                 id="ruleOfThreeAxInput"
                 class="text-center"
+                aria-label="a * x"
                 placeholder="a * x"
                 title="a * x"
                 type="number"
@@ -672,6 +694,7 @@
               <input
                 id="ruleOfThreeAyInput"
                 class="text-center"
+                aria-label="a * y"
                 placeholder="a * y"
                 title="a * y"
                 type="number"
@@ -684,6 +707,7 @@
               <input
                 id="ruleOfThreeBxInput"
                 class="text-center"
+                aria-label="b * x"
                 placeholder="b * x"
                 title="b * x"
                 type="number"
@@ -697,6 +721,7 @@
               <input
                 id="ruleOfThreeByInput"
                 class="text-center"
+                aria-label="b * y"
                 placeholder="b * y"
                 title="b * y"
                 type="text"
@@ -745,6 +770,7 @@
             <div class="flex1">
               <textarea
                 id="stringBuilderInput"
+                aria-label="Non-string input"
                 placeholder="Non-string input"
                 rows="8"
                 title="Non-string input"
@@ -754,6 +780,7 @@
             <div class="flex1">
               <textarea
                 id="stringBuilderOutput"
+                aria-label="String output"
                 placeholder="String output"
                 readonly
                 rows="8"
@@ -797,6 +824,7 @@
           <div class="flex">
             <input
               id="sentenceCaseInput"
+              aria-label="Sentence case"
               placeholder="Sentence case"
               title="Sentence case"
               type="text"
@@ -806,6 +834,7 @@
           <div class="flex">
             <input
               id="capitalCaseInput"
+              aria-label="Capital case"
               placeholder="Capital case"
               title="Capital case"
               type="text"
@@ -815,6 +844,7 @@
           <div class="flex">
             <input
               id="lowercaseInput"
+              aria-label="Lowercase"
               placeholder="Lowercase"
               title="Lowercase"
               type="text"
@@ -824,6 +854,7 @@
           <div class="flex">
             <input
               id="uppercaseInput"
+              aria-label="Uppercase"
               placeholder="Uppercase"
               title="Uppercase"
               type="text"
@@ -833,6 +864,7 @@
           <div class="flex">
             <input
               id="camelCaseInput"
+              aria-label="Camel case"
               placeholder="Camel case"
               title="Camel case"
               type="text"
@@ -842,6 +874,7 @@
           <div class="flex">
             <input
               id="snakeCaseInput"
+              aria-label="Snake case"
               placeholder="Snake case"
               title="Snake case"
               type="text"
@@ -851,6 +884,7 @@
           <div class="flex">
             <input
               id="kebabCaseInput"
+              aria-label="Kebab case"
               placeholder="Kebab case"
               title="Kebab case"
               type="text"
@@ -893,6 +927,7 @@
               <input
                 id="triangularSumStartInput"
                 class="text-center"
+                aria-label="1 (Start)"
                 placeholder="1 (Start)"
                 title="Start"
                 type="number"
@@ -906,6 +941,7 @@
               <input
                 id="triangularSumEndInput"
                 class="text-center"
+                aria-label="End"
                 placeholder="End"
                 title="End"
                 type="number"
@@ -918,6 +954,7 @@
               <input
                 id="triangularSumOutput"
                 class="text-center"
+                aria-label="Sum"
                 placeholder="Sum"
                 title="Sum"
                 type="number"
