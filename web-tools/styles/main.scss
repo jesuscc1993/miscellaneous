@@ -1,6 +1,6 @@
 $content-padding: 24px;
 $content-margin: 36px;
-$min-content-width: 1024px;
+$max-content-width: 78rem;
 
 * {
   box-sizing: border-box;
@@ -10,15 +10,15 @@ $min-content-width: 1024px;
 html {
   --active-bg-color: #8bb5f829;
   --cr-button-border-color: rgb(4, 125, 183);
-  --cr-button-border-radius: 16px;
+  --cr-button-border-radius: 1.25rem;
   --cr-card-background-color: #292a2d;
-  --cr-card-border-radius: 8px;
+  --cr-card-border-radius: 0.625rem;
   --cr-disabled-opacity: 0.38;
   --cr-elevation-2: #0000004d 0 1px 2px 0, #00000026 0 2px 6px 2px;
   --cr-input-background-color: #0000004d;
   --cr-input-border-radius: 4px;
   --cr-readonly-opacity: 0.66;
-  --cr-section-padding: 20px;
+  --cr-section-padding: 1.5rem;
   --cr-separator-line: 1px solid #ffffff1a;
   --google-blue-300: #8ab4f8;
   --google-grey-200: #e8eaed;
@@ -114,7 +114,7 @@ html {
 }
 
 .content-wrapper {
-  max-width: $min-content-width;
+  max-width: $max-content-width;
   width: 100%;
   margin: auto;
 }
@@ -150,7 +150,7 @@ footer {
 
 ul.anchor-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 170px);
+  grid-template-columns: repeat(auto-fill, 13rem);
   justify-content: center;
 
   font-size: 1.25rem;
@@ -241,7 +241,7 @@ textarea {
   }
 }
 
-@media (max-width: $min-content-width) {
+@media (max-width: $max-content-width) {
   #content-wrapper {
     min-width: 0 !important;
     width: calc(100vw - #{$content-padding} * 2) !important;
@@ -258,7 +258,7 @@ button,
 .btn {
   background: transparent;
   border-radius: var(--cr-button-border-radius);
-  border: 1px solid var(--google-grey-700);
+  border: 0.1rem solid var(--google-grey-700);
   color: var(--google-blue-300);
   padding: 8px 16px;
   transition: 0.2s;
