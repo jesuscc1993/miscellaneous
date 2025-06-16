@@ -250,6 +250,10 @@ textarea {
 
 /* theme */
 
+::placeholder {
+  color: #aaa;
+}
+
 button,
 .btn {
   background: transparent;
