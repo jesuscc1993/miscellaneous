@@ -18,19 +18,95 @@
     <div class="border-bottom">
       <nav class="content-wrapper">
         <ul class="anchor-list">
-          <li><a href="#htmlCleaner">HTML cleaner</a></li>
-          <li><a href="#htmlToString">HTML to string</a></li>
-          <li><a href="#jsonSorter">JSON sorter</a></li>
-          <li><a href="#jsonToProperties">JSON to *.properties</a></li>
-          <li><a href="#inlineListSorter">List sorter (inline)</a></li>
-          <li><a href="#multilineListSorter">List sorter (multiline)</a></li>
-          <li><a href="#tableToCsv">MD table to CSV</a></li>
-          <li><a href="#tableToJson">MD table to JSON</a></li>
-          <li><a href="#regexReplacer">Regex replacer</a></li>
-          <li><a href="#ruleOfThree">Rule of three</a></li>
-          <li><a href="#stringBuilder">String builder</a></li>
-          <li><a href="#textCaseTransformer">Text case transformer</a></li>
-          <li><a href="#triangularSum">Triangular sum</a></li>
+          <li>
+            <a
+              href="#htmlCleaner"
+              title="Scroll down to the HTML cleaner section"
+              >HTML cleaner</a
+            >
+          </li>
+          <li>
+            <a
+              href="#htmlToString"
+              title="Scroll down to the HTML to string section"
+              >HTML to string</a
+            >
+          </li>
+          <li>
+            <a href="#jsonSorter" title="Scroll down to the JSON sorter section"
+              >JSON sorter</a
+            >
+          </li>
+          <li>
+            <a
+              href="#jsonToProperties"
+              title="Scroll down to the JSON to *.properties section"
+              >JSON to *.properties</a
+            >
+          </li>
+          <li>
+            <a
+              href="#inlineListSorter"
+              title="Scroll down to the List sorter (inline) section"
+              >List sorter (inline)</a
+            >
+          </li>
+          <li>
+            <a
+              href="#multilineListSorter"
+              title="Scroll down to the List sorter (multiline) section"
+              >List sorter (multiline)</a
+            >
+          </li>
+          <li>
+            <a
+              href="#tableToCsv"
+              title="Scroll down to the MD table to CSV section"
+              >MD table to CSV</a
+            >
+          </li>
+          <li>
+            <a
+              href="#tableToJson"
+              title="Scroll down to the MD table to JSON section"
+              >MD table to JSON</a
+            >
+          </li>
+          <li>
+            <a
+              href="#regexReplacer"
+              title="Scroll down to the Regex replacer section"
+              >Regex replacer</a
+            >
+          </li>
+          <li>
+            <a
+              href="#ruleOfThree"
+              title="Scroll down to the Rule of three section"
+              >Rule of three</a
+            >
+          </li>
+          <li>
+            <a
+              href="#stringBuilder"
+              title="Scroll down to the String builder section"
+              >String builder</a
+            >
+          </li>
+          <li>
+            <a
+              href="#textCaseTransformer"
+              title="Scroll down to the Text case transformer section"
+              >Text case transformer</a
+            >
+          </li>
+          <li>
+            <a
+              href="#triangularSum"
+              title="Scroll down to the Triangular sum section"
+              >Triangular sum</a
+            >
+          </li>
         </ul>
       </nav>
     </div>
@@ -74,7 +150,10 @@
 
         <div class="card-footer">
           <div class="center-contents">
-            <button type="button" onclick="pasteInput('#htmlCleanerInput')">
+            <button
+              type="button"
+              onclick="pasteInput(this, '#htmlCleanerInput')"
+            >
               Paste
             </button>
             <button
@@ -132,7 +211,10 @@
 
         <div class="card-footer">
           <div class="center-contents">
-            <button type="button" onclick="pasteInput('#htmlToStringInput')">
+            <button
+              type="button"
+              onclick="pasteInput(this, '#htmlToStringInput')"
+            >
               Paste
             </button>
             <button
@@ -179,7 +261,10 @@
 
         <div class="card-footer">
           <div class="center-contents">
-            <button type="button" onclick="pasteInput('#unsortedJsonInput')">
+            <button
+              type="button"
+              onclick="pasteInput(this, '#unsortedJsonInput')"
+            >
               Paste
             </button>
             <button
@@ -228,7 +313,7 @@
           <div class="center-contents">
             <button
               type="button"
-              onclick="pasteInput('#jsonToPropertiesInput')"
+              onclick="pasteInput(this, '#jsonToPropertiesInput')"
             >
               Paste
             </button>
@@ -293,7 +378,7 @@
           <div class="center-contents">
             <button
               type="button"
-              onclick="pasteInput('#unsortedInlineListInput')"
+              onclick="pasteInput(this, '#unsortedInlineListInput')"
             >
               Paste
             </button>
@@ -360,7 +445,7 @@
           <div class="center-contents">
             <button
               type="button"
-              onclick="pasteInput('#unsortedMultilineListInput')"
+              onclick="pasteInput(this, '#unsortedMultilineListInput')"
             >
               Paste
             </button>
@@ -414,7 +499,10 @@
 
         <div class="card-footer">
           <div class="center-contents">
-            <button type="button" onclick="pasteInput('#tableToCsvInput')">
+            <button
+              type="button"
+              onclick="pasteInput(this, '#tableToCsvInput')"
+            >
               Paste
             </button>
             <button
@@ -464,7 +552,10 @@
 
         <div class="card-footer">
           <div class="center-contents">
-            <button type="button" onclick="pasteInput('#tableToJsonInput')">
+            <button
+              type="button"
+              onclick="pasteInput(this, '#tableToJsonInput')"
+            >
               Paste
             </button>
             <button
@@ -674,7 +765,10 @@
 
         <div class="card-footer">
           <div class="center-contents">
-            <button type="button" onclick="pasteInput('#stringBuilderInput')">
+            <button
+              type="button"
+              onclick="pasteInput(this, '#stringBuilderInput')"
+            >
               Paste
             </button>
             <button
@@ -769,10 +863,17 @@
           <div class="center-contents">
             <button
               type="button"
+              onclick="pasteInput(this, '#sentenceCaseInput')"
+            >
+              Paste
+            </button>
+            <button
+              type="button"
               onclick="clearInputs(['#sentenceCaseInput', '#capitalCaseInput', '#lowercaseInput', '#uppercaseInput', '#snakeCaseInput', '#camelCaseInput', '#kebabCaseInput'])"
             >
               Clear
             </button>
+            <button type="button" class="invisible">Copy</button>
           </div>
         </div>
       </section>
@@ -845,8 +946,16 @@
 
     <footer>
       <div class="content-wrapper">
-        <div>
-          <a href="https://github.com/jesuscc1993" target="_blank"
+        <div class="center-contents">
+          <img
+            src="https://github.githubassets.com/favicons/favicon-dark.png"
+            alt="GitHub logo"
+            height="16"
+          />
+          <a
+            href="https://github.com/jesuscc1993"
+            title="Open GitHub user jesuscc1993 on a new tab"
+            target="_blank"
             >jesuscc1993</a
           >
         </div>

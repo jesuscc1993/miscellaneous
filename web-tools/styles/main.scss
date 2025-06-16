@@ -144,7 +144,7 @@ footer {
   }
 }
 
-[title]:not(input):not(textarea) {
+[title]:not(a, input, textarea) {
   cursor: help;
 }
 
@@ -181,7 +181,7 @@ ul.anchor-list {
 
 .center-contents {
   display: flex;
-  gap: 12px;
+  gap: 0.25rem;
   justify-content: center;
 }
 
@@ -318,6 +318,7 @@ button,
     button,
     .btn {
       min-width: 68px;
+      margin: 0 0.25rem;
     }
   }
 }

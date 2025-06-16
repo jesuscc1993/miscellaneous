@@ -22,13 +22,16 @@ const copyOutput = async (inputSelector) => {
   }
 };
 
-const pasteInput = async (inputSelector) => {
+const pasteInput = async (trigger, inputSelector) => {
   const input = querySelector(inputSelector);
   try {
     const text = await navigator.clipboard.readText();
     input.value = text;
     input.focus();
+    input.dispatchEvent(new Event('input', { bubbles: true }));
     input.blur();
+
+    trigger.focus();
   } catch (error) {
     console.error('Failed to paste text: ', error);
   }
