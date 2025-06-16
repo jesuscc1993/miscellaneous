@@ -8,980 +8,1001 @@
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
   </head>
 
-  <body style="display: none">
+  <body>
     <header>
       <div class="content-wrapper">
         <h1>Web Tools</h1>
       </div>
     </header>
 
-    <div class="border-bottom">
-      <nav class="content-wrapper">
-        <ul class="anchor-list">
-          <li>
-            <a
-              href="#htmlCleaner"
-              aria-label="Scroll down to the HTML cleaner section"
-              >HTML cleaner</a
-            >
-          </li>
-          <li>
-            <a
-              href="#htmlToString"
-              aria-label="Scroll down to the HTML to string section"
-              >HTML to string</a
-            >
-          </li>
-          <li>
-            <a
-              href="#jsonSorter"
-              aria-label="Scroll down to the JSON sorter section"
-              >JSON sorter</a
-            >
-          </li>
-          <li>
-            <a
-              href="#jsonToProperties"
-              aria-label="Scroll down to the JSON to *.properties section"
-              >JSON to *.properties</a
-            >
-          </li>
-          <li>
-            <a
-              href="#inlineListSorter"
-              aria-label="Scroll down to the List sorter (inline) section"
-              >List sorter (inline)</a
-            >
-          </li>
-          <li>
-            <a
-              href="#multilineListSorter"
-              aria-label="Scroll down to the List sorter (multiline) section"
-              >List sorter (multiline)</a
-            >
-          </li>
-          <li>
-            <a
-              href="#tableToCsv"
-              aria-label="Scroll down to the MD table to CSV section"
-              >MD table to CSV</a
-            >
-          </li>
-          <li>
-            <a
-              href="#tableToJson"
-              aria-label="Scroll down to the MD table to JSON section"
-              >MD table to JSON</a
-            >
-          </li>
-          <li>
-            <a
-              href="#regexReplacer"
-              aria-label="Scroll down to the Regex replacer section"
-              >Regex replacer</a
-            >
-          </li>
-          <li>
-            <a
-              href="#ruleOfThree"
-              aria-label="Scroll down to the Rule of three section"
-              >Rule of three</a
-            >
-          </li>
-          <li>
-            <a
-              href="#stringBuilder"
-              aria-label="Scroll down to the String builder section"
-              >String builder</a
-            >
-          </li>
-          <li>
-            <a
-              href="#textCaseTransformer"
-              aria-label="Scroll down to the Text case transformer section"
-              >Text case transformer</a
-            >
-          </li>
-          <li>
-            <a
-              href="#triangularSum"
-              aria-label="Scroll down to the Triangular sum section"
-              >Triangular sum</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <main>
+      <div class="border-bottom">
+        <nav class="content-wrapper">
+          <ul class="anchor-list">
+            <li>
+              <a
+                href="#htmlCleaner"
+                aria-label="Scroll down to the HTML cleaner section"
+                >HTML cleaner</a
+              >
+            </li>
+            <li>
+              <a
+                href="#htmlToString"
+                aria-label="Scroll down to the HTML to string section"
+                >HTML to string</a
+              >
+            </li>
+            <li>
+              <a
+                href="#jsonSorter"
+                aria-label="Scroll down to the JSON sorter section"
+                >JSON sorter</a
+              >
+            </li>
+            <li>
+              <a
+                href="#jsonToProperties"
+                aria-label="Scroll down to the JSON to *.properties section"
+                >JSON to *.properties</a
+              >
+            </li>
+            <li>
+              <a
+                href="#inlineListSorter"
+                aria-label="Scroll down to the List sorter (inline) section"
+                >List sorter (inline)</a
+              >
+            </li>
+            <li>
+              <a
+                href="#multilineListSorter"
+                aria-label="Scroll down to the List sorter (multiline) section"
+                >List sorter (multiline)</a
+              >
+            </li>
+            <li>
+              <a
+                href="#tableToCsv"
+                aria-label="Scroll down to the MD table to CSV section"
+                >MD table to CSV</a
+              >
+            </li>
+            <li>
+              <a
+                href="#tableToJson"
+                aria-label="Scroll down to the MD table to JSON section"
+                >MD table to JSON</a
+              >
+            </li>
+            <li>
+              <a
+                href="#regexReplacer"
+                aria-label="Scroll down to the Regex replacer section"
+                >Regex replacer</a
+              >
+            </li>
+            <li>
+              <a
+                href="#ruleOfThree"
+                aria-label="Scroll down to the Rule of three section"
+                >Rule of three</a
+              >
+            </li>
+            <li>
+              <a
+                href="#stringBuilder"
+                aria-label="Scroll down to the String builder section"
+                >String builder</a
+              >
+            </li>
+            <li>
+              <a
+                href="#textCaseTransformer"
+                aria-label="Scroll down to the Text case transformer section"
+                >Text case transformer</a
+              >
+            </li>
+            <li>
+              <a
+                href="#triangularSum"
+                aria-label="Scroll down to the Triangular sum section"
+                >Triangular sum</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-    <div class="content-wrapper">
-      <!-- HTML cleaner -->
-      <section id="htmlCleaner" class="card">
-        <div class="card-header">
-          <span class="card-title">
-            <h2>HTML cleaner</h2>
-            <small
-              title="Removes empty tags (p), redundant closing + opening tags (em, strong) and consecutive spaces/newlines and replaces HTTP with HTTPS."
+      <div class="content-wrapper">
+        <!-- HTML cleaner -->
+        <section id="htmlCleaner" class="card">
+          <div class="card-header">
+            <span class="card-title">
+              <h2>HTML cleaner</h2>
+              <small
+                title="Removes empty tags (p), redundant closing + opening tags (em, strong) and consecutive spaces/newlines and replaces HTTP with HTTPS."
+              >
+                Corrects a few common issues resulting of HTML conversion
+              </small></span
             >
-              Corrects a few common issues resulting of HTML conversion
-            </small></span
-          >
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <div class="flex1">
-              <textarea
-                id="htmlCleanerInput"
-                aria-label="HTML"
-                placeholder="HTML"
-                rows="8"
-                title="HTML"
-                onblur="htmlCleaner()"
-              ></textarea>
-            </div>
-            <div class="flex1">
-              <textarea
-                id="htmlCleanerOutput"
-                aria-label="String"
-                placeholder="String"
-                readonly
-                rows="8"
-                title="String"
-              ></textarea>
-            </div>
           </div>
-        </div>
 
-        <div class="card-footer">
-          <div class="center-contents">
-            <button
-              type="button"
-              onclick="pasteInput(this, '#htmlCleanerInput')"
-            >
-              Paste
-            </button>
-            <button
-              type="button"
-              onclick="clearInputs(['#htmlCleanerInput', '#htmlCleanerOutput'])"
-            >
-              Clear
-            </button>
-            <button type="button" onclick="copyOutput('#htmlCleanerOutput')">
-              Copy
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- HTML to string -->
-      <section id="htmlToString" class="card">
-        <div class="card-header">
-          <span class="card-title"><h2>HTML to string</h2></span>
-
-          <div class="form-input">
-            <label for="htmlToStringDoubleQuotes">
-              Use double quotes ( " )
-            </label>
-            <input
-              id="htmlToStringDoubleQuotes"
-              type="checkbox"
-              onchange="htmlToString()"
-            />
-          </div>
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <div class="flex1">
-              <textarea
-                id="htmlToStringInput"
-                aria-label="HTML"
-                placeholder="HTML"
-                rows="8"
-                title="HTML"
-                onblur="htmlToString()"
-              ></textarea>
-            </div>
-            <div class="flex1">
-              <textarea
-                id="htmlToStringOutput"
-                aria-label="String"
-                placeholder="String"
-                readonly
-                rows="8"
-                title="String"
-              ></textarea>
+          <div class="card-content">
+            <div class="flex">
+              <div class="flex1">
+                <textarea
+                  id="htmlCleanerInput"
+                  aria-label="HTML"
+                  placeholder="HTML"
+                  rows="8"
+                  title="HTML"
+                  onblur="htmlCleaner()"
+                ></textarea>
+              </div>
+              <div class="flex1">
+                <textarea
+                  id="htmlCleanerOutput"
+                  aria-label="String"
+                  placeholder="String"
+                  readonly
+                  rows="8"
+                  title="String"
+                ></textarea>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="card-footer">
-          <div class="center-contents">
-            <button
-              type="button"
-              onclick="pasteInput(this, '#htmlToStringInput')"
-            >
-              Paste
-            </button>
-            <button
-              type="button"
-              onclick="clearInputs(['#htmlToStringInput', '#htmlToStringOutput'])"
-            >
-              Clear
-            </button>
-            <button type="button" onclick="copyOutput('#htmlToStringOutput')">
-              Copy
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- JSON sorter -->
-      <section id="jsonSorter" class="card">
-        <div class="card-header">
-          <span class="card-title"><h2>JSON sorter</h2></span>
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <div class="flex1">
-              <textarea
-                id="unsortedJsonInput"
-                aria-label="Unordered JSON"
-                placeholder="Unordered JSON"
-                rows="8"
-                title="Unordered JSON"
-                onblur="sortJson()"
-              ></textarea>
-            </div>
-            <div class="flex1">
-              <textarea
-                id="sortedJsonOutput"
-                aria-label="Ordered JSON"
-                placeholder="Ordered JSON"
-                readonly
-                rows="8"
-                title="Ordered JSON"
-              ></textarea>
+          <div class="card-footer">
+            <div class="center-contents">
+              <button
+                type="button"
+                onclick="pasteInput(this, '#htmlCleanerInput')"
+              >
+                Paste
+              </button>
+              <button
+                type="button"
+                onclick="clearInputs(['#htmlCleanerInput', '#htmlCleanerOutput'])"
+              >
+                Clear
+              </button>
+              <button type="button" onclick="copyOutput('#htmlCleanerOutput')">
+                Copy
+              </button>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div class="card-footer">
-          <div class="center-contents">
-            <button
-              type="button"
-              onclick="pasteInput(this, '#unsortedJsonInput')"
-            >
-              Paste
-            </button>
-            <button
-              type="button"
-              onclick="clearInputs(['#unsortedJsonInput', '#sortedJsonOutput'])"
-            >
-              Clear
-            </button>
-            <button type="button" onclick="copyOutput('#sortedJsonOutput')">
-              Copy
-            </button>
-          </div>
-        </div>
-      </section>
+        <!-- HTML to string -->
+        <section id="htmlToString" class="card">
+          <div class="card-header">
+            <span class="card-title"><h2>HTML to string</h2></span>
 
-      <!-- JSON to *.properties -->
-      <section id="jsonToProperties" class="card">
-        <div class="card-header">
-          <span class="card-title"><h2>JSON to *.properties</h2></span>
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <div class="flex1">
-              <textarea
-                id="jsonToPropertiesInput"
-                aria-label="JSON"
-                placeholder="JSON"
-                rows="8"
-                title="JSON"
-                onblur="jsonToProperties()"
-              ></textarea>
-            </div>
-            <div class="flex1">
-              <textarea
-                id="jsonToPropertiesOutput"
-                aria-label="Properties"
-                placeholder="Properties"
-                readonly
-                rows="8"
-                title="Properties"
-              ></textarea>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="center-contents">
-            <button
-              type="button"
-              onclick="pasteInput(this, '#jsonToPropertiesInput')"
-            >
-              Paste
-            </button>
-            <button
-              type="button"
-              onclick="clearInputs(['#jsonToPropertiesInput', '#jsonToPropertiesOutput'])"
-            >
-              Clear
-            </button>
-            <button
-              type="button"
-              onclick="copyOutput('#jsonToPropertiesOutput')"
-            >
-              Copy
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- List sorter (inline) -->
-      <section id="inlineListSorter" class="card">
-        <div class="card-header">
-          <span class="card-title">
-            <h2>List sorter (inline)</h2>
-            <small>Splits by comma or space, but never both</small>
-          </span>
-
-          <div class="form-input">
-            <label for="inlineListSorterDiscardDuplicates">
-              Discard duplicates
-            </label>
-            <input
-              id="inlineListSorterDiscardDuplicates"
-              type="checkbox"
-              onchange="sortInlineList()"
-            />
-          </div>
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <textarea
-              id="unsortedInlineListInput"
-              aria-label="Unordered inline list"
-              placeholder="Unordered inline list"
-              rows="4"
-              title="Unordered inline list"
-              onblur="sortInlineList()"
-            ></textarea>
-          </div>
-          <div class="flex">
-            <textarea
-              id="sortedInlineListOutput"
-              aria-label="Ordered inline list"
-              placeholder="Ordered inline list"
-              readonly
-              rows="4"
-              title="Ordered inline list"
-            ></textarea>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="center-contents">
-            <button
-              type="button"
-              onclick="pasteInput(this, '#unsortedInlineListInput')"
-            >
-              Paste
-            </button>
-            <button
-              type="button"
-              onclick="clearInputs(['#unsortedInlineListInput', '#sortedInlineListOutput'])"
-            >
-              Clear
-            </button>
-            <button
-              type="button"
-              onclick="copyOutput('#sortedInlineListOutput')"
-            >
-              Copy
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- List sorter (multiline) -->
-      <section id="multilineListSorter" class="card">
-        <div class="card-header">
-          <span class="card-title">
-            <h2>List sorter (multiline)</h2>
-            <small>Splits by newline</small>
-          </span>
-
-          <div class="form-input">
-            <label for="multilineListSorterDiscardDuplicates">
-              Discard duplicates
-            </label>
-            <input
-              id="multilineListSorterDiscardDuplicates"
-              type="checkbox"
-              onchange="sortMultilineList()"
-            />
-          </div>
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <div class="flex1">
-              <textarea
-                id="unsortedMultilineListInput"
-                aria-label="Unordered multiline list"
-                placeholder="Unordered multiline list"
-                rows="8"
-                title="Unordered multiline list"
-                onblur="sortMultilineList()"
-              ></textarea>
-            </div>
-            <div class="flex1">
-              <textarea
-                id="sortedMultilineListOutput"
-                aria-label="Ordered multiline list"
-                placeholder="Ordered multiline list"
-                readonly
-                rows="8"
-                title="Ordered multiline list"
-              ></textarea>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="center-contents">
-            <button
-              type="button"
-              onclick="pasteInput(this, '#unsortedMultilineListInput')"
-            >
-              Paste
-            </button>
-            <button
-              type="button"
-              onclick="clearInputs(['#unsortedMultilineListInput', '#sortedMultilineListOutput'])"
-            >
-              Clear
-            </button>
-            <button
-              type="button"
-              onclick="copyOutput('#sortedMultilineListOutput')"
-            >
-              Copy
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- MD table to CSV -->
-      <section id="tableToCsv" class="card">
-        <div class="card-header">
-          <span class="card-title">
-            <h2>MD table to CSV</h2>
-            <small>Paste rows only; do not paste headers</small>
-          </span>
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <div class="flex1">
-              <textarea
-                id="tableToCsvInput"
-                aria-label="Table"
-                placeholder="Table"
-                rows="8"
-                title="Table"
-                onblur="tableToCsv()"
-              ></textarea>
-            </div>
-            <div class="flex1">
-              <textarea
-                id="tableToCsvOutput"
-                aria-label="CSV"
-                placeholder="CSV"
-                readonly
-                rows="8"
-                title="CSV"
-              ></textarea>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="center-contents">
-            <button
-              type="button"
-              onclick="pasteInput(this, '#tableToCsvInput')"
-            >
-              Paste
-            </button>
-            <button
-              type="button"
-              onclick="clearInputs(['#tableToCsvInput', '#tableToCsvOutput'])"
-            >
-              Clear
-            </button>
-            <button type="button" onclick="copyOutput('#tableToCsvOutput')">
-              Copy
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- MD table to JSON -->
-      <section id="tableToJson" class="card">
-        <div class="card-header">
-          <span class="card-title">
-            <h2>MD table to JSON</h2>
-            <small>Paste rows only; do not paste headers</small>
-          </span>
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <div class="flex1">
-              <textarea
-                id="tableToJsonInput"
-                aria-label="Table"
-                placeholder="Table"
-                rows="8"
-                title="Table"
-                onblur="tableToJson()"
-              ></textarea>
-            </div>
-            <div class="flex1">
-              <textarea
-                id="tableToJsonOutput"
-                aria-label="JSON"
-                placeholder="JSON"
-                readonly
-                rows="8"
-                title="JSON"
-              ></textarea>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="center-contents">
-            <button
-              type="button"
-              onclick="pasteInput(this, '#tableToJsonInput')"
-            >
-              Paste
-            </button>
-            <button
-              type="button"
-              onclick="clearInputs(['#tableToJsonInput', '#tableToJsonOutput'])"
-            >
-              Clear
-            </button>
-            <button type="button" onclick="copyOutput('#tableToJsonOutput')">
-              Copy
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Regex replacer -->
-      <section id="regexReplacer" class="card">
-        <div class="card-header">
-          <span class="card-title"><h2>Regex replacer</h2></span>
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <textarea
-              id="regexReplacerInput"
-              onkeyup="applyRegexReplacement()"
-              aria-label="Input string"
-              placeholder="Input string"
-              rows="1"
-              title="Input string"
-            ></textarea>
-          </div>
-
-          <div class="flex">
-            <span class="flex1">
+            <div class="form-input">
+              <label for="htmlToStringDoubleQuotes">
+                Use double quotes ( " )
+              </label>
               <input
-                id="regexpInput"
-                aria-label="Regex expression"
-                placeholder="Regex expression"
-                title="Regex expression"
+                id="htmlToStringDoubleQuotes"
+                type="checkbox"
+                onchange="htmlToString()"
+              />
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="flex">
+              <div class="flex1">
+                <textarea
+                  id="htmlToStringInput"
+                  aria-label="HTML"
+                  placeholder="HTML"
+                  rows="8"
+                  title="HTML"
+                  onblur="htmlToString()"
+                ></textarea>
+              </div>
+              <div class="flex1">
+                <textarea
+                  id="htmlToStringOutput"
+                  aria-label="String"
+                  placeholder="String"
+                  readonly
+                  rows="8"
+                  title="String"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="center-contents">
+              <button
+                type="button"
+                onclick="pasteInput(this, '#htmlToStringInput')"
+              >
+                Paste
+              </button>
+              <button
+                type="button"
+                onclick="clearInputs(['#htmlToStringInput', '#htmlToStringOutput'])"
+              >
+                Clear
+              </button>
+              <button type="button" onclick="copyOutput('#htmlToStringOutput')">
+                Copy
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- JSON sorter -->
+        <section id="jsonSorter" class="card">
+          <div class="card-header">
+            <span class="card-title"><h2>JSON sorter</h2></span>
+          </div>
+
+          <div class="card-content">
+            <div class="flex">
+              <div class="flex1">
+                <textarea
+                  id="unsortedJsonInput"
+                  aria-label="Unordered JSON"
+                  placeholder="Unordered JSON"
+                  rows="8"
+                  title="Unordered JSON"
+                  onblur="sortJson()"
+                ></textarea>
+              </div>
+              <div class="flex1">
+                <textarea
+                  id="sortedJsonOutput"
+                  aria-label="Ordered JSON"
+                  placeholder="Ordered JSON"
+                  readonly
+                  rows="8"
+                  title="Ordered JSON"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="center-contents">
+              <button
+                type="button"
+                onclick="pasteInput(this, '#unsortedJsonInput')"
+              >
+                Paste
+              </button>
+              <button
+                type="button"
+                onclick="clearInputs(['#unsortedJsonInput', '#sortedJsonOutput'])"
+              >
+                Clear
+              </button>
+              <button type="button" onclick="copyOutput('#sortedJsonOutput')">
+                Copy
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- JSON to *.properties -->
+        <section id="jsonToProperties" class="card">
+          <div class="card-header">
+            <span class="card-title"><h2>JSON to *.properties</h2></span>
+          </div>
+
+          <div class="card-content">
+            <div class="flex">
+              <div class="flex1">
+                <textarea
+                  id="jsonToPropertiesInput"
+                  aria-label="JSON"
+                  placeholder="JSON"
+                  rows="8"
+                  title="JSON"
+                  onblur="jsonToProperties()"
+                ></textarea>
+              </div>
+              <div class="flex1">
+                <textarea
+                  id="jsonToPropertiesOutput"
+                  aria-label="Properties"
+                  placeholder="Properties"
+                  readonly
+                  rows="8"
+                  title="Properties"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="center-contents">
+              <button
+                type="button"
+                onclick="pasteInput(this, '#jsonToPropertiesInput')"
+              >
+                Paste
+              </button>
+              <button
+                type="button"
+                onclick="clearInputs(['#jsonToPropertiesInput', '#jsonToPropertiesOutput'])"
+              >
+                Clear
+              </button>
+              <button
+                type="button"
+                onclick="copyOutput('#jsonToPropertiesOutput')"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- List sorter (inline) -->
+        <section id="inlineListSorter" class="card">
+          <div class="card-header">
+            <span class="card-title">
+              <h2>List sorter (inline)</h2>
+              <small>Splits by comma or space, but never both</small>
+            </span>
+
+            <div class="form-input">
+              <label for="inlineListSorterDiscardDuplicates">
+                Discard duplicates
+              </label>
+              <input
+                id="inlineListSorterDiscardDuplicates"
+                type="checkbox"
+                onchange="sortInlineList()"
+              />
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="flex">
+              <textarea
+                id="unsortedInlineListInput"
+                aria-label="Unordered inline list"
+                placeholder="Unordered inline list"
+                rows="4"
+                title="Unordered inline list"
+                onblur="sortInlineList()"
+              ></textarea>
+            </div>
+            <div class="flex">
+              <textarea
+                id="sortedInlineListOutput"
+                aria-label="Ordered inline list"
+                placeholder="Ordered inline list"
+                readonly
+                rows="4"
+                title="Ordered inline list"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="center-contents">
+              <button
+                type="button"
+                onclick="pasteInput(this, '#unsortedInlineListInput')"
+              >
+                Paste
+              </button>
+              <button
+                type="button"
+                onclick="clearInputs(['#unsortedInlineListInput', '#sortedInlineListOutput'])"
+              >
+                Clear
+              </button>
+              <button
+                type="button"
+                onclick="copyOutput('#sortedInlineListOutput')"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- List sorter (multiline) -->
+        <section id="multilineListSorter" class="card">
+          <div class="card-header">
+            <span class="card-title">
+              <h2>List sorter (multiline)</h2>
+              <small>Splits by newline</small>
+            </span>
+
+            <div class="form-input">
+              <label for="multilineListSorterDiscardDuplicates">
+                Discard duplicates
+              </label>
+              <input
+                id="multilineListSorterDiscardDuplicates"
+                type="checkbox"
+                onchange="sortMultilineList()"
+              />
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="flex">
+              <div class="flex1">
+                <textarea
+                  id="unsortedMultilineListInput"
+                  aria-label="Unordered multiline list"
+                  placeholder="Unordered multiline list"
+                  rows="8"
+                  title="Unordered multiline list"
+                  onblur="sortMultilineList()"
+                ></textarea>
+              </div>
+              <div class="flex1">
+                <textarea
+                  id="sortedMultilineListOutput"
+                  aria-label="Ordered multiline list"
+                  placeholder="Ordered multiline list"
+                  readonly
+                  rows="8"
+                  title="Ordered multiline list"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="center-contents">
+              <button
+                type="button"
+                onclick="pasteInput(this, '#unsortedMultilineListInput')"
+              >
+                Paste
+              </button>
+              <button
+                type="button"
+                onclick="clearInputs(['#unsortedMultilineListInput', '#sortedMultilineListOutput'])"
+              >
+                Clear
+              </button>
+              <button
+                type="button"
+                onclick="copyOutput('#sortedMultilineListOutput')"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- MD table to CSV -->
+        <section id="tableToCsv" class="card">
+          <div class="card-header">
+            <span class="card-title">
+              <h2>MD table to CSV</h2>
+              <small>Paste rows only; do not paste headers</small>
+            </span>
+          </div>
+
+          <div class="card-content">
+            <div class="flex">
+              <div class="flex1">
+                <textarea
+                  id="tableToCsvInput"
+                  aria-label="Table"
+                  placeholder="Table"
+                  rows="8"
+                  title="Table"
+                  onblur="tableToCsv()"
+                ></textarea>
+              </div>
+              <div class="flex1">
+                <textarea
+                  id="tableToCsvOutput"
+                  aria-label="CSV"
+                  placeholder="CSV"
+                  readonly
+                  rows="8"
+                  title="CSV"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="center-contents">
+              <button
+                type="button"
+                onclick="pasteInput(this, '#tableToCsvInput')"
+              >
+                Paste
+              </button>
+              <button
+                type="button"
+                onclick="clearInputs(['#tableToCsvInput', '#tableToCsvOutput'])"
+              >
+                Clear
+              </button>
+              <button type="button" onclick="copyOutput('#tableToCsvOutput')">
+                Copy
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- MD table to JSON -->
+        <section id="tableToJson" class="card">
+          <div class="card-header">
+            <span class="card-title">
+              <h2>MD table to JSON</h2>
+              <small>Paste rows only; do not paste headers</small>
+            </span>
+          </div>
+
+          <div class="card-content">
+            <div class="flex">
+              <div class="flex1">
+                <textarea
+                  id="tableToJsonInput"
+                  aria-label="Table"
+                  placeholder="Table"
+                  rows="8"
+                  title="Table"
+                  onblur="tableToJson()"
+                ></textarea>
+              </div>
+              <div class="flex1">
+                <textarea
+                  id="tableToJsonOutput"
+                  aria-label="JSON"
+                  placeholder="JSON"
+                  readonly
+                  rows="8"
+                  title="JSON"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="center-contents">
+              <button
+                type="button"
+                onclick="pasteInput(this, '#tableToJsonInput')"
+              >
+                Paste
+              </button>
+              <button
+                type="button"
+                onclick="clearInputs(['#tableToJsonInput', '#tableToJsonOutput'])"
+              >
+                Clear
+              </button>
+              <button type="button" onclick="copyOutput('#tableToJsonOutput')">
+                Copy
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Regex replacer -->
+        <section id="regexReplacer" class="card">
+          <div class="card-header">
+            <span class="card-title"><h2>Regex replacer</h2></span>
+          </div>
+
+          <div class="card-content">
+            <div class="flex">
+              <textarea
+                id="regexReplacerInput"
+                onkeyup="applyRegexReplacement()"
+                aria-label="Input string"
+                placeholder="Input string"
+                rows="1"
+                title="Input string"
+              ></textarea>
+            </div>
+
+            <div class="flex">
+              <span class="flex1">
+                <input
+                  id="regexpInput"
+                  aria-label="Regex expression"
+                  placeholder="Regex expression"
+                  title="Regex expression"
+                  type="text"
+                  onkeyup="applyRegexReplacement()"
+                />
+              </span>
+
+              <span class="flex1">
+                <input
+                  id="regexpOptionsInput"
+                  aria-label="Regex options (default = gm)"
+                  placeholder="Regex options (default = gm)"
+                  title="Regex options"
+                  type="text"
+                  onkeyup="applyRegexReplacement()"
+                />
+              </span>
+            </div>
+
+            <div class="flex">
+              <input
+                id="regexReplacementInput"
+                aria-label="Replacement"
+                placeholder="Replacement"
+                title="Replacement"
                 type="text"
                 onkeyup="applyRegexReplacement()"
               />
-            </span>
-
-            <span class="flex1">
-              <input
-                id="regexpOptionsInput"
-                aria-label="Regex options (default = gm)"
-                placeholder="Regex options (default = gm)"
-                title="Regex options"
-                type="text"
-                onkeyup="applyRegexReplacement()"
-              />
-            </span>
-          </div>
-
-          <div class="flex">
-            <input
-              id="regexReplacementInput"
-              aria-label="Replacement"
-              placeholder="Replacement"
-              title="Replacement"
-              type="text"
-              onkeyup="applyRegexReplacement()"
-            />
-          </div>
-
-          <div class="flex">
-            <textarea
-              id="regexReplacerOutput"
-              aria-label="Output string"
-              placeholder="Output string"
-              readonly
-              rows="1"
-              title="Output string"
-            ></textarea>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="center-contents">
-            <button type="button" class="invisible">Paste</button>
-            <button
-              type="button"
-              onclick="clearInputs(['#regexReplacerInput', '#regexpInput', '#regexpOptionsInput', '#regexReplacementInput', '#regexReplacerOutput'])"
-            >
-              Clear
-            </button>
-            <button type="button" onclick="copyOutput('#regexReplacerOutput')">
-              Copy
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Rule of three -->
-      <section id="ruleOfThree" class="card">
-        <div class="card-header">
-          <span class="card-title"><h2>Rule of three</h2></span>
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <span class="flex1">
-              <input
-                id="ruleOfThreeAxInput"
-                class="text-center"
-                aria-label="a * x"
-                placeholder="a * x"
-                title="a * x"
-                type="number"
-                oninput="calculateRuleOfThree()"
-              />
-            </span>
-
-            <span class="text-center form-padded">=</span>
-
-            <span class="flex1">
-              <input
-                id="ruleOfThreeAyInput"
-                class="text-center"
-                aria-label="a * y"
-                placeholder="a * y"
-                title="a * y"
-                type="number"
-                oninput="calculateRuleOfThree()"
-              />
-            </span>
-          </div>
-          <div class="flex">
-            <span class="flex1">
-              <input
-                id="ruleOfThreeBxInput"
-                class="text-center"
-                aria-label="b * x"
-                placeholder="b * x"
-                title="b * x"
-                type="number"
-                oninput="calculateRuleOfThree()"
-              />
-            </span>
-
-            <span class="text-center form-padded">=</span>
-
-            <span class="flex1">
-              <input
-                id="ruleOfThreeByInput"
-                class="text-center"
-                aria-label="b * y"
-                placeholder="b * y"
-                title="b * y"
-                type="text"
-                readonly
-              />
-            </span>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="center-contents">
-            <button type="button" class="invisible">Paste</button>
-            <button
-              type="button"
-              onclick="clearInputs(['#ruleOfThreeAxInput', '#ruleOfThreeAyInput', '#ruleOfThreeBxInput', '#ruleOfThreeByInput'])"
-            >
-              Clear
-            </button>
-            <button type="button" onclick="copyOutput('#ruleOfThreeByInput')">
-              Copy
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- String builder -->
-      <section id="stringBuilder" class="card">
-        <div class="card-header">
-          <span class="card-title">
-            <h2>String builder</h2>
-            <small>For Java, mostly</small>
-          </span>
-
-          <div class="form-input">
-            <label for="stringBuilderKeepLineBreaks"> Keep line breaks </label>
-            <input
-              id="stringBuilderKeepLineBreaks"
-              type="checkbox"
-              onchange="buildString()"
-            />
-          </div>
-        </div>
-
-        <div class="card-content">
-          <div class="flex">
-            <div class="flex1">
-              <textarea
-                id="stringBuilderInput"
-                aria-label="Non-string input"
-                placeholder="Non-string input"
-                rows="8"
-                title="Non-string input"
-                onblur="buildString()"
-              ></textarea>
             </div>
-            <div class="flex1">
+
+            <div class="flex">
               <textarea
-                id="stringBuilderOutput"
-                aria-label="String output"
-                placeholder="String output"
+                id="regexReplacerOutput"
+                aria-label="Output string"
+                placeholder="Output string"
                 readonly
-                rows="8"
-                title="String output"
+                rows="1"
+                title="Output string"
               ></textarea>
             </div>
           </div>
-        </div>
 
-        <div class="card-footer">
-          <div class="center-contents">
-            <button
-              type="button"
-              onclick="pasteInput(this, '#stringBuilderInput')"
-            >
-              Paste
-            </button>
-            <button
-              type="button"
-              onclick="clearInputs(['#stringBuilderInput', '#stringBuilderOutput'])"
-            >
-              Clear
-            </button>
-            <button type="button" onclick="copyOutput('#stringBuilderOutput')">
-              Copy
-            </button>
+          <div class="card-footer">
+            <div class="center-contents">
+              <button type="button" aria-hidden="true" class="invisible">
+                Paste
+              </button>
+              <button
+                type="button"
+                onclick="clearInputs(['#regexReplacerInput', '#regexpInput', '#regexpOptionsInput', '#regexReplacementInput', '#regexReplacerOutput'])"
+              >
+                Clear
+              </button>
+              <button
+                type="button"
+                onclick="copyOutput('#regexReplacerOutput')"
+              >
+                Copy
+              </button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Text case transformer -->
-      <section id="textCaseTransformer" class="card">
-        <div class="card-header">
-          <span class="card-title">
-            <h2>Text case transformer</h2>
-            <small>Type into any of the inputs</small>
-          </span>
-        </div>
+        <!-- Rule of three -->
+        <section id="ruleOfThree" class="card">
+          <div class="card-header">
+            <span class="card-title"><h2>Rule of three</h2></span>
+          </div>
 
-        <div class="card-content">
-          <div class="flex">
-            <input
-              id="sentenceCaseInput"
-              aria-label="Sentence case"
-              placeholder="Sentence case"
-              title="Sentence case"
-              type="text"
-              oninput="transformFromSentenceCase()"
-            />
-          </div>
-          <div class="flex">
-            <input
-              id="capitalCaseInput"
-              aria-label="Capital case"
-              placeholder="Capital case"
-              title="Capital case"
-              type="text"
-              oninput="transformFromCapitalCase()"
-            />
-          </div>
-          <div class="flex">
-            <input
-              id="lowercaseInput"
-              aria-label="Lowercase"
-              placeholder="Lowercase"
-              title="Lowercase"
-              type="text"
-              oninput="transformFromLowercase()"
-            />
-          </div>
-          <div class="flex">
-            <input
-              id="uppercaseInput"
-              aria-label="Uppercase"
-              placeholder="Uppercase"
-              title="Uppercase"
-              type="text"
-              oninput="transformFromUppercase()"
-            />
-          </div>
-          <div class="flex">
-            <input
-              id="camelCaseInput"
-              aria-label="Camel case"
-              placeholder="Camel case"
-              title="Camel case"
-              type="text"
-              oninput="transformFromCamelCase()"
-            />
-          </div>
-          <div class="flex">
-            <input
-              id="snakeCaseInput"
-              aria-label="Snake case"
-              placeholder="Snake case"
-              title="Snake case"
-              type="text"
-              oninput="transformFromSnakeCase()"
-            />
-          </div>
-          <div class="flex">
-            <input
-              id="kebabCaseInput"
-              aria-label="Kebab case"
-              placeholder="Kebab case"
-              title="Kebab case"
-              type="text"
-              oninput="transformFromKebabCase()"
-            />
-          </div>
-        </div>
+          <div class="card-content">
+            <div class="flex">
+              <span class="flex1">
+                <input
+                  id="ruleOfThreeAxInput"
+                  class="text-center"
+                  aria-label="a * x"
+                  placeholder="a * x"
+                  title="a * x"
+                  type="number"
+                  oninput="calculateRuleOfThree()"
+                />
+              </span>
 
-        <div class="card-footer">
-          <div class="center-contents">
-            <button
-              type="button"
-              onclick="pasteInput(this, '#sentenceCaseInput')"
-            >
-              Paste
-            </button>
-            <button
-              type="button"
-              onclick="clearInputs(['#sentenceCaseInput', '#capitalCaseInput', '#lowercaseInput', '#uppercaseInput', '#snakeCaseInput', '#camelCaseInput', '#kebabCaseInput'])"
-            >
-              Clear
-            </button>
-            <button type="button" class="invisible">Copy</button>
+              <span class="text-center form-padded">=</span>
+
+              <span class="flex1">
+                <input
+                  id="ruleOfThreeAyInput"
+                  class="text-center"
+                  aria-label="a * y"
+                  placeholder="a * y"
+                  title="a * y"
+                  type="number"
+                  oninput="calculateRuleOfThree()"
+                />
+              </span>
+            </div>
+            <div class="flex">
+              <span class="flex1">
+                <input
+                  id="ruleOfThreeBxInput"
+                  class="text-center"
+                  aria-label="b * x"
+                  placeholder="b * x"
+                  title="b * x"
+                  type="number"
+                  oninput="calculateRuleOfThree()"
+                />
+              </span>
+
+              <span class="text-center form-padded">=</span>
+
+              <span class="flex1">
+                <input
+                  id="ruleOfThreeByInput"
+                  class="text-center"
+                  aria-label="b * y"
+                  placeholder="b * y"
+                  title="b * y"
+                  type="text"
+                  readonly
+                />
+              </span>
+            </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Triangular Sum -->
-      <section id="triangularSum" class="card">
-        <div class="card-header">
-          <span class="card-title">
-            <h2>Triangular Sum</h2>
-            <small>1 + 2 + 3...</small></span
-          >
-        </div>
+          <div class="card-footer">
+            <div class="center-contents">
+              <button type="button" aria-hidden="true" class="invisible">
+                Paste
+              </button>
+              <button
+                type="button"
+                onclick="clearInputs(['#ruleOfThreeAxInput', '#ruleOfThreeAyInput', '#ruleOfThreeBxInput', '#ruleOfThreeByInput'])"
+              >
+                Clear
+              </button>
+              <button type="button" onclick="copyOutput('#ruleOfThreeByInput')">
+                Copy
+              </button>
+            </div>
+          </div>
+        </section>
 
-        <div class="card-content">
-          <div class="flex">
-            <span class="flex1">
-              <input
-                id="triangularSumStartInput"
-                class="text-center"
-                aria-label="1 (Start)"
-                placeholder="1 (Start)"
-                title="Start"
-                type="number"
-                oninput="calculateTriangularSum()"
-              />
+        <!-- String builder -->
+        <section id="stringBuilder" class="card">
+          <div class="card-header">
+            <span class="card-title">
+              <h2>String builder</h2>
+              <small>For Java, mostly</small>
             </span>
 
-            <span class="text-center form-padded">=</span>
-
-            <span class="flex1">
+            <div class="form-input">
+              <label for="stringBuilderKeepLineBreaks">
+                Keep line breaks
+              </label>
               <input
-                id="triangularSumEndInput"
-                class="text-center"
-                aria-label="End"
-                placeholder="End"
-                title="End"
-                type="number"
-                oninput="calculateTriangularSum()"
+                id="stringBuilderKeepLineBreaks"
+                type="checkbox"
+                onchange="buildString()"
               />
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="flex">
+              <div class="flex1">
+                <textarea
+                  id="stringBuilderInput"
+                  aria-label="Non-string input"
+                  placeholder="Non-string input"
+                  rows="8"
+                  title="Non-string input"
+                  onblur="buildString()"
+                ></textarea>
+              </div>
+              <div class="flex1">
+                <textarea
+                  id="stringBuilderOutput"
+                  aria-label="String output"
+                  placeholder="String output"
+                  readonly
+                  rows="8"
+                  title="String output"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="center-contents">
+              <button
+                type="button"
+                onclick="pasteInput(this, '#stringBuilderInput')"
+              >
+                Paste
+              </button>
+              <button
+                type="button"
+                onclick="clearInputs(['#stringBuilderInput', '#stringBuilderOutput'])"
+              >
+                Clear
+              </button>
+              <button
+                type="button"
+                onclick="copyOutput('#stringBuilderOutput')"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Text case transformer -->
+        <section id="textCaseTransformer" class="card">
+          <div class="card-header">
+            <span class="card-title">
+              <h2>Text case transformer</h2>
+              <small>Type into any of the inputs</small>
             </span>
           </div>
-          <div class="flex">
-            <span class="flex1">
-              <input
-                id="triangularSumOutput"
-                class="text-center"
-                aria-label="Sum"
-                placeholder="Sum"
-                title="Sum"
-                type="number"
-                readonly
-              />
-            </span>
-          </div>
-        </div>
 
-        <div class="card-footer">
-          <div class="center-contents">
-            <button type="button" class="invisible">Paste</button>
-            <button
-              type="button"
-              onclick="clearInputs(['#triangularSumStartInput', '#triangularSumEndInput', '#triangularSumOutput'])"
+          <div class="card-content">
+            <div class="flex">
+              <input
+                id="sentenceCaseInput"
+                aria-label="Sentence case"
+                placeholder="Sentence case"
+                title="Sentence case"
+                type="text"
+                oninput="transformFromSentenceCase()"
+              />
+            </div>
+            <div class="flex">
+              <input
+                id="capitalCaseInput"
+                aria-label="Capital case"
+                placeholder="Capital case"
+                title="Capital case"
+                type="text"
+                oninput="transformFromCapitalCase()"
+              />
+            </div>
+            <div class="flex">
+              <input
+                id="lowercaseInput"
+                aria-label="Lowercase"
+                placeholder="Lowercase"
+                title="Lowercase"
+                type="text"
+                oninput="transformFromLowercase()"
+              />
+            </div>
+            <div class="flex">
+              <input
+                id="uppercaseInput"
+                aria-label="Uppercase"
+                placeholder="Uppercase"
+                title="Uppercase"
+                type="text"
+                oninput="transformFromUppercase()"
+              />
+            </div>
+            <div class="flex">
+              <input
+                id="camelCaseInput"
+                aria-label="Camel case"
+                placeholder="Camel case"
+                title="Camel case"
+                type="text"
+                oninput="transformFromCamelCase()"
+              />
+            </div>
+            <div class="flex">
+              <input
+                id="snakeCaseInput"
+                aria-label="Snake case"
+                placeholder="Snake case"
+                title="Snake case"
+                type="text"
+                oninput="transformFromSnakeCase()"
+              />
+            </div>
+            <div class="flex">
+              <input
+                id="kebabCaseInput"
+                aria-label="Kebab case"
+                placeholder="Kebab case"
+                title="Kebab case"
+                type="text"
+                oninput="transformFromKebabCase()"
+              />
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="center-contents">
+              <button
+                type="button"
+                onclick="pasteInput(this, '#sentenceCaseInput')"
+              >
+                Paste
+              </button>
+              <button
+                type="button"
+                onclick="clearInputs(['#sentenceCaseInput', '#capitalCaseInput', '#lowercaseInput', '#uppercaseInput', '#snakeCaseInput', '#camelCaseInput', '#kebabCaseInput'])"
+              >
+                Clear
+              </button>
+              <button type="button" aria-hidden="true" class="invisible">
+                Copy
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Triangular Sum -->
+        <section id="triangularSum" class="card">
+          <div class="card-header">
+            <span class="card-title">
+              <h2>Triangular Sum</h2>
+              <small>1 + 2 + 3...</small></span
             >
-              Clear
-            </button>
-            <button type="button" onclick="copyOutput('#triangularSumOutput')">
-              Copy
-            </button>
           </div>
-        </div>
-      </section>
-    </div>
+
+          <div class="card-content">
+            <div class="flex">
+              <span class="flex1">
+                <input
+                  id="triangularSumStartInput"
+                  class="text-center"
+                  aria-label="1 (Start)"
+                  placeholder="1 (Start)"
+                  title="Start"
+                  type="number"
+                  oninput="calculateTriangularSum()"
+                />
+              </span>
+
+              <span class="text-center form-padded">=</span>
+
+              <span class="flex1">
+                <input
+                  id="triangularSumEndInput"
+                  class="text-center"
+                  aria-label="End"
+                  placeholder="End"
+                  title="End"
+                  type="number"
+                  oninput="calculateTriangularSum()"
+                />
+              </span>
+            </div>
+            <div class="flex">
+              <span class="flex1">
+                <input
+                  id="triangularSumOutput"
+                  class="text-center"
+                  aria-label="Sum"
+                  placeholder="Sum"
+                  title="Sum"
+                  type="number"
+                  readonly
+                />
+              </span>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="center-contents">
+              <button type="button" aria-hidden="true" class="invisible">
+                Paste
+              </button>
+              <button
+                type="button"
+                onclick="clearInputs(['#triangularSumStartInput', '#triangularSumEndInput', '#triangularSumOutput'])"
+              >
+                Clear
+              </button>
+              <button
+                type="button"
+                onclick="copyOutput('#triangularSumOutput')"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
 
     <footer>
       <div class="content-wrapper">

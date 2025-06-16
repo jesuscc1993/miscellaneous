@@ -6,10 +6,6 @@ const initialize = () => {
     });
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    document.body.style.display = 'block';
-  });
-
   const anchorLinks = querySelectorAll('.anchor-list a');
   anchorLinks.forEach((anchor) => {
     anchor.addEventListener('click', (event) => {
