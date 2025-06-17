@@ -115,9 +115,10 @@ html {
 }
 
 .content-wrapper {
-  max-width: $max-content-width;
-  width: 100%;
   margin: auto;
+  max-width: $max-content-width;
+  padding: 0 $content-padding / 2;
+  width: 100%;
 }
 
 header,
@@ -206,6 +207,10 @@ ul.anchor-list {
 
 .form-padded {
   padding: 6px 8px;
+}
+
+.text-center {
+  text-align: center;
 }
 
 label {
