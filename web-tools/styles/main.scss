@@ -1,6 +1,7 @@
-$content-padding: 24px;
 $content-margin: 36px;
+$content-padding: 24px;
 $max-content-width: 78rem;
+$portrait-breakpoint: 512px;
 
 * {
   box-sizing: border-box;
@@ -192,6 +193,11 @@ ul.anchor-list {
   &:not(:last-child) {
     margin-bottom: var(--input-spacing);
   }
+
+  @media screen and (max-width: $portrait-breakpoint) {
+    flex-direction: column;
+    row-gap: var(--input-spacing);
+  }
 }
 
 .flex1 {
@@ -223,7 +229,7 @@ input {
   }
 }
 
-input,
+input:not([type='checkbox']),
 textarea {
   @extend .form-padded;
 
@@ -287,7 +293,7 @@ button,
 
   .card-header {
     padding: 16px var(--cr-section-padding);
-    white-space: nowrap;
+    // white-space: nowrap;
 
     &,
     > * {
