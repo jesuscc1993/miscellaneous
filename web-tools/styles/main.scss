@@ -195,7 +195,7 @@ ul.anchor-list {
     margin-bottom: var(--input-spacing);
   }
 
-  @media screen and (max-width: $portrait-breakpoint) {
+  @media (max-width: $portrait-breakpoint) {
     flex-direction: column;
     row-gap: var(--input-spacing);
   }
