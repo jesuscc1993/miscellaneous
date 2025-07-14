@@ -16,4 +16,6 @@ Intended as a "hub" of sorts to host several minor miscellaneous projects.
 - [/hoyoverse/genshin-impact/inventory-viewer/](hoyoverse/genshin-impact/inventory-viewer/)
 - [/hoyoverse/honkai-star-rail/inventory-viewer/](hoyoverse/honkai-star-rail/inventory-viewer/)
 - [/pokemon/types-chart/](pokemon/types-chart/)
+- [/steam/steam-appid-asset-viewer](steam/steam-appid-asset-viewer)
+- [/steam/steam-appid-browser](steam/steam-appid-browser)
 - [/web-tools/](web-tools/)
