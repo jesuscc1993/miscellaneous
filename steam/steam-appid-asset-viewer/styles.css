@@ -63,10 +63,11 @@ img {
   padding: 0 0.5rem;
 }
 .links-container .thumb {
-  width: 5vw;
+  font-size: 1rem;
   height: 5vw;
-  object-fit: contain;
+  width: 5vw;
   margin-top: .25rem;
+  object-fit: contain;
 }
 
 .asset-group {
