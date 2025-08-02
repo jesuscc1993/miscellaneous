@@ -2,7 +2,7 @@ const storeAnchor = document.getElementById('storeAnchor');
 const appIdInput = document.getElementById('appIdInput');
 const assetImgAnchors = document.querySelectorAll('.asset-group a');
 const assetImgs = document.querySelectorAll(
-  '.links-container .thumb, .asset-group a img'
+  '.links-container a img, .asset-group a img'
 );
 
 const initialize = () => {

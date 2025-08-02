@@ -50,6 +50,7 @@ h2:first-child {
 }
 
 img {
+  max-height: 100%;
   max-width: 100%;
 }
 
@@ -59,17 +60,25 @@ img {
   margin-top: .5rem;
 }
 .links-container a {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-size: 1.25rem;
+  height: 7em;
+}
+.links-container span {
+  display: flex;
+  flex-direction: column;
+  height: 2em;
+  justify-content: center;
 }
 .links-container .thumb {
-  font-size: 1rem;
+  align-items: center;
+  display: flex;
   height: 5vw;
-  width: 5vw;
-  object-fit: contain;
+  justify-content: center;
   margin: 0 .75rem .25rem;
+  width: 5vw;
 }
 
 .asset-group {
@@ -79,9 +88,6 @@ img {
 .asset-group.flex {
   display: flex;
   justify-content: space-around;
-}
-.asset-group img {
-  max-width: 100%;
 }
 
 .checkerboard {
