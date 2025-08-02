@@ -6,6 +6,9 @@ const assetImgs = document.querySelectorAll(
 );
 
 const initialize = () => {
+  const assetAnchors = document.querySelectorAll('.asset-group a:has(img)');
+  assetAnchors.forEach((a) => (a.querySelector('img').src = a.href));
+
   appIdInput.value = getAppIdParam();
   updateImages();
 };
