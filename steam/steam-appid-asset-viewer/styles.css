@@ -42,6 +42,9 @@ h1 {
   margin: 1rem 0;
 }
 
+h2 {
+  margin: .5rem 0;
+}
 h2:first-child {
   margin-top: 0;
 }
@@ -71,20 +74,17 @@ img {
 }
 
 .asset-group {
-  padding: 1em 2rem;
+  margin: 1em auto;
+  width: 50vw;
+}
+.asset-group.flex {
+  display: flex;
+  justify-content: space-around;
 }
 .asset-group img {
-  max-width: 50vw;
+  max-width: 100%;
 }
 
 .checkerboard {
   background: url(../../assets/images/checkerboard.png);
-}
-
-/* utility */
-.flex {
-  display: flex;
-}
-.justify-center {
-  justify-content: center;
 }
