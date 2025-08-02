@@ -77,8 +77,8 @@ img {
   max-width: 50vw;
 }
 
-#capsuleImg {
-  max-width: 300px;
+.checkerboard {
+  background: url(../../assets/images/checkerboard.png);
 }
 
 /* utility */
