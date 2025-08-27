@@ -18,6 +18,12 @@ td {
   border: solid var(--c-border);
   border-width: 1px 0 0 1px;
 }
+td:last-child {
+  border-right-width: 1px;
+}
+tr:last-child td {
+  border-bottom-width: 1px;
+}
 
 td.vertical {
   line-height: 0;
