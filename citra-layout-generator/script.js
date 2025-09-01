@@ -231,14 +231,14 @@ const getLayoutType = () => {
   return document.querySelector('input[name="layout-type"]:checked').value;
 };
 
-const generateLayout = () => {
+const generateLayout = (scroll = true) => {
   const layouts = {
     vertical: generateVerticalLayout,
     single: generateSingleScreenLayout,
     horizontal: generateHorizontalLayout,
   };
   const success = layouts[getLayoutType()]();
-  if (success) {
+  if (success && scroll) {
     outputHeaderNode.scrollIntoView();
   }
 };
@@ -300,7 +300,7 @@ custom_bottom_bottom=${bottomBottom}`;
   outputWrapperEl.removeAttribute('hidden');
   copyOutputEl.textContent = 'Copy layout.';
 
-  copyLayout(true);
+  // copyLayout(true);
 };
 
 const copyLayout = (silent = false) => {
@@ -344,8 +344,10 @@ const recalculateBottomWidth = () => {
 };
 
 const setMonitorSize = (scale) => {
-  monitorWidthEl.value = oneKWidth * scale;
-  monitorHeightEl.value = oneKHeight * scale;
+  monitorWidthEl.value = Math.round(oneKWidth * scale);
+  monitorHeightEl.value = Math.round(oneKHeight * scale);
+
+  generateLayout(false);
 };
 
 const swapMonitorSizes = () => {
@@ -353,6 +355,8 @@ const swapMonitorSizes = () => {
   const height = monitorHeightEl.value;
   monitorWidthEl.value = height;
   monitorHeightEl.value = width;
+
+  generateLayout(false);
 };
 
 const setTopSize = (multiplier, auto) => {
@@ -374,6 +378,8 @@ const setTopSize = (multiplier, auto) => {
 
   topWidthEl.value = defaultTopWidth * _multiplier;
   topHeightEl.value = defaultTopHeight * _multiplier;
+
+  generateLayout(false);
 };
 
 const setBottomSize = (multiplier, auto) => {
@@ -395,6 +401,8 @@ const setBottomSize = (multiplier, auto) => {
 
   bottomWidthEl.value = defaultBottomWidth * _multiplier;
   bottomHeightEl.value = defaultBottomHeight * _multiplier;
+
+  generateLayout(false);
 };
 
 const detectMonitorSize = () => {
@@ -402,8 +410,26 @@ const detectMonitorSize = () => {
   monitorHeightEl.value = screen.height;
 };
 
+const detectScreenMultipliers = () => {
+  let maxWidthMultiplier = Math.floor(
+    screen.width / (defaultTopWidth + defaultBottomWidth)
+  );
+  let maxHeightMultiplier = Math.floor(
+    screen.height / (defaultTopHeight + defaultBottomHeight)
+  );
+  let multiplier = Math.min(maxWidthMultiplier, maxHeightMultiplier);
+
+  topWidthEl.value = defaultTopWidth * multiplier;
+  topHeightEl.value = defaultTopHeight * multiplier;
+  bottomWidthEl.value = defaultBottomWidth * multiplier;
+  bottomHeightEl.value = defaultBottomHeight * multiplier;
+};
+
 const initialize = () => {
   detectMonitorSize();
+  detectScreenMultipliers();
+
+  generateLayout(false);
 };
 
 initialize();
