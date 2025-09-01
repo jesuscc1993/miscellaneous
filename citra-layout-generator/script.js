@@ -12,7 +12,7 @@ const topHeightEl = document.querySelector('#top-height');
 const bottomWidthEl = document.querySelector('#bottom-width');
 const bottomHeightEl = document.querySelector('#bottom-height');
 
-const copyOutputEl = document.querySelector('#copy-output');
+const copyMessageEl = document.querySelector('#copy-message');
 const outputEl = document.querySelector('#output');
 const outputHeaderNode = document.querySelector('#output-header');
 const outputWrapperEl = document.querySelector('#output-wrapper');
@@ -231,15 +231,16 @@ const getLayoutType = () => {
   return document.querySelector('input[name="layout-type"]:checked').value;
 };
 
-const generateLayout = (scroll = true) => {
+const generateLayout = (manual) => {
   const layouts = {
     vertical: generateVerticalLayout,
     single: generateSingleScreenLayout,
     horizontal: generateHorizontalLayout,
   };
   const success = layouts[getLayoutType()]();
-  if (success && scroll) {
+  if (success && manual) {
     outputHeaderNode.scrollIntoView();
+    copyLayout(true);
   }
 };
 
@@ -298,17 +299,14 @@ custom_bottom_bottom=${bottomBottom}`;
   previewBottomEl.title = swapScreens ? 'Top' : 'Bottom';
 
   outputWrapperEl.removeAttribute('hidden');
-  copyOutputEl.textContent = 'Copy layout.';
-
-  // copyLayout(true);
+  copyMessageEl.textContent = '';
 };
 
-const copyLayout = (silent = false) => {
+const copyLayout = () => {
   navigator.clipboard.writeText(outputEl.textContent);
-  if (!silent) {
-    copyOutputEl.textContent = 'Layout copied.';
-    setTimeout(() => (copyOutputEl.textContent = 'Copy layout.'), 2000);
-  }
+
+  copyMessageEl.textContent = 'Layout copied.';
+  setTimeout(() => (copyMessageEl.textContent = ''), 2000);
 };
 
 const recalculateTopHeight = () => {
@@ -347,7 +345,7 @@ const setMonitorSize = (scale) => {
   monitorWidthEl.value = Math.round(oneKWidth * scale);
   monitorHeightEl.value = Math.round(oneKHeight * scale);
 
-  generateLayout(false);
+  generateLayout();
 };
 
 const swapMonitorSizes = () => {
@@ -356,7 +354,7 @@ const swapMonitorSizes = () => {
   monitorWidthEl.value = height;
   monitorHeightEl.value = width;
 
-  generateLayout(false);
+  generateLayout();
 };
 
 const setTopSize = (multiplier, auto) => {
@@ -379,7 +377,7 @@ const setTopSize = (multiplier, auto) => {
   topWidthEl.value = defaultTopWidth * _multiplier;
   topHeightEl.value = defaultTopHeight * _multiplier;
 
-  generateLayout(false);
+  generateLayout();
 };
 
 const setBottomSize = (multiplier, auto) => {
@@ -402,7 +400,7 @@ const setBottomSize = (multiplier, auto) => {
   bottomWidthEl.value = defaultBottomWidth * _multiplier;
   bottomHeightEl.value = defaultBottomHeight * _multiplier;
 
-  generateLayout(false);
+  generateLayout();
 };
 
 const detectMonitorSize = () => {
@@ -429,7 +427,7 @@ const initialize = () => {
   detectMonitorSize();
   detectScreenMultipliers();
 
-  generateLayout(false);
+  generateLayout();
 };
 
 initialize();
