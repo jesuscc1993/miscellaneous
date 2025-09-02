@@ -406,6 +406,8 @@ const setBottomSize = (multiplier, auto) => {
 const detectMonitorSize = () => {
   monitorWidthEl.value = screen.width;
   monitorHeightEl.value = screen.height;
+
+  generateLayout();
 };
 
 const detectScreenMultipliers = () => {
@@ -424,10 +426,8 @@ const detectScreenMultipliers = () => {
 };
 
 const initialize = () => {
-  detectMonitorSize();
   detectScreenMultipliers();
-
-  generateLayout();
+  detectMonitorSize();
 };
 
 initialize();
