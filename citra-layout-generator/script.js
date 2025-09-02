@@ -175,6 +175,8 @@ const generateHorizontalLayout = () => {
   );
   const bottomRight = bottomLeft + secondScreen.width;
 
+  const bottomOpacity = bottomOpacityEl.value;
+
   outputLayout({
     monitorHeight,
     monitorWidth,
@@ -189,6 +191,8 @@ const generateHorizontalLayout = () => {
     bottomLeft,
     bottomRight,
     bottomTop,
+
+    bottomOpacity,
   });
 
   return true;
@@ -217,6 +221,8 @@ const generateSingleScreenLayout = () => {
   const topLeft = (monitor.width - firstScreen.width) / 2;
   const topRight = topLeft + firstScreen.width;
 
+  const bottomOpacity = bottomOpacityEl.value;
+
   outputLayout({
     monitorHeight,
     monitorWidth,
@@ -231,6 +237,8 @@ const generateSingleScreenLayout = () => {
     bottomLeft: 0,
     bottomRight: 0,
     bottomTop: 0,
+
+    bottomOpacity,
   });
 
   return true;
