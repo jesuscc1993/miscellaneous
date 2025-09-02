@@ -65,7 +65,9 @@ const generateVerticalLayout = () => {
     getFormValues();
 
   if (Math.max(topScreen.width, bottomScreen.width) > monitor.width) {
-    alert('Screens are too wide to fit your monitor.');
+    alert(
+      'Screens are too wide to fit your monitor.\n(To disable this verification, check "Overlap screens").'
+    );
     return;
   }
 
@@ -74,7 +76,9 @@ const generateVerticalLayout = () => {
       ? Math.max(topScreen.height, bottomScreen.height) > monitor.width
       : topScreen.height + bottomScreen.height > monitor.height
   ) {
-    alert('Screens are too tall to fit your monitor.');
+    alert(
+      'Screens are too tall to fit your monitor.\n(To disable this verification, check "Overlap screens").'
+    );
     return;
   }
 
