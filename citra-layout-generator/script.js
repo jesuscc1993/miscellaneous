@@ -326,6 +326,8 @@ const recalculateTopHeight = () => {
     topWidthEl.value === ''
       ? ''
       : Math.round((topWidthEl.value / defaultTopWidth) * defaultTopHeight);
+
+  generateLayout();
 };
 
 const recalculateBottomHeight = () => {
@@ -335,6 +337,8 @@ const recalculateBottomHeight = () => {
       : Math.round(
           (bottomWidthEl.value / defaultBottomWidth) * defaultBottomHeight
         );
+
+  generateLayout();
 };
 
 const recalculateTopWidth = () => {
@@ -342,6 +346,8 @@ const recalculateTopWidth = () => {
     topHeightEl.value === ''
       ? ''
       : Math.round((topHeightEl.value * defaultTopWidth) / defaultTopHeight);
+
+  generateLayout();
 };
 
 const recalculateBottomWidth = () => {
@@ -351,6 +357,8 @@ const recalculateBottomWidth = () => {
       : Math.round(
           (bottomHeightEl.value * defaultBottomWidth) / defaultBottomHeight
         );
+
+  generateLayout();
 };
 
 const updateBottomOpacity = () => {
