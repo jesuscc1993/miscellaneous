@@ -11,6 +11,7 @@ const topWidthEl = document.querySelector('#top-width');
 const topHeightEl = document.querySelector('#top-height');
 const bottomWidthEl = document.querySelector('#bottom-width');
 const bottomHeightEl = document.querySelector('#bottom-height');
+const bottomOpacityEl = document.querySelector('#bottom-opacity');
 
 const copyMessageEl = document.querySelector('#copy-message');
 const outputEl = document.querySelector('#output');
@@ -103,6 +104,8 @@ const generateVerticalLayout = () => {
   const bottomLeft = (monitor.width - secondScreen.width) / 2;
   const bottomRight = bottomLeft + secondScreen.width;
 
+  const bottomOpacity = bottomOpacityEl.value;
+
   outputLayout({
     monitorHeight,
     monitorWidth,
@@ -117,6 +120,8 @@ const generateVerticalLayout = () => {
     bottomLeft,
     bottomRight,
     bottomTop,
+
+    bottomOpacity,
   });
 
   return true;
@@ -256,8 +261,11 @@ const outputLayout = ({
   bottomLeft,
   bottomRight,
   bottomTop,
+  bottomOpacity,
 }) => {
-  outputEl.textContent = `custom_layout\\default=false
+  outputEl.textContent = `custom_second_layer_opacity\\default=false
+custom_second_layer_opacity=${bottomOpacity}
+custom_layout\\default=false
 custom_layout=true
 custom_top_left\\default=false
 custom_top_left=${topLeft}
@@ -339,6 +347,10 @@ const recalculateBottomWidth = () => {
       : Math.round(
           (bottomHeightEl.value * defaultBottomWidth) / defaultBottomHeight
         );
+};
+
+const updateBottomOpacity = () => {
+  previewBottomEl.style.opacity = bottomOpacityEl.value / 100;
 };
 
 const setMonitorSize = (scale) => {

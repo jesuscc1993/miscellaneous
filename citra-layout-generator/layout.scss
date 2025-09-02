@@ -12,7 +12,7 @@ body {
 }
 
 button,
-input,
+input:not([type='range']),
 textarea {
   padding: 4px 6px;
 }
