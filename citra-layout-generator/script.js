@@ -351,6 +351,7 @@ const recalculateBottomWidth = () => {
 
 const updateBottomOpacity = () => {
   previewBottomEl.style.opacity = bottomOpacityEl.value / 100;
+  bottomOpacityEl.title = bottomOpacityEl.value;
 };
 
 const setMonitorSize = (scale) => {
