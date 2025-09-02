@@ -25,6 +25,7 @@
             type="radio"
             value="vertical"
             checked
+            onchange="generateLayout()"
           />
           <label for="layout-vertical">Vertical layout</label>
         </div>
@@ -35,6 +36,7 @@
             name="layout-type"
             type="radio"
             value="single"
+            onchange="generateLayout()"
           />
           <label for="layout-single-screen">Single screen</label>
         </div>
@@ -45,6 +47,7 @@
             name="layout-type"
             type="radio"
             value="horizontal"
+            onchange="generateLayout()"
           />
           <label for="layout-horizontal">Horizontal layout</label>
         </div>
@@ -52,12 +55,20 @@
 
       <div class="form-group">
         <div title="Display bottom screen on top">
-          <input id="swap-screens" type="checkbox" />
+          <input
+            id="swap-screens"
+            type="checkbox"
+            onchange="generateLayout()"
+          />
           <label for="swap-screens">Swap screens</label>
         </div>
 
         <div title="Allow screens to render on top of each other">
-          <input id="overlap-screens" type="checkbox" />
+          <input
+            id="overlap-screens"
+            type="checkbox"
+            onchange="generateLayout()"
+          />
           <label for="overlap-screens">Overlap screens</label>
         </div>
 
