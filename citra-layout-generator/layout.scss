@@ -1,10 +1,14 @@
+:root {
+  --preview-w: 540px;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0 auto;
-  max-width: 530px;
+  max-width: calc(var(--preview-w) + 52px);
   font-family: 'Roboto', sans-serif;
   overflow-y: scroll;
 
@@ -147,9 +151,10 @@ label {
 }
 
 .preview {
+  box-sizing: content-box;
   margin: auto;
   position: relative;
-  width: 480px;
+  width: var(--preview-w);
 
   .screen {
     align-items: center;

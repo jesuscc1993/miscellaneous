@@ -288,9 +288,9 @@ custom_bottom_right=${bottomRight}
 custom_bottom_bottom\\default=false
 custom_bottom_bottom=${bottomBottom}`;
 
-  const scale = 478 / monitorWidth;
+  const scale = previewEl.clientWidth / monitorWidth;
 
-  previewEl.style.height = monitorHeight * scale + 2 + 'px';
+  previewEl.style.height = Math.round(monitorHeight * scale + 2) + 'px';
 
   previewTopEl.style.backgroundImage = `url(./assets/images/${
     swapScreens ? 'bottom' : 'top'
