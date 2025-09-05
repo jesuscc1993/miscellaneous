@@ -56,15 +56,13 @@ const scanJsonText = (text) => {
         .map((entry) => {
           const { key, ...fields } = entry;
           const label = getEntryLabel(key);
-          const link = encodeURIComponent(
+          const link = `https://hollowknight.fandom.com/wiki/Special:Search?query=${encodeURIComponent(
             key.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/_/g, ' ')
-          );
+          )}`;
 
           return `
             <li>
-              <a href="https://hollowknight.fandom.com/wiki/Special:Search?query=${link}" target="_blank">
-                ${label}
-              </a>
+              <a href="${link}" target="_blank">${label}</a>
               <small>${JSON.stringify(fields).replace(/,/g, ', ')}</small>
             </li>
           `;
