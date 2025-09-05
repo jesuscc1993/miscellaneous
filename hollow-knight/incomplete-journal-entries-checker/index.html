@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Incomplete Journal Entries Checker | Hollow Knight</title>
+    <link
+      rel="icon"
+      href="https://github.githubassets.com/favicons/favicon-dark.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8" />
+    <meta name="color-scheme" content="dark" />
+  </head>
+  <body>
+    <main>
+      <h1>Incomplete Journal Entries Checker | Hollow Knight</h1>
+
+      <div class="row">
+        <div>
+          <label for="file">
+            Select your user*.json file
+            <small>(you can get it with the QOL mod)</small>
+          </label>
+        </div>
+        <input id="file" type="file" accept=".json" />
+      </div>
+
+      <div class="row">
+        <div class="meta" id="status"></div>
+
+        <div id="output"></div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

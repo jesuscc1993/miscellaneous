@@ -1,0 +1,14 @@
+body {
+  font-family: 'Roboto', monospace;
+}
+
+main {
+  max-width: fit-content;
+  margin: 2em auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+}
