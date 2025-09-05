@@ -13,6 +13,7 @@ Intended as a "hub" of sorts to host several minor miscellaneous projects.
 - [/gbf-tools/image-viewers/town-backgrounds/](gbf-tools/image-viewers/town-backgrounds/)
 - [/gbf-tools/support-summons/](gbf-tools/support-summons/)
 - [/gbf-tools/units-viewer/](gbf-tools/units-viewer/)
+- [/hollow-knight/incomplete-journal-entries-checker/](hollow-knight/incomplete-journal-entries-checker/)
 - [/hoyoverse/genshin-impact/inventory-viewer/](hoyoverse/genshin-impact/inventory-viewer/)
 - [/hoyoverse/honkai-star-rail/inventory-viewer/](hoyoverse/honkai-star-rail/inventory-viewer/)
 - [/pokemon/types-chart/](pokemon/types-chart/)
