@@ -14,7 +14,7 @@ fileInputEl.addEventListener('change', () => {
     };
     reader.onerror = function (error) {
       outputEl.value = '';
-      statusEl.textContent = '[ERROR] COuld not read file: ' + error.message;
+      statusEl.textContent = '[ERROR] Could not read file: ' + error.message;
     };
     reader.readAsText(file);
   } else {
@@ -36,7 +36,12 @@ const scanJsonText = (text) => {
   const incompleteEntries = [];
   for (const key in playerData) {
     if (key.startsWith('kills') && playerData[key]) {
-      incompleteEntries.push(key.replace(/^kills/, ''));
+      const name = key.replace(/^kills/, '');
+      incompleteEntries.push({
+        key: name,
+        encountered: playerData[`killed${name}`],
+        pendingKills: playerData[key],
+      });
     }
   }
 
@@ -48,12 +53,22 @@ const scanJsonText = (text) => {
     outputEl.innerHTML =
       '<ul>' +
       incompleteEntries
-        .map(
-          (entry) =>
-            `<li><a href="https://hollowknight.fandom.com/wiki/Special:Search?query=${encodeURIComponent(
-              entry.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/_/g, ' ')
-            )}" target="_blank">${getEntryLabel(entry)}</a></li>`
-        )
+        .map((entry) => {
+          const { key, ...fields } = entry;
+          const label = getEntryLabel(key);
+          const link = encodeURIComponent(
+            key.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/_/g, ' ')
+          );
+
+          return `
+            <li>
+              <a href="https://hollowknight.fandom.com/wiki/Special:Search?query=${link}" target="_blank">
+                ${label}
+              </a>
+              <small>${JSON.stringify(fields).replace(/,/g, ', ')}</small>
+            </li>
+          `;
+        })
         .join('') +
       '</ul>';
     outputEl.rows = incompleteEntries.length;
