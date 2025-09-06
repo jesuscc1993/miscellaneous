@@ -9,10 +9,8 @@ fileInputEl.addEventListener('change', () => {
   statusEl.textContent = file ? file.name : 'No file loaded';
   if (file) {
     const reader = new FileReader();
-    reader.onload = function (ev) {
-      scanJsonText(ev.target.result);
-    };
-    reader.onerror = function (error) {
+    reader.onload = (ev) => scanJsonText(ev.target.result);
+    reader.onerror = (error) => {
       outputEl.value = '';
       statusEl.textContent = '[ERROR] Could not read file: ' + error.message;
     };
