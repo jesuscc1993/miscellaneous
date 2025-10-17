@@ -136,6 +136,12 @@ footer {
   width: 100%;
 }
 
+.pokeball {
+  --size: 160px;
+  height: var(--size);
+  width: var(--size);
+}
+
 td.attack {
   background: var(--c-red);
   border-left: none;
