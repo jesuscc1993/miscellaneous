@@ -155,24 +155,24 @@ td.defense {
   border-top: none;
 }
 
-.label.bug { background: #83C300; }
-.label.dark { background: #5B5466; }
-.label.dragon { background: #006FC9; }
-.label.electric { background: #FBD100; }
-.label.fairy { background: #FB89EB; }
-.label.fighting { background: #E0306A; }
-.label.fire { background: #FF9741; }
-.label.flying { background: #89AAE3; }
-.label.ghost { background: #4C6AB2; }
-.label.grass { background: #38BF4B; }
-.label.ground { background: #E87236; }
-.label.ice { background: #4CD1C0; }
-.label.normal { background: #919aa2; }
-.label.poison { background: #B567CE; }
-.label.psychic { background: #FF6675; }
-.label.rock { background: #C8B686; }
-.label.steel { background: #5A8EA2; }
-.label.water { background: #3692DC; }
+.label.bug { background: #91a119; }
+.label.dark { background: #624d4e; }
+.label.dragon { background: #5060e1; }
+.label.electric { background: #fac000; }
+.label.fairy { background: #ef70ef; }
+.label.fighting { background: #ff8000; }
+.label.fire { background: #e62829; }
+.label.flying { background: #81b9ef; }
+.label.ghost { background: #704170; }
+.label.grass { background: #3fa129; }
+.label.ground { background: #915121; }
+.label.ice { background: #3dcef3; }
+.label.normal { background: #9fa09f; }
+.label.poison { background: #9141cb; }
+.label.psychic { background: #ef4179; }
+.label.rock { background: #afa981; }
+.label.steel { background: #60a1b8; }
+.label.water { background: #2980ef; }
 
 .damage.none:after { background-image: url('./assets/images/damage/none.svg'); }
 .damage.half:after { background-image: url('./assets/images/damage/half.svg'); }
