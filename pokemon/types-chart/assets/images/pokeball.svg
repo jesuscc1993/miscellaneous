@@ -1,9 +1,1 @@
-<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="80" cy="80" r="80" fill="#1A1A1A"/>
-<path d="M80 8C118.422 8 149.814 38.0961 151.89 76H8.11035C10.1859 38.0961 41.5777 8 80 8Z" fill="#E03030"/>
-<path d="M80 152C118.481 152 149.921 121.904 152 84H8C10.0787 121.904 41.5188 152 80 152Z" fill="white"/>
-<circle cx="80" cy="80" r="30" fill="#1A1A1A"/>
-<circle cx="80" cy="80" r="22" fill="white"/>
-<circle cx="80" cy="80" r="14" fill="#1A1A1A"/>
-<circle cx="80" cy="80" r="6" fill="white"/>
-</svg>
+<svg fill="none" height="160" viewBox="0 0 160 160" width="160" xmlns="http://www.w3.org/2000/svg"><circle cx="80" cy="80" fill="#1a1a1a" r="80"/><path d="m80 8c38.422 0 69.814 30.0961 71.89 68h-143.77965c2.07555-37.9039 33.46735-68 71.88965-68z" fill="#e03030"/><path d="m80 152c38.481 0 69.921-30.096 72-68h-144c2.0787 37.904 33.5188 68 72 68z" fill="#fff"/><circle cx="80" cy="80" fill="#1a1a1a" r="30"/><circle cx="80" cy="80" fill="#fff" r="22"/><circle cx="80" cy="80" fill="#1a1a1a" r="14"/><circle cx="80" cy="80" fill="#fff" r="6"/></svg>
