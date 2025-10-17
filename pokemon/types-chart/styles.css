@@ -98,7 +98,7 @@ footer {
   display: inline-block;
 }
 
-.guides {
+.guides td.damage {
   --c-border: #0000;
 }
 .guides .label {
