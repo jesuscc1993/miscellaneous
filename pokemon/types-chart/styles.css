@@ -101,13 +101,17 @@ footer {
 .guides td.damage {
   --c-border: #0000;
 }
+
+.guides td.damage.normal:after {
+  background-size: 75%;
+}
 .guides .label {
   --guide-length: 737px;
   --guide-thickness: 4px;
   --guide-margin: 146px;
   position: relative;
 }
-.guides .label:has([data-type])::after {
+.guides .label:has([data-type]):after {
   content: '';
   display: block;
   position: absolute;
@@ -115,20 +119,20 @@ footer {
   z-index: -1;
   opacity: 0.67;
 }
-.guides .label.horizontal::after {
+.guides .label.horizontal:after {
   width: var(--guide-length);
   height: var(--guide-thickness);
   left: var(--guide-margin);
   top: calc(50% - var(--guide-thickness) / 2);
 }
-.guides .label.vertical::after {
+.guides .label.vertical:after {
   height: var(--guide-length);
   left: calc(50% - var(--guide-thickness) / 2);
   top: var(--guide-margin);
   width: var(--guide-thickness);
 }
 
-.damage::after {
+.damage:after {
   background: center no-repeat;
   content: '';
   display: block;
@@ -170,10 +174,10 @@ td.defense {
 .label.steel { background: #5A8EA2; }
 .label.water { background: #3692DC; }
 
-.damage.none::after { background-image: url('./assets/images/damage/none.svg'); }
-.damage.half::after { background-image: url('./assets/images/damage/half.svg'); }
-.damage.normal::after { background-image: url('./assets/images/damage/normal.svg'); }
-.damage.double::after { background-image: url('./assets/images/damage/double.svg'); }
+.damage.none:after { background-image: url('./assets/images/damage/none.svg'); }
+.damage.half:after { background-image: url('./assets/images/damage/half.svg'); }
+.damage.normal:after { background-image: url('./assets/images/damage/normal.svg'); }
+.damage.double:after { background-image: url('./assets/images/damage/double.svg'); }
 
 [data-type='attack'] { background-image: url('./assets/images/attack.svg'); }
 [data-type='defense'] { background-image: url('./assets/images/defense.svg'); }
