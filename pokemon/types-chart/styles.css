@@ -103,7 +103,7 @@ footer {
 }
 
 .guides td.damage.normal:after {
-  background-size: 75%;
+  background-size: 80%;
 }
 .guides .label {
   --guide-length: 737px;
