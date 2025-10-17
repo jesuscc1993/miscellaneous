@@ -65,6 +65,30 @@ footer {
   text-align: center;
 }
 
+/* .label {
+  position: relative;
+}
+.label:has([data-type])::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  opacity: 1;
+}
+.label.horizontal::after {
+  width: 737px;
+  height: 4px;
+  left: 146px;
+  top: 18px;
+}
+.label.vertical::after {
+  height: 737px;
+  left: 18px;
+  top: 146px;
+  width: 4px;
+} */
+
 .label.vertical .label {
   padding: 8px 0;
   height: 89px;
@@ -87,25 +111,12 @@ footer {
   display: inline-block;
 }
 
-.normal-damage::after {
-  content: '·';
-}
-
-.no-damage::after {
-  /* content: '●'; */
-  content: '✖';
-  color: #6f1111;
-}
-
-.half-damage::after {
-  /* content: '◑'; */
-  content: '△';
-  color: var(--c-red);
-}
-
-.double-damage::after {
-  content: '◎';
-  color: var(--c-green);
+.damage::after {
+  background: center no-repeat;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 td.attack { background: var(--c-red); }
@@ -130,22 +141,27 @@ td.defense { background: var(--c-blue); }
 .label.steel { background: #5A8EA2; }
 .label.water { background: #3692DC; }
 
-[data-type='bug'] { background-image: url('./assets/images/bug.svg'); }
-[data-type='dark'] { background-image: url('./assets/images/dark.svg'); }
-[data-type='defense'] { background-image: url('./assets/images/defense.svg'); }
-[data-type='dragon'] { background-image: url('./assets/images/dragon.svg'); }
-[data-type='electric'] { background-image: url('./assets/images/electric.svg'); }
-[data-type='fairy'] { background-image: url('./assets/images/fairy.svg'); }
-[data-type='fighting'] { background-image: url('./assets/images/fighting.svg'); }
-[data-type='fire'] { background-image: url('./assets/images/fire.svg'); }
-[data-type='flying'] { background-image: url('./assets/images/flying.svg'); }
-[data-type='ghost'] { background-image: url('./assets/images/ghost.svg'); }
-[data-type='grass'] { background-image: url('./assets/images/grass.svg'); }
-[data-type='ground'] { background-image: url('./assets/images/ground.svg'); }
-[data-type='ice'] { background-image: url('./assets/images/ice.svg'); }
-[data-type='normal'] { background-image: url('./assets/images/normal.svg'); }
-[data-type='poison'] { background-image: url('./assets/images/poison.svg'); }
-[data-type='psychic'] { background-image: url('./assets/images/psychic.svg'); }
-[data-type='rock'] { background-image: url('./assets/images/rock.svg'); }
-[data-type='steel'] { background-image: url('./assets/images/steel.svg'); }
-[data-type='water'] { background-image: url('./assets/images/water.svg'); }
+.damage.none::after { background-image: url('./assets/images/damage/none.svg'); }
+.damage.half::after { background-image: url('./assets/images/damage/half.svg'); }
+.damage.normal::after { background-image: url('./assets/images/damage/normal.svg'); }
+.damage.double::after { background-image: url('./assets/images/damage/double.svg'); }
+
+[data-type='bug'] { background-image: url('./assets/images/types/bug.svg'); }
+[data-type='dark'] { background-image: url('./assets/images/types/dark.svg'); }
+[data-type='defense'] { background-image: url('./assets/images/types/defense.svg'); }
+[data-type='dragon'] { background-image: url('./assets/images/types/dragon.svg'); }
+[data-type='electric'] { background-image: url('./assets/images/types/electric.svg'); }
+[data-type='fairy'] { background-image: url('./assets/images/types/fairy.svg'); }
+[data-type='fighting'] { background-image: url('./assets/images/types/fighting.svg'); }
+[data-type='fire'] { background-image: url('./assets/images/types/fire.svg'); }
+[data-type='flying'] { background-image: url('./assets/images/types/flying.svg'); }
+[data-type='ghost'] { background-image: url('./assets/images/types/ghost.svg'); }
+[data-type='grass'] { background-image: url('./assets/images/types/grass.svg'); }
+[data-type='ground'] { background-image: url('./assets/images/types/ground.svg'); }
+[data-type='ice'] { background-image: url('./assets/images/types/ice.svg'); }
+[data-type='normal'] { background-image: url('./assets/images/types/normal.svg'); }
+[data-type='poison'] { background-image: url('./assets/images/types/poison.svg'); }
+[data-type='psychic'] { background-image: url('./assets/images/types/psychic.svg'); }
+[data-type='rock'] { background-image: url('./assets/images/types/rock.svg'); }
+[data-type='steel'] { background-image: url('./assets/images/types/steel.svg'); }
+[data-type='water'] { background-image: url('./assets/images/types/water.svg'); }
