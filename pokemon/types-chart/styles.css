@@ -1,7 +1,7 @@
 :root {
   --c-red: #e03030;
   --c-blue: #38a5dc;
-  --c-border: #0003;
+  --c-border: #ccc;
 
   --contents-width: 926px;
 }
@@ -75,7 +75,7 @@ footer {
 .label.vertical {
   align-items: center;
   display: inline-flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: end;
   text-align: center;
 }
@@ -140,8 +140,14 @@ footer {
   width: 100%;
 }
 
-td.attack { background: var(--c-red); }
-td.defense { background: var(--c-blue); }
+td.attack {
+  background: var(--c-red);
+  border-left: none;
+}
+td.defense {
+  background: var(--c-blue);
+  border-top: none;
+}
 
 .label.bug { background: #83C300; }
 .label.dark { background: #5B5466; }
