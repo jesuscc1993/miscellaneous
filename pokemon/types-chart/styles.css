@@ -74,9 +74,6 @@ footer {
 
 .label.vertical {
   align-items: center;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: end;
   text-align: center;
 }
 
