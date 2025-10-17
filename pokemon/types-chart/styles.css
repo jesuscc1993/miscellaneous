@@ -1,7 +1,7 @@
 :root {
   --c-red: #e84030;
   --c-blue: #30abe8;
-  --c-border: #ccc;
+  --c-border: #ddd;
 
   --contents-width: 926px;
 }
@@ -140,7 +140,11 @@ footer {
   width: 100%;
 }
 
-.pokeball {
+td.pokeball {
+  background-color: var(--c-border);
+}
+
+td.pokeball img {
   --size: 160px;
   height: var(--size);
   width: var(--size);
