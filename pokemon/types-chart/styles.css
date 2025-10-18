@@ -66,19 +66,17 @@ footer {
 .label.horizontal {
   display: flex;
   justify-content: end;
+  padding-left: 10px;
 }
 
-.label.horizontal .label {
-  padding: 0 8px;
-}
 
 .label.vertical {
   align-items: center;
+  padding-top: 10px;
   text-align: center;
 }
 
 .label.vertical .label {
-  padding: 8px 0;
   height: 89px;
   text-align: left;
   transform: rotate(180deg);
@@ -106,9 +104,9 @@ footer {
   background-size: 80%;
 }
 .guides .label {
-  --guide-length: 737px;
+  --guide-length: 738px;
   --guide-thickness: 4px;
-  --guide-margin: 146px;
+  --guide-margin: 140px;
   position: relative;
 }
 .guides .label:has([data-type]):after {
