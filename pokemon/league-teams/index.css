@@ -1,0 +1,124 @@
+:root {
+  --pokemon-width: 160px;
+  --pokemon-height: calc(var(--pokemon-width) + 1em);
+
+  --card-header-height: 40px;
+  --card-border: 12px;
+  --card-gap: 8px;
+  --card-width: calc(var(--pokemon-width) * 3 + (var(--card-border) + var(--card-gap)) * 2);
+  --card-height: calc(var(--card-header-height) + var(--pokemon-height) * 2 + (var(--card-border) + var(--card-gap)) * 2);
+}
+
+body {
+  background: fixed url('res/background.webp');
+  background-position: center;
+  margin: 0;
+  font-size: 20px;
+}
+
+#main_content {
+  color: #606060;
+  margin: 0 auto;
+  text-align: center;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--card-width));
+  grid-auto-rows: var(--card-height);
+  align-content: space-evenly;
+  justify-content: space-evenly;
+  min-height: 100vh;
+}
+
+.poke_pane {
+  border: var(--card-border) solid;
+  font-family: Cuprum;
+  position: relative;
+}
+
+.poke_pane::before {
+  --negative-padding: 8px;
+  background-color: #fff;
+  content: ' ';
+  display: block;
+  height: 100%;
+  margin: calc(var(--negative-padding) * -1);
+  padding: var(--negative-padding);
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.poke_pane.kanto {
+  border-image: url('res/frame_kanto.webp') 12;
+}
+
+.poke_pane.johto {
+  border-image: url('res/frame_johto.webp') 12;
+}
+
+.poke_pane.hoenn {
+  border-image: url('res/frame_hoenn.webp') 12;
+}
+
+.poke_pane.sinnoh {
+  border-image: url('res/frame_sinnoh.webp') 12;
+}
+
+.poke_pane.unova {
+  border-image: url('res/frame_unova.webp') 12;
+}
+
+.poke_pane.title {
+  margin-bottom: -1px;
+}
+
+.poke_team {
+  display: grid;
+  grid-gap: var(--card-gap);
+  grid-template-columns: repeat(auto-fill, var(--pokemon-width));
+  grid-template-rows: repeat(auto-fill, var(--pokemon-height));
+}
+
+div.poke_slot {
+  display: inline-block;
+  height: var(--pokemon-height);
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: var(--pokemon-width);
+}
+
+a.poke_link {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: var(--pokemon-width);
+  transform: scale(0.9);
+  width: var(--pokemon-width);
+}
+
+a.poke_link:hover {
+  filter: brightness(1.1);
+  transform: scale(1);
+}
+
+span.poke_name {
+  bottom: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  right: 0;
+}
+
+a.poke_link {
+  transition: 0.2s;
+}
+
+/* debug */
+/* a.poke_link,
+span.poke_name {
+  background-color: #0002;
+  transform: scale(1);
+} */
