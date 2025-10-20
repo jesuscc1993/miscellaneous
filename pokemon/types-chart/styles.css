@@ -39,7 +39,7 @@ table:has(td.damage:hover) tr:not(:hover) td.damage:after {
   background-color: #fffb;
 }
 table:has(td.damage:hover) tr:not(:hover) .label.horizontal:after {
-  opacity: .05;
+  opacity: .1;
 }
 
 td.vertical {
@@ -123,6 +123,9 @@ footer {
   position: absolute;
   background: inherit;
   z-index: -1;
+  opacity: 0.5;
+}
+.guides tr:hover .label:has([data-type]):after {
   opacity: 0.67;
 }
 .guides .label.horizontal:after {
