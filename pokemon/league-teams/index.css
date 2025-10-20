@@ -35,7 +35,7 @@ main {
 
 .poke_pane {
   border: var(--card-border) solid;
-  font-family: Cuprum;
+  font-family: 'Cuprum';
   position: relative;
 }
 
@@ -119,8 +119,8 @@ a.poke_link {
   transition: 0.2s;
 }
 
-.poke_pane.kanto { border-image: url('res/frame_kanto.webp') 12; }
-.poke_pane.johto { border-image: url('res/frame_johto.webp') 12; }
-.poke_pane.hoenn { border-image: url('res/frame_hoenn.webp') 12; }
-.poke_pane.sinnoh { border-image: url('res/frame_sinnoh.webp') 12; }
-.poke_pane.unova { border-image: url('res/frame_unova.webp') 12; }
+.poke_pane.kanto { border-image: url('res/frames/frame_kanto.webp') 12; }
+.poke_pane.johto { border-image: url('res/framesframe_johto.webp') 12; }
+.poke_pane.hoenn { border-image: url('res/framesframe_hoenn.webp') 12; }
+.poke_pane.sinnoh { border-image: url('res/framesframe_sinnoh.webp') 12; }
+.poke_pane.unova { border-image: url('res/framesframe_unova.webp') 12; }
