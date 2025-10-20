@@ -1,4 +1,6 @@
 :root {
+  --grid-gap: 16px;
+
   --pokemon-width: 160px;
   --pokemon-height: calc(var(--pokemon-width) + 1em);
 
@@ -22,11 +24,13 @@ body {
   text-align: center;
 
   display: grid;
+  gap: var(--grid-gap);
+  padding: var(--grid-gap);
   grid-template-columns: repeat(auto-fill, var(--card-width));
   grid-auto-rows: var(--card-height);
   align-content: space-evenly;
   justify-content: space-evenly;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--grid-gap) * 2);
 }
 
 .poke_pane {

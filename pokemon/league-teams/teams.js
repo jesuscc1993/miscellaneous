@@ -1,6 +1,7 @@
-const teams = {
-  kanto: {
+const teams = [
+  {
     region: 'Kanto',
+    label: 'Kanto - Pokémon Red',
     team: [
       { species: 'Charizard', gender: 'male', name: 'Efreet' },
       { species: 'Dragonite', gender: 'female', name: 'Chubby' },
@@ -10,8 +11,9 @@ const teams = {
       { species: 'Scizor', gender: 'female', name: 'VladScythe' },
     ],
   },
-  johto: {
+  {
     region: 'Johto',
+    label: 'Johto - Pokémon Silver',
     team: [
       { species: 'Alakazam', gender: 'male', name: 'Abba' },
       { species: 'Ampharos', gender: 'male', name: 'Watame' },
@@ -21,8 +23,9 @@ const teams = {
       { species: 'Thyplosion', gender: 'male', name: 'Ember' },
     ],
   },
-  hoenn: {
+  {
     region: 'Hoenn',
+    label: 'Hoenn - Pokémon Emerald',
     team: [
       { species: 'Blaziken', gender: 'male', name: 'Inferno' },
       { species: 'Espeon', gender: 'female', name: 'VoidEater' },
@@ -32,8 +35,9 @@ const teams = {
       { species: 'Milotic', gender: 'male', name: 'Velvet' },
     ],
   },
-  sinnoh: {
+  {
     region: 'Sinnoh',
+    label: 'Sinnoh - Pokémon Platinum',
     team: [
       { species: 'Floatzel', gender: 'female', name: 'Zelzel' },
       { species: 'Garchomp', gender: 'female', name: 'Gyaruchamp' },
@@ -43,8 +47,9 @@ const teams = {
       { species: 'Staraptor', gender: 'female', name: 'Subau' },
     ],
   },
-  unova: {
+  {
     region: 'Unova',
+    label: 'Unova - Pokémon White',
     team: [
       { species: 'Archeops', gender: 'male' },
       { species: 'Excadrill', gender: 'female', name: 'Mogu' },
@@ -59,4 +64,4 @@ const teams = {
       { species: 'Swoobat', gender: 'male', name: 'Woovie' },
     ],
   },
-};
+];

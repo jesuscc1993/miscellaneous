@@ -1,19 +1,18 @@
-const parseTeam = (teamData) => {
-  const { region, team } = teamData;
+const generateTeamCard = ({ label, region, team }) => {
   const regionCode = region.toLowerCase();
 
   const teamEl = document.createElement('div');
   teamEl.className = `poke_pane ${regionCode} poke_team`;
 
-  const containerEl = document.createElement('div');
-  containerEl.id = regionCode;
-  containerEl.className = 'poke_region';
+  const cardContainerEl = document.createElement('div');
+  cardContainerEl.id = regionCode;
+  cardContainerEl.className = 'poke_region';
 
-  const titleEl = document.createElement('div');
-  titleEl.className = `poke_pane ${regionCode} title limited_width`;
-  titleEl.textContent = `${region} Region`;
-  containerEl.appendChild(titleEl);
-  containerEl.appendChild(teamEl);
+  const cardTitleEl = document.createElement('div');
+  cardTitleEl.className = `poke_pane ${regionCode} title limited_width`;
+  cardTitleEl.textContent = label || `${region} Region`;
+  cardContainerEl.appendChild(cardTitleEl);
+  cardContainerEl.appendChild(teamEl);
 
   team.forEach((pkm) => {
     const knownGender =
@@ -39,14 +38,10 @@ const parseTeam = (teamData) => {
     teamEl.appendChild(slotEl);
   });
 
-  return containerEl;
+  return cardContainerEl;
 };
 
 document.addEventListener('DOMContentLoaded', () => {
   const containerEl = document.getElementById('main_content');
-  containerEl.appendChild(parseTeam(teams.kanto));
-  containerEl.appendChild(parseTeam(teams.johto));
-  containerEl.appendChild(parseTeam(teams.hoenn));
-  containerEl.appendChild(parseTeam(teams.sinnoh));
-  containerEl.appendChild(parseTeam(teams.unova));
+  teams.forEach((team) => containerEl.appendChild(generateTeamCard(team)));
 });
