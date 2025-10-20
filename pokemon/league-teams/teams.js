@@ -10,6 +10,11 @@ const teams = [
       { species: 'Lapras', gender: 'female', name: 'Shellby' },
       { species: 'Scizor', gender: 'female', name: 'VladScythe' },
     ],
+    backupTeam: [
+      { species: 'Arcanine', gender: 'male', name: 'Inferno' },
+      { species: 'Golem', gender: 'female', name: 'Clayla' },
+      { species: 'Primeape', gender: 'female', name: 'Azusa' },
+    ],
   },
   {
     region: 'Johto',
@@ -21,6 +26,10 @@ const teams = [
       { species: 'Lapras', gender: 'male', name: 'La+' },
       { species: 'Machamp', gender: 'female', name: 'Muscle' },
       { species: 'Thyplosion', gender: 'male', name: 'Ember' },
+    ],
+    backupTeam: [
+      { species: 'Nidoking', gender: 'male', name: 'Nito' },
+      { species: 'Pidgeot', gender: 'female', name: 'Suba' },
     ],
   },
   {
@@ -58,7 +67,7 @@ const teams = [
       { species: 'Lilligant', gender: 'female', name: 'FauFau' },
       { species: 'Scrafty', gender: 'male' },
     ],
-    backup: [
+    backupTeam: [
       { species: 'Basculin', gender: 'female', name: 'Bassu' },
       { species: 'Emboar', gender: 'male', name: 'Chestnut' },
       { species: 'Swoobat', gender: 'male', name: 'Woovie' },

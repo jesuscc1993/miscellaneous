@@ -18,7 +18,7 @@ body {
   font-size: 20px;
 }
 
-#main_content {
+main {
   color: #606060;
   margin: 0 auto;
   text-align: center;
@@ -52,26 +52,6 @@ body {
   z-index: -1;
 }
 
-.poke_pane.kanto {
-  border-image: url('res/frame_kanto.webp') 12;
-}
-
-.poke_pane.johto {
-  border-image: url('res/frame_johto.webp') 12;
-}
-
-.poke_pane.hoenn {
-  border-image: url('res/frame_hoenn.webp') 12;
-}
-
-.poke_pane.sinnoh {
-  border-image: url('res/frame_sinnoh.webp') 12;
-}
-
-.poke_pane.unova {
-  border-image: url('res/frame_unova.webp') 12;
-}
-
 .poke_pane.title {
   margin-bottom: -1px;
 }
@@ -81,6 +61,25 @@ body {
   grid-gap: var(--card-gap);
   grid-template-columns: repeat(auto-fill, var(--pokemon-width));
   grid-template-rows: repeat(auto-fill, var(--pokemon-height));
+}
+.poke_pane.body:not(.backup) .poke_team.backup {
+  display: none;
+}
+.poke_pane.body.backup .poke_team.league {
+  display: none;
+}
+
+.team_toggle {
+  all: unset;
+
+  cursor: pointer;
+  float: inline-end;
+  font-size: .75em;
+  height: 100%;
+  opacity: .67;
+  padding: 0 .33em;
+  position: absolute;
+  right: 0;
 }
 
 div.poke_slot {
@@ -120,9 +119,8 @@ a.poke_link {
   transition: 0.2s;
 }
 
-/* debug */
-/* a.poke_link,
-span.poke_name {
-  background-color: #0002;
-  transform: scale(1);
-} */
+.poke_pane.kanto { border-image: url('res/frame_kanto.webp') 12; }
+.poke_pane.johto { border-image: url('res/frame_johto.webp') 12; }
+.poke_pane.hoenn { border-image: url('res/frame_hoenn.webp') 12; }
+.poke_pane.sinnoh { border-image: url('res/frame_sinnoh.webp') 12; }
+.poke_pane.unova { border-image: url('res/frame_unova.webp') 12; }

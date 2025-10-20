@@ -1,47 +1,76 @@
-const generateTeamCard = ({ label, region, team }) => {
+const generateTeamCard = ({ backupTeam, label, region, team }) => {
   const regionCode = region.toLowerCase();
 
-  const teamEl = document.createElement('div');
-  teamEl.className = `poke_pane ${regionCode} poke_team`;
-
-  const cardContainerEl = document.createElement('div');
-  cardContainerEl.id = regionCode;
-  cardContainerEl.className = 'poke_region';
+  const wrapperEl = document.createElement('div');
+  wrapperEl.id = regionCode;
+  wrapperEl.className = 'poke_region';
 
   const cardTitleEl = document.createElement('div');
   cardTitleEl.className = `poke_pane ${regionCode} title limited_width`;
   cardTitleEl.textContent = label || `${region} Region`;
-  cardContainerEl.appendChild(cardTitleEl);
-  cardContainerEl.appendChild(teamEl);
+  wrapperEl.appendChild(cardTitleEl);
 
-  team.forEach((pkm) => {
-    const knownGender =
-      pkm.gender !== undefined
-        ? `<img src="res/gender_${pkm.gender}.webp"> `
-        : '';
+  const cardBodyEl = document.createElement('div');
+  cardBodyEl.className = `poke_pane ${regionCode} body`;
+  wrapperEl.appendChild(cardBodyEl);
 
-    const slotEl = document.createElement('div');
-    slotEl.className = 'poke_slot';
+  const teamEl = document.createElement('div');
+  teamEl.className = 'poke_team league';
+  cardBodyEl.appendChild(teamEl);
 
-    const linkEl = document.createElement('a');
-    linkEl.className = 'poke_link';
-    linkEl.target = '_blank';
-    linkEl.href = `http://bulbapedia.bulbagarden.net/wiki/${pkm.species}_(Pokémon)`;
-    linkEl.style.backgroundImage = `url('res/pokemon/${pkm.species.toLowerCase()}.webp')`;
+  team.forEach((pkm) => teamEl.appendChild(generatePokemonSlot(pkm)));
 
-    const nameEl = document.createElement('span');
-    nameEl.className = 'poke_name';
-    nameEl.innerHTML = `${knownGender}${pkm.species}`;
+  if (backupTeam?.length) {
+    const backupTeamEl = document.createElement('div');
+    backupTeamEl.className = 'poke_team backup';
+    cardBodyEl.appendChild(backupTeamEl);
 
-    slotEl.appendChild(linkEl);
-    slotEl.appendChild(nameEl);
-    teamEl.appendChild(slotEl);
-  });
+    backupTeam.forEach((pkm) =>
+      backupTeamEl.appendChild(generatePokemonSlot(pkm))
+    );
 
-  return cardContainerEl;
+    const backupBtn = document.createElement('button');
+    backupBtn.textContent = 'Show backup team';
+    backupBtn.className = 'team_toggle';
+    backupBtn.addEventListener('click', () => {
+      const showingBackup = cardBodyEl.classList.toggle('backup');
+      backupBtn.textContent = showingBackup
+        ? 'Show league team'
+        : 'Show backup team';
+    });
+
+    cardTitleEl.appendChild(backupBtn);
+  }
+
+  return wrapperEl;
+};
+
+const generatePokemonSlot = (pkm) => {
+  const knownGender =
+    pkm.gender !== undefined
+      ? `<img src='res/gender_${pkm.gender}.webp'> `
+      : '';
+
+  const slotEl = document.createElement('div');
+  slotEl.className = 'poke_slot';
+
+  const linkEl = document.createElement('a');
+  linkEl.className = 'poke_link';
+  linkEl.target = '_blank';
+  linkEl.href = `http://bulbapedia.bulbagarden.net/wiki/${pkm.species}_(Pokémon)`;
+  linkEl.style.backgroundImage = `url('res/pokemon/${pkm.species.toLowerCase()}.webp')`;
+
+  const nameEl = document.createElement('span');
+  nameEl.className = 'poke_name';
+  nameEl.innerHTML = `${knownGender}${pkm.species}`;
+
+  slotEl.appendChild(linkEl);
+  slotEl.appendChild(nameEl);
+
+  return slotEl;
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  const containerEl = document.getElementById('main_content');
+  const containerEl = document.querySelector('main');
   teams.forEach((team) => containerEl.appendChild(generateTeamCard(team)));
 });
