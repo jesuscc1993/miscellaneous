@@ -120,7 +120,7 @@ a.poke_link {
 }
 
 .poke_pane.kanto { border-image: url('res/frames/frame_kanto.webp') 12; }
-.poke_pane.johto { border-image: url('res/framesframe_johto.webp') 12; }
-.poke_pane.hoenn { border-image: url('res/framesframe_hoenn.webp') 12; }
-.poke_pane.sinnoh { border-image: url('res/framesframe_sinnoh.webp') 12; }
-.poke_pane.unova { border-image: url('res/framesframe_unova.webp') 12; }
+.poke_pane.johto { border-image: url('res/frames/frame_johto.webp') 12; }
+.poke_pane.hoenn { border-image: url('res/frames/frame_hoenn.webp') 12; }
+.poke_pane.sinnoh { border-image: url('res/frames/frame_sinnoh.webp') 12; }
+.poke_pane.unova { border-image: url('res/frames/frame_unova.webp') 12; }
