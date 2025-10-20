@@ -35,7 +35,8 @@ tr:last-child td {
 }
 
 table:has(td.damage:hover) tr:not(:hover) td.damage:after {
-  opacity: .33;
+  background-blend-mode: screen;
+  background-color: #fffb;
 }
 table:has(td.damage:hover) tr:not(:hover) .label.horizontal:after {
   opacity: .05;
@@ -139,6 +140,8 @@ footer {
 
 .damage:after {
   background: center no-repeat;
+  background-image: var(--bg-image);
+  mask-image: var(--bg-image);
   content: '';
   display: block;
   height: 100%;
@@ -183,10 +186,10 @@ td.defense {
 .label.steel { background: #60a1b8; }
 .label.water { background: #2980ef; }
 
-.damage.none:after { background-image: url('./assets/images/damage/none.svg'); }
-.damage.half:after { background-image: url('./assets/images/damage/half.svg'); }
-.damage.normal:after { background-image: url('./assets/images/damage/normal.svg'); }
-.damage.double:after { background-image: url('./assets/images/damage/double.svg'); }
+.damage.none { --bg-image: url('./assets/images/damage/none.svg'); }
+.damage.half { --bg-image: url('./assets/images/damage/half.svg'); }
+.damage.normal { --bg-image: url('./assets/images/damage/normal.svg'); }
+.damage.double { --bg-image: url('./assets/images/damage/double.svg'); }
 
 [data-type='attack'] { background-image: url('./assets/images/attack.svg'); }
 [data-type='defense'] { background-image: url('./assets/images/defense.svg'); }
