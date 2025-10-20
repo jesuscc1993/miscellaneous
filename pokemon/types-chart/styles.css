@@ -34,6 +34,13 @@ tr:last-child td {
   border-bottom-width: 1px;
 }
 
+table:has(td.damage:hover) tr:not(:hover) td.damage:after {
+  opacity: .33;
+}
+table:has(td.damage:hover) tr:not(:hover) .label.horizontal:after {
+  opacity: .05;
+}
+
 td.vertical {
   line-height: 0;
 }
