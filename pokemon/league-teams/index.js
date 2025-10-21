@@ -46,10 +46,11 @@ const generateTeamCard = ({ backupTeam, label, region, team }) => {
 };
 
 const generatePokemonSlot = (pkm) => {
-  const knownGender =
-    pkm.gender !== undefined
-      ? `<img src='res/gender_${pkm.gender}.webp'> `
-      : '';
+  const knownGender = pkm.gender
+    ? `<span class="gender ${pkm.gender}">${
+        pkm.gender === 'male' ? '♂' : '♀'
+      }</span>`
+    : '';
 
   const slotEl = document.createElement('div');
   slotEl.className = 'poke_slot';
@@ -62,7 +63,7 @@ const generatePokemonSlot = (pkm) => {
 
   const nameEl = document.createElement('span');
   nameEl.className = 'poke_name';
-  nameEl.innerHTML = `${knownGender}${pkm.species}`;
+  nameEl.innerHTML = `${knownGender} <span>${pkm.species}</span>`;
 
   slotEl.appendChild(linkEl);
   slotEl.appendChild(nameEl);

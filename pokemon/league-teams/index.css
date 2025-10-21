@@ -91,6 +91,15 @@ div.poke_slot {
   width: var(--pokemon-width);
 }
 
+.gender {
+  font-weight: bold;
+}
+.gender.male { color: #73a9e4; }
+.gender.female { color: #ff8b80; }
+.gender + span {
+  padding-right: .75em;
+}
+
 a.poke_link {
   background-position: center;
   background-repeat: no-repeat;
