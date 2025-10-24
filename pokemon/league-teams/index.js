@@ -123,7 +123,10 @@ const generatePokemonSlot = (pkm) => {
   return slotEl;
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  const containerEl = document.querySelector('main');
-  teams.forEach((team) => containerEl.appendChild(generateTeamCard(team)));
-});
+fetch('data/teams.json')
+  .then((response) => response.json())
+  .then((data) => {
+    const containerEl = document.querySelector('main');
+    data.forEach((region) => containerEl.appendChild(generateTeamCard(region)));
+  })
+  .catch((error) => console.error('Error fetching teams:', error));

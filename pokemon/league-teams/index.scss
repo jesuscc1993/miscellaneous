@@ -1,0 +1,196 @@
+:root {
+  --grid-gap: 16px;
+
+  --pokemon-width: 160px;
+  --pokemon-height: calc(var(--pokemon-width) + 1em);
+
+  --card-border: 12px;
+  --card-gap: 8px;
+
+  --team-card-height: calc(
+    (var(--pokemon-height) + var(--card-border)) * 2 + var(--card-gap)
+  );
+
+  --card-header-height: 48px;
+  --card-width: calc(
+    var(--pokemon-width) * 3 + (var(--card-border) + var(--card-gap)) * 2
+  );
+  --card-height: calc(var(--card-header-height) + var(--team-card-height));
+
+  --transition: 0.2s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: fixed url('res/background.webp');
+  background-position: center;
+  margin: 0;
+  font-size: 20px;
+}
+
+main {
+  color: #606060;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100vh;
+
+  display: grid;
+  gap: var(--grid-gap);
+  padding: var(--grid-gap);
+  grid-template-columns: repeat(auto-fill, var(--card-width));
+  grid-auto-rows: var(--card-height);
+  align-content: space-evenly;
+  justify-content: space-evenly;
+}
+
+.poke_pane {
+  $slice: 12;
+
+  border: var(--card-border) solid;
+  font-family: 'Cuprum';
+  position: relative;
+
+  &::before {
+    --negative-padding: 8px;
+
+    content: ' ';
+    background-color: #fff;
+    display: block;
+    height: 100%;
+    margin: calc(var(--negative-padding) * -1);
+    padding: var(--negative-padding);
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &.title {
+    margin-bottom: -1px;
+  }
+
+  &.body {
+    height: var(--team-card-height);
+  }
+
+  &.kanto {
+    border-image: url('res/frames/frame_kanto.webp') $slice;
+  }
+  &.johto {
+    border-image: url('res/frames/frame_johto.webp') $slice;
+  }
+  &.hoenn {
+    border-image: url('res/frames/frame_hoenn.webp') $slice;
+  }
+  &.sinnoh {
+    border-image: url('res/frames/frame_sinnoh.webp') $slice;
+  }
+  &.unova {
+    border-image: url('res/frames/frame_unova.webp') $slice;
+  }
+}
+
+.poke_pane {
+  &.sideA {
+    .sideB {
+      display: none;
+    }
+    &.main .poke_team.league {
+      display: grid;
+    }
+    &.backup .poke_team.backup {
+      display: grid;
+    }
+  }
+
+  &.sideB {
+    .sideA {
+      display: none;
+    }
+    &.main .poke_team.league {
+      display: grid;
+    }
+    &.backup .poke_team.backup {
+      display: grid;
+    }
+  }
+}
+
+.poke_team {
+  display: none; /* overwritten with grid when displayed */
+
+  grid-gap: var(--card-gap);
+  grid-template-columns: repeat(auto-fill, var(--pokemon-width));
+  grid-template-rows: repeat(auto-fill, var(--pokemon-height));
+
+  .poke_slot {
+    display: inline-block;
+    height: var(--pokemon-height);
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: var(--pokemon-width);
+
+    .poke_name {
+      bottom: 0;
+      left: 0;
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+button.toggle {
+  all: unset;
+
+  cursor: pointer;
+  font-size: 0.75em;
+  height: 100%;
+  opacity: 0.67;
+  padding: 0 0.33em;
+  position: absolute;
+
+  &.side {
+    left: 0;
+  }
+
+  &.team {
+    right: 0;
+  }
+}
+
+.gender {
+  font-weight: bold;
+
+  &.male {
+    color: #73a9e4;
+  }
+  &.female {
+    color: #ff8b80;
+  }
+
+  & + span {
+    padding-right: 0.75em;
+  }
+}
+
+a.poke_link {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: var(--pokemon-width);
+  width: var(--pokemon-width);
+
+  transform: scale(0.9);
+  transition: var(--transition);
+
+  &:hover {
+    filter: brightness(1.1);
+    transform: scale(1);
+  }
+}
