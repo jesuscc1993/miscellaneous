@@ -4,11 +4,17 @@
   --pokemon-width: 160px;
   --pokemon-height: calc(var(--pokemon-width) + 1em);
 
-  --card-header-height: 40px;
+  --team-card-height: calc((var(--pokemon-height) + var(--card-border)) * 2 + var(--card-gap));
+
+  --card-header-height: 48px;
   --card-border: 12px;
   --card-gap: 8px;
   --card-width: calc(var(--pokemon-width) * 3 + (var(--card-border) + var(--card-gap)) * 2);
-  --card-height: calc(var(--card-header-height) + var(--pokemon-height) * 2 + (var(--card-border) + var(--card-gap)) * 2);
+  --card-height: calc(var(--card-header-height) + var(--team-card-height));
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -30,7 +36,7 @@ main {
   grid-auto-rows: var(--card-height);
   align-content: space-evenly;
   justify-content: space-evenly;
-  min-height: calc(100vh - var(--grid-gap) * 2);
+  min-height: 100vh;
 }
 
 .poke_pane {
@@ -73,6 +79,10 @@ main {
 .poke_pane.sideB.main .poke_team.league,
 .poke_pane.sideB.backup .poke_team.backup {
   display: grid;
+}
+
+.poke_pane.body {
+  height: var(--team-card-height);
 }
 
 button.toggle {
