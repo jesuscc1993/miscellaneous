@@ -1,4 +1,4 @@
-const generateTeamCard = ({ backupTeam, label, region, team }) => {
+const generateTeamCard = ({ region, team, teamB }) => {
   const regionCode = region.toLowerCase();
 
   const wrapperEl = document.createElement('div');
@@ -7,36 +7,88 @@ const generateTeamCard = ({ backupTeam, label, region, team }) => {
 
   const cardTitleEl = document.createElement('div');
   cardTitleEl.className = `poke_pane ${regionCode} title limited_width`;
-  cardTitleEl.textContent = label || `${region} Region`;
+  cardTitleEl.textContent = `${region} Region`;
   wrapperEl.appendChild(cardTitleEl);
 
   const cardBodyEl = document.createElement('div');
-  cardBodyEl.className = `poke_pane ${regionCode} body`;
+  cardBodyEl.className = `poke_pane ${regionCode} body main sideA`;
   wrapperEl.appendChild(cardBodyEl);
 
-  const teamEl = document.createElement('div');
-  teamEl.className = 'poke_team league';
-  cardBodyEl.appendChild(teamEl);
+  if (team) {
+    const { league, backup } = team;
 
-  team.forEach((pkm) => teamEl.appendChild(generatePokemonSlot(pkm)));
+    const sideAEl = document.createElement('div');
+    sideAEl.className = 'poke_side sideA';
+    cardBodyEl.appendChild(sideAEl);
 
-  if (backupTeam?.length) {
-    const backupTeamEl = document.createElement('div');
-    backupTeamEl.className = 'poke_team backup';
-    cardBodyEl.appendChild(backupTeamEl);
+    if (league?.length) {
+      const leagueEl = document.createElement('div');
+      leagueEl.className = 'poke_team league';
+      league.forEach((pkm) => leagueEl.appendChild(generatePokemonSlot(pkm)));
 
-    backupTeam.forEach((pkm) =>
-      backupTeamEl.appendChild(generatePokemonSlot(pkm))
-    );
+      sideAEl.appendChild(leagueEl);
+    }
+
+    if (backup?.length) {
+      const backupEl = document.createElement('div');
+      backupEl.className = 'poke_team backup';
+      backup.forEach((pkm) => backupEl.appendChild(generatePokemonSlot(pkm)));
+
+      sideAEl.appendChild(backupEl);
+    }
+  }
+
+  if (teamB) {
+    const { league, backup } = teamB;
+
+    const sideBEl = document.createElement('div');
+    sideBEl.className = 'poke_side sideB';
+    cardBodyEl.appendChild(sideBEl);
+
+    if (league?.length) {
+      const leagueEl = document.createElement('div');
+      leagueEl.className = 'poke_team league';
+      league.forEach((pkm) => leagueEl.appendChild(generatePokemonSlot(pkm)));
+
+      sideBEl.appendChild(leagueEl);
+    }
+
+    if (backup?.length) {
+      const backupEl = document.createElement('div');
+      backupEl.className = 'poke_team backup';
+      backup.forEach((pkm) => backupEl.appendChild(generatePokemonSlot(pkm)));
+
+      sideBEl.appendChild(backupEl);
+    }
+  }
+
+  if (team?.league?.length && teamB?.league?.length) {
+    const sideALabel = `Show ${team.label} team`;
+    const sideBLabel = `Show ${teamB.label} team`;
+
+    const teamBtn = document.createElement('button');
+    teamBtn.textContent = sideBLabel;
+    teamBtn.className = 'toggle side';
+    teamBtn.addEventListener('click', () => {
+      cardBodyEl.classList.toggle('sideA');
+      const showingSideB = cardBodyEl.classList.toggle('sideB');
+      teamBtn.textContent = showingSideB ? sideALabel : sideBLabel;
+    });
+
+    cardTitleEl.appendChild(teamBtn);
+  }
+
+  if (team?.backup?.length || teamB?.backup?.length) {
+    const leagueLabel = 'Show league team';
+    const backupLabel = 'Show backup team';
 
     const backupBtn = document.createElement('button');
-    backupBtn.textContent = 'Show backup team';
-    backupBtn.className = 'team_toggle';
+    backupBtn.textContent = backupLabel;
+    backupBtn.className = 'toggle team';
     backupBtn.addEventListener('click', () => {
+      cardBodyEl.classList.toggle('main');
       const showingBackup = cardBodyEl.classList.toggle('backup');
-      backupBtn.textContent = showingBackup
-        ? 'Show league team'
-        : 'Show backup team';
+      backupBtn.textContent = showingBackup ? leagueLabel : backupLabel;
     });
 
     cardTitleEl.appendChild(backupBtn);
