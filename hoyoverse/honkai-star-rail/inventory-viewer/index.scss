@@ -40,11 +40,11 @@ $elements: 'fire', 'ice', 'imaginary', 'lightning', 'physical', 'quantum',
 }
 
 html {
-  background-image: url(assets/images/bg.jpg);
+  background-image: url(assets/images/bg.webp);
 }
 
 body {
-  cursor: url(./assets/images/cursor.png) 1 1, auto;
+  cursor: url(./assets/images/cursor.webp) 1 1, auto;
   font-family: 'DIN', non-serif;
   font-size: var(--font-size);
 }
@@ -122,7 +122,7 @@ a {
       &.#{$element} {
         .item-portrait {
           &:before {
-            background-image: url(assets/images/elements/#{$element}.png);
+            background-image: url(assets/images/elements/#{$element}.webp);
           }
         }
       }
@@ -133,7 +133,7 @@ a {
         .bottom-text {
           .level {
             &:before {
-              background-image: url(assets/images/paths/small/#{$path}.png);
+              background-image: url(assets/images/paths/small/#{$path}.webp);
             }
           }
         }
@@ -159,7 +159,7 @@ a {
       &.#{$path} {
         .item-portrait {
           &:before {
-            background-image: url(assets/images/paths/small/#{$path}.png);
+            background-image: url(assets/images/paths/small/#{$path}.webp);
           }
         }
       }

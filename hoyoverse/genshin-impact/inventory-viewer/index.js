@@ -1,5 +1,5 @@
 const rarityBackgrounds = {
-  3: 'assets/images/char_bg_red.png',
+  3: 'assets/images/char_bg_red.webp',
   4: 'https://webstatic-sea.hoyolab.com/app/community-game-records-sea/images/level_4_bg_s.7a6c5841.png',
   5: 'https://webstatic-sea.hoyolab.com/app/community-game-records-sea/images/level_5_bg_s.1ff411a0.png',
 };

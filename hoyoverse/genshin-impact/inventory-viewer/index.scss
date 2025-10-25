@@ -30,11 +30,11 @@ $elements: 'anemo', 'cryo', 'dendro', 'electro', 'geo', 'hydro', 'pyro';
 }
 
 html {
-  background-image: url(assets/images/bg.jpg);
+  background-image: url(assets/images/bg.webp);
 }
 
 body {
-  cursor: url(./assets/images/cursor.png) 2 2, auto;
+  cursor: url(./assets/images/cursor.webp) 2 2, auto;
   font-family: 'HYWenHei', non-serif;
   font-size: var(--font-size);
   letter-spacing: -0.25;
@@ -60,7 +60,7 @@ a {
     &.#{$element} {
       .item-portrait {
         &:before {
-          background-image: url(assets/images/elements/colored/#{$element}.png);
+          background-image: url(assets/images/elements/colored/#{$element}.webp);
         }
       }
     }
@@ -71,7 +71,7 @@ a {
       .bottom-text {
         .level {
           &:before {
-            background-image: url(assets/images/weapons/cropped/#{$weaponType}.png);
+            background-image: url(assets/images/weapons/cropped/#{$weaponType}.webp);
           }
         }
       }

@@ -108,7 +108,7 @@ const processFilter = (identifier, filterValues) => {
 };
 
 const getFilterImg = (identifierId, filterId) => {
-  return `${filterPaths[identifierId]}/${filterId}.png`;
+  return `${filterPaths[identifierId]}/${filterId}.webp`;
 };
 
 const toggleFilter = (name, value) => {
