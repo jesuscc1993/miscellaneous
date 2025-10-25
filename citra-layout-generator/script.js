@@ -300,7 +300,7 @@ custom_bottom_bottom=${bottomBottom}`;
 
   previewTopEl.style.backgroundImage = `url(./assets/images/${
     swapScreens ? 'bottom' : 'top'
-  }.jpg)`;
+  }.webp)`;
   previewTopEl.style.left = topLeft * scale + 'px';
   previewTopEl.style.top = topTop * scale + 'px';
   previewTopEl.style.width = (topRight - topLeft) * scale + 'px';
@@ -309,7 +309,7 @@ custom_bottom_bottom=${bottomBottom}`;
 
   previewBottomEl.style.backgroundImage = `url(./assets/images/${
     swapScreens ? 'top' : 'bottom'
-  }.jpg)`;
+  }.webp)`;
   previewBottomEl.style.left = bottomLeft * scale + 'px';
   previewBottomEl.style.top = bottomTop * scale + 'px';
   previewBottomEl.style.width = (bottomRight - bottomLeft) * scale + 'px';
