@@ -1,7 +1,7 @@
 {
   "DEV_IS": {
     "ReGLOSS": [
-      { "name": "Hiodoshi Ao" },
+      { "name": "Hiodoshi Ao", "graduated": true },
       { "name": "Ichijou Ririka", "keyword": "Ririka" },
       { "name": "Juufuutei Raden", "keyword": "Raden" },
       { "name": "Otonose Kanade", "keyword": "Kanade" },
@@ -58,6 +58,7 @@
       { "name": "Tsunomaki Watame", "keyword": "Watame" }
     ],
     "Gen 5": [
+      { "name": "Mano Aloe", "graduated": true },
       { "name": "Momosuzu Nene", "keyword": "Nene" },
       { "name": "Omaru Polka", "keyword": "Polka" },
       { "name": "Shishiro Botan", "keyword": "Botan" },

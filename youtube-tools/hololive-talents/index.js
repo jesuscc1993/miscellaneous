@@ -73,7 +73,7 @@ const initialize = () => {
               );
 
               const talentImage = jQuery(
-                `<img src="assets/images/portraits/${talent.name}.jpg">`
+                `<img src="assets/images/portraits/${talent.name}.webp" alt="${talent.name}" />`
               );
               talentContainer.append(talentImage);
 
