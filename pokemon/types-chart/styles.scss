@@ -214,83 +214,6 @@ footer {
   }
 }
 
-.damage {
-  &.none {
-    --bg-image: url('./assets/images/damage/none.svg');
-  }
-  &.half {
-    --bg-image: url('./assets/images/damage/half.svg');
-  }
-  &.normal {
-    --bg-image: url('./assets/images/damage/normal.svg');
-  }
-  &.double {
-    --bg-image: url('./assets/images/damage/double.svg');
-  }
-}
-
-[data-type='attack'] {
-  background-image: url('./assets/images/attack.svg');
-}
-[data-type='defense'] {
-  background-image: url('./assets/images/defense.svg');
-}
-
-[data-type='bug'] {
-  background-image: url('./assets/images/types/bug.svg');
-}
-[data-type='dark'] {
-  background-image: url('./assets/images/types/dark.svg');
-}
-[data-type='dragon'] {
-  background-image: url('./assets/images/types/dragon.svg');
-}
-[data-type='electric'] {
-  background-image: url('./assets/images/types/electric.svg');
-}
-[data-type='fairy'] {
-  background-image: url('./assets/images/types/fairy.svg');
-}
-[data-type='fighting'] {
-  background-image: url('./assets/images/types/fighting.svg');
-}
-[data-type='fire'] {
-  background-image: url('./assets/images/types/fire.svg');
-}
-[data-type='flying'] {
-  background-image: url('./assets/images/types/flying.svg');
-}
-[data-type='ghost'] {
-  background-image: url('./assets/images/types/ghost.svg');
-}
-[data-type='grass'] {
-  background-image: url('./assets/images/types/grass.svg');
-}
-[data-type='ground'] {
-  background-image: url('./assets/images/types/ground.svg');
-}
-[data-type='ice'] {
-  background-image: url('./assets/images/types/ice.svg');
-}
-[data-type='normal'] {
-  background-image: url('./assets/images/types/normal.svg');
-}
-[data-type='poison'] {
-  background-image: url('./assets/images/types/poison.svg');
-}
-[data-type='psychic'] {
-  background-image: url('./assets/images/types/psychic.svg');
-}
-[data-type='rock'] {
-  background-image: url('./assets/images/types/rock.svg');
-}
-[data-type='steel'] {
-  background-image: url('./assets/images/types/steel.svg');
-}
-[data-type='water'] {
-  background-image: url('./assets/images/types/water.svg');
-}
-
 .label {
   &.bug {
     background: #91a119;
@@ -348,6 +271,28 @@ footer {
   }
 }
 
+[data-type='attack'] {
+  background-image: url('./assets/images/attack.svg');
+}
+[data-type='defense'] {
+  background-image: url('./assets/images/defense.svg');
+}
+
+@each $type in bug, dark, dragon, electric, fairy, fighting, fire, flying, ghost,
+  grass, ground, ice, normal, poison, psychic, rock, steel, water
+{
+  [data-type='#{$type}'] {
+    background-image: url('./assets/images/types/#{$type}.svg');
+  }
+}
+
+@each $type in double, half, none, normal {
+  .damage.#{$type} {
+    --bg-image: url('./assets/images/damage/#{$type}.svg');
+  }
+}
+
+/* utility */
 .no-padding {
   padding: 0 !important;
 }
