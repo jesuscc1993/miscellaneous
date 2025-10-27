@@ -47,8 +47,6 @@ main {
 }
 
 .poke_pane {
-  $slice: 12;
-
   border: var(--card-border) solid;
   font-family: 'Cuprum';
   position: relative;
@@ -75,20 +73,10 @@ main {
     height: var(--team-card-height);
   }
 
-  &.kanto {
-    border-image: url('res/frames/frame_kanto.webp') $slice;
-  }
-  &.johto {
-    border-image: url('res/frames/frame_johto.webp') $slice;
-  }
-  &.hoenn {
-    border-image: url('res/frames/frame_hoenn.webp') $slice;
-  }
-  &.sinnoh {
-    border-image: url('res/frames/frame_sinnoh.webp') $slice;
-  }
-  &.unova {
-    border-image: url('res/frames/frame_unova.webp') $slice;
+  @each $region in kanto, johto, hoenn, sinnoh, unova {
+    &.#{$region} {
+      border-image: url('res/frames/frame_#{$region}.webp') 12;
+    }
   }
 }
 
