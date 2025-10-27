@@ -1,0 +1,347 @@
+:root {
+  --c-red: #e84030;
+  --c-blue: #30abe8;
+  --c-border: #ddd;
+
+  --contents-width: 926px;
+  --label-width: 139px;
+  --cell-height: 40px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: fit-content;
+}
+
+table {
+  font-size: var(--cell-height);
+  overflow: hidden;
+
+  td {
+    border: solid var(--c-border);
+    border-width: 1px 0 0 1px;
+
+    &.vertical {
+      line-height: 0;
+    }
+
+    &:not(.vertical):not(.label) {
+      --size: var(--cell-height);
+      height: var(--size);
+      width: var(--size);
+      line-height: var(--size);
+      text-align: center;
+    }
+
+    &.pokeball {
+      background-color: var(--c-border);
+
+      img {
+        --size: 160px;
+        height: var(--size);
+        width: var(--size);
+      }
+    }
+
+    &.attack {
+      background: var(--c-red);
+      border-left: none;
+    }
+
+    &.defense {
+      background: var(--c-blue);
+      border-top: none;
+    }
+
+    &.damage {
+      &::after {
+        background: center no-repeat;
+        background-image: var(--bg-image);
+        mask-image: var(--bg-image);
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &:last-child {
+      border-right-width: 1px;
+    }
+  }
+
+  tr:last-child td {
+    border-bottom-width: 1px;
+  }
+
+  &:has(td.damage:hover) {
+    tr:not(:hover) {
+      td.damage:after {
+        background-blend-mode: screen;
+        background-color: #fffb;
+      }
+
+      .label.horizontal:after {
+        opacity: 0.1;
+      }
+    }
+  }
+}
+
+footer {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  max-width: var(--contents-width);
+  padding: 4px 8px;
+}
+
+.label {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: end;
+
+  &.horizontal {
+    height: var(--cell-height);
+    min-width: var(--label-width);
+    padding: 0 4px;
+
+    .label_text {
+      padding: 0 4px;
+    }
+  }
+
+  &.vertical {
+    align-items: center;
+    flex-direction: column;
+    min-height: var(--label-width);
+    padding: 4px 0;
+    text-align: center;
+    width: var(--cell-height);
+
+    .label_text {
+      padding: 4px 0;
+      height: 89px;
+      text-align: left;
+      transform: rotate(180deg);
+      writing-mode: vertical-rl;
+    }
+  }
+
+  &.centered {
+    justify-content: center;
+  }
+
+  .label_text {
+    color: white;
+    font-size: 0.5em;
+    text-transform: uppercase;
+
+    &.split {
+      display: inline-flex;
+      flex: 1;
+      justify-content: space-around;
+    }
+  }
+
+  .label_icon {
+    --size: 28px;
+    height: var(--size);
+    width: var(--size);
+    line-height: var(--size);
+    background-size: contain;
+    display: inline-block;
+  }
+}
+
+.guides {
+  td.damage {
+    --c-border: #0000;
+
+    &.normal:after {
+      background-size: 80%;
+    }
+  }
+
+  .label {
+    --guide-length: 738px;
+    --guide-thickness: 4px;
+    --guide-margin: calc(var(--label-width) + 1px);
+    position: relative;
+
+    &:has([data-type]):after {
+      content: '';
+      display: block;
+      position: absolute;
+      background: inherit;
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    tr:hover &:has([data-type]):after {
+      opacity: 0.67;
+    }
+
+    &.horizontal:after {
+      width: var(--guide-length);
+      height: var(--guide-thickness);
+      left: var(--guide-margin);
+      top: calc(50% - var(--guide-thickness) / 2);
+    }
+
+    &.vertical:after {
+      height: var(--guide-length);
+      left: calc(50% - var(--guide-thickness) / 2);
+      top: var(--guide-margin);
+      width: var(--guide-thickness);
+    }
+  }
+}
+
+.damage {
+  &.none {
+    --bg-image: url('./assets/images/damage/none.svg');
+  }
+  &.half {
+    --bg-image: url('./assets/images/damage/half.svg');
+  }
+  &.normal {
+    --bg-image: url('./assets/images/damage/normal.svg');
+  }
+  &.double {
+    --bg-image: url('./assets/images/damage/double.svg');
+  }
+}
+
+[data-type='attack'] {
+  background-image: url('./assets/images/attack.svg');
+}
+[data-type='defense'] {
+  background-image: url('./assets/images/defense.svg');
+}
+
+[data-type='bug'] {
+  background-image: url('./assets/images/types/bug.svg');
+}
+[data-type='dark'] {
+  background-image: url('./assets/images/types/dark.svg');
+}
+[data-type='dragon'] {
+  background-image: url('./assets/images/types/dragon.svg');
+}
+[data-type='electric'] {
+  background-image: url('./assets/images/types/electric.svg');
+}
+[data-type='fairy'] {
+  background-image: url('./assets/images/types/fairy.svg');
+}
+[data-type='fighting'] {
+  background-image: url('./assets/images/types/fighting.svg');
+}
+[data-type='fire'] {
+  background-image: url('./assets/images/types/fire.svg');
+}
+[data-type='flying'] {
+  background-image: url('./assets/images/types/flying.svg');
+}
+[data-type='ghost'] {
+  background-image: url('./assets/images/types/ghost.svg');
+}
+[data-type='grass'] {
+  background-image: url('./assets/images/types/grass.svg');
+}
+[data-type='ground'] {
+  background-image: url('./assets/images/types/ground.svg');
+}
+[data-type='ice'] {
+  background-image: url('./assets/images/types/ice.svg');
+}
+[data-type='normal'] {
+  background-image: url('./assets/images/types/normal.svg');
+}
+[data-type='poison'] {
+  background-image: url('./assets/images/types/poison.svg');
+}
+[data-type='psychic'] {
+  background-image: url('./assets/images/types/psychic.svg');
+}
+[data-type='rock'] {
+  background-image: url('./assets/images/types/rock.svg');
+}
+[data-type='steel'] {
+  background-image: url('./assets/images/types/steel.svg');
+}
+[data-type='water'] {
+  background-image: url('./assets/images/types/water.svg');
+}
+
+.label {
+  &.bug {
+    background: #91a119;
+  }
+  &.dark {
+    background: #624d4e;
+  }
+  &.dragon {
+    background: #5060e1;
+  }
+  &.electric {
+    background: #fac000;
+  }
+  &.fairy {
+    background: #ef70ef;
+  }
+  &.fighting {
+    background: #ff8000;
+  }
+  &.fire {
+    background: #e62829;
+  }
+  &.flying {
+    background: #81b9ef;
+  }
+  &.ghost {
+    background: #704170;
+  }
+  &.grass {
+    background: #3fa129;
+  }
+  &.ground {
+    background: #915121;
+  }
+  &.ice {
+    background: #3dcef3;
+  }
+  &.normal {
+    background: #9fa09f;
+  }
+  &.poison {
+    background: #9141cb;
+  }
+  &.psychic {
+    background: #ef4179;
+  }
+  &.rock {
+    background: #afa981;
+  }
+  &.steel {
+    background: #60a1b8;
+  }
+  &.water {
+    background: #2980ef;
+  }
+}
+
+.no-padding {
+  padding: 0 !important;
+}
