@@ -106,6 +106,10 @@ footer {
 }
 
 .label {
+  --padding: 4px;
+  --x-scale: 1;
+  --y-scale: 1.125;
+
   align-items: center;
   box-sizing: border-box;
   display: flex;
@@ -114,10 +118,11 @@ footer {
   &.horizontal {
     height: var(--cell-height);
     min-width: var(--label-width);
-    padding: 0 4px;
+    padding: 0 var(--padding);
 
     .label_text {
-      padding: 0 4px;
+      padding: 0 var(--padding);
+      scale: var(--x-scale) var(--y-scale);
     }
   }
 
@@ -125,13 +130,14 @@ footer {
     align-items: center;
     flex-direction: column;
     min-height: var(--label-width);
-    padding: 4px 0;
+    padding: var(--padding) 0;
     text-align: center;
     width: var(--cell-height);
 
     .label_text {
-      padding: 4px 0;
       height: 89px;
+      padding: var(--padding) 0;
+      scale: var(--y-scale) var(--x-scale);
       text-align: left;
       transform: rotate(180deg);
       writing-mode: vertical-rl;
