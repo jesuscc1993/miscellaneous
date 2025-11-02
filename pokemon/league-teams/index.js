@@ -108,10 +108,12 @@ const generatePokemonSlot = (pkm) => {
   linkEl.href = `http://bulbapedia.bulbagarden.net/wiki/${pkm.species}_(Pokémon)`;
   linkEl.style.backgroundImage = `url('res/pokemon/${pkmSprite}')`;
 
-  const genderColor = pkm.gender === 'male' ? 'red' : 'cyan';
-  const genderSymbol = pkm.gender === 'male' ? '♂' : '♀';
+  const genderData =
+    pkm.gender === 'male'
+      ? { color: 'cyan', symbol: '♂' }
+      : { color: 'red', symbol: '♀' };
   const genderEl = pkm.gender
-    ? `<strong class="gender ${genderColor}">${genderSymbol}</strong>`
+    ? `<strong class="gender ${genderData.color}">${genderData.symbol}</strong>`
     : '';
 
   const nameEl = document.createElement('span');
