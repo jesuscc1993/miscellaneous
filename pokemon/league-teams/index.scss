@@ -18,6 +18,9 @@
   --card-height: calc(var(--card-header-height) + var(--team-card-height));
 
   --transition: 0.2s;
+
+  --c-red: #ff4d5b;
+  --c-blue: #2ebbe5;
 }
 
 * {
@@ -139,15 +142,15 @@ main {
         font-weight: bold;
 
         &.male {
-          color: #2ebbe5;
+          color: var(--c-blue);
         }
         &.female {
-          color: #ff4d5b;
+          color: var(--c-red);
         }
       }
 
       .shiny {
-        color: #ff4d5b;
+        color: var(--c-red);
         font-weight: bold;
       }
     }
