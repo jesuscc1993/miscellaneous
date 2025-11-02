@@ -2,54 +2,46 @@
   {
     "region": "Kanto",
     "team": {
-      "label": "Pokémon Red",
+      "label": "FRLG",
+      "time": "77:31",
       "league": [
         {
           "species": "Charizard",
-          "gender": "male",
-          "name": "Efreet"
+          "gender": "male"
         },
         {
           "species": "Dragonite",
-          "gender": "female",
-          "name": "Chubby"
+          "gender": "female"
         },
         {
           "species": "Gengar",
-          "gender": "female",
-          "name": "Alice"
+          "gender": "female"
         },
         {
           "species": "Jolteon",
-          "gender": "female",
-          "name": "Sparky"
+          "gender": "female"
         },
         {
           "species": "Lapras",
-          "gender": "female",
-          "name": "Shellby"
+          "gender": "female"
         },
         {
           "species": "Scizor",
-          "gender": "female",
-          "name": "VladScythe"
+          "gender": "female"
         }
       ],
       "backup": [
         {
           "species": "Arcanine",
-          "gender": "male",
-          "name": "Inferno"
+          "gender": "male"
         },
         {
           "species": "Golem",
-          "gender": "female",
-          "name": "Clayla"
+          "gender": "female"
         },
         {
           "species": "Primeape",
-          "gender": "female",
-          "name": "Azusa"
+          "gender": "female"
         }
       ]
     }
@@ -57,49 +49,42 @@
   {
     "region": "Johto",
     "team": {
-      "label": "Pokémon Silver",
+      "label": "HGSS",
+      "time": "37:06",
       "league": [
         {
           "species": "Alakazam",
-          "gender": "male",
-          "name": "Abba"
+          "gender": "male"
         },
         {
           "species": "Ampharos",
-          "gender": "male",
-          "name": "Watame"
+          "gender": "male"
         },
         {
           "species": "Crobat",
-          "gender": "male",
-          "name": "Acrobat"
+          "gender": "male"
         },
         {
           "species": "Lapras",
-          "gender": "male",
-          "name": "La+"
+          "gender": "male"
         },
         {
           "species": "Machamp",
-          "gender": "female",
-          "name": "Muscle"
+          "gender": "female"
         },
         {
           "species": "Thyplosion",
-          "gender": "male",
-          "name": "Ember"
+          "gender": "male"
         }
       ],
       "backup": [
         {
           "species": "Nidoking",
-          "gender": "male",
-          "name": "Nito"
+          "gender": "male"
         },
         {
           "species": "Pidgeot",
-          "gender": "female",
-          "name": "Suba"
+          "gender": "female"
         }
       ]
     }
@@ -107,76 +92,73 @@
   {
     "region": "Hoenn",
     "team": {
-      "label": "Pokémon Emerald",
+      "label": "RSE",
       "league": [
         {
           "species": "Blaziken",
-          "gender": "male",
-          "name": "Inferno"
+          "gender": "male"
         },
         {
           "species": "Espeon",
-          "gender": "female",
-          "name": "VoidEater"
+          "gender": "female"
         },
         {
           "species": "Gengar",
-          "gender": "female",
-          "name": "Alice"
+          "gender": "female"
         },
         {
           "species": "Glalie",
-          "gender": "male",
-          "name": "Frostburn"
+          "gender": "male"
         },
         {
-          "species": "Jolteon",
-          "gender": "female",
-          "name": "Sparky"
+          "species": "Magneton",
+          "gender": "male"
         },
         {
           "species": "Milotic",
-          "gender": "male",
-          "name": "Velvet"
+          "gender": "male"
         }
       ],
-      "backup": []
+      "backup": [
+        {
+          "species": "Aggron",
+          "gender": "male"
+        },
+        {
+          "species": "Azumarill",
+          "gender": "female"
+        }
+      ]
     }
   },
   {
     "region": "Sinnoh",
     "team": {
-      "label": "Pokémon Platinum",
+      "label": "DPPt",
       "league": [
         {
           "species": "Floatzel",
-          "gender": "female",
-          "name": "Zelzel"
+          "gender": "female"
         },
         {
           "species": "Garchomp",
-          "gender": "female",
-          "name": "Gyaruchamp"
+          "gender": "female"
         },
         {
           "species": "Infernape",
-          "gender": "male",
-          "name": "Saru"
+          "gender": "male"
         },
         {
           "species": "Luxray",
-          "gender": "female",
-          "name": "Shishiron"
+          "gender": "female"
         },
         {
           "species": "Rhyperior",
-          "gender": "male",
-          "name": "Rideon"
+          "gender": "male"
         },
         {
           "species": "Staraptor",
-          "gender": "female",
-          "name": "Subau"
+          "gender": "female"
         }
       ],
       "backup": []
@@ -185,7 +167,8 @@
   {
     "region": "Unova",
     "team": {
-      "label": "White",
+      "label": "BW",
+      "time": "26:24",
       "league": [
         {
           "species": "Archeops",
@@ -193,23 +176,19 @@
         },
         {
           "species": "Excadrill",
-          "gender": "female",
-          "name": "Mogu"
+          "gender": "female"
         },
         {
           "species": "Galvantula",
-          "gender": "female",
-          "name": "Kumora"
+          "gender": "female"
         },
         {
           "species": "Haxorus",
-          "gender": "female",
-          "name": "Hax"
+          "gender": "female"
         },
         {
           "species": "Lilligant",
-          "gender": "female",
-          "name": "FauFau"
+          "gender": "female"
         },
         {
           "species": "Scrafty",
@@ -219,23 +198,20 @@
       "backup": [
         {
           "species": "Basculin",
-          "gender": "female",
-          "name": "Bassu"
+          "gender": "female"
         },
         {
           "species": "Emboar",
-          "gender": "male",
-          "name": "Chestnut"
+          "gender": "male"
         },
         {
           "species": "Swoobat",
-          "gender": "male",
-          "name": "Woovie"
+          "gender": "male"
         }
       ]
     },
     "teamB": {
-      "label": "Black 2",
+      "label": "B2W2",
       "league": [],
       "backup": []
     }
