@@ -98,12 +98,6 @@ const generateTeamCard = ({ region, team, teamB }) => {
 };
 
 const generatePokemonSlot = (pkm) => {
-  const knownGender = pkm.gender
-    ? `<span class="gender ${pkm.gender}">${
-        pkm.gender === 'male' ? '♂' : '♀'
-      }</span>`
-    : '';
-
   const slotEl = document.createElement('div');
   slotEl.className = 'poke_slot';
 
@@ -114,12 +108,18 @@ const generatePokemonSlot = (pkm) => {
   linkEl.href = `http://bulbapedia.bulbagarden.net/wiki/${pkm.species}_(Pokémon)`;
   linkEl.style.backgroundImage = `url('res/pokemon/${pkmSprite}')`;
 
+  const genderColor = pkm.gender === 'male' ? 'red' : 'cyan';
+  const genderSymbol = pkm.gender === 'male' ? '♂' : '♀';
+  const genderEl = pkm.gender
+    ? `<strong class="gender ${genderColor}">${genderSymbol}</strong>`
+    : '';
+
   const nameEl = document.createElement('span');
   nameEl.className = 'poke_name';
   nameEl.innerHTML = `
-    ${knownGender}
+    ${genderEl}
     <span>${pkm.species}</span>
-    ${pkm.shiny ? '<span class="shiny">⟡</span>' : ''}
+    ${pkm.shiny ? '<strong class="shiny red">⟡</strong>' : ''}
   `;
 
   slotEl.appendChild(linkEl);

@@ -137,22 +137,6 @@ main {
           padding-right: 0.75em;
         }
       }
-
-      .gender {
-        font-weight: bold;
-
-        &.male {
-          color: var(--c-blue);
-        }
-        &.female {
-          color: var(--c-red);
-        }
-      }
-
-      .shiny {
-        color: var(--c-red);
-        font-weight: bold;
-      }
     }
   }
 }
@@ -191,4 +175,11 @@ a.poke_link {
     filter: brightness(1.1);
     transform: scale(1);
   }
+}
+
+.cyan {
+  color: var(--c-blue);
+}
+.red {
+  color: var(--c-red);
 }
