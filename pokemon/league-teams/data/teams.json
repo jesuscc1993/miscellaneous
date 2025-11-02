@@ -165,7 +165,12 @@
           "gender": "female"
         }
       ],
-      "backup": []
+      "backup": [
+        {
+          "species": "Bibarel",
+          "gender": "female"
+        }
+      ]
     }
   },
   {
