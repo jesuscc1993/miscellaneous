@@ -42,6 +42,10 @@
         {
           "species": "Primeape",
           "gender": "female"
+        },
+        {
+          "species": "Steelix",
+          "gender": "female"
         }
       ]
     }
