@@ -108,20 +108,23 @@ const generatePokemonSlot = (pkm) => {
   linkEl.href = `http://bulbapedia.bulbagarden.net/wiki/${pkm.species}_(Pokémon)`;
   linkEl.style.backgroundImage = `url('res/pokemon/${pkmSprite}')`;
 
-  const genderData =
-    pkm.gender === 'male'
-      ? { color: 'cyan', symbol: '♂' }
-      : { color: 'red', symbol: '♀' };
-  const genderEl = pkm.gender
-    ? `<strong class="gender ${genderData.color}">${genderData.symbol}</strong>`
-    : '';
+  let genderHtml = '';
+  if (pkm.gender) {
+    const { color, symbol } = genderData[pkm.gender];
+    genderHtml = `<strong class="gender ${color}">${symbol}</strong>`;
+  }
+
+  let shinyHtml = '';
+  if (pkm.shiny) {
+    shinyHtml = '<strong class="shiny red">⟡</strong>';
+  }
 
   const nameEl = document.createElement('span');
   nameEl.className = 'poke_name';
   nameEl.innerHTML = `
-    ${genderEl}
+    ${genderHtml}
     <span>${pkm.species}</span>
-    ${pkm.shiny ? '<strong class="shiny red">⟡</strong>' : ''}
+    ${shinyHtml}
   `;
 
   slotEl.appendChild(linkEl);
@@ -130,10 +133,21 @@ const generatePokemonSlot = (pkm) => {
   return slotEl;
 };
 
-fetch('data/teams.json')
-  .then((response) => response.json())
-  .then((data) => {
-    const containerEl = document.querySelector('main');
-    data.forEach((region) => containerEl.appendChild(generateTeamCard(region)));
-  })
-  .catch((error) => console.error('Error fetching teams:', error));
+const initialize = () => {
+  fetch('data/teams.json')
+    .then((response) => response.json())
+    .then((data) => {
+      const containerEl = document.querySelector('main');
+      data.forEach((region) =>
+        containerEl.appendChild(generateTeamCard(region))
+      );
+    })
+    .catch((error) => console.error('Error fetching teams:', error));
+};
+
+initialize();
+
+const genderData = {
+  female: { color: 'red', symbol: '♀' },
+  male: { color: 'cyan', symbol: '♂' },
+};
