@@ -128,6 +128,28 @@ main {
       margin-right: auto;
       position: absolute;
       right: 0;
+
+      &:has(.gender):not(:has(.shiny)) {
+        > span:last-child {
+          padding-right: 0.75em;
+        }
+      }
+
+      .gender {
+        font-weight: bold;
+
+        &.male {
+          color: #2ebbe5;
+        }
+        &.female {
+          color: #ff4d5b;
+        }
+      }
+
+      .shiny {
+        color: #ff4d5b;
+        font-weight: bold;
+      }
     }
   }
 }
@@ -148,21 +170,6 @@ button.toggle {
 
   &.team {
     right: 0;
-  }
-}
-
-.gender {
-  font-weight: bold;
-
-  &.male {
-    color: #2ebbe5;
-  }
-  &.female {
-    color: #ff4d5b;
-  }
-
-  & + span {
-    padding-right: 0.75em;
   }
 }
 

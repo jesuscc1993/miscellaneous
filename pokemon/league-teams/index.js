@@ -116,7 +116,11 @@ const generatePokemonSlot = (pkm) => {
 
   const nameEl = document.createElement('span');
   nameEl.className = 'poke_name';
-  nameEl.innerHTML = `${knownGender} <span>${pkm.species}</span>`;
+  nameEl.innerHTML = `
+    ${knownGender}
+    <span>${pkm.species}</span>
+    ${pkm.shiny ? '<span class="shiny">⟡</span>' : ''}
+  `;
 
   slotEl.appendChild(linkEl);
   slotEl.appendChild(nameEl);
