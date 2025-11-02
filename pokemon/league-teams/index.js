@@ -102,11 +102,11 @@ const generatePokemonSlot = (pkm) => {
   slotEl.className = 'poke_slot';
 
   const pkmSprite = `${pkm.species.toLowerCase()}${pkm.shiny ? '_s' : ''}.webp`;
-  const linkEl = document.createElement('a');
-  linkEl.className = 'poke_link';
-  linkEl.target = '_blank';
-  linkEl.href = `http://bulbapedia.bulbagarden.net/wiki/${pkm.species}_(Pokémon)`;
-  linkEl.style.backgroundImage = `url('res/pokemon/${pkmSprite}')`;
+  const imageLinkEl = document.createElement('a');
+  imageLinkEl.className = 'poke_link';
+  imageLinkEl.target = '_blank';
+  imageLinkEl.href = `https://pokemondb.net/artwork/${pkm.species}`;
+  imageLinkEl.style.backgroundImage = `url('res/pokemon/${pkmSprite}')`;
 
   let genderHtml = '';
   if (pkm.gender) {
@@ -114,20 +114,24 @@ const generatePokemonSlot = (pkm) => {
     genderHtml = `<strong class="gender ${color}">${symbol}</strong>`;
   }
 
+  const nameHtml = `<span>${pkm.species}</span>`;
+
   let shinyHtml = '';
   if (pkm.shiny) {
     shinyHtml = '<strong class="shiny">⟡</strong>';
   }
 
-  const nameEl = document.createElement('span');
+  const nameEl = document.createElement('a');
   nameEl.className = 'poke_name';
+  nameEl.href = `http://bulbapedia.bulbagarden.net/wiki/${pkm.species}_(Pokémon)`;
+  nameEl.target = '_blank';
   nameEl.innerHTML = `
     ${genderHtml}
-    <span>${pkm.species}</span>
+    ${nameHtml}
     ${shinyHtml}
   `;
 
-  slotEl.appendChild(linkEl);
+  slotEl.appendChild(imageLinkEl);
   slotEl.appendChild(nameEl);
 
   return slotEl;

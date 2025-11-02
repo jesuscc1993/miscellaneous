@@ -49,6 +49,18 @@ main {
   justify-content: space-evenly;
 }
 
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+
+  &:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+}
+
 .poke_pane {
   border: var(--card-border) solid;
   font-family: 'Cuprum';
@@ -172,12 +184,9 @@ a.poke_link {
   display: block;
   height: var(--pokemon-width);
   width: var(--pokemon-width);
-
   transform: scale(0.9);
-  transition: var(--transition);
 
   &:hover {
-    filter: brightness(1.1);
     transform: scale(1);
   }
 }
