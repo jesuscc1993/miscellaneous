@@ -116,7 +116,7 @@ const generatePokemonSlot = (pkm) => {
 
   let shinyHtml = '';
   if (pkm.shiny) {
-    shinyHtml = '<strong class="shiny red">⟡</strong>';
+    shinyHtml = '<strong class="shiny">⟡</strong>';
   }
 
   const nameEl = document.createElement('span');
