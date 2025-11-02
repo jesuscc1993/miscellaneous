@@ -105,7 +105,7 @@ const generatePokemonSlot = (pkm) => {
   const imageLinkEl = document.createElement('a');
   imageLinkEl.className = 'poke_link';
   imageLinkEl.target = '_blank';
-  imageLinkEl.href = `https://pokemondb.net/artwork/${pkm.species}`;
+  imageLinkEl.href = `https://archives.bulbagarden.net/wiki/Category:${pkm.species}`;
   imageLinkEl.style.backgroundImage = `url('res/pokemon/${pkmSprite}')`;
 
   let genderHtml = '';
