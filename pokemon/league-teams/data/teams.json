@@ -36,6 +36,11 @@
           "gender": "male"
         },
         {
+          "species": "Golbat",
+          "gender": "female",
+          "shiny": true
+        },
+        {
           "species": "Golem",
           "gender": "female"
         },
@@ -82,6 +87,11 @@
         }
       ],
       "backup": [
+        {
+          "species": "Gyarados",
+          "gender": "male",
+          "shiny": true
+        },
         {
           "species": "Nidoking",
           "gender": "male"

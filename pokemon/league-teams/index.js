@@ -107,11 +107,12 @@ const generatePokemonSlot = (pkm) => {
   const slotEl = document.createElement('div');
   slotEl.className = 'poke_slot';
 
+  const pkmSprite = `${pkm.species.toLowerCase()}${pkm.shiny ? '_s' : ''}.webp`;
   const linkEl = document.createElement('a');
   linkEl.className = 'poke_link';
   linkEl.target = '_blank';
   linkEl.href = `http://bulbapedia.bulbagarden.net/wiki/${pkm.species}_(Pokémon)`;
-  linkEl.style.backgroundImage = `url('res/pokemon/${pkm.species.toLowerCase()}.webp')`;
+  linkEl.style.backgroundImage = `url('res/pokemon/${pkmSprite}')`;
 
   const nameEl = document.createElement('span');
   nameEl.className = 'poke_name';
