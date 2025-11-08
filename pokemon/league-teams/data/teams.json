@@ -231,8 +231,47 @@
     },
     "teamB": {
       "label": "B2W2",
-      "league": [],
-      "backup": []
+      "time": "50:30",
+      "league": [
+        {
+          "species": "Krookodile",
+          "gender": "female"
+        },
+        {
+          "species": "Samurott",
+          "gender": "male"
+        },
+        {
+          "species": "Scrafty",
+          "gender": "male"
+        },
+        {
+          "species": "Unfezant",
+          "gender": "female"
+        },
+        {
+          "species": "Vanilluxe",
+          "gender": "male"
+        }
+      ],
+      "backup": [
+        {
+          "species": "Darmanitan",
+          "gender": "female"
+        },
+        {
+          "species": "Emolga",
+          "gender": "female"
+        },
+        {
+          "species": "Excadrill",
+          "gender": "female"
+        },
+        {
+          "species": "Leavanny",
+          "gender": "female"
+        }
+      ]
     }
   }
 ]
