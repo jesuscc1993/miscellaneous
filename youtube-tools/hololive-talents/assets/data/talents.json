@@ -51,7 +51,7 @@
       { "name": "Usada Pekora", "keyword": "Pekora" }
     ],
     "Gen 4": [
-      { "name": "Amane Kanata", "keyword": "Kanata" },
+      { "name": "Amane Kanata", "keyword": "Kanata", "graduated": true  },
       { "name": "Himemori Luna", "keyword": "Luna" },
       { "name": "Kiryu Coco", "keyword": "Coco", "graduated": true },
       { "name": "Tokoyami Towa", "keyword": "Towa" },
