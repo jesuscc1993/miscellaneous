@@ -1,7 +1,7 @@
 const rarityBackgrounds = {
-  3: 'assets/images/char_bg_red.webp',
-  4: 'https://webstatic-sea.hoyolab.com/app/community-game-records-sea/images/level_4_bg_s.7a6c5841.png',
-  5: 'https://webstatic-sea.hoyolab.com/app/community-game-records-sea/images/level_5_bg_s.1ff411a0.png',
+  3: 'https://act.hoyolab.com/app/community-game-records-sea/images/roleStarBg105.5a61ce94.png',
+  4: 'https://act.hoyolab.com/app/community-game-records-sea/images/roleStarBg4.0b20569c.png',
+  5: 'https://act.hoyolab.com/app/community-game-records-sea/images/roleStarBg5.30180c91.png',
 };
 const filterPaths = {
   elements: 'assets/images/elements/colored',
