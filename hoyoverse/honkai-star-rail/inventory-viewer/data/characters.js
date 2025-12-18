@@ -1,7 +1,7 @@
 const characters = [
   { name: 'Acheron',      level: 80,  rarity: 5, uncap: 0, type: 'Nihility',      element: 'Lightning', portrait: 'u9a1qb/dc6f2ef358cd233cb72a1eb576712d85' },
   { name: 'Archer',       level: 40,  rarity: 5, uncap: 0, type: 'Hunt',          element: 'Quantum',   portrait: 'u732fd/feff831d553d648743e5b8fe6e4a4056' },
-  { name: 'Arlan',        level: 30,  rarity: 4, uncap: 4, type: 'Destruction',   element: 'Lightning', portrait: 'u98dvc/25cd169c207dc20398a75749efb8377e' },
+  { name: 'Arlan',        level: 40,  rarity: 4, uncap: 5, type: 'Destruction',   element: 'Lightning', portrait: 'u98dvc/25cd169c207dc20398a75749efb8377e' },
   { name: 'Asta',         level: 60,  rarity: 4, uncap: 6, type: 'Harmony',       element: 'Fire',      portrait: 'ua57cb/ce0425bc0e957690b997ae29dfaf5ebf' },
   { name: 'Black Swan',   level: 80,  rarity: 5, uncap: 0, type: 'Nihility',      element: 'Wind',      portrait: 'ufe9lc/477f80ca2ff7fa8841b80917e2e49c28' },
   { name: 'Bronya',       level: 40,  rarity: 5, uncap: 0, type: 'Harmony',       element: 'Wind',      portrait: 'ub53tb/4801552465b7b649975db39fa9d05be3' },
