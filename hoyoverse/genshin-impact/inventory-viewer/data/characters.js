@@ -21,7 +21,7 @@ const characters = [
   { id: 'Faruzan',    level: 60, rarity: 4, uncap: 6, type: 'Catalyst', element: 'Anemo' },
   { id: 'Feiyan',     level: 80, rarity: 4, uncap: 6, type: 'Catalyst', element: 'Pyro',    name: 'Yanfei' },
   { id: 'Fischl',     level: 80, rarity: 4, uncap: 6, type: 'Bow',      element: 'Electro' },
-  { id: 'Freminet',   level: 50, rarity: 4, uncap: 1, type: 'Claymore', element: 'Cryo',    portrait: '_uceddf/7ca0ad25c2cbb36cd55a8a19c1b2a39f' },
+  { id: 'Freminet',   level: 50, rarity: 4, uncap: 2, type: 'Claymore', element: 'Cryo',    portrait: '_uceddf/7ca0ad25c2cbb36cd55a8a19c1b2a39f' },
   { id: 'Gaming',     level: 50, rarity: 4, uncap: 4, type: 'Claymore', element: 'Pyro',    portrait: '_u757vf/5caf783cd8140c2f075be59c1fd0e952' },
   { id: 'Ganyu',      level: 90, rarity: 5, uncap: 0, type: 'Bow',      element: 'Cryo' },
   { id: 'Gorou',      level: 50, rarity: 4, uncap: 2, type: 'Bow',      element: 'Geo' },
