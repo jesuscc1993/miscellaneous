@@ -153,17 +153,37 @@ const filterItems = (items, areItemsWeapons) => {
 
   return filteredItems;
 };
-
 const sortItems = (items) => {
   return items.sort(
     (a, b) =>
-      `${b.rarity}`.localeCompare(`${a.rarity}`) ||
-      `${b.level}`.localeCompare(`${a.level}`) ||
-      `${b.type}`.localeCompare(`${a.type}`) ||
-      `${b.element}`.localeCompare(`${a.element}`) ||
-      `${b.uncap}`.localeCompare(`${a.uncap}`) ||
-      `${a.name || a.id}`.localeCompare(`${b.name || b.id}`)
+      compareByRarity(a, b) ||
+      compareByLevel(a, b) ||
+      compareByType(a, b) ||
+      compareByElement(a, b) ||
+      compareByName(a, b)
   );
+};
+
+const compareByRarity = (a, b) => {
+  return `${b.rarity}`.localeCompare(`${a.rarity}`);
+};
+
+const compareByLevel = (a, b) => {
+  return `${b.level}`.localeCompare(`${a.level}`);
+};
+
+const compareByType = (a, b) => {
+  return orderByType
+    ? orderByType.indexOf(a.type) - orderByType.indexOf(b.type)
+    : `${a.type}`.localeCompare(`${b.type}`);
+};
+
+const compareByElement = (a, b) => {
+  return `${b.element}`.localeCompare(`${a.element}`);
+};
+
+const compareByName = (a, b) => {
+  return `${a.name || a.id}`.localeCompare(`${b.name || b.id}`);
 };
 
 const setItemBackground = (item) => {

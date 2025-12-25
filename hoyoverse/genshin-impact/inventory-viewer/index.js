@@ -7,6 +7,7 @@ const filterPaths = {
   elements: 'assets/images/elements/colored',
   types: 'assets/images/weapons',
 };
+const orderByType = ['Bow', 'Catalyst', 'Pole', 'Claymore', 'Sword'];
 
 const getCharacterSprite = (item) => {
   return item.portrait

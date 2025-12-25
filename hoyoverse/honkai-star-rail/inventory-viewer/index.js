@@ -7,6 +7,15 @@ const filterPaths = {
   elements: 'assets/images/elements',
   types: 'assets/images/paths',
 };
+const orderByType = [
+  'Destruction',
+  'The Hunt',
+  'Erudition',
+  'Harmony',
+  'Nihility',
+  'Preservation',
+  'Abundance',
+];
 
 const getCharacterSprite = (item) => {
   return item.portrait
