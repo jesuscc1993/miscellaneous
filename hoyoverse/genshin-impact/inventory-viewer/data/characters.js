@@ -1,5 +1,7 @@
 const characters = [
   { id: 'Ambor',      level: 70, rarity: 4, uncap: 6, type: 'Bow',      element: 'Pyro',    name: 'Amber' },
+  { id: 'Aino',       level: 70, rarity: 4, uncap: 1, type: 'Claymore', element: 'Hydro',   portrait: '/68c0b17a/cfec735e9e867016be94f500e9dae122' },
+  { id: 'Illuga',     level: 70, rarity: 4, uncap: 0, type: 'Pole',     element: 'Geo',     portrait: '/6966dc8c/64666707baedabc3e6a7d80738d24730' },
   { id: 'Arlecchino', level: 90, rarity: 5, uncap: 2, type: 'Pole',     element: 'Pyro',    portrait: '_ueb15f/6e91fd2e2bc1022882e9b1069094a161' },
   { id: 'Ayaka',      level: 90, rarity: 5, uncap: 0, type: 'Sword',    element: 'Cryo',    fullName: 'Kamisato Ayaka' },
   { id: 'Barbara',    level: 80, rarity: 4, uncap: 6, type: 'Catalyst', element: 'Hydro' },
@@ -19,7 +21,7 @@ const characters = [
   { id: 'Eula',       level: 90, rarity: 5, uncap: 0, type: 'Claymore', element: 'Cryo' },
   { id: 'Faruzan',    level: 60, rarity: 4, uncap: 6, type: 'Catalyst', element: 'Anemo' },
   { id: 'Feiyan',     level: 80, rarity: 4, uncap: 6, type: 'Catalyst', element: 'Pyro',    name: 'Yanfei' },
-  { id: 'Fischl',     level: 80, rarity: 4, uncap: 6, type: 'Bow',      element: 'Electro' },
+  { id: 'Fischl',     level: 90, rarity: 4, uncap: 6, type: 'Bow',      element: 'Electro' },
   { id: 'Freminet',   level: 70, rarity: 4, uncap: 2, type: 'Claymore', element: 'Cryo',    portrait: '_uceddf/7ca0ad25c2cbb36cd55a8a19c1b2a39f' },
   { id: 'Gaming',     level: 70, rarity: 4, uncap: 5, type: 'Claymore', element: 'Pyro',    portrait: '_u757vf/5caf783cd8140c2f075be59c1fd0e952' },
   { id: 'Ganyu',      level: 90, rarity: 5, uncap: 0, type: 'Bow',      element: 'Cryo' },
