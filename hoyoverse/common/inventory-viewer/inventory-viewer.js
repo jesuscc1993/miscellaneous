@@ -27,13 +27,13 @@ const processList = (identifier, items, itemType) => {
         item.rarity
       } ${itemType} ${item.type.toLowerCase()} ${
         item.element ? item.element.toLowerCase() : ''
-      }" title="${item.fullName || shortItemName}"></div>`
+      }" title="${item.fullName || shortItemName}"></div>`,
     );
 
     const portrait = jQuery(`<div class="item-portrait"></div>`);
     portrait.css(
       `background-image`,
-      `url(${artwork}), url(${artworkBackground})`
+      `url(${artwork}), url(${artworkBackground})`,
     );
     itemContainer.append(portrait);
 
@@ -44,7 +44,7 @@ const processList = (identifier, items, itemType) => {
       const uncapElement = jQuery(
         `<div class="item-text uncap-text center-text ${
           areItemsWeapons && item.uncap > 4 ? 'maxed' : ''
-        }">${uncapText}</div>`
+        }">${uncapText}</div>`,
       );
       itemContainer.append(uncapElement);
     }
@@ -56,12 +56,12 @@ const processList = (identifier, items, itemType) => {
         <span class="clamp ${
           areItemsWeapons ? 'clamp-2' : ''
         }">${shortItemName}</span>
-      </span>`
+      </span>`,
     );
     bottomText.append(nameLine);
 
     const levelLine = jQuery(
-      `<span class="center-text level">Lvl. ${item.level}</span>`
+      `<span class="center-text level">Lvl. ${item.level}</span>`,
     );
     bottomText.append(levelLine);
 
@@ -123,10 +123,10 @@ const toggleFilter = (name, value) => {
   newUrl.search = params.toString();
   history.pushState(null, '', newUrl);
 
-  initialize();
+  initializeViewer();
 };
 
-const initialize = () => {
+const initializeViewer = () => {
   processFilter('Elements', elements);
   processFilter('Types', types);
   processList('Characters', characters, ItemType.Character);
@@ -142,12 +142,12 @@ const filterItems = (items, areItemsWeapons) => {
 
   if (!areItemsWeapons && elementFilter && elementFilter !== filterAny) {
     filteredItems = filteredItems.filter(
-      ({ element }) => element.toLowerCase() === elementFilter
+      ({ element }) => element.toLowerCase() === elementFilter,
     );
   }
   if (weaponFilter && weaponFilter !== filterAny) {
     filteredItems = filteredItems.filter(
-      ({ type }) => type.toLowerCase() === weaponFilter
+      ({ type }) => type.toLowerCase() === weaponFilter,
     );
   }
 
@@ -160,7 +160,7 @@ const sortItems = (items) => {
       compareByLevel(a, b) ||
       compareByType(a, b) ||
       compareByElement(a, b) ||
-      compareByName(a, b)
+      compareByName(a, b),
   );
 };
 
@@ -173,8 +173,8 @@ const compareByLevel = (a, b) => {
 };
 
 const compareByType = (a, b) => {
-  return orderByType
-    ? orderByType.indexOf(a.type) - orderByType.indexOf(b.type)
+  return types
+    ? types.indexOf(a.type) - types.indexOf(b.type)
     : `${a.type}`.localeCompare(`${b.type}`);
 };
 
@@ -195,5 +195,3 @@ const setItemBackground = (item) => {
 const scrollToTop = () => {
   window.scrollTo(0, 0);
 };
-
-initialize();

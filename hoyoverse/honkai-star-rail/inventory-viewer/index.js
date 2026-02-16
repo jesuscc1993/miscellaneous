@@ -1,22 +1,3 @@
-const rarityBackgrounds = {
-  3: 'https://act.hoyolab.com/app/community-game-records-sea/rpg/images/character_r_3.bdfa75d1.png',
-  4: 'https://act.hoyolab.com/app/community-game-records-sea/rpg/images/character_r_4.24f329b7.png',
-  5: 'https://act.hoyolab.com/app/community-game-records-sea/rpg/images/character_r_5.99d42eb7.png',
-};
-const filterPaths = {
-  elements: 'assets/images/elements',
-  types: 'assets/images/paths',
-};
-const orderByType = [
-  'Destruction',
-  'The Hunt',
-  'Erudition',
-  'Harmony',
-  'Nihility',
-  'Preservation',
-  'Abundance',
-];
-
 const getCharacterSprite = (item) => {
   return item.portrait
     ? getPortrait(item)
@@ -36,3 +17,21 @@ const getPortrait = (item) => {
 const getWeaponUncapText = (uncap) => {
   return ['', 'I', 'II', 'III', 'IV', 'V'][uncap];
 };
+
+let weapons = [];
+let characters = [];
+
+const initialize = () => {
+  Promise.all([
+    fetch('data/weapons.json').then((res) => res.json()),
+    fetch('data/characters.json').then((res) => res.json()),
+  ]).then(([weaponsJson, charactersJson]) => {
+    weapons = weaponsJson;
+    characters = charactersJson;
+    initializeViewer();
+
+    // https://act.hoyolab.com/sr/event/calculator/index.html
+  });
+};
+
+initialize();
