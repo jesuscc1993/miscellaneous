@@ -31,7 +31,7 @@ const initialize = () => {
     Object.keys(talentsMap).forEach((countryKey) => {
       const countryMap = talentsMap[countryKey];
       const countryContainer = jQuery(
-        `<div class="talent-country"><h2 id="${countryKey}">${countryKey}</h2></div>`
+        `<div class="talent-country"><h2 id="${countryKey}">${countryKey}</h2></div>`,
       );
       const countryLinksContainer = jQuery(`<span></span>`);
 
@@ -56,31 +56,31 @@ const initialize = () => {
 
           talentsList
             .sort((a, b) =>
-              a.graduated === b.graduated ? 0 : a.graduated ? 1 : -1
+              a.graduated === b.graduated ? 0 : a.graduated ? 1 : -1,
             )
             .forEach((talent) => {
               // const talentKeyword = sanitizeSpaces(talent.keyword || talent.name);
               const talentKeyword = sanitizeSpaces(talent.name);
               const talentQuery = searchUrl.replace(
                 /\{\{ QUERY \}\}/g,
-                encodeURI(`${talentKeyword}+-${blacklist.join('+-')}`)
+                encodeURI(`${talentKeyword}+-${blacklist.join('+-')}`),
               );
 
               const talentContainer = jQuery(
                 `<a class="talent ${
                   talent.graduated ? 'graduated' : ''
-                }" href="${talentQuery}"></a>`
+                }" href="${talentQuery}"></a>`,
               );
 
               const talentImage = jQuery(
-                `<img src="assets/images/portraits/${talent.name}.webp" alt="${talent.name}" />`
+                `<img src="assets/images/portraits/${talent.name}.webp" alt="${talent.name}" />`,
               );
               talentContainer.append(talentImage);
 
               const talentText = jQuery(
                 `<div class="talent-text" style=${
                   talent.fontSize ? `font-size:${talent.fontSize}` : ``
-                }>${talent.name}</div>`
+                }>${talent.name}</div>`,
               );
               talentContainer.append(talentText);
 
@@ -97,6 +97,12 @@ const initialize = () => {
 
     output.append(linksContainer);
     output.append(talentsContainer);
+
+    jQuery('#graduated_toggle').on('click', function () {
+      jQuery(this).toggleClass('off');
+      const showGraduated = !jQuery(this).hasClass('off');
+      jQuery('.talent.graduated').toggleClass('visible', showGraduated);
+    });
   });
 };
 

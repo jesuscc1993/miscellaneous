@@ -58,6 +58,13 @@ a:hover {
   margin: 0 12px;
   scale: 1.05;
 }
+
+.talent.graduated {
+  display: none;
+}
+.talent.graduated.visible {
+  display: inline-block;
+}
 .talent.graduated:after {
   --size: 56px;
   --spacing: -10px;
@@ -102,4 +109,11 @@ a:hover {
 
 .footer {
   margin-top: 25vh;
+}
+
+.toggle {
+  cursor: pointer;
+}
+.off {
+  opacity: .5;
 }
