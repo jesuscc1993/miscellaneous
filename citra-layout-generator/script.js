@@ -12,6 +12,7 @@ const topHeightEl = document.querySelector('#top-height');
 const bottomWidthEl = document.querySelector('#bottom-width');
 const bottomHeightEl = document.querySelector('#bottom-height');
 const bottomOpacityEl = document.querySelector('#bottom-opacity');
+const opacityValueEl = document.querySelector('#opacity-value');
 
 const copyMessageEl = document.querySelector('#copy-message');
 const outputEl = document.querySelector('#output');
@@ -66,7 +67,7 @@ const generateVerticalLayout = () => {
 
   if (Math.max(topScreen.width, bottomScreen.width) > monitor.width) {
     alert(
-      'Screens are too wide to fit your monitor.\n(To disable this verification, check "Overlap screens").'
+      'Screens are too wide to fit your monitor.\n(To disable this verification, check "Overlap screens").',
     );
     return;
   }
@@ -77,14 +78,14 @@ const generateVerticalLayout = () => {
       : topScreen.height + bottomScreen.height > monitor.height
   ) {
     alert(
-      'Screens are too tall to fit your monitor.\n(To disable this verification, check "Overlap screens").'
+      'Screens are too tall to fit your monitor.\n(To disable this verification, check "Overlap screens").',
     );
     return;
   }
 
   const emptySpace = Math.max(
     monitor.height - topScreen.height - bottomScreen.height,
-    0
+    0,
   );
   const borderSpacing = Math.round(emptySpace / 3);
   const centerSpace = emptySpace - borderSpacing * 2;
@@ -102,7 +103,7 @@ const generateVerticalLayout = () => {
 
   const bottomTop = Math.min(
     topBottom + centerSpace,
-    monitorHeight - secondScreen.height
+    monitorHeight - secondScreen.height,
   );
   const bottomBottom = bottomTop + secondScreen.height;
   const bottomLeft = (monitor.width - secondScreen.width) / 2;
@@ -151,7 +152,7 @@ const generateHorizontalLayout = () => {
 
   const emptySpace = Math.max(
     monitor.width - topScreen.width - bottomScreen.width,
-    0
+    0,
   );
   const borderSpacing = Math.round(emptySpace / 3);
   const centerSpace = emptySpace - borderSpacing * 2;
@@ -171,7 +172,7 @@ const generateHorizontalLayout = () => {
   const bottomBottom = bottomTop + secondScreen.height;
   const bottomLeft = Math.min(
     topRight + centerSpace,
-    monitorWidth - secondScreen.width
+    monitorWidth - secondScreen.width,
   );
   const bottomRight = bottomLeft + secondScreen.width;
 
@@ -341,7 +342,7 @@ const recalculateBottomHeight = () => {
     bottomWidthEl.value === ''
       ? ''
       : Math.round(
-          (bottomWidthEl.value / defaultBottomWidth) * defaultBottomHeight
+          (bottomWidthEl.value / defaultBottomWidth) * defaultBottomHeight,
         );
 
   generateLayout();
@@ -361,7 +362,7 @@ const recalculateBottomWidth = () => {
     bottomHeightEl.value === ''
       ? ''
       : Math.round(
-          (bottomHeightEl.value * defaultBottomWidth) / defaultBottomHeight
+          (bottomHeightEl.value * defaultBottomWidth) / defaultBottomHeight,
         );
 
   generateLayout();
@@ -369,7 +370,7 @@ const recalculateBottomWidth = () => {
 
 const updateBottomOpacity = () => {
   previewBottomEl.style.opacity = bottomOpacityEl.value / 100;
-  bottomOpacityEl.title = bottomOpacityEl.value;
+  opacityValueEl.innerText = bottomOpacityEl.value;
 };
 
 const setMonitorSize = (scale) => {
@@ -401,7 +402,7 @@ const setTopSize = (multiplier, auto) => {
 
     _multiplier = Math.min(
       (monitorWidthEl.value - subtractedWidth) / defaultTopWidth,
-      (monitorHeightEl.value - subtractedHeight) / defaultTopHeight
+      (monitorHeightEl.value - subtractedHeight) / defaultTopHeight,
     );
   }
 
@@ -424,7 +425,7 @@ const setBottomSize = (multiplier, auto) => {
 
     _multiplier = Math.min(
       (monitorWidthEl.value - subtractedWidth) / defaultBottomWidth,
-      (monitorHeightEl.value - subtractedHeight) / defaultBottomHeight
+      (monitorHeightEl.value - subtractedHeight) / defaultBottomHeight,
     );
   }
 
@@ -443,10 +444,10 @@ const detectMonitorSize = () => {
 
 const detectScreenMultipliers = () => {
   let maxWidthMultiplier = Math.floor(
-    screen.width / (defaultTopWidth + defaultBottomWidth)
+    screen.width / (defaultTopWidth + defaultBottomWidth),
   );
   let maxHeightMultiplier = Math.floor(
-    screen.height / (defaultTopHeight + defaultBottomHeight)
+    screen.height / (defaultTopHeight + defaultBottomHeight),
   );
   let multiplier = Math.min(maxWidthMultiplier, maxHeightMultiplier);
 
