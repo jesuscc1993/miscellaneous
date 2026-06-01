@@ -14,17 +14,10 @@ const initFromConfig = async () => {
   try {
     const res = await fetch('config.json', { cache: 'no-store' });
     if (!res.ok) throw new Error('Failed to fetch config');
-    const raw = await res.json();
-    if (Array.isArray(raw)) {
-      for (const entry of raw) {
-        const parentName = entry.name || entry.title || '';
-        if (Array.isArray(entry.children) && entry.children.length) {
-          for (const child of entry.children) {
-            items.push({ ...child, parent: parentName });
-          }
-        } else if (entry.cron) {
-          items.push({ ...entry, parent: parentName });
-        }
+    const config = await res.json();
+    for (const group of config) {
+      for (const child of group.children) {
+        items.push({ ...child, parent: group.name });
       }
     }
   } catch (err) {
