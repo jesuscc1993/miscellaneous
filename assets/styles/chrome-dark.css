@@ -1,0 +1,46 @@
+/* chrome */
+html {
+  --cr-card-background-color: #292a2d;
+  --cr-card-border-radius: 8px;
+  --cr-elevation-2: #0000004d 0 1px 2px 0, #00000026 0 2px 6px 2px;
+  --cr-primary-text-color: #e3e3e3;
+  --cr-separator-line: 1px solid #ffffff1a;
+  --cr-toolbar-field-width: 680px;
+}
+
+body {
+  background: #202124;
+  color: var(--cr-primary-text-color);
+  margin: 0;
+}
+
+.card {
+  background-color: var(--cr-card-background-color);
+  border-radius: var(--cr-card-border-radius);
+  box-shadow: var(--cr-elevation-2);
+}
+.card .section {
+  font-size: 13px;
+  line-height: 20px;
+  padding: 0 20px;
+}
+.card .section.padded {
+  padding: 20px;
+}
+.card .section.hr {
+  border-top: var(--cr-separator-line);
+}
+.card .section .section-title {
+  font-size: 12px;
+}
+.card .section .section-content {
+  color: #9aa0a6;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+}
+.page-header img {
+  margin-right: 12px;
+}

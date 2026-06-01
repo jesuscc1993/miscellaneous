@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Humble Bundle",
+    "children": [
+      {
+        "name": "Humble Choice release",
+        "cron": "0 17 1-7 * 2"
+      }
+    ]
+  },
+  {
+    "name": "Epic Games",
+    "children": [
+      {
+        "name": "Weekly games giveaway",
+        "cron": "0 17 * * 4"
+      }
+    ]
+  },
+  {
+    "name": "Amazon Prime",
+    "children": [
+      {
+        "name": "Weekly games giveaway",
+        "cron": "0 17 1-7 * 2"
+      }
+    ]
+  },
+  {
+    "name": "Hoyoverse",
+    "children": [
+      {
+        "name": "Daily reset",
+        "cron": "0 4 * * *"
+      },
+      {
+        "name": "Weekly reset",
+        "cron": "0 4 * * 1"
+      },
+      {
+        "name": "Biweekly reset",
+        "cron": "0 4 1,15 * *"
+      },
+      {
+        "name": "Monthly reset",
+        "cron": "0 0 1 * *"
+      }
+    ]
+  },
+  {
+    "name": "Warframe",
+    "children": [
+      {
+        "name": "Daily reset",
+        "cron": "0 5 * * *"
+      }
+    ]
+  }
+]

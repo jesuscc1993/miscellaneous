@@ -19,4 +19,5 @@ Intended as a "hub" of sorts to host several minor miscellaneous projects.
 - [/pokemon/types-chart/](pokemon/types-chart/)
 - [/steam/steam-appid-asset-viewer](steam/steam-appid-asset-viewer)
 - [/steam/steam-appid-browser](steam/steam-appid-browser)
+- [/time/countdowns/](time/countdowns/)
 - [/web-tools/](web-tools/)

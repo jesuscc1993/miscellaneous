@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-size: 16px;
+}
+main {
+  max-width: 576px;
+  margin: 0 auto;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25em;
+  margin: 1em 0;
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0;
+  }
+  .label {
+    margin-bottom: 0.5em;
+  }
+  .line {
+    flex: 1;
+    height: 1px;
+    background: var(--cr-primary-text-color);
+    opacity: 0.25;
+  }
+  .time {
+    font-family: monospace;
+  }
+}
+.text-center {
+  text-align: center;
+}
+.text-125 {
+  font-size: 1.25em;
+}
