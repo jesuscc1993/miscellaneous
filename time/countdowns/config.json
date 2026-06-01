@@ -5,7 +5,7 @@
       {
         "name": "Humble Choice release",
         "cron": "0 17 1-7 * 2",
-        "link": "https://www.humblebundle.com/membership/home"
+        "links": [{ "href": "https://www.humblebundle.com/membership/home" }]
       }
     ]
   },
@@ -15,7 +15,7 @@
       {
         "name": "Weekly games giveaway",
         "cron": "0 17 * * 4",
-        "link": "https://store.epicgames.com/free-games"
+        "links": [{ "href": "https://store.epicgames.com/free-games" }]
       }
     ]
   },
@@ -25,7 +25,7 @@
       {
         "name": "Weekly games giveaway",
         "cron": "0 17 1-7 * 2",
-        "link": "https://luna.amazon.es/claims/home"
+        "links": [{ "href": "https://luna.amazon.es/claims/home" }]
       }
     ]
   },
@@ -34,7 +34,17 @@
     "children": [
       {
         "name": "Daily reset",
-        "cron": "0 4 * * *"
+        "cron": "0 4 * * *",
+        "links": [
+          {
+            "name": "GI",
+            "href": "https://act.hoyolab.com/ys/event/signin-sea-v3/index.html?act_id=e202102251931481"
+          },
+          {
+            "name": "HSR",
+            "href": "https://act.hoyolab.com/bbs/event/signin/hkrpg/index.html?act_id=e202303301540311"
+          }
+        ]
       },
       {
         "name": "Weekly reset",

@@ -72,13 +72,24 @@ const appendItems = () => {
       const name = document.createElement('div');
       name.textContent = child.name;
 
-      if (child.link) {
-        const anchor = document.createElement('a');
-        anchor.href = child.link;
-        anchor.textContent = '🔗';
-        anchor.className = 'plain';
-        anchor.target = '_blank';
-        name.appendChild(anchor);
+      if (child.links) {
+        name.appendChild(document.createTextNode(' ('));
+
+        for (let i = 0; i < child.links.length; i++) {
+          const link = child.links[i];
+          const anchor = document.createElement('a');
+          anchor.href = link.href;
+          anchor.textContent = (link.name ?? '') + '🔗';
+          anchor.className = 'plain';
+          anchor.target = '_blank';
+          name.appendChild(anchor);
+
+          if (i < child.links.length - 1) {
+            name.appendChild(document.createTextNode(' | '));
+          }
+        }
+
+        name.appendChild(document.createTextNode(')'));
       }
 
       row.appendChild(name);
