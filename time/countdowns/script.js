@@ -1,10 +1,12 @@
-const TIME_PAD_LENGTH = 2;
-const UPDATE_INTERVAL_MS = 1000;
+const TIME_DIGIT_LENGTH = 2;
+const MS_IN_SECOND = 1000;
 const SECONDS_IN_MINUTE = 60;
 const MINUTES_IN_HOUR = 60;
 const HOURS_IN_DAY = 24;
+const DAYS_IN_WEEK = 7;
 const SECONDS_IN_HOUR = SECONDS_IN_MINUTE * MINUTES_IN_HOUR;
 const SECONDS_IN_DAY = SECONDS_IN_HOUR * HOURS_IN_DAY;
+const SECONDS_IN_WEEK = SECONDS_IN_DAY * DAYS_IN_WEEK;
 
 let items = [];
 
@@ -41,7 +43,7 @@ const initFromConfig = async () => {
 
   appendItems();
   updateItems();
-  setInterval(updateItems, UPDATE_INTERVAL_MS);
+  setInterval(updateItems, MS_IN_SECOND);
 };
 
 const getIdFromName = (name) =>
@@ -108,17 +110,19 @@ const appendItems = () => {
   }
 };
 
-const padStart = (n, length = TIME_PAD_LENGTH) => {
+const padStart = (n, length = TIME_DIGIT_LENGTH) => {
   return n.toString().padStart(length, '0');
 };
 
 const formatRemaining = (ms) => {
-  const remaining = Math.floor(ms / 1000);
-  const days = Math.floor(remaining / SECONDS_IN_DAY);
+  const remaining = Math.max(0, Math.floor(ms / MS_IN_SECOND));
+  const weeks = Math.floor(remaining / SECONDS_IN_WEEK);
+  const days = Math.floor((remaining % SECONDS_IN_WEEK) / SECONDS_IN_DAY);
   const hours = Math.floor((remaining % SECONDS_IN_DAY) / SECONDS_IN_HOUR);
   const minutes = Math.floor((remaining % SECONDS_IN_HOUR) / SECONDS_IN_MINUTE);
   const seconds = remaining % SECONDS_IN_MINUTE;
   return (
+    (weeks ? weeks + 'w ' : '') +
     (days ? days + 'd ' : '') +
     (padStart(hours) + ':' + padStart(minutes) + ':' + padStart(seconds))
   );
