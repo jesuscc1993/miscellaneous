@@ -66,6 +66,10 @@
       {
         "name": "Daily reset",
         "cron": "0 5 * * *"
+      },
+      {
+        "name": "Weekly reset",
+        "cron": "0 5 * * 1"
       }
     ]
   }
