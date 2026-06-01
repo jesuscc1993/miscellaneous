@@ -37,8 +37,8 @@
     "icon": "https://www.hoyolab.com/favicon.ico",
     "children": [
       {
-        "name": "Daily reset",
-        "cron": "0 4 * * *",
+        "name": "Daily check-in reset",
+        "cron": "0 16 * * *",
         "links": [
           {
             "name": "GI",
@@ -49,6 +49,10 @@
             "href": "https://act.hoyolab.com/bbs/event/signin/hkrpg/index.html?act_id=e202303301540311"
           }
         ]
+      },
+      {
+        "name": "Daily reset",
+        "cron": "0 4 * * *"
       },
       {
         "name": "Weekly reset",
