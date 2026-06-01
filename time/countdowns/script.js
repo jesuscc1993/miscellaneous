@@ -20,20 +20,10 @@ const initFromConfig = async () => {
         const parentName = entry.name || entry.title || '';
         if (Array.isArray(entry.children) && entry.children.length) {
           for (const child of entry.children) {
-            const childName = child.name ?? child.description ?? parentName;
-            items.push({
-              parent: parentName,
-              name: childName,
-              cron: child.cron,
-            });
+            items.push({ ...child, parent: parentName });
           }
         } else if (entry.cron) {
-          const childName = entry.description ?? entry.name ?? parentName;
-          items.push({
-            parent: parentName,
-            name: childName,
-            cron: entry.cron,
-          });
+          items.push({ ...entry, parent: parentName });
         }
       }
     }
@@ -88,6 +78,16 @@ const appendItems = () => {
 
       const name = document.createElement('div');
       name.textContent = child.name;
+
+      if (child.link) {
+        const anchor = document.createElement('a');
+        anchor.href = child.link;
+        anchor.textContent = '🔗';
+        anchor.className = 'plain';
+        anchor.target = '_blank';
+        name.appendChild(anchor);
+      }
+
       row.appendChild(name);
 
       const line = document.createElement('div');

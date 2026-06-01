@@ -6,6 +6,10 @@ main {
   max-width: 576px;
   margin: 0 auto;
 }
+a.plain {
+  color: inherit;
+  text-decoration: none;
+}
 .card {
   display: flex;
   flex-direction: column;

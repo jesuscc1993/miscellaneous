@@ -4,7 +4,8 @@
     "children": [
       {
         "name": "Humble Choice release",
-        "cron": "0 17 1-7 * 2"
+        "cron": "0 17 1-7 * 2",
+        "link": "https://www.humblebundle.com/membership/home"
       }
     ]
   },
@@ -13,7 +14,8 @@
     "children": [
       {
         "name": "Weekly games giveaway",
-        "cron": "0 17 * * 4"
+        "cron": "0 17 * * 4",
+        "link": "https://store.epicgames.com/free-games"
       }
     ]
   },
@@ -22,7 +24,8 @@
     "children": [
       {
         "name": "Weekly games giveaway",
-        "cron": "0 17 1-7 * 2"
+        "cron": "0 17 1-7 * 2",
+        "link": "https://luna.amazon.es/claims/home"
       }
     ]
   },
