@@ -1,6 +1,7 @@
 [
   {
     "name": "Humble Bundle",
+    "icon": "https://cdn.humblebundle.com/static/hashed/46cf2ed85a0641bfdc052121786440c70da77d75.png",
     "children": [
       {
         "name": "Humble Choice release",
@@ -11,6 +12,7 @@
   },
   {
     "name": "Epic Games",
+    "icon": "https://static-assets-prod.epicgames.com/epic-store/static/favicon.ico",
     "children": [
       {
         "name": "Weekly games giveaway",
@@ -21,6 +23,7 @@
   },
   {
     "name": "Amazon Prime",
+    "icon": "https://m.media-amazon.com/images/G/01/T/TC05316420/A07531864/brand/Round_Icon_128x128.png",
     "children": [
       {
         "name": "Weekly games giveaway",
@@ -31,6 +34,7 @@
   },
   {
     "name": "Hoyoverse",
+    "icon": "https://www.hoyolab.com/favicon.ico",
     "children": [
       {
         "name": "Daily reset",
@@ -62,6 +66,7 @@
   },
   {
     "name": "Warframe",
+    "icon": "https://www-static.warframe.com/images/warframe/favicon.ico",
     "children": [
       {
         "name": "Daily reset",

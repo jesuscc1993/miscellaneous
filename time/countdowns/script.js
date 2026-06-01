@@ -8,17 +8,37 @@ const SECONDS_IN_HOUR = SECONDS_IN_MINUTE * MINUTES_IN_HOUR;
 const SECONDS_IN_DAY = SECONDS_IN_HOUR * HOURS_IN_DAY;
 const SECONDS_IN_WEEK = SECONDS_IN_DAY * DAYS_IN_WEEK;
 
-let items = [];
+let items;
+let groups;
 
 const initFromConfig = async () => {
   try {
     const res = await fetch('config.json', { cache: 'no-store' });
     if (!res.ok) throw new Error('Failed to fetch config');
     const config = await res.json();
+
+    items = [];
+    groups = [];
+
     for (const group of config) {
-      for (const child of group.children) {
-        items.push({ ...child, parent: group.name });
+      const children = [];
+
+      for (const child of group.children ?? []) {
+        const item = {
+          ...child,
+          parent: group.name,
+          id: getIdFromName(group.name + ' ' + child.name),
+        };
+        children.push(item);
+        items.push(item);
       }
+
+      groups.push({
+        name: group.name,
+        id: getIdFromName(group.name) || 'parent',
+        icon: group.icon,
+        children,
+      });
     }
   } catch (err) {
     console.error('Could not load config.json', err);
@@ -44,28 +64,30 @@ const getIdFromName = (name) =>
 const appendItems = () => {
   const container = document.getElementById('itemsContainer');
 
-  const groups = new Map();
-  for (const item of items) {
-    const id = getIdFromName(item.parent + ' ' + item.name);
-    item.id = id;
-    const parent = item.parent || item.name;
-    if (!groups.has(parent)) groups.set(parent, []);
-    groups.get(parent).push(item);
-  }
-
-  for (const [parentName, children] of groups) {
-    const parentId = getIdFromName(parentName) || 'parent';
+  for (const group of groups) {
     const section = document.createElement('section');
     section.className = 'card';
-    section.setAttribute('aria-labelledby', parentId + 'Label');
+    section.setAttribute('aria-labelledby', group.id + 'Label');
+
+    if (group.icon) {
+      const icon = document.createElement('img');
+      icon.className = 'icon';
+      icon.src = group.icon;
+      icon.alt = group.name + ' icon';
+      section.appendChild(icon);
+    }
+
+    const right = document.createElement('section');
+    right.className = 'right';
+    right.setAttribute('aria-labelledby', group.id + 'Label');
 
     const title = document.createElement('strong');
-    title.id = parentId + 'Label';
+    title.id = group.id + 'Label';
     title.className = 'label text-125';
-    title.textContent = parentName;
-    section.appendChild(title);
+    title.textContent = group.name;
+    right.appendChild(title);
 
-    for (const child of children) {
+    for (const child of group.children) {
       const row = document.createElement('p');
       row.className = 'row';
 
@@ -107,7 +129,8 @@ const appendItems = () => {
       timeEl.setAttribute('aria-atomic', 'true');
       row.appendChild(timeEl);
 
-      section.appendChild(row);
+      right.appendChild(row);
+      section.appendChild(right);
     }
 
     container.appendChild(section);
