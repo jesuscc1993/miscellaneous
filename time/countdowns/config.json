@@ -37,7 +37,7 @@
     "icon": "https://www.hoyolab.com/favicon.ico",
     "children": [
       {
-        "name": "Daily check-in reset",
+        "name": "Daily check-in",
         "cron": "0 16 * * *",
         "links": [
           {
