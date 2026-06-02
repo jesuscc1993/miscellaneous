@@ -150,7 +150,7 @@ const formatRemaining = (ms) => {
   const seconds = remaining % SECONDS_IN_MINUTE;
   return (
     (weeks ? weeks + 'w ' : '') +
-    (days ? days + 'd ' : '') +
+    (weeks || days ? days + 'd ' : '') +
     (padStart(hours) + ':' + padStart(minutes) + ':' + padStart(seconds))
   );
 };
