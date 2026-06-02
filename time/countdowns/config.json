@@ -27,7 +27,7 @@
     "children": [
       {
         "name": "Weekly games giveaway",
-        "cron": "0 17 1-7 * 2",
+        "cron": "0 17 * * 4",
         "links": [{ "href": "https://luna.amazon.es/claims/home" }]
       }
     ]
