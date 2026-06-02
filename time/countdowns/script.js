@@ -142,7 +142,7 @@ const padStart = (n, length = TIME_DIGIT_LENGTH) => {
 };
 
 const formatRemaining = (ms) => {
-  const remaining = Math.max(0, Math.floor(ms / MS_IN_SECOND));
+  const remaining = Math.max(0, Math.ceil(ms / MS_IN_SECOND));
   const weeks = Math.floor(remaining / SECONDS_IN_WEEK);
   const days = Math.floor((remaining % SECONDS_IN_WEEK) / SECONDS_IN_DAY);
   const hours = Math.floor((remaining % SECONDS_IN_DAY) / SECONDS_IN_HOUR);
