@@ -39,9 +39,9 @@ a.plain {
   }
   .line {
     flex: 1;
-    height: 1px;
-    background: var(--cr-primary-text-color);
-    opacity: 0.25;
+    margin-top: 1px;
+    border-top: 1px dashed var(--cr-primary-text-color);
+    opacity: 0.33;
   }
   .time {
     font-family: monospace;
