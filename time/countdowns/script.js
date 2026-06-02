@@ -91,30 +91,57 @@ const appendItems = () => {
       const row = document.createElement('p');
       row.className = 'row';
 
-      const name = document.createElement('div');
+      const name = document.createElement('span');
       name.textContent = child.name;
 
-      if (child.links) {
-        name.appendChild(document.createTextNode(' ('));
+      const nameWrapper = document.createElement('div');
+      nameWrapper.appendChild(name);
+
+      if (child.links?.length > 1) {
+        const anchor = document.createElement('a');
+        anchor.href = '#';
+        anchor.className = 'plain';
+        anchor.target = '_blank';
+        anchor.onclick = (e) => {
+          e.preventDefault();
+
+          for (const link of child.links) {
+            window.open(link.href, link.name ?? '_blank');
+          }
+        };
+        anchor.appendChild(name);
+        nameWrapper.appendChild(anchor);
+
+        nameWrapper.appendChild(document.createTextNode(' ('));
 
         for (let i = 0; i < child.links.length; i++) {
           const link = child.links[i];
-          const anchor = document.createElement('a');
-          anchor.href = link.href;
-          anchor.textContent = (link.name ?? '') + '🔗';
-          anchor.className = 'plain';
-          anchor.target = '_blank';
-          name.appendChild(anchor);
+          const childAnchor = document.createElement('a');
+          childAnchor.href = link.href;
+          childAnchor.textContent = (link.name ?? '') + '🔗';
+          childAnchor.target = '_blank';
+          nameWrapper.appendChild(childAnchor);
 
           if (i < child.links.length - 1) {
-            name.appendChild(document.createTextNode(' | '));
+            nameWrapper.appendChild(document.createTextNode(' | '));
           }
         }
 
-        name.appendChild(document.createTextNode(')'));
-      }
+        nameWrapper.appendChild(document.createTextNode(')'));
+        row.appendChild(nameWrapper);
+      } else if (child.links?.length === 1) {
+        nameWrapper.textContent += '🔗';
 
-      row.appendChild(name);
+        const link = child.links[0];
+        const anchor = document.createElement('a');
+        anchor.href = link.href;
+        anchor.className = 'plain';
+        anchor.target = '_blank';
+        anchor.appendChild(nameWrapper);
+        row.appendChild(anchor);
+      } else {
+        row.appendChild(nameWrapper);
+      }
 
       const line = document.createElement('div');
       line.className = 'line';

@@ -6,8 +6,16 @@ main {
   max-width: 576px;
   margin: 0 auto;
 }
-a.plain {
+a {
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.plain {
+    color: inherit;
+  }
 }
 .card {
   display: flex;
