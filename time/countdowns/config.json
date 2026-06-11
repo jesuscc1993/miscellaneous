@@ -16,7 +16,7 @@
     "children": [
       {
         "name": "Weekly games giveaway",
-        "cron": "0 17 * * 4",
+        "cron": "0 15 * * 4",
         "links": [{ "href": "https://store.epicgames.com/free-games" }]
       }
     ]
