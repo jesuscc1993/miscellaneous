@@ -1,7 +1,7 @@
 [
   {
     "name": "Humble Bundle",
-    "icon": "https://cdn.humblebundle.com/static/hashed/46cf2ed85a0641bfdc052121786440c70da77d75.png",
+    "icon": "https://cdn.humblebundle.com/static/hashed/cf3858ca434246e23c6474e37cd123028f9d1b98.svg",
     "children": [
       {
         "name": "Humble Choice release",
@@ -34,7 +34,8 @@
   },
   {
     "name": "Hoyoverse",
-    "icon": "https://www.hoyolab.com/favicon.ico",
+    "icon": "https://hyl-static-res-prod.hoyolab.com/communityWeb/pgc/business/hyl_icon.png",
+    "iconClass": "squircle",
     "children": [
       {
         "name": "Daily check-in",
@@ -70,7 +71,8 @@
   },
   {
     "name": "Warframe",
-    "icon": "https://www-static.warframe.com/images/warframe/favicon.ico",
+    "icon": "https://www-static.warframe.com/images/warframe/favicon-180.png",
+    "iconClass": "squircle",
     "children": [
       {
         "name": "Daily reset",

@@ -34,9 +34,8 @@ const initFromConfig = async () => {
       }
 
       groups.push({
-        name: group.name,
+        ...group,
         id: getIdFromName(group.name) || 'parent',
-        icon: group.icon,
         children,
       });
     }
@@ -71,7 +70,10 @@ const appendItems = () => {
 
     if (group.icon) {
       const icon = document.createElement('img');
-      icon.className = 'icon';
+      icon.classList.add('icon');
+      if (group.iconClass) {
+        icon.classList.add(group.iconClass);
+      }
       icon.src = group.icon;
       icon.alt = group.name + ' icon';
       section.appendChild(icon);

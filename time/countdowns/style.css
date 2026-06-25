@@ -20,14 +20,19 @@ a {
 .card {
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 1.125em;
   padding: 1.25em;
   margin: 1em 0;
 
   .icon {
-    --size: 32px;
-    width: var(--size);
-    height: var(--size);
+    --size: 48px;
+    max-width: var(--size);
+    max-height: var(--size);
+
+    &.squircle {
+      border-radius: 50%;
+      corner-shape: superellipse(1.75);
+    }
   }
   .right {
     flex: 1;
