@@ -3,8 +3,15 @@ body {
   font-size: 16px;
 }
 main {
-  max-width: 576px;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
+  max-width: 576px;
+  min-height: 100dvh;
+  width: 100%;
+}
+footer {
+  margin-top: auto;
 }
 a {
   text-decoration: none;
@@ -22,10 +29,13 @@ a {
   align-items: center;
   gap: 1.125em;
   padding: 1.25em;
-  margin: 1em 0;
+
+  & + .card {
+    margin-top: 1em;
+  }
 
   .icon {
-    max-width: 48px;
+    width: 48px;
     max-height: 60px;
 
     &.squircle {
