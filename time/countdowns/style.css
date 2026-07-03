@@ -25,9 +25,8 @@ a {
   margin: 1em 0;
 
   .icon {
-    --size: 48px;
-    max-width: var(--size);
-    max-height: var(--size);
+    max-width: 48px;
+    max-height: 60px;
 
     &.squircle {
       border-radius: 50%;

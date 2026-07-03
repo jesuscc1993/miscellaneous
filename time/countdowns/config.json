@@ -1,7 +1,7 @@
 [
   {
     "name": "Humble Bundle",
-    "icon": "https://cdn.humblebundle.com/static/hashed/cf3858ca434246e23c6474e37cd123028f9d1b98.svg",
+    "icon": "./assets/images/humble-bundle.webp",
     "children": [
       {
         "name": "Humble Choice release",
@@ -12,7 +12,7 @@
   },
   {
     "name": "Epic Games",
-    "icon": "https://static-assets-prod.epicgames.com/epic-store/static/favicon.ico",
+    "icon": "./assets/images/epic-games.webp",
     "children": [
       {
         "name": "Weekly games giveaway",
@@ -23,7 +23,7 @@
   },
   {
     "name": "Amazon Prime",
-    "icon": "https://m.media-amazon.com/images/G/01/T/TC05316420/A07531864/brand/Round_Icon_128x128.png",
+    "icon": "./assets/images/amazon-prime.webp",
     "children": [
       {
         "name": "Weekly games giveaway",
@@ -34,8 +34,7 @@
   },
   {
     "name": "Hoyoverse",
-    "icon": "https://hyl-static-res-prod.hoyolab.com/communityWeb/pgc/business/hyl_icon.png",
-    "iconClass": "squircle",
+    "icon": "./assets/images/hoyoverse.webp",
     "children": [
       {
         "name": "Daily check-in",
@@ -71,8 +70,7 @@
   },
   {
     "name": "Warframe",
-    "icon": "https://www-static.warframe.com/images/warframe/favicon-180.png",
-    "iconClass": "squircle",
+    "icon": "./assets/images/warframe.webp",
     "children": [
       {
         "name": "Daily reset",
