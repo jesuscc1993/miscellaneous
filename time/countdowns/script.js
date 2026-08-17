@@ -8,6 +8,13 @@ const SECONDS_IN_HOUR = SECONDS_IN_MINUTE * MINUTES_IN_HOUR;
 const SECONDS_IN_DAY = SECONDS_IN_HOUR * HOURS_IN_DAY;
 const SECONDS_IN_WEEK = SECONDS_IN_DAY * DAYS_IN_WEEK;
 
+const COLORIZATION_THRESHOLDS = [
+  { min: 0.75, color: 'green' },
+  { min: 0.5, color: 'orange' },
+  { min: 0.25, color: 'yellow' },
+  { min: 0, color: 'red' },
+];
+
 let items;
 let groups;
 
@@ -184,6 +191,14 @@ const formatRemaining = (ms) => {
   );
 };
 
+const getColorForRatio = (ratio, ascending) => {
+  const r = ascending ? 1 - ratio : ratio;
+  for (const { min, color } of COLORIZATION_THRESHOLDS) {
+    if (r >= min) return color;
+  }
+  return COLORIZATION_THRESHOLDS[COLORIZATION_THRESHOLDS.length - 1].color;
+};
+
 const updateItems = () => {
   const now = new Date();
   const nowInMs = Date.now();
@@ -192,8 +207,22 @@ const updateItems = () => {
     if (!el) continue;
     const target = nextFromCron(now, item.cron);
     if (!target) continue;
-    el.textContent = formatRemaining(target.getTime() - nowInMs);
+    const timeLeft = target.getTime() - nowInMs;
+    el.textContent = formatRemaining(timeLeft);
     el.setAttribute('datetime', target.toISOString());
+
+    if (item.colorize) {
+      const nextTarget = nextFromCron(target, item.cron);
+      if (nextTarget) {
+        const periodicity = nextTarget.getTime() - target.getTime();
+        const color = getColorForRatio(
+          timeLeft / periodicity,
+          item.colorize === 'ASC',
+        );
+        el.classList.remove('fg-red', 'fg-yellow', 'fg-green', 'fg-white');
+        if (color) el.classList.add('fg-' + color);
+      }
+    }
   }
 };
 

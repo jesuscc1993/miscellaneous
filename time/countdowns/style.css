@@ -69,6 +69,19 @@ a {
     font-family: monospace;
   }
 }
+.fg-red {
+  color: #E53935;
+}
+.fg-orange {
+  color: #FB8C00;
+}
+.fg-yellow {
+  color: #FDD835;
+}
+.fg-green {
+  color: #43A047;
+}
+
 .text-center {
   text-align: center;
 }
