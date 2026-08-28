@@ -16,13 +16,13 @@
   <body>
     <h1>Steam AppID Asset Viewer<small id="subtitle"></small></h1>
 
-    <form onsubmit="updateImages(event)">
+    <form onsubmit="onAppIdChange(event)">
       <label for="appIdInput">App ID</label>
       <input
         type="number"
         id="appIdInput"
         title="appId"
-        onblur="updateImages(event)"
+        onblur="onAppIdChange(event)"
       />
       <button type="submit">Submit</button>
 

@@ -10,20 +10,33 @@ const initialize = () => {
   const assetAnchors = document.querySelectorAll('.asset-group a:has(img)');
   assetAnchors.forEach((a) => (a.querySelector('img').src = a.href));
 
-  appIdInput.value = getAppIdParam();
-
-  const appName = getParams().get('appName');
-  if (appName) subtitle.innerHTML = '<br>' + appName;
+  appIdInput.value = getParam('appId', 70);
 
   updateImages();
+  setAppName(getParam('appName'));
 };
 
-const updateImages = (event) => {
+const setAppName = (appName) => {
+  setParam('appName', appName);
+
+  if (appName) {
+    subtitle.innerHTML = '<br>' + appName;
+  } else {
+    subtitle.innerHTML = '';
+  }
+};
+
+const onAppIdChange = (event) => {
   event?.preventDefault();
   event?.stopPropagation();
 
+  updateImages();
+  setAppName();
+};
+
+const updateImages = () => {
   const appId = parseInt(appIdInput.value, 10);
-  setAppIdParam(appId);
+  setParam('appId', appId);
 
   assetImgAnchors.forEach((anchor) => {
     anchor.href = getUpdatedAppIdUrl(appId, anchor.href);
@@ -49,18 +62,23 @@ const getParams = () => {
   return new URLSearchParams(window.location.search);
 };
 
-const getAppIdParam = () => {
-  return getParams().get('appId') || 70;
+const getParam = (name, fallback) => {
+  return getParams().get(name) || fallback;
 };
 
-const setAppIdParam = (appId) => {
-  const params = getParams();
-  params.set('appId', appId);
+const setParams = (params) => {
   window.history.replaceState(
     {},
     '',
     `${window.location.pathname}?${params.toString()}`,
   );
+};
+
+const setParam = (name, value) => {
+  const params = getParams();
+  if (value === undefined) params.delete(name);
+  else params.set(name, value);
+  setParams(params);
 };
 
 initialize();
