@@ -1,8 +1,9 @@
 const storeAnchor = document.getElementById('storeAnchor');
+const subtitle = document.getElementById('subtitle');
 const appIdInput = document.getElementById('appIdInput');
 const assetImgAnchors = document.querySelectorAll('.asset-group a');
 const assetImgs = document.querySelectorAll(
-  '.links-container a img, .asset-group a img'
+  '.links-container a img, .asset-group a img',
 );
 
 const initialize = () => {
@@ -10,6 +11,10 @@ const initialize = () => {
   assetAnchors.forEach((a) => (a.querySelector('img').src = a.href));
 
   appIdInput.value = getAppIdParam();
+
+  const appName = getParams().get('appName');
+  if (appName) subtitle.innerHTML = '<br>' + appName;
+
   updateImages();
 };
 
@@ -40,18 +45,21 @@ const getUpdatedStoreUrl = (appId, url) => {
   return url.replace(/\/\d+/, `\/${appId}`);
 };
 
+const getParams = () => {
+  return new URLSearchParams(window.location.search);
+};
+
 const getAppIdParam = () => {
-  const params = new URLSearchParams(window.location.search);
-  return params.get('appId') || 70;
+  return getParams().get('appId') || 70;
 };
 
 const setAppIdParam = (appId) => {
-  const params = new URLSearchParams(window.location.search);
+  const params = getParams();
   params.set('appId', appId);
   window.history.replaceState(
     {},
     '',
-    `${window.location.pathname}?${params.toString()}`
+    `${window.location.pathname}?${params.toString()}`,
   );
 };
 
