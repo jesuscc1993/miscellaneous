@@ -5,7 +5,7 @@
     "children": [
       {
         "name": "Humble Choice release",
-        "colorize": "ASC",
+        "countdown": "brightness",
         "cron": "0 17 1-7 * 2",
         "links": [{ "href": "https://www.humblebundle.com/membership/home" }]
       }
@@ -17,7 +17,7 @@
     "children": [
       {
         "name": "Weekly games giveaway",
-        "colorize": "ASC",
+        "countdown": "brightness",
         "cron": "0 15 * * 4",
         "links": [{ "href": "https://store.epicgames.com/free-games" }]
       }
@@ -29,7 +29,7 @@
     "children": [
       {
         "name": "Weekly games giveaway",
-        "colorize": "ASC",
+        "countdown": "brightness",
         "cron": "0 17 * * 4",
         "links": [{ "href": "https://luna.amazon.es/claims/home" }]
       }
@@ -41,7 +41,7 @@
     "children": [
       {
         "name": "Daily check-in",
-        "colorize": "DESC",
+        "countdown": "color",
         "cron": "0 16 * * *",
         "links": [
           {

@@ -82,6 +82,19 @@ a {
   color: #43A047;
 }
 
+.fg-1000 {
+  color: hsl(0 0% 100%);
+}
+.fg-875 {
+  color: hsl(0 0% 87.5%);
+}
+.fg-750 {
+  color: hsl(0 0% 75%);
+}
+.fg-625 {
+  color: hsl(0 0% 62.5%);
+}
+
 .text-center {
   text-align: center;
 }

@@ -9,10 +9,16 @@ const SECONDS_IN_DAY = SECONDS_IN_HOUR * HOURS_IN_DAY;
 const SECONDS_IN_WEEK = SECONDS_IN_DAY * DAYS_IN_WEEK;
 
 const COLORIZATION_THRESHOLDS = [
-  { min: 0.75, color: 'green' },
-  { min: 0.5, color: 'orange' },
-  { min: 0.25, color: 'yellow' },
-  { min: 0, color: 'red' },
+  { min: 0.75, className: 'fg-green' },
+  { min: 0.5, className: 'fg-orange' },
+  { min: 0.25, className: 'fg-yellow' },
+  { min: 0, className: 'fg-red' },
+];
+const BRIGHTNESS_THRESHOLDS = [
+  { min: 0.75, className: 'fg-1000' },
+  { min: 0.5, className: 'fg-875' },
+  { min: 0.25, className: 'fg-750' },
+  { min: 0, className: 'fg-625' },
 ];
 
 let items;
@@ -191,12 +197,20 @@ const formatRemaining = (ms) => {
   );
 };
 
-const getColorForRatio = (ratio, ascending) => {
-  const r = ascending ? 1 - ratio : ratio;
-  for (const { min, color } of COLORIZATION_THRESHOLDS) {
-    if (r >= min) return color;
+const getColorClassForRatio = (ratio, direction) => {
+  return getClassForRatio(COLORIZATION_THRESHOLDS, ratio, direction);
+};
+
+const getBrightnessClassForRatio = (ratio, direction) => {
+  return getClassForRatio(BRIGHTNESS_THRESHOLDS, ratio, direction);
+};
+
+const getClassForRatio = (dict, ratio, direction = 'ASC') => {
+  const r = direction === 'ASC' ? 1 - ratio : ratio;
+  for (const { min, className } of dict) {
+    if (r >= min) return className;
   }
-  return COLORIZATION_THRESHOLDS[COLORIZATION_THRESHOLDS.length - 1].color;
+  return dict[dict.length - 1].className;
 };
 
 const updateItems = () => {
@@ -211,16 +225,28 @@ const updateItems = () => {
     el.textContent = formatRemaining(timeLeft);
     el.setAttribute('datetime', target.toISOString());
 
-    if (item.colorize) {
+    if (item.countdown) {
       const nextTarget = nextFromCron(target, item.cron);
       if (nextTarget) {
         const periodicity = nextTarget.getTime() - target.getTime();
-        const color = getColorForRatio(
-          timeLeft / periodicity,
-          item.colorize === 'ASC',
+        const ratio = timeLeft / periodicity;
+
+        const className =
+          item.countdown === 'color'
+            ? getColorClassForRatio(ratio, 'DESC')
+            : getBrightnessClassForRatio(ratio, 'ASC');
+
+        el.classList.remove(
+          'fg-red',
+          'fg-yellow',
+          'fg-green',
+          'fg-white',
+          'fg-100',
+          'fg-80',
+          'fg-60',
+          'fg-40',
         );
-        el.classList.remove('fg-red', 'fg-yellow', 'fg-green', 'fg-white');
-        if (color) el.classList.add('fg-' + color);
+        if (className) el.classList.add(className);
       }
     }
   }
