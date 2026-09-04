@@ -14,7 +14,12 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Steam AppID Asset Viewer<br><small id="subtitle"></small></h1>
+    <h1>
+      Steam AppID Asset Viewer<br /><small>
+        <span id="appNameLabel"></span>
+        <span id="appIdLabel"></span>
+      </small>
+    </h1>
 
     <form onsubmit="onAppIdChange(event)">
       <label for="appIdInput">App ID</label>
@@ -28,7 +33,7 @@
 
       <a
         id="storeAnchor"
-        href="https://store.steampowered.com/app/1"
+        href="https://store.steampowered.com/app/1/"
         target="_blank"
       >
         Store Page

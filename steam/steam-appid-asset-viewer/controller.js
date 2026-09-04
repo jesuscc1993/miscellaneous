@@ -1,56 +1,59 @@
 const storeAnchor = document.getElementById('storeAnchor');
-const subtitle = document.getElementById('subtitle');
 const appIdInput = document.getElementById('appIdInput');
+const appIdLabel = document.getElementById('appIdLabel');
+const appNameLabel = document.getElementById('appNameLabel');
 const assetImgAnchors = document.querySelectorAll('.asset-group a');
 const assetImgs = document.querySelectorAll(
   '.links-container a img, .asset-group a img',
 );
 
 const initialize = () => {
+  window.addEventListener('popstate', loadAppParams);
+  loadAppParams();
+
   const assetAnchors = document.querySelectorAll('.asset-group a:has(img)');
   assetAnchors.forEach((a) => (a.querySelector('img').src = a.href));
-
-  appIdInput.value = getParam('appId', 70);
-
-  updateImages();
-  setAppName(getParam('appName'));
 };
 
-const setAppName = (appName) => {
-  setParam('appName', appName);
-  subtitle.innerHTML = appName ?? '';
+const loadAppParams = () => {
+  applyAppValues(getParam('appId', 70), getParam('appName'));
+};
+
+const applyAppValues = (appId, appName) => {
+  appIdLabel.innerHTML = appId ? `[${appId}]` : '';
+  appIdInput.value = appId;
+  appNameLabel.innerHTML = appName ?? '';
+
+  updateImages(appId);
+};
+
+const setAppParams = (appId, appName) => {
+  setParams({ appId, appName });
+  applyAppValues(appId, appName);
 };
 
 const onAppIdChange = (event) => {
   event?.preventDefault();
   event?.stopPropagation();
 
-  updateImages();
-  setAppName();
+  setAppParams(parseInt(appIdInput.value, 10), undefined);
 };
 
-const updateImages = () => {
-  const appId = parseInt(appIdInput.value, 10);
-  setParam('appId', appId);
-
+const updateImages = (appId) => {
   assetImgAnchors.forEach((anchor) => {
-    anchor.href = getUpdatedAppIdUrl(appId, anchor.href);
+    anchor.href = getUpdatedAppUrl(appId, anchor.href);
   });
   assetImgs.forEach((img) => {
-    img.src = getUpdatedAppIdUrl(appId, img.src);
+    img.src = getUpdatedAppUrl(appId, img.src);
   });
 
-  storeAnchor.href = getUpdatedStoreUrl(appId, storeAnchor.href);
+  storeAnchor.href = getUpdatedAppUrl(appId, storeAnchor.href);
 
   document.body.style.backgroundImage = `url(https://cdn.cloudflare.steamstatic.com/steam/apps/${appId}/page_bg_generated_v6b.jpg)`;
 };
 
-const getUpdatedAppIdUrl = (appId, url) => {
+const getUpdatedAppUrl = (appId, url) => {
   return url.replace(/\/\d+\//, `/${appId}/`);
-};
-
-const getUpdatedStoreUrl = (appId, url) => {
-  return url.replace(/\/\d+/, `\/${appId}`);
 };
 
 const getParams = () => {
@@ -61,19 +64,31 @@ const getParam = (name, fallback) => {
   return getParams().get(name) || fallback;
 };
 
-const setParams = (params) => {
-  window.history.replaceState(
+const setParams = (updates) => {
+  const params = getParams();
+
+  const changed = Object.entries(updates)
+    .map(([name, value]) => setParam(params, name, value))
+    .some(Boolean);
+  if (!changed) return;
+
+  window.history.pushState(
     {},
     '',
     `${window.location.pathname}?${params.toString()}`,
   );
 };
 
-const setParam = (name, value) => {
-  const params = getParams();
-  if (value === undefined) params.delete(name);
-  else params.set(name, value);
-  setParams(params);
+const setParam = (params, name, newValue) => {
+  const currentValue = params.get(name);
+  if (`${currentValue}` === `${newValue}`) return false;
+
+  if (typeof newValue === 'undefined') {
+    params.delete(name);
+  } else {
+    params.set(name, newValue);
+  }
+  return true;
 };
 
 initialize();
