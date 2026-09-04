@@ -18,12 +18,7 @@ const initialize = () => {
 
 const setAppName = (appName) => {
   setParam('appName', appName);
-
-  if (appName) {
-    subtitle.innerHTML = '<br>' + appName;
-  } else {
-    subtitle.innerHTML = '';
-  }
+  subtitle.innerHTML = appName ?? '';
 };
 
 const onAppIdChange = (event) => {
