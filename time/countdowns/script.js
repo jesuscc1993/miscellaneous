@@ -118,19 +118,7 @@ const appendItems = () => {
         infoFlag.className = 'info-flag';
         infoFlag.style.display = 'inline';
         infoFlag.textContent = '🛈';
-        infoFlag.onclick = (e) => {
-          e.preventDefault();
-
-          const msg = 'Changed since you last checked. Press "OK" to dismiss.';
-          if (!window.confirm(msg)) return;
-
-          const nextTime =
-            typeof nextFromCron === 'function'
-              ? nextFromCron(new Date(), child.cron)
-              : null;
-          if (nextTime) setStoredTimeIso(child.id, nextTime.toISOString());
-          infoFlag.style.display = 'none';
-        };
+        infoFlag.onclick = () => dismissReminder(child.id, child.cron, true);
         row.appendChild(infoFlag);
 
         try {
@@ -157,6 +145,8 @@ const appendItems = () => {
           for (const link of child.links) {
             window.open(link.href, link.name ?? '_blank');
           }
+
+          dismissReminder(child.id, child.cron, false);
         };
         anchor.appendChild(name);
         nameWrapper.appendChild(anchor);
@@ -169,6 +159,8 @@ const appendItems = () => {
           childAnchor.href = link.href;
           childAnchor.textContent = (link.name ?? '') + '🔗';
           childAnchor.target = '_blank';
+          childAnchor.onclick = () =>
+            dismissReminder(child.id, child.cron, false);
           nameWrapper.appendChild(childAnchor);
 
           if (i < child.links.length - 1) {
@@ -186,6 +178,7 @@ const appendItems = () => {
         anchor.href = link.href;
         anchor.className = 'plain';
         anchor.target = '_blank';
+        anchor.onclick = () => dismissReminder(child.id, child.cron, false);
         anchor.appendChild(nameWrapper);
         row.appendChild(anchor);
       } else {
@@ -262,6 +255,21 @@ const setStoredTimeIso = (id, iso) => {
   try {
     localStorage.setItem(getStorageKey(id), iso);
   } catch (err) {}
+};
+
+// Dismiss a reminder for an item by id and optional cron expression.
+// If `confirm` is true, ask the user before dismissing.
+const dismissReminder = (id, cron, confirm = false) => {
+  if (confirm) {
+    const msg = 'Changed since you last checked. Press "OK" to dismiss.';
+    if (!window.confirm(msg)) return;
+  }
+
+  const nextTime =
+    typeof nextFromCron === 'function' ? nextFromCron(new Date(), cron) : null;
+  if (nextTime) setStoredTimeIso(id, nextTime.toISOString());
+  const flagEl = document.getElementById(`${id}-changed`);
+  if (flagEl) flagEl.style.display = 'none';
 };
 
 const updateItems = () => {
