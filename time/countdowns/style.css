@@ -67,8 +67,9 @@ a {
   }
   .info-flag {
     cursor: pointer;
-    margin-right: 0.25em;
     display: none;
+    font-size: 125%;
+    line-height: 0;
   }
   .time {
     font-family: monospace;

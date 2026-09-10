@@ -131,7 +131,7 @@ const appendItems = () => {
           if (nextTime) setStoredTimeIso(child.id, nextTime.toISOString());
           infoFlag.style.display = 'none';
         };
-        nameWrapper.appendChild(infoFlag);
+        row.appendChild(infoFlag);
 
         try {
           if (typeof nextFromCron === 'function') {
