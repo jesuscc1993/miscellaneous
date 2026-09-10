@@ -112,6 +112,40 @@ const appendItems = () => {
       const nameWrapper = document.createElement('div');
       nameWrapper.appendChild(name);
 
+      if (child.reminder) {
+        const infoFlag = document.createElement('span');
+        infoFlag.id = `${child.id}-changed`;
+        infoFlag.className = 'info-flag';
+        infoFlag.style.display = 'inline';
+        infoFlag.textContent = '🛈';
+        infoFlag.onclick = (e) => {
+          e.preventDefault();
+
+          const msg = 'Changed since you last checked. Press "OK" to dismiss.';
+          if (!window.confirm(msg)) return;
+
+          const nextTime =
+            typeof nextFromCron === 'function'
+              ? nextFromCron(new Date(), child.cron)
+              : null;
+          if (nextTime) setStoredTimeIso(child.id, nextTime.toISOString());
+          infoFlag.style.display = 'none';
+        };
+        nameWrapper.appendChild(infoFlag);
+
+        try {
+          if (typeof nextFromCron === 'function') {
+            const initial = nextFromCron(new Date(), child.cron);
+            if (initial && !localStorage.getItem(getStorageKey(child.id))) {
+              localStorage.setItem(
+                getStorageKey(child.id),
+                initial.toISOString(),
+              );
+            }
+          }
+        } catch (err) {}
+      }
+
       if (child.links?.length > 1) {
         const anchor = document.createElement('a');
         anchor.href = '#';
@@ -213,6 +247,23 @@ const getClassForRatio = (dict, ratio, direction = 'ASC') => {
   return dict[dict.length - 1].className;
 };
 
+const getStorageKey = (id) => `nextTimeFor_${id}`;
+
+const getStoredTimeMs = (id) => {
+  try {
+    const iso = localStorage.getItem(getStorageKey(id));
+    return iso ? Date.parse(iso) : null;
+  } catch (err) {
+    return null;
+  }
+};
+
+const setStoredTimeIso = (id, iso) => {
+  try {
+    localStorage.setItem(getStorageKey(id), iso);
+  } catch (err) {}
+};
+
 const updateItems = () => {
   const now = new Date();
   const nowInMs = Date.now();
@@ -224,6 +275,16 @@ const updateItems = () => {
     const timeLeft = target.getTime() - nowInMs;
     el.textContent = formatRemaining(timeLeft);
     el.setAttribute('datetime', target.toISOString());
+
+    try {
+      const storedMs = getStoredTimeMs(item.id);
+      const flagEl = document.getElementById(`${item.id}-changed`);
+      if (storedMs && target.getTime() > storedMs) {
+        if (flagEl) flagEl.style.display = 'inline';
+      } else {
+        if (flagEl) flagEl.style.display = 'none';
+      }
+    } catch (err) {}
 
     if (item.countdown) {
       const nextTarget = nextFromCron(target, item.cron);

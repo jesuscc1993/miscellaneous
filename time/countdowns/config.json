@@ -7,6 +7,7 @@
         "name": "Humble Choice release",
         "countdown": "brightness",
         "cron": "0 17 1-7 * 2",
+        "reminder": true,
         "links": [{ "href": "https://www.humblebundle.com/membership/home" }]
       }
     ]
@@ -19,6 +20,7 @@
         "name": "Weekly games giveaway",
         "countdown": "brightness",
         "cron": "0 15 * * 4",
+        "reminder": true,
         "links": [{ "href": "https://store.epicgames.com/free-games" }]
       }
     ]
@@ -31,6 +33,7 @@
         "name": "Weekly games giveaway",
         "countdown": "brightness",
         "cron": "0 17 * * 4",
+        "reminder": true,
         "links": [{ "href": "https://luna.amazon.es/claims/home" }]
       }
     ]
@@ -43,6 +46,7 @@
         "name": "Daily check-in",
         "countdown": "color",
         "cron": "0 16 * * *",
+        "reminder": true,
         "links": [
           {
             "name": "GI",
