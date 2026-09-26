@@ -28,8 +28,9 @@ const initialize = () => {
     const talentsContainer = jQuery(`<div class="talents-container"></div>`);
     const linksContainer = jQuery(`<div class="links-container"></div>`);
 
-    Object.keys(talentsMap).forEach((countryKey) => {
-      const countryMap = talentsMap[countryKey];
+    talentsMap.forEach((country) => {
+      const countryKey = country.locale;
+      const groups = country.groups || [];
       const countryContainer = jQuery(
         `<div class="talent-country"><h2 id="${countryKey}">${countryKey}</h2></div>`,
       );
@@ -39,11 +40,13 @@ const initialize = () => {
         <a href="#${sanitizeSpaces(countryKey)}">${countryKey}</a> :
       `);
 
-      Object.keys(countryMap)
+      groups
+        .slice()
         .reverse()
-        .forEach((groupKey, i) => {
+        .forEach((group, i) => {
+          const groupKey = group.label;
           const id = sanitizeSpaces(`${countryKey}-${groupKey}`);
-          const talentsList = countryMap[groupKey];
+          const talentsList = group.talents || [];
           const groupContainer = jQuery(`
             <div class="talent-group">
                <h3 id="${id}">${groupKey}</h3>
@@ -59,7 +62,6 @@ const initialize = () => {
               a.graduated === b.graduated ? 0 : a.graduated ? 1 : -1,
             )
             .forEach((talent) => {
-              // const talentKeyword = sanitizeSpaces(talent.keyword || talent.name);
               const talentKeyword = sanitizeSpaces(talent.name);
               const talentQuery = searchUrl.replace(
                 /\{\{ QUERY \}\}/g,
