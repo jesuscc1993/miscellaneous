@@ -118,7 +118,9 @@ const appendItems = () => {
         infoFlag.className = 'info-flag';
         infoFlag.style.display = 'inline';
         infoFlag.textContent = '🛈';
-        infoFlag.onclick = () => dismissReminder(child.id, child.cron, true);
+        setClickHandlers(infoFlag, () =>
+          dismissReminder(child.id, child.cron, true),
+        );
         row.appendChild(infoFlag);
 
         try {
@@ -139,15 +141,15 @@ const appendItems = () => {
         anchor.href = '#';
         anchor.className = 'plain';
         anchor.target = '_blank';
-        anchor.onclick = (e) => {
-          e.preventDefault();
+        setClickHandlers(anchor, (event) => {
+          event.preventDefault();
 
           for (const link of child.links) {
             window.open(link.href, link.name ?? '_blank');
           }
 
           dismissReminder(child.id, child.cron, false);
-        };
+        });
         anchor.appendChild(name);
         nameWrapper.appendChild(anchor);
 
@@ -159,8 +161,9 @@ const appendItems = () => {
           childAnchor.href = link.href;
           childAnchor.textContent = (link.name ?? '') + '🔗';
           childAnchor.target = '_blank';
-          childAnchor.onclick = () =>
-            dismissReminder(child.id, child.cron, false);
+          setClickHandlers(childAnchor, () =>
+            dismissReminder(child.id, child.cron, false),
+          );
           nameWrapper.appendChild(childAnchor);
 
           if (i < child.links.length - 1) {
@@ -178,7 +181,9 @@ const appendItems = () => {
         anchor.href = link.href;
         anchor.className = 'plain';
         anchor.target = '_blank';
-        anchor.onclick = () => dismissReminder(child.id, child.cron, false);
+        setClickHandlers(anchor, () =>
+          dismissReminder(child.id, child.cron, false),
+        );
         anchor.appendChild(nameWrapper);
         row.appendChild(anchor);
       } else {
@@ -204,6 +209,13 @@ const appendItems = () => {
 
     container.appendChild(section);
   }
+};
+
+const setClickHandlers = (element, onClick) => {
+  element.onclick = onClick;
+  element.onauxclick = (event) => {
+    if (event.button === 1) element.onclick(event);
+  };
 };
 
 const padStart = (n, length = TIME_DIGIT_LENGTH) => {
