@@ -1,0 +1,31 @@
+{
+  "subLocation": "login",
+  "instances": [
+    {
+      "name": "Guest",
+      "urls": [
+        {
+          "label": "DEV",
+          "address": "https://dev.example.com"
+        },
+        {
+          "label": "PRD",
+          "address": "https://prd.example.com"
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "urls": [
+        {
+          "label": "DEV",
+          "address": "https://admin.dev.example.com"
+        },
+        {
+          "label": "PRD",
+          "address": "https://admin.prd.example.com"
+        }
+      ]
+    }
+  ]
+}

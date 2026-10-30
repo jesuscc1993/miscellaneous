@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 1rem 0.5rem;
+}
+
+main {
+  width: min(64rem, 100%);
+  margin: 0 auto;
+}
+
+input,
+textarea {
+  border-radius: 0.5rem;
+  border: 1px solid #fff4;
+  font: inherit;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+table {
+  td {
+    &:first-child {
+      width: 1%;
+      white-space: nowrap;
+    }
+  }
+}
+
+.rows,
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.form-control label {
+  display: block;
+
+  + input,
+  + textarea {
+    margin-top: 0.25rem;
+  }
+}
+
+.card {
+  background-color: #fff1;
+  border-radius: 0.75rem;
+  border: 1px solid #fff4;
+  padding: 1rem;
+
+  .card-title {
+    margin: 0 0 1rem;
+  }
+}
+
+/* utility */
+
+.dim {
+  filter: invert(.33);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.no-bottom-margin {
+  margin-bottom: 0;
+}

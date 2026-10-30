@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SubLocation URL Builder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>SubLocation URL Builder</h1>
+      <p class="dim">Fill in the following config to generate your subpaths.</p>
+
+      <section>
+        <div class="card">
+          <div class="form-control">
+            <label for="configInput">Config</label>
+            <textarea
+              id="configInput"
+              autocomplete="off"
+              rows="10"
+              placeholder='{
+  "subLocation": string;
+  "instances": {
+    "name": string;
+    "urls": {
+      "label": string;
+      "address": string;
+    }[];
+  }[];
+}'
+            ></textarea>
+          </div>
+        </div>
+      </section>
+
+      <h2>Output</h2>
+
+      <section id="output" class="rows"></section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
