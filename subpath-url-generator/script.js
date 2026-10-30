@@ -27,7 +27,7 @@ function update() {
 
       instance.urls.forEach((url) => {
         const address = suffix
-          ? `${url.address.replace(/\/+$/, '')}/${encodeURIComponent(suffix)}`
+          ? `${url.address.replace(/\/+$/, '')}/${encodeURI(suffix)}`
           : url.address;
 
         const anchor = document.createElement('a');

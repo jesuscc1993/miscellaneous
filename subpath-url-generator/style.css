@@ -27,7 +27,11 @@ textarea {
 }
 
 table {
+  width: 100%;
+
   td {
+    overflow-wrap: anywhere;
+
     &:first-child {
       width: 1%;
       white-space: nowrap;
